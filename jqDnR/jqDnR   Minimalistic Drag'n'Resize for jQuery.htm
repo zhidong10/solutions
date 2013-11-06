@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=GB2312">
+<title>jqDnR :: Minimalistic Drag'n'Resize for jQuery</title>
+<meta name="author" content="Brice Burgess">
+<meta name="description" content="Minimalistic Drag and Resize for jQuery. Javascript Drag and Resize">
+<meta name="keywords" content="drag, resize, jquery, javascript">
+
+<!--  Page Styling -->
+<link type="text/css" rel="stylesheet" media="all" href="jqDnR%20%20%20Minimalistic%20Drag%27n%27Resize%20for%20jQuery_files/common.css">
+<link type="text/css" rel="stylesheet" media="all" href="jqDnR%20%20%20Minimalistic%20Drag%27n%27Resize%20for%20jQuery_files/example.css">
+
+<!--  jqDnR Required -->
+<script type="text/javascript" src="jqDnR%20%20%20Minimalistic%20Drag%27n%27Resize%20for%20jQuery_files/jquery.js"></script>
+<script type="text/javascript" src="jqDnR%20%20%20Minimalistic%20Drag%27n%27Resize%20for%20jQuery_files/jqDnR.js"></script>
+
+<!--  jqDnR Recommended -->
+<script type="text/javascript" src="jqDnR%20%20%20Minimalistic%20Drag%27n%27Resize%20for%20jQuery_files/dimensions.js"></script>
+
+<!--  jqModal [optional] -->
+<script type="text/javascript" src="jqDnR%20%20%20Minimalistic%20Drag%27n%27Resize%20for%20jQuery_files/jqModal.js"></script>
+
+</head>
+<body>
+<div class="box">
+
+  
+<p><em>Examples</em></p>
+
+<div class="example">
+1. <em>Resize</em>
+</div>
+<script type="text/javascript">
+$().ready(function() {
+	$('#ex1').jqResize('.jqResize');
+});
+</script>
+<style>
+.jqHandle {
+	 background: red;
+	 height:15px;
+}
+
+.jqDrag {
+	width: 100%;
+	cursor: move;
+}
+
+.jqResize {
+	 width: 15px;
+	 position: absolute;
+	 bottom: 0;
+	 right: 0;
+	 cursor: se-resize;
+}
+
+.jqDnR {
+    z-index: 3;
+    position: relative;
+    
+    width: 180px;
+    font-size: 0.77em;
+    color: #618d5e;
+    margin: 5px 10px 10px 10px;
+    padding: 8px;
+    background-color: #EEE;
+    border: 1px solid #CCC;
+}
+</style>
+
+<div id="ex1" class="jqDnR">
+	I am an example Box "#ex1"<br>
+	You can *RESIZE* Me.
+	<div class="jqHandle jqResize"></div>
+</div>
+	
+<div class="src">
+<div class="js">
+<a href="#">Javascript</a>
+<pre>$().ready(function() {
+  $('#ex1').jqResize('.jqResize');
+});</pre>
+</div>
+
+<div class="css">
+<a href="#">CSS</a>
+<pre>.jqHandle {
+   background: red;
+   height:15px;
+}
+
+.jqDrag {
+  width: 100%;
+  cursor: move;
+}
+
+.jqResize {
+   width: 15px;
+   position: absolute;
+   bottom: 0;
+   right: 0;
+   cursor: se-resize;
+}
+
+.jqDnR {
+    z-index: 3;
+    position: relative;
+    
+    width: 180px;
+    font-size: 0.77em;
+    color: #618d5e;
+    margin: 5px 10px 10px 10px;
+    padding: 8px;
+    background-color: #EEE;
+    border: 1px solid #CCC;
+}</pre>
+</div>
+
+<div class="html">
+<a href="#">HTML</a>
+<pre>&lt;div id="ex1" class="jqDnR"&gt;
+  I am an example Box "#ex1"&lt;br /&gt;
+  You can *RESIZE* Me.
+  &lt;div class="jqHandle jqResize"&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+</div>
+</div>
+
+<div class="example">
+2. <em>Drag</em>
+</div>
+<script type="text/javascript">
+$().ready(function() {
+	$('#ex2').jqDrag();
+	
+	$('#ex2b')
+		.css('opacity',0.6)
+		.jqDrag();
+});
+</script>
+
+<div id="ex2" class="jqDnR jqDrag">
+	I am an example Box "#ex2"<br>
+	You can *DRAG* Me.
+</div>
+
+<div style="opacity: 0.6;" id="ex2b" class="jqDnR jqDrag">
+	I am an example Box "#ex2"<br>
+	You can *DRAG* Me. <br>
+	Notice my Original Opacity is preserved.
+</div>
+	
+<div class="src">
+<div class="js">
+<a href="#">Javascript</a>
+<pre>$().ready(function() {
+  $('#ex2').jqDrag();
+  
+  $('#ex2b')
+    .css('opacity',0.6)
+    .jqDrag();
+});</pre>
+</div>
+
+<div class="css">
+<a href="#">CSS</a>
+<pre>CSS inherited from Example 1.</pre>
+</div>
+
+<div class="html">
+<a href="#">HTML</a>
+<pre>&lt;div id="ex2" class="jqDnR jqDrag"&gt;
+  I am an example Box "#ex2"&lt;br /&gt;
+  You can *DRAG* Me.
+&lt;/div&gt;
+
+&lt;div id="ex2b" class="jqDnR jqDrag"&gt;
+  I am an example Box "#ex2"&lt;br /&gt;
+  You can *DRAG* Me. &lt;br /&gt;
+  Notice my Original Opacity is preserved.
+&lt;/div&gt;</pre>
+</div>
+</div>
+
+ 
+
+  	
+ 
+
+<br clear="all">
+  
+
+<script type="text/javascript">
+// common
+$().ready(function() {
+   $('div.src a').click(function(){
+    $('../pre',this).toggle();
+    return false;
+   });
+});
+</script>
+
+
+
+</body></html>

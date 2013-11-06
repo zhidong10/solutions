@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title>Photo Zoom Out Effect with jQuery</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="description" content="Photo Zoom Out Effect with jQuery - Demonstation" />
+        <meta name="keywords" content="photo, image, zoom out, jQuery" />
+        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+    </head>
+    <body>
+        <div id="container" class="container">
+            <div class="wrap">
+                <a href="#">
+                    <img src="images/image1.jpg" alt="Picture 1"/>
+                </a>
+            </div>
+            <div class="wrap">
+                <a href="#">
+                    <img src="images/image2.jpg" alt="Picture 2"/>
+                </a>
+            </div>
+            <div class="wrap">
+                <a href="#">
+                    <img src="images/image3.jpg" alt="Picture 3"/>
+                </a>
+            </div>
+            <div class="wrap">
+                <a href="#">
+                    <img src="images/image4.jpg" alt="Picture 4"/>
+                </a>
+            </div>
+            <div class="wrap">
+                <a href="#">
+                    <img src="images/image5.jpg" alt="Picture 5"/>
+                </a>
+            </div>
+            <div class="wrap">
+                <a href="http://www.flickr.com/photos/tonythemisfit/3839281139/">
+                    <img src="images/image6.jpg" alt="Picture 6"/>
+                </a>
+            </div>
+        </div>
+        <div>
+         </div>
+
+        <!-- The JavaScript -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function() {
+				$('#container img').hover(
+					function(){
+						var $this = $(this);
+						$this.stop().animate({'opacity':'1.0','height':'200px','top':'0px','left':'0px'});
+					},
+					function(){
+						var $this = $(this);
+						$this.stop().animate({'opacity':'0.5','height':'500px','top':'-66.5px','left':'-150px'});
+					}
+				);
+            });
+        </script>
+    </body>
+</html>

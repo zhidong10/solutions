@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Overview The JWPlayer Skin</title>
+<style type="text/css">
+body, button, option, select{
+	font:normal normal 12px/22px Tahoma, Geneva, sans-serif;
+}
+#page{
+	width:500px;
+	margin:0 auto;
+}
+#player{
+	width:500px;
+	margin:0 auto;
+	padding-top:30px;
+}
+select, button{
+	-moz-border-radius:3px 3px 3px 3px;
+	background:#e5e5e5;
+	border:1px solid #989898;
+	color:#3f2611;
+	cursor:pointer;
+}
+/*option{
+	background:#e5e5e5;
+	border:1px solid #989898;
+	border-left:none;
+	border-right:none;
+}*/
+button{
+	display:inline;
+	height:22px;
+	line-height:22px;
+	margin:0 3px;
+	padding:0;
+	width:65px;
+	display:none;
+}
+#video-music-flash{
+	padding:0;
+	margin:0;
+	list-style:none;
+	height:24px;
+	width:180px;
+	float:right;
+}
+#video-music-flash li{
+	height:24px;
+	width:60px;
+	display:block;
+	float:left;
+}
+#video-music-flash li input, #video-music-flash li label{
+	display:inline-block;
+	float:left;
+}
+#video-music-flash li input{ margin-top:6px;}
+</style>
+</head>
+
+<body>   
+<div id="page">
+	<select  name="skin-option" class="skin-option" id="skin-option">
+		<option>bluemetal</option>
+		<option>carbon</option>
+		<option>copper</option>
+		<option>darksunset</option>
+		<option>facebook</option>
+		<option>facebook1</option>
+		<option>graphite</option>
+		<option>icecreamsneaka</option>
+		<option>jump</option>
+		<option>lightrv5</option>
+		<option>moderngreen</option>
+		<option>nexus</option>
+		<option>norden</option>
+		<option>plexi</option>
+		<option>schoon</option>
+		<option>simplicity</option>
+		<option>snel</option>
+		<option>stormtrooper</option>
+		<option selected="selected">tlbb</option>
+		<option>unlimblue</option>
+		<!--
+		<option>vector</option>
+		<option>comet</option>
+		<option>nature</option>
+		-->
+	</select>
+	<button id="overview">Overview</button>
+	<ul id="video-music-flash">
+		<li>
+			<input type="radio" name="video-music-flash" value="video" id="video" checked="checked" />
+			<label for="video">Video</label>
+		</li>
+		<li>
+			<input type="radio" name="video-music-flash" value="music" id="music" />
+			<label for="music">Music</label>
+		</li>
+		<!--<li>
+			<input type="radio" name="flash" value="flash" id="flash" />
+			<label for="flash">Flash</label>
+		</li>-->
+	</ul>
+</div>
+<div id="player">
+	<span id="replaced"><img src="http://i2.itc.cn/20101123/848_f1fa558a_b382_44e6_979c_21a1a60abb46_6.jpg" /></span>
+</div>
+<script type="text/javascript" src="http://www.changyou.com/scripts/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+<script type="text/javascript">
+$(function(){
+	// var cdnPath = 'http://files1.changyou.com/mediaplayer';
+	var playFlash = function(skin){		
+		var skin = 'http://www.changyou.com/cyouFile/mediaplayer/skin/' + skin + '.zip' ;
+		var val = $('#video-music-flash input:checked').val();
+		//alert(val);
+		if(val == 'video') {
+			swfobject.embedSWF('http://www.changyou.com/cyouFile/mediaplayer/player.swf', 'replaced', '500', '328', '7', 
+				'http://www.changyou.com/cyouFile/mediaplayer/expressInstall.swf',
+			   	{ 
+					file      : 'http://www.changyou.com/cyouFile/mediaplayer/skin/overview.flv',
+					skin      : skin,
+					autostart : 'true',
+					repeat    : 'always',
+					controlbar: 'bottom',
+					image     : 'http://i3.itc.cn/20101020/848_7e004191_ef71_4ccd_9870_a94dc67d491f_0.jpg',
+					stretching: 'exactfit'
+				 
+				},{ 
+					allowfullscreen   : 'true', 
+					allowscriptaccess : 'always',
+					wmode             : 'transparent'
+			   	},{
+					id    : 'replaced',  
+				  	name  : 'replaced'
+			  });
+		}else if(val == 'music'){
+			swfobject.embedSWF('http://www.changyou.com/cyouFile/mediaplayer/player.swf', 'replaced', '500', '30', '7',
+			'http://www.changyou.com/cyouFile/mediaplayer/expressInstall.swf',
+			{
+				file      : 'http://www.changyou.com/cyouFile/mediaplayer/skin/overview.mp3',
+				skin      : skin,
+				autostart : 'true',
+				repeat    : 'always'
+		   	},{
+			 	wmode     : 'transparent',
+				allowfullscreen   : 'false'
+		   	});  	
+		}
+	}	
+	playFlash($('#skin-option').val());
+	var skinPath = '';
+	$('#skin-option').change(function(){
+		skinPath = $('#skin-option').val();
+		playFlash(skinPath);
+	});
+	$('#video-music-flash input').change(function(){
+		playFlash(skinPath);	
+	});
+	
+});
+</script>
+</body>
+</html>

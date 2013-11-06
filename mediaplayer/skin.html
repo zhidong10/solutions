@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Overview The JWPlayer Skin</title>
+</head>
+
+<body>   
+<div id="player">
+	<span id="replaced"><img src="http://i2.itc.cn/20101123/848_f1fa558a_b382_44e6_979c_21a1a60abb46_6.jpg" /></span>
+</div>
+<script type="text/javascript" src="http://www.changyou.com/scripts/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+<script type="text/javascript">
+$(function(){
+	var playFlash = function(skin){		
+		var skin = 'skin/' + skin + '.zip' ;
+		 
+			swfobject.embedSWF('player.swf', 'replaced', '500', '30', '7',
+			'expressInstall.swf',
+			{
+				file      : 'skin/overview.mp3',
+				skin      : skin,
+				autostart : "true",	 
+				repeat    :"always",
+			 	wmode     : 'transparent',
+				loop      : -1,
+				allowfullscreen   : 'false'
+		   });  	
+	}	
+	playFlash('schoon');
+ 
+});
+</script>
+</body>
+</html>
