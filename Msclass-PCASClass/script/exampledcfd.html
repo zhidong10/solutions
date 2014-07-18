@@ -1,0 +1,149 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<!-- Mirrored from www.popub.net/script/example.asp?id=4 by HTTrack Website Copier/3.x [XR&CO'2010], Thu, 26 Jun 2014 06:28:55 GMT -->
+<HEAD>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<script src="MSClass.js" type="text/javascript"></script>
+
+<TITLE>淘宝广告应用实例 JavaScript - MSClass应用实例演示 - Class Of Marquee Scroll通用不间断滚动JS封装类</TITLE>
+<meta name="keywords" content="JavaScript淘宝广告应用实例,MSClass,不间断滚动,JS不间断滚动,通用不间断滚动,Class Of Marquee Scroll">
+<META NAME="description" CONTENT="JavaScript淘宝广告应用实例,MSClass,不间断滚动,JS不间断滚动,通用不间断滚动,Class Of Marquee Scroll">
+<META content="MSHTML 6.00.6000.17097" name=GENERATOR></HEAD>
+<body>
+<script type="text/javascript">
+function $(id){return document.getElementById(id)};
+</script>
+
+<h1>淘宝广告应用实例 JavaScript - MSClass应用实例演示 <a href="MSClass.html">下载MSClass</a></h1>
+<br/><br/>
+<style>
+a,body,select,td,b{font-size:12px;text-decoration:none;}
+body{background:#ffffff;}
+a,pre{color:#808080;}
+a:link,a:visited {color:#555;}
+a:hover,a:active { color:#ff4e00;}
+img{border:0}
+</style>
+<style type="text/css" media="screen">
+/* 定义顶部的下半部分 */ 
+#TAOBAOBOX { 
+	position:relative;
+	float:none; 
+	border:1px solid #DCDDDD;
+	width:358px;
+	margin-top:0px;
+	height:298px;
+	overflow:hidden; background-color:#FFFFFF
+} 
+#TaobaoHeader{
+	background-color: #FFFFFF;
+	margin-top: 2px;
+	margin-right: 0;
+	margin-bottom: 2px;
+	margin-left: 0;
+}
+.TaobaoNav{height:27px;border-bottom:2px solid #F27B04;list-style:none;padding:0;margin:0;}
+.TaobaoNav li{float:left;width:54px;line-height:27px;text-align:center;}
+.TaobaoNav li a{ left:100px; color:#CD083E;font-size:12px;font-weight:400;display:block;}
+.TaobaoNav li.n1{background:url(images/menu.jpg) no-repeat;width:74px;margin-right:6px; }
+.TaobaoNav li.n1 a{color:#fff; font-size:14px; font-weight:600; letter-spacing:1px}
+.TaobaoTab {
+	position:absolute;
+	top:34px;
+	left:1px;
+	width:70px;
+	float: left;
+	height: 270px;
+	margin-top:-1px;
+	border-left:1px solid #FEC799;
+	border-right:1px solid #FEC799;
+}
+.TaobaoTab li {
+	background-color:#FEFBEC;
+	float:left;
+	width:70px;
+	height:25px;
+	line-height:25px;
+	border-bottom:1px solid #FEEFD7;
+	text-align:center;
+}
+.TaobaoTab li.active {
+	position:relative;
+	width:70px;
+	height:30px; 
+	background-color:#FEF0D0;
+}
+.TaobaoTab li.active a{
+	color:#C70535;
+	text-decoration:blink;
+	font-weight:bold;
+	font-size:14px;
+	line-height:30px;
+} 
+#TAOBAOTABBOX {width:285px;height:265px;top:0px;overflow:hidden; float:right;}
+#TAOBAOTABBOX li{width:285px;height:265px;}
+#TAOBAOTABBOX a{font-size:0;} 
+</style>
+<div id="TAOBAOBOX">
+	<div id="TaobaoHeader">
+		<ul class="TaobaoNav">
+			<li class="n1"><a href="javascript:void(0)">淘宝网</a></li>
+			<li><a href="javascript:void(0)">女人</a></li>
+			<li><a href="javascript:void(0)">热卖</a></li>
+			<li><a href="javascript:void(0)">美容</a></li>
+			<li><a href="javascript:void(0)">男人</a></li>
+			<li><a href="javascript:void(0)">运动</a></li>
+		</ul>
+	</div>
+	<div class="TaobaoTab">
+		<ul id="TAOBAOTABID">
+			<li><a href="javascript:void(0)">连衣裙</a></li>
+			<li><a href="javascript:void(0)">女包</a></li>
+			<li><a href="javascript:void(0)">T恤</a></li>
+			<li><a href="javascript:void(0)">衬衫</a></li>
+			<li><a href="javascript:void(0)">男T恤</a></li>
+			<li><a href="javascript:void(0)">单鞋</a></li>
+			<li><a href="javascript:void(0)">哈伦裤</a></li>
+			<li><a href="javascript:void(0)">雪纺衫</a></li>
+			<li><a href="javascript:void(0)">凉鞋</a></li>
+			<li><a href="javascript:void(0)">皮鞋</a></li>
+		</ul>
+	</div>
+	<div id="TAOBAOTABBOX">
+		<ul id="TAOBAOTABCONTENT">
+			<li><a href="javascript:void(0)"><img src="images/285X265_1.jpg" alt="连衣裙"></a></li>
+			<li><a href="javascript:void(0)"><img src="images/285X265_2.jpg" alt="女包"></a></li>
+			<li><a href="javascript:void(0)"><img src="images/285X265_3.jpg" alt="T恤"></a></li>
+			<li><a href="javascript:void(0)"><img src="images/285X265_4.jpg" alt="衬衫"></a></li>
+			<li><a href="javascript:void(0)"><img src="images/285X265_5.jpg" alt="T恤"></a></li>
+			<li><a href="javascript:void(0)"><img src="images/285X265_6.jpg" alt="单鞋"></a></li>
+			<li><a href="javascript:void(0)"><img src="images/285X265_7.jpg" alt="哈伦裤"> </a></li>
+			<li><a href="javascript:void(0)"><img src="images/285X265_8.jpg" alt="雪纺"></a></li>
+			<li><a href="javascript:void(0)"><img src="images/285X265_9.jpg" alt="单鞋"></a></li>
+			<li><a href="javascript:void(0)"><img src="images/285X265_10.jpg" alt="皮鞋"></a></li>
+		</ul>
+	</div>
+</div>
+
+<script type="text/javascript">
+new Marquee(
+{
+	MSClass	  : ["TAOBAOTABBOX","TAOBAOTABCONTENT","TAOBAOTABID"],
+	Direction : 2,
+	Step	  : 0.5,
+	Width	  : 285,
+	Height	  : 265,
+	Timer	  : 20,
+	DelayTime : 5000,
+	WaitTime  : 0,
+	ScrollStep: 0,
+	SwitchType: 0,
+	AutoStart : true
+});
+</script>
+<div style="position:absolute;top:-10000px;"><script language="javascript" type="text/javascript" src="../../js.users.51.la/3287800.js"></script></div>
+</body>
+
+<!-- Mirrored from www.popub.net/script/example.asp?id=4 by HTTrack Website Copier/3.x [XR&CO'2010], Thu, 26 Jun 2014 06:29:01 GMT -->
+</html>

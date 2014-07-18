@@ -1,0 +1,123 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<!-- Mirrored from www.popub.net/script/example.asp?id=11 by HTTrack Website Copier/3.x [XR&CO'2010], Thu, 26 Jun 2014 06:27:52 GMT -->
+<HEAD>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<script src="MSClass.js" type="text/javascript"></script>
+
+<TITLE>京东渐显效果 JavaScript - MSClass应用实例演示 - Class Of Marquee Scroll通用不间断滚动JS封装类</TITLE>
+<meta name="keywords" content="JavaScript京东渐显效果,MSClass,不间断滚动,JS不间断滚动,通用不间断滚动,Class Of Marquee Scroll">
+<META NAME="description" CONTENT="JavaScript京东渐显效果,MSClass,不间断滚动,JS不间断滚动,通用不间断滚动,Class Of Marquee Scroll">
+<META content="MSHTML 6.00.6000.17097" name=GENERATOR></HEAD>
+<body>
+<script type="text/javascript">
+function $(id){return document.getElementById(id)};
+</script>
+
+<h1>京东渐显效果 JavaScript - MSClass应用实例演示 <a href="MSClass.html">下载MSClass</a></h1>
+<br/><br/>
+<style>
+a,body,select,td,b{font-size:12px;text-decoration:none;}
+body{background:#ffffff;}
+a,pre{color:#808080;}
+a:link,a:visited {color:#555;}
+a:hover,a:active { color:#ff4e00;}
+img{border:0}
+</style>
+<STYLE type=text/css>
+#JINGDONGTABBOX{position:relative;}
+#JINGDONGTAB .mt{
+	margin:0 auto;width:760px;BACKGROUND: url(images/bg_tit_home.gif) #e6e6e6 repeat-x 0px -128px; OVERFLOW: visible; POSITION: relative; HEIGHT: 28px
+}
+
+#JINGDONGTAB H2 {
+	MARGIN-TOP:0;FONT-SIZE: 14px;PADDING-RIGHT: 10px; PADDING-LEFT: 10px; BACKGROUND: url(images/bg_tit_home.gif) no-repeat 0px -100px; FLOAT: left; PADDING-BOTTOM: 0px; WIDTH: 121px; COLOR: #fff; LINE-HEIGHT: 28px; PADDING-TOP: 0px; HEIGHT: 28px
+}
+#JINGDONGTAB .tab {
+	MARGIN-TOP:0;RIGHT: 5px; POSITION: absolute; TOP: 4px;width:75px;
+}
+#JINGDONGTAB .tab LI {
+	float:left;
+	list-style:none;
+	cursor:default;
+	BACKGROUND: url(images/bg_tit_plist2.gif) no-repeat -120px -152px; WIDTH: 20px; LINE-HEIGHT: 20px; MARGIN-RIGHT: 4px; FONT-FAMILY: arial; HEIGHT: 20px; TEXT-ALIGN: center
+}
+#JINGDONGTAB .tab LI.active {float:left;
+	BACKGROUND-POSITION: -98px -152px; FONT-WEIGHT: bold; PADDING-BOTTOM: 8px; COLOR: #fff
+}
+#JINGDONGTAB .mt .extra {
+	BACKGROUND: url(images/bg_tit_home.gif) no-repeat -191px -156px; FLOAT: right; WIDTH: 20px; HEIGHT: 28px
+}
+#JINGDONGTABBOX {
+	margin:0 auto;margin-top:10px;PADDING-BOTTOM: 10px; BORDER-BOTTOM: #e2ebf4 1px solid;clear:both;background-color:#ffffff;
+}
+#JINGDONGTABBOX DL {
+	float:left;display:inline;list-style:none;PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 0px; WIDTH: 234px;height:180px;PADDING-TOP: 0px; TEXT-ALIGN: center
+}
+#JINGDONGTABBOX DT {
+	ZOOM: 1;position:relative; HEIGHT: 130px;
+}
+#JINGDONGTABBOX DD {
+	margin:0;padding:0;width:234px;margin-top:5px;
+}
+#JINGDONGTABBOX .p-price {
+	z-index:100;PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-WEIGHT: bold; RIGHT: 20px; BACKGROUND: #f33; PADDING-BOTTOM: 2px; COLOR: #fff; LINE-HEIGHT: 14px; PADDING-TOP: 2px; FONT-FAMILY: arial; POSITION:absolute;display:block;BOTTOM: 10px;HEIGHT: 14px
+}
+</STYLE>
+<b>DIV + CSS实例(DL + DT + DD)渐显 + TAB</b>
+<DIV style="background-color:#ffffff;width:760px;">
+<DIV id="JINGDONGTAB"><DIV class=mt><H2>疯狂抢购</H2><DIV class=extra><ul class="tab" id="JINGDONGTABID"><li>1</li><li class="curr">2</li><li>3</li></ul></DIV></DIV></DIV>
+<DIV id="JINGDONGTABBOX">
+<DIV id="JINGDONGTABCONTENT" style="width:762px;height:180px;overflow:hidden;">
+<dl>
+<dt><a href="javascript:void(0)"><img src="images/130X130_1.jpg" width="130" height="130" border="0"></a><p class="p-price">￥199.00</p></dt><dd><a href="javascript:void(0)">皇威足浴盆H-209C！热销足浴盆！直降70有木有！仅售199！有木有！史无前例最低价！</a></dd>
+</dl>
+<dl>
+<dt><a href="javascript:void(0)"><img src="images/130X130_2.jpg" width="130" height="130" border="0"></a><p class="p-price">￥3799.00</p></dt><dd><a href="javascript:void(0)">戴尔Inspiron 14V-498B i3-380 500G 512M独显 WIN7 促销：送200元京券！</a></dd>
+</dl>
+<dl>
+<dt><a href="javascript:void(0)"><img src="images/130X130_3.jpg" width="130" height="130" border="0"></a><p class="p-price">￥9199.00</p></dt><dd><a href="javascript:void(0)">尼康 D300S 单反相机机身 直降300周末放价！</a></dd>
+</dl>
+<dl>
+<dt><a href="javascript:void(0)"><img src="images/130X130_4.jpg" width="130" height="130" border="0"></a><p class="p-price">￥1688.00</p></dt><dd><a href="javascript:void(0)">富士 S4050数码相机（黑色） 限时抢购 30倍光变，长焦利器 ！</a></dd>
+</dl>
+<dl>
+<dt><a href="javascript:void(0)"><img src="images/130X130_5.jpg" width="130" height="130" border="0"></a><p class="p-price">￥40.00</p></dt><dd><a href="javascript:void(0)">李宇春2011全新大碟：会跳舞的文艺青年（CD）</a></dd>
+</dl>
+<dl>
+<dt><a href="javascript:void(0)"><img src="images/130X130_6.jpg" width="130" height="130" border="0"></a><p class="p-price">￥299.00</p></dt><dd><a href="javascript:void(0)">昂达（onda） VX570R 4G 智能MP4播放器 Android2.1系统，128RAM 重力感应 白色</a></dd>
+</dl>
+<dl>
+<dt><a href="javascript:void(0)"><img src="images/130X130_7.jpg" width="130" height="130" border="0"></a><p class="p-price">￥3499.00</p></dt><dd><a href="javascript:void(0)">西门子KK22F66TI 双开218升冰箱，直降300！</a></dd>
+</dl>
+<dl>
+<dt><a href="javascript:void(0)"><img src="images/130X130_8.jpg" width="130" height="130" border="0"></a><p class="p-price">￥1666.00</p></dt><dd><a href="javascript:void(0)">海鸥表M162S双历双飞返白盘钢带飞轮全自动机械男表</a></dd>
+</dl>
+<dl>
+<dt><a href="javascript:void(0)"><img src="images/130X130_9.jpg" width="130" height="130" border="0"></a><p class="p-price">￥599.00</p></dt><dd><a href="javascript:void(0)">长虹 008-IIIM铂金汗马 双卡双待 2块3000毫安电池，待机更持久！</a></dd>
+</dl>
+</DIV>
+</DIV>
+</DIV>
+<script type="text/javascript">
+new Marquee(
+{
+	MSClass	  : ["JINGDONGTABBOX","JINGDONGTABCONTENT","JINGDONGTABID"],
+	Direction : 2,
+	Step	  : 4,
+	Width	  : 762,
+	Height	  : 180,
+	Timer	  : 20,
+	DelayTime : 5000,
+	WaitTime  : 0,
+	ScrollStep: 0,
+	SwitchType: 2,
+	AutoStart : true
+});
+</script>
+<div style="position:absolute;top:-10000px;"><script language="javascript" type="text/javascript" src="../../js.users.51.la/3287800.js"></script></div>
+</body>
+
+<!-- Mirrored from www.popub.net/script/example.asp?id=11 by HTTrack Website Copier/3.x [XR&CO'2010], Thu, 26 Jun 2014 06:27:55 GMT -->
+</html>

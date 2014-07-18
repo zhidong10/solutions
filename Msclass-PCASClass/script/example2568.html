@@ -1,0 +1,75 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<!-- Mirrored from www.popub.net/script/example.asp?id=49 by HTTrack Website Copier/3.x [XR&CO'2010], Thu, 26 Jun 2014 06:29:13 GMT -->
+<HEAD>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<script src="MSClass.js" type="text/javascript"></script>
+
+<TITLE>缩略图、纵向滚动应用效果演示 JavaScript - MSClass应用实例演示 - Class Of Marquee Scroll通用不间断滚动JS封装类</TITLE>
+<meta name="keywords" content="JavaScript缩略图、纵向滚动应用效果演示,MSClass,不间断滚动,JS不间断滚动,通用不间断滚动,Class Of Marquee Scroll">
+<META NAME="description" CONTENT="JavaScript缩略图、纵向滚动应用效果演示,MSClass,不间断滚动,JS不间断滚动,通用不间断滚动,Class Of Marquee Scroll">
+<META content="MSHTML 6.00.6000.17097" name=GENERATOR></HEAD>
+<body>
+<script type="text/javascript">
+function $(id){return document.getElementById(id)};
+</script>
+
+<h1>缩略图、纵向滚动应用效果演示 JavaScript - MSClass应用实例演示 <a href="MSClass.html">下载MSClass</a></h1>
+<br/><br/>
+<style>
+a,body,select,td,b{font-size:12px;text-decoration:none;}
+body{background:#ffffff;}
+a,pre{color:#808080;}
+a:link,a:visited {color:#555;}
+a:hover,a:active { color:#ff4e00;}
+img{border:0}
+</style>
+<STYLE type=text/css>
+#TabID {POSITION: absolute; BOTTOM: 0px; LEFT: 5px}
+#TabID LI {FLOAT: left; CURSOR: pointer; WIDTH:80px;HEIGHT:40px;FILTER: alpha(opacity=50); opacity: 0.5;}
+#TabID LI IMG{WIDTH:66px;HEIGHT:26px;BORDER:2px solid #3A528C;MARGIN:4px;}
+#TabID LI.active {FILTER: alpha(opacity=100);opacity: 1}
+#TabID LI.active IMG{WIDTH:75px;HEIGHT:30px;BORDER:2px solid #0099FF;MARGIN:0;}
+#MaskDiv{POSITION: absolute; FILTER: alpha(opacity=40); WIDTH: 700px; BOTTOM: 0px; BACKGROUND: #000; HEIGHT: 50px; LEFT: 0px; opacity: 0.4; -moz-opacity: 0.4;}
+</STYLE>
+<DIV style="position:relative;width:700px;height:280px;overflow:hidden;">
+	<DIV id=MSClassBox>
+		<UL id=ContentID>
+			<LI><A href="javascript:void(0)"><IMG border=0 src="images/700X280_1.jpg" width=700 height=280></A></LI>
+			<LI><A href="javascript:void(0)"><IMG border=0 src="images/700X280_2.jpg" width=700 height=280></A></LI>
+			<LI><A href="javascript:void(0)"><IMG border=0 src="images/700X280_3.jpg" width=700 height=280></A></LI>
+			<LI><A href="javascript:void(0)"><IMG border=0 src="images/700X280_4.jpg" width=700 height=280></A></LI>
+			<LI><A href="javascript:void(0)"><IMG border=0 src="images/700X280_5.jpg" width=700 height=280></A></LI>
+			<LI><A href="javascript:void(0)"><IMG border=0 src="images/700X280_6.jpg" width=700 height=280></A></LI>
+		</UL>
+	</DIV>
+	<div id="MaskDiv">
+	</div>
+	<UL id=TabID>
+		<LI><IMG border=0 src="images/66X26_1.jpg"></LI>
+		<LI><IMG border=0 src="images/66X26_2.jpg"></LI>
+		<LI><IMG border=0 src="images/66X26_3.jpg"></LI>
+		<LI><IMG border=0 src="images/66X26_4.jpg"></LI>
+		<LI><IMG border=0 src="images/66X26_5.jpg"></LI>
+		<LI><IMG border=0 src="images/66X26_6.jpg"></LI>
+	</UL>
+</DIV>
+<SCRIPT type=text/javascript>
+new Marquee(
+{
+	MSClass	  : ["MSClassBox","ContentID","TabID"],
+	Width	  : 700,
+	Height	  : 280,
+	Step	  : 0.3,
+	DelayTime : 2,
+	WaitTime  : 2,
+	ScrollStep: 280,
+	AutoStart : 1
+})
+</SCRIPT>
+<div style="position:absolute;top:-10000px;"><script language="javascript" type="text/javascript" src="../../js.users.51.la/3287800.js"></script></div>
+</body>
+
+<!-- Mirrored from www.popub.net/script/example.asp?id=49 by HTTrack Website Copier/3.x [XR&CO'2010], Thu, 26 Jun 2014 06:29:13 GMT -->
+</html>

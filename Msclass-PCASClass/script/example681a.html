@@ -1,0 +1,170 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<!-- Mirrored from www.popub.net/script/example.asp?id=1 by HTTrack Website Copier/3.x [XR&CO'2010], Thu, 26 Jun 2014 06:27:49 GMT -->
+<HEAD>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<script src="MSClass.js" type="text/javascript"></script>
+
+<TITLE>百度知道渐显效果应用实例 JavaScript - MSClass应用实例演示 - Class Of Marquee Scroll通用不间断滚动JS封装类</TITLE>
+<meta name="keywords" content="JavaScript百度知道渐显效果应用实例,MSClass,不间断滚动,JS不间断滚动,通用不间断滚动,Class Of Marquee Scroll">
+<META NAME="description" CONTENT="JavaScript百度知道渐显效果应用实例,MSClass,不间断滚动,JS不间断滚动,通用不间断滚动,Class Of Marquee Scroll">
+<META content="MSHTML 6.00.6000.17097" name=GENERATOR></HEAD>
+<body>
+<script type="text/javascript">
+function $(id){return document.getElementById(id)};
+</script>
+
+<h1>百度知道渐显效果应用实例 JavaScript - MSClass应用实例演示 <a href="MSClass.html">下载MSClass</a></h1>
+<br/><br/>
+<style>
+a,body,select,td,b{font-size:12px;text-decoration:none;}
+body{background:#ffffff;}
+a,pre{color:#808080;}
+a:link,a:visited {color:#555;}
+a:hover,a:active { color:#ff4e00;}
+img{border:0}
+</style>
+<style>
+DL,DT,DD,UL{margin:0;padding:0;}
+
+A:link {VERTICAL-ALIGN: baseline; TEXT-DECORATION: none}
+A:visited {VERTICAL-ALIGN: baseline; TEXT-DECORATION: none}
+A:hover {TEXT-DECORATION: underline}
+A:link {COLOR: #133db6}
+A:visited {COLOR: #133db6}
+A:hover {COLOR: #133db6}
+
+
+#rc-list-wrapper {FLOAT: left; OVERFLOW: hidden; WIDTH: 570px}
+#rc-list .show {FLOAT: left; WIDTH: 570px; HEIGHT:172px;overflow:hidden;PADDING-TOP: 6px}
+#rc-list .pic {PADDING-LEFT: 6px; FLOAT: left}
+#rc-list .pic IMG {BORDER-RIGHT: #e4e4e4 1px solid; BORDER-TOP: #e4e4e4 1px solid; BORDER-LEFT: #e4e4e4 1px solid; WIDTH: 213px; BORDER-BOTTOM: #e4e4e4 1px solid; HEIGHT: 170px}
+#rc-list .txt {PADDING-LEFT: 17px; FLOAT: left; WIDTH: 330px; COLOR: #444}
+#rc-list .hd H3 {FONT-SIZE: 0px; FLOAT: left; PADDING-TOP: 5px}
+#rc-list .hd A {FLOAT: right;font-size:14px;}
+#rc-list .hd .time {PADDING-LEFT: 7px; FLOAT: left; COLOR: #888; PADDING-TOP: 5px;font-size:12px;}
+#rc-list .bd {CLEAR: both; PADDING-TOP: 4px}
+#rc-list .bd DT {PADDING-BOTTOM: 5px}
+#rc-list .bd DD {PADDING-LEFT: 10px; FONT-SIZE: 14px;BACKGROUND: url(images/bg.gif) no-repeat -85px -251px; LINE-HEIGHT: 25px}
+#rc-list .bd A.title {FONT-SIZE: 20px; COLOR: #333; FONT-FAMILY: '黑体'}
+#rc-list .answerer {PADDING-LEFT: 10px; FONT-SIZE: 12px; COLOR: #666}
+#slider {FLOAT: right; BORDER-LEFT: #d6efc7 1px solid; WIDTH: 194px}
+#slider LI {height:21px;PADDING-RIGHT: 0px;line-height:25px; PADDING-LEFT: 29px; FONT-SIZE: 14px; PADDING-BOTTOM: 7px; CURSOR: pointer; COLOR: #327b00; PADDING-TOP: 8px; BORDER-BOTTOM: #d6efc7 1px solid; ZOOM: 1}
+#slider LI:hover {BACKGROUND-COLOR: #e6f4d0}
+#slider .active {PADDING-LEFT: 24px; BORDER-LEFT: #91d550 5px solid; BACKGROUND-COLOR: #e6f4d0;}
+</style>
+<DIV style="height:182px;width:790px;border:5px solid #91d550;PADDING-RIGHT: 0px; PADDING-LEFT: 3px; BACKGROUND: #ffffff; PADDING-BOTTOM: 3px; PADDING-TOP: 0px;">
+	<DIV id=rc-list-wrapper>
+		<UL id=rc-list>
+			<LI class=show>
+				<DIV class=pic><A href="javascript:void(0)"><IMG height=170 src="images/0511.jpg" width=213></A></DIV>
+				<DIV class=txt>
+					<DIV class=hd>
+						<H3>
+						<IMG height=17 alt=精彩推荐 src="images/recommand.png" width=59></H3><SPAN class=time>2011.05.11</SPAN> <A href="javascript:void(0)">更多</A> 
+					</DIV>
+					<DL class=bd>
+						<DT><A class=title href="javascript:void(0)">食品添加剂，安全不安全</A> 
+							<DD><A href="javascript:void(0)">食品中为什么要有添加剂？</A> <SPAN class=answerer>碚城饭桶 </SPAN>
+							<DD><A href="javascript:void(0)">常见的食品添加剂有哪些？</A> <SPAN class=answerer>hanchao171</SPAN> 
+							<DD><A href="javascript:void(0)">卫生部明文规定不能添加的物质...</A> <SPAN class=answerer>dejinlm </SPAN>
+							<DD><A href="javascript:void(0)">食品添加剂超标的危害？</A> <SPAN class=answerer>5698707</SPAN></DD>
+					</DL>
+				</DIV>
+			</LI>
+			<LI class=show>
+				<DIV class=pic><A href="javascript:void(0)"><IMG height=170 src="images/0510.jpg" width=213></A></DIV>
+				<DIV class=txt>
+					<DIV class=hd>
+						<H3>
+						<IMG height=17 alt=精彩推荐 src="images/recommand.png" width=59></H3><SPAN class=time>2011.05.10</SPAN> <A href="javascript:void(0)">更多</A> 
+					</DIV>
+					<DL class=bd>
+						<DT><A class=title href="javascript:void(0)">悲情的紫金王朝</A>
+						<DD><A href="javascript:void(0)">湖人被横扫是历史上第一次吗？</A> <SPAN class=answerer>墨精武 </SPAN>
+						<DD><A href="javascript:void(0)">“紫金王朝”的称号从何而来？</A> <SPAN class=answerer>殘認的伤害你 </SPAN>
+						<DD><A href="javascript:void(0)">湖人队的历史战绩？</A> <SPAN class=answerer>泰山天魔神</SPAN> 
+						<DD><A href="javascript:void(0)">畅聊：湖人怎样重组能再次夺冠...</A> <SPAN class=answerer>知识伯乐</SPAN></DD>
+					</DL>
+				</DIV>
+			</LI>
+			<LI class=show>
+				<DIV class=pic><A href="javascript:void(0)"><IMG height=170 src="images/0509-1.jpg" width=213></A></DIV>
+				<DIV class=txt>
+					<DIV class=hd>
+						<H3>
+						<IMG height=17 alt=精彩推荐 src="images/recommand.png" width=59></H3><SPAN class=time>2011.05.09</SPAN> <A href="javascript:void(0)">更多</A> 
+					</DIV>
+					<DL class=bd>
+						<DT><A class=title href="javascript:void(0)">嗨朋友，请笑一笑</A> 
+						<DD><A href="javascript:void(0)">保持笑容对身体有什么好处？</A> <SPAN class=answerer>刘晓东1974 </SPAN>
+						<DD><A href="javascript:void(0)">标准的笑容是露几颗牙齿？</A> <SPAN class=answerer>凤蛮娘 </SPAN>
+						<DD><A href="javascript:void(0)">古代笑不露齿的传统从何而来？</A> <SPAN class=answerer>姜一尘 </SPAN>
+						<DD><A href="javascript:void(0)">在什么情况下不适宜大笑？</A> <SPAN class=answerer>疯狂答题手 </SPAN></DD>
+					</DL>
+				</DIV>
+			</LI>
+			<LI class=show>
+				<DIV class=pic><A href="javascript:void(0)"><IMG height=170 src="images/0508-2.jpg" width=213></A></DIV>
+				<DIV class=txt>
+					<DIV class=hd>
+						<H3>
+						<IMG height=17 alt=精彩推荐 src="images/recommand.png" width=59></H3><SPAN class=time>2011.05.08</SPAN> <A href="javascript:void(0)">更多</A> 
+					</DIV>
+					<DL class=bd>
+						<DT><A class=title href="javascript:void(0)">爱意浓浓母亲节</A> 
+						<DD><A href="javascript:void(0)">世界上第一个母亲节是何时？</A> <SPAN class=answerer>雨点的声音 </SPAN>
+						<DD><A href="javascript:void(0)">世界各地母亲节都在同一天吗？</A> <SPAN class=answerer>热心网友</SPAN> 
+						<DD><A href="javascript:void(0)">中国的母亲花是忘忧草吗？</A> <SPAN class=answerer>梦呓的鱼 </SPAN>
+						<DD><A href="javascript:void(0)">2011最温馨母亲节祝福短信</A> <SPAN class=answerer>yh961202 </SPAN></DD>
+					</DL>
+				</DIV>
+			</LI>
+			<LI class=show>
+				<DIV class=pic><A href="javascript:void(0)"><IMG height=170 src="images/0507hp.jpg" width=213></A></DIV>
+				<DIV class=txt>
+					<DIV class=hd>
+						<H3>
+						<IMG height=17 alt=精彩推荐 src="images/recommand.png" width=59></H3><SPAN class=time>2011.05.07</SPAN> <A href="javascript:void(0)">更多</A> 
+					</DIV>
+					<DL class=bd>
+						<DT><A class=title href="javascript:void(0)">黄埔军校的风云岁月</A> 
+						<DD><A href="javascript:void(0)">黄埔军校是怎样建立的？</A> <SPAN class=answerer>沈连营</SPAN> 
+						<DD><A href="javascript:void(0)">孙中山为什么要创建黄埔军校？</A> <SPAN class=answerer>冰火精灵1</SPAN> 
+						<DD><A href="javascript:void(0)">为何苏联帮中国建立黄埔军校？</A> <SPAN class=answerer>帝国づ月长石</SPAN> 
+						<DD><A href="javascript:void(0)">哪些著名将领毕业于黄埔？</A> <SPAN class=answerer>33867ty33867ty</SPAN></DD>
+					</DL>
+				</DIV>
+			</LI>
+		</UL>
+	</DIV>
+	<UL id=slider>
+		<LI class="active">食品添加剂，安全不安...</LI>
+		<LI>悲情的紫金王朝</LI>
+		<LI>嗨朋友，请笑一笑</LI>
+		<LI>爱意浓浓母亲节</LI>
+		<LI>黄埔军校的风云岁月</LI>
+	</UL>
+</DIV>
+<script type="text/javascript">
+new Marquee(
+{
+	MSClass	  : ["rc-list-wrapper","rc-list","slider","onclick"],
+	Direction : 0,
+	Step	  : 0.2,
+	Width	  : 570,
+	Height	  : 178,
+	Timer	  : 20,
+	DelayTime : 5000,
+	WaitTime  : 0,
+	ScrollStep: 0,
+	SwitchType: 2,
+	AutoStart : true
+});
+</script>
+<div style="position:absolute;top:-10000px;"><script language="javascript" type="text/javascript" src="../../js.users.51.la/3287800.js"></script></div>
+</body>
+
+<!-- Mirrored from www.popub.net/script/example.asp?id=1 by HTTrack Website Copier/3.x [XR&CO'2010], Thu, 26 Jun 2014 06:27:52 GMT -->
+</html>

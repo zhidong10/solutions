@@ -1,0 +1,73 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<!-- Mirrored from www.popub.net/script/example.asp?id=29 by HTTrack Website Copier/3.x [XR&CO'2010], Thu, 26 Jun 2014 06:27:19 GMT -->
+<HEAD>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<script src="MSClass.js" type="text/javascript"></script>
+
+<TITLE>DIV + CSS(UL + LI)产品展示放大应用实例(缓动) JavaScript - MSClass应用实例演示 - Class Of Marquee Scroll通用不间断滚动JS封装类</TITLE>
+<meta name="keywords" content="JavaScriptDIV + CSS(UL + LI)产品展示放大应用实例(缓动),MSClass,不间断滚动,JS不间断滚动,通用不间断滚动,Class Of Marquee Scroll">
+<META NAME="description" CONTENT="JavaScriptDIV + CSS(UL + LI)产品展示放大应用实例(缓动),MSClass,不间断滚动,JS不间断滚动,通用不间断滚动,Class Of Marquee Scroll">
+<META content="MSHTML 6.00.6000.17097" name=GENERATOR></HEAD>
+<body>
+<script type="text/javascript">
+function $(id){return document.getElementById(id)};
+</script>
+
+<h1>DIV + CSS(UL + LI)产品展示放大应用实例(缓动) JavaScript - MSClass应用实例演示 <a href="MSClass.html">下载MSClass</a></h1>
+<br/><br/>
+<style>
+a,body,select,td,b{font-size:12px;text-decoration:none;}
+body{background:#ffffff;}
+a,pre{color:#808080;}
+a:link,a:visited {color:#555;}
+a:hover,a:active { color:#ff4e00;}
+img{border:0}
+</style>
+<style>
+#CSSBox{float:left;width:680px;height:120px; border:1px solid #000000; margin:0 auto;overflow:hidden;background-color:#ffffff;}
+#CSSBox ul li{ float:left; list-style:none; border:0px solid red; margin:10px 10px;}
+#CSSBox ul li span{ display:block; text-align:center; font-size:12px;}
+#LeftButton{cursor:hand;margin:5px;height:140px;width:20px;float:left;background:url('images/left.gif') center center no-repeat;}
+#RightButton{cursor:hand;margin:5px;height:140px;width:20px;float:left;background:url('images/right.gif') center center no-repeat;}
+#wrapper{width:750px;}
+#ProductShow{width:305px;height:245px;text-align:center;border:1px solid #c0c0c0;margin:5px;}
+</style>
+<div id="ProductShow"><img src="images/150X120_1.jpg" width="300" height="240" id="ProductImage"></div>
+<div id="wrapper">
+<div id="LeftButton"></div>
+<div id="CSSBox">
+	<ul id="CSSContent">
+  		<li><a href="javascript:void(0)"><img src="images/150X120_1.jpg" onclick="$('ProductImage').src=this.src" width="150" height="120" title="1"/></a><span><a href="javascript:void(0)">测试1</a></span></li>
+  		<li><a href="javascript:void(0)"><img src="images/150X120_2.jpg" onclick="$('ProductImage').src=this.src"  width="150" height="120" title="2"/></a><span><a href="javascript:void(0)">测试2</a></span></li>
+ 		<li><a href="javascript:void(0)"><img src="images/150X120_3.jpg" onclick="$('ProductImage').src=this.src"  width="150" height="120" title="3"/></a><span><a href="javascript:void(0)">测试3</a></span></li>
+  		<li><a href="javascript:void(0)"><img src="images/150X120_4.jpg" onclick="$('ProductImage').src=this.src"  width="150" height="120" title="4"/></a><span><a href="javascript:void(0)">测试4</a></span></li>
+  		<li><a href="javascript:void(0)"><img src="images/150X120_5.jpg" onclick="$('ProductImage').src=this.src"  width="150" height="120" title="5"/></a><span><a href="javascript:void(0)">测试5</a></span></li>
+	</ul>
+</div>
+<div id="RightButton"></div>
+</div>
+<script type="text/javascript">
+new Marquee(
+{
+	MSClass	  : ["CSSBox","CSSContent"],
+	Direction : 2,
+	PrevBtnID : "LeftButton",
+	NextBtnID : "RightButton",
+	Step	  : 0.3,
+	Width	  : 510,
+	Height	  : 150,
+	Timer	  : 20,
+	DelayTime : 3000,
+	WaitTime  : 100000,
+	ScrollStep: 170,
+	SwitchType: 0,
+	AutoStart : true
+});
+</script>
+<div style="position:absolute;top:-10000px;"><script language="javascript" type="text/javascript" src="../../js.users.51.la/3287800.js"></script></div>
+</body>
+
+<!-- Mirrored from www.popub.net/script/example.asp?id=29 by HTTrack Website Copier/3.x [XR&CO'2010], Thu, 26 Jun 2014 06:27:19 GMT -->
+</html>

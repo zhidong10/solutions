@@ -1,0 +1,375 @@
+
+
+<!-- Mirrored from www.popub.net/script/MSClass1.65.html by HTTrack Website Copier/3.x [XR&CO'2010], Thu, 26 Jun 2014 06:26:43 GMT -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>MSClass (Class Of Marquee Scroll通用不间断滚动JS封装类) Ver 1.65修正版 程序制作/版权所有:崔永祥(333)</title>
+<style>
+a,body,select,td{font-size:12px;text-decoration:none;}
+a,pre{color:#808080;}
+body{background:#efefef;}
+</style>
+</head>
+
+<pre>
+/*MSClass (Class Of Marquee Scroll通用不间断滚动JS封装类) Ver 1.65修正版*\
+
+　制作时间:2006-08-29 (Ver 0.5)
+　发布时间:2006-08-31 (Ver 0.8)
+　更新时间:2007-12-28 (Ver 1.65)
+　更新说明: + 加入功能 * 修正、完善
+	1.65.071228
+		* 横向、纵向滚动格式调整 (解决横向滚动换行的问题，无需特殊设置)
+		* 彻底解决由于IE问题导致上下滚动页面留白的问题 (本次更新主要解决此问题,感谢天上的书生参与测试)
+	1.6.070131
+		+ 禁止鼠标控制暂停或继续 (将第9个参数设置为-1或者动态赋值将ScrollStep设置为-1)
+		+ 判断是否可以滚动 (若内容区域小于显示区域,则自动取消滚动)
+		+ 跳过初始化错误 (避免引起其它滚动的停止)
+		+ 默认值 (除容器ID必选外，其他参数均可根据情况进行选择设置)
+		+ 参数动态赋值 (方向可用英文表示top|up|bottom|down|left|right,使其更直观、方便)
+		* 文字滚动不准确 (本次更新主要目的解决此Bug,感谢周珺参与测试)
+	1.4.061211
+		+ 鼠标悬停改变滚动方向 (鼠标悬停控制左右滚动)
+		* 由于文档下载过慢而导致获取的高度/宽度不准确
+		* 浏览器兼容问题 (IE、FF、Opera、NS、MYIE)
+	1.2.060922
+		+ 指定范围间歇滚动
+		* 程序调整
+		* 连续间歇滚动停止的错误
+	1.0.060901
+		+ 向下、向右滚动
+		+ 开始等待时间
+		+ 连续滚动
+		* 调整时间单位
+		* 滚动误差
+		* 随机死循环
+		* 加强性能
+		* 程序优化
+	0.8.060829
+		  翻屏不间断向上、向左滚动
+
+
+　演示地址:<a href="MSClass1.65.html">http://www.popub.net/script/MSClass1.65.html</a>
+　下载地址:<a href="MSClass1.65.js"><font color="red">http://www.popub.net/script/MSClass1.65.js</font></a>
+
+　应用说明:页面包含&lt;script type="text/javascript" src="MSClass1.65.js" charset="gb2312">&lt;/script>
+	
+	创建实例:
+		//参数直接赋值法
+		new Marquee("marquee")
+		new Marquee("marquee","top")
+		......
+		new Marquee("marquee",0,1,760,52)
+		new Marquee("marquee","top",1,760,52,50,5000)
+		......
+		new Marquee("marquee",0,1,760,104,50,5000,3000,52)
+		new Marquee("marquee",null,null,760,104,null,5000,null,-1)
+
+		//参数动态赋值法
+		var marquee1 = new Marquee("marquee")	*此参数必选
+		marquee1.Direction = "top";	或者	marquee1.Direction = 0;
+		marquee1.Step = 1;
+		marquee1.Width = 760;
+		marquee1.Height = 52;
+		marquee1.Timer = 50;
+		marquee1.DelayTime = 5000;
+		marquee1.WaitTime = 3000;
+		marquee1.ScrollStep = 52;
+		marquee1.Start();
+
+	参数说明:
+		ID		"marquee"	容器ID		(必选)
+		Direction	(0)		滚动方向	(可选,默认为0向上滚动) 可设置的值包括:0,1,2,3,"top","bottom","left","right" (0向上 1向下 2向左 3向右)
+		Step		(1)		滚动的步长	(可选,默认值为2,数值越大,滚动越快)
+		Width		(760)		容器可视宽度	(可选,默认值为容器初始设置的宽度)
+		Height		(52)		容器可视高度	(可选,默认值为容器初始设置的高度)
+		Timer		(50)		定时器		(可选,默认值为30,数值越小,滚动的速度越快,1000=1秒,建议不小于20)
+		DelayTime	(5000)		间歇停顿延迟时间(可选,默认为0不停顿,1000=1秒)
+		WaitTime	(3000)		开始时的等待时间(可选,默认或0为不等待,1000=1秒)
+		ScrollStep	(52)		间歇滚动间距	(可选,默认为翻屏宽/高度,该数值与延迟均为0则为鼠标悬停控制,-1禁止鼠标控制)
+
+　使用建议:
+		1、建议直接赋予容器的显示区域的宽度和高度，如(&lt;div id="marquee" style="width:760px;height:52px;">......&lt;/div>)
+		2、建议为容器添加样式overflow = auto，如(&lt;div id="marquee" style="width:760px;height:52px;overflow:auto;">......&lt;/div>)
+		3、为了更准确的获取滚动区域的宽度和高度，请尽可能将各滚动单位直接赋予正确宽高度
+		4、对于TABLE标记的横向滚动，需要对TABLE添加样式display = inline，如(&lt;div id="marquee" style="width:760px;height:52px;overflow:auto;">&lt;table style="display:inline">......&lt;/table>&lt;/div>)
+		5、对于翻屏滚动或间歇滚动，要注意各滚动单位间的间距，同时需要对容器的可视高度和可视宽度做好准确的设置，对于各滚动单位间的间距可以通过设置行间距或者单元格的高宽度来进行调整
+		6、对于LI自动换行的问题暂时没有更好的解决办法，建议将其转换成表格(TABLE)的形式来达到同等的效果
+		7、针对横向滚动的文字段落，如果最末端是以空格" "结束的，请将空格" "转换成"&nbsp;"
+		8、鼠标悬停滚动思想源自Flash，所以有一定的局限性（容器内仅允许用图片&lt;img>或者带链接的图片&lt;a>&lt;img>&lt;/a>的形式，并需要禁止其自动换行）
+
+　感　　谢:
+	<a href="http://www.skycn.com/soft/40329.html" target="_blank" title="下载ASP代码加密工具"><font color="red">ASP代码加密工具</font></a> 作者:天上的书生(QQ:30370740) (IE页面留白的Bug) 2007/12/22
+	周珺 zhoujun#yuchengtech.com (文字滚动跳行的bug) 2007/01/31
+	自本程序发布以来，收到不少朋友的邮件，提出了很多意见和建议，感谢大家的支持！
+
+\***程序制作/版权所有:崔永祥(333) E-Mail:zhadan007@21cn.com 网址:http://www.popub.net***/
+</pre>
+
+<script src="MSClass1.65.js" type="text/javascript" charset="gb2312"></script>
+
+<b>PCAS (Province City Area Selector 省、市、地区联动选择JS封装类) Ver 2.01 数据压缩完整版</b>&nbsp;<a href="pcas-2.html"><font color="red">演示及下载</font></a><br><br>
+
+<br>
+
+<b>不间断滚动应用实例演示:</b>&nbsp;<a href="MSClass1.65.js"><font color="red">下载1.65修正版</font></a>&nbsp;&nbsp;<a href="MSClass.html"><font color="red">新版请点击…</font></a><br><br>
+
+
+
+<fieldset style="padding:5px;">
+<legend>不间断滚动实例</legend>
+<center>
+
+箭头控制滚动方向及速度
+
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#ffffff">
+<td><a href="javascript:void(0);" id="left3"><img src="images/left.gif" border="0"></a></td>
+<td width="10"></td>
+<td valign="top" width="477">
+	<div ID="marqueedivcontrol2" style="width:477px;overflow:hidden;"><TABLE style="WIDTH:800px; BORDER-COLLAPSE: collapse;display:inline;" cellSpacing=0 cellPadding=0 align=center border=0>
+        <TBODY>
+        <TR>
+          <TD width="160" align="center" height="145">
+              <A href="javascript:void(0)"><IMG src="images/150X120_1.jpg" border=0 width="150" height="120"></A><br/>
+              <A href="javascript:void(0)">链接1</A> 
+		  </TD>
+          <TD width="160" align="center">
+			<A href="javascript:void(0)"><IMG src="images/150X120_2.jpg" border=0 width="150" height="120"></A><br/>
+            <A href="javascript:void(0)">链接2</A> 
+          </TD>
+          <TD width="160" align="center">
+            <A href="javascript:void(0)"><IMG src="images/150X120_3.jpg" border=0 width="150" height="120"></A><br/>
+            <a href="javascript:void(0)">链接3</a> 
+          </TD>
+          <TD width="160" align="center">
+            <A href="javascript:void(0)"><IMG src="images/150X120_4.jpg" border=0 width="150" height="120"></A><br/>
+            <A href="javascript:void(0)">链接4</A> 
+          </TD>
+          <TD width="160" align="center">
+            <A href="javascript:void(0)"><IMG src="images/150X120_5.jpg" border=0 width="150" height="120"></A><br/>
+            <A href="javascript:void(0)">链接5</A> 
+          </TD>
+        </TR>
+        </TBODY>
+        </TABLE></div>
+
+</td>
+<td width="10"></td>
+<td><a href="javascript:void(0);" id="right3"><img src="images/right.gif" border="0"></a></td></tr>
+</table>
+
+<script>
+var marquee4=new Marquee("marqueedivcontrol2");
+marquee4.Direction="left";
+marquee4.Step=1;
+marquee4.Width=477;
+marquee4.Height=145;
+marquee4.Timer=20;
+marquee4.ScrollStep=3;
+marquee4.Start();
+document.getElementById("left3").onmouseover=function(){marquee4.Direction=2}
+document.getElementById("left3").onmouseout=document.getElementById("left3").onmouseup=function(){marquee4.Step=marquee4.BakStep}
+document.getElementById("left3").onmousedown=document.getElementById("right3").onmousedown=function(){marquee4.Step=marquee4.BakStep+3}
+document.getElementById("right3").onmouseover=function(){marquee4.Direction=3}
+document.getElementById("right3").onmouseout=document.getElementById("right3").onmouseup=function(){marquee4.Step=marquee4.BakStep}
+</script>
+
+
+
+
+<br>
+<br>
+
+
+禁止鼠标控制暂停或滚动
+<div id="textnomouse" style="border:1 solid #c0c0c0;text-align:left;width:760px;height:42px;overflow:hidden;">
+演示地址:<a href="MSClass.html">http://www.popub.net/script/MSClass.html</a><br>
+下载地址:<a href="MSClass.js"><font color="red">http://www.popub.net/script/MSClass.js</font></a><br>
+PCAS (Province City Area Selector 省、市、地区联动选择JS封装类) Ver 2.01 数据压缩完整版</b>&nbsp;<a href="pcas-2.html"><font color="red">演示及下载</font></a><br>
+\***程序制作/版权所有:崔永祥(333) E-Mail:zhadan007@21cn.com 网址:http://www.popub.net***/<br>
+文字滚动测试1<br>
+文字滚动测试2<br>
+文字滚动测试3<br>
+如有其它意见及建议请Email<br>
+</div>
+<br>
+<br>
+控制滚动方向实例
+<nobr>
+<div id="marqueedivcontrol" style="width:760px;height:52px;overflow:hidden;"><img src="images/yaode.gif" width="150" height="50" border="0" hspace="1"><img src="images/qtrjczh.gif" width="150" height="50" border="0" hspace="1"><img src="images/gucang.gif" width="150" height="50" border="0" hspace="1"><img src="images/bmfd.gif" width="150" height="50" border="0" hspace="1"><img src="images/guangming.gif" width="150" height="50" border="0" hspace="1"><img src="images/liangan.gif" width="150" height="50" border="0" hspace="1"><img src="images/klk.gif" width="150" height="50" border="0" hspace="1"><img src="images/old.gif" width="150" height="50" border="0" style="border-color:#cccccc" hspace="1"><img src="images/yangyang.gif" width="150" height="50" border="0" hspace="1"><img src="images/hanch.gif" width="150" height="50" border="0" hspace="1"></div>
+</nobr>
+<input type="button" value="向左" id="left1"> <input type="button" value="向右" id="right1">
+
+<br>
+<br>
+控制滚动方向及加速实例
+<nobr>
+<div id="marqueedivcontrol1" style="width:760px;height:52px;overflow:hidden;"><img src="images/yaode.gif" width="150" height="50" border="0" hspace="1"><img src="images/qtrjczh.gif" width="150" height="50" border="0" hspace="1"><img src="images/gucang.gif" width="150" height="50" border="0" hspace="1"><img src="images/bmfd.gif" width="150" height="50" border="0" hspace="1"><img src="images/guangming.gif" width="150" height="50" border="0" hspace="1"><img src="images/liangan.gif" width="150" height="50" border="0" hspace="1"><img src="images/klk.gif" width="150" height="50" border="0" hspace="1"><img src="images/old.gif" width="150" height="50" border="0" style="border-color:#cccccc" hspace="1"><img src="images/yangyang.gif" width="150" height="50" border="0" hspace="1"><img src="images/hanch.gif" width="150" height="50" border="0" hspace="1"></div>
+</nobr>
+<input type="button" value="向左" id="left2"> <input type="button" value="向右" id="right2">
+
+<br>
+<br>
+鼠标悬停滚动
+<nobr>
+<div id="marqueedivmouse" style="width:760px;overflow:auto;"><img src="images/yaode.gif" width="150" height="50" border="0" hspace="1"><img src="images/qtrjczh.gif" width="150" height="50" border="0" hspace="1"><img src="images/gucang.gif" width="150" height="50" border="0" hspace="1"><img src="images/bmfd.gif" width="150" height="50" border="0" hspace="1"><img src="images/guangming.gif" width="150" height="50" border="0" hspace="1"><img src="images/liangan.gif" width="150" height="50" border="0" hspace="1"><img src="images/klk.gif" width="150" height="50" border="0" hspace="1"><img src="images/old.gif" width="150" height="50" border="0" style="border-color:#cccccc" hspace="1"><img src="images/yangyang.gif" width="150" height="50" border="0" hspace="1"><img src="images/hanch.gif" width="150" height="50" border="0" hspace="1"></div>
+</nobr>
+<br>
+<br>
+文字翻屏滚动
+<div id="textdiv" style="border:1 solid #c0c0c0;text-align:left;width:760px;height:42px;overflow:hidden;">
+演示地址:<a href="MSClass.html">http://www.popub.net/script/MSClass.html</a><br>
+下载地址:<a href="MSClass.js"><font color="red">http://www.popub.net/script/MSClass.js</font></a><br>
+PCAS (Province City Area Selector 省、市、地区联动选择JS封装类) Ver 2.01 数据压缩完整版</b>&nbsp;<a href="pcas-2.html"><font color="red">演示及下载</font></a><br>
+\***程序制作/版权所有:崔永祥(333) E-Mail:zhadan007@21cn.com 网址:http://www.popub.net***/<br>
+文字滚动测试1<br>
+文字滚动测试2<br>
+文字滚动测试3<br>
+如有其它意见及建议请Email<br>
+</div>
+<br>
+<br>
+文字间歇滚动
+<div id="textdiv1" style="border:1 solid #c0c0c0;text-align:left;width:760px;height:42px;overflow:hidden;">
+演示地址:<a href="MSClass.html">http://www.popub.net/script/MSClass.html</a><br>
+下载地址:<a href="MSClass.js"><font color="red">http://www.popub.net/script/MSClass.js</font></a><br>
+PCAS (Province City Area Selector 省、市、地区联动选择JS封装类) Ver 2.01 数据压缩完整版</b>&nbsp;<a href="pcas-2.html"><font color="red">演示及下载</font></a><br>
+\***程序制作/版权所有:崔永祥(333) E-Mail:zhadan007@21cn.com 网址:http://www.popub.net***/<br>
+文字滚动测试1<br>
+文字滚动测试2<br>
+文字滚动测试3<br>
+如有其它意见及建议请Email<br>
+</div>
+<br>
+<br>
+向上翻屏滚动
+<div id="marqueediv1" style="width:760px;height:52px;overflow:hidden;">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td height="52" align="center" valign="middle"><img src="images/yaode.gif" width="150" height="50" border="0" hspace="1"><img src="images/qtrjczh.gif" width="150" height="50" border="0" hspace="1"><img src="images/gucang.gif" width="150" height="50" border="0" hspace="1"><img src="images/bmfd.gif" width="150" height="50" border="0" hspace="1"><img src="images/guangming.gif" width="150" height="50" border="0" hspace="1"></td>
+  </tr>
+  <tr>
+    <td height="52" align="center" valign="middle"><img src="images/liangan.gif" width="150" height="50" border="0" hspace="1"><img src="images/klk.gif" width="150" height="50" border="0" hspace="1"><img src="images/old.gif" width="150" height="50" border="0" style="border-color:#cccccc" hspace="1"><img src="images/yangyang.gif" width="150" height="50" border="0" hspace="1"><img src="images/hanch.gif" width="150" height="50" border="0" hspace="1"></td>
+  </tr>
+</table>
+</div>
+<br>
+<br>
+向下翻屏滚动
+<div id="marqueediv2" style="width:760px;height:52px;overflow:hidden;">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td height="52" align="center" valign="middle"><img src="images/yaode.gif" width="150" height="50" border="0" hspace="1"><img src="images/qtrjczh.gif" width="150" height="50" border="0" hspace="1"><img src="images/gucang.gif" width="150" height="50" border="0" hspace="1"><img src="images/bmfd.gif" width="150" height="50" border="0" hspace="1"><img src="images/guangming.gif" width="150" height="50" border="0" hspace="1"></td>
+  </tr>
+  <tr>
+    <td height="52" align="center" valign="middle"><img src="images/liangan.gif" width="150" height="50" border="0" hspace="1"><img src="images/klk.gif" width="150" height="50" border="0" hspace="1"><img src="images/old.gif" width="150" height="50" border="0" style="border-color:#cccccc" hspace="1"><img src="images/yangyang.gif" width="150" height="50" border="0" hspace="1"><img src="images/hanch.gif" width="150" height="50" border="0" hspace="1"></td>
+  </tr>
+</table>
+</div>
+<br>
+<br>
+向左翻屏滚动
+<nobr>
+<div id="marqueediv3" style="width:760px;height:52px;overflow:hidden;"><img src="images/yaode.gif" width="150" height="50" border="0" hspace="1"><img src="images/qtrjczh.gif" width="150" height="50" border="0" hspace="1"><img src="images/gucang.gif" width="150" height="50" border="0" hspace="1"><img src="images/bmfd.gif" width="150" height="50" border="0" hspace="1"><img src="images/guangming.gif" width="150" height="50" border="0" hspace="1"><img src="images/liangan.gif" width="150" height="50" border="0" hspace="1"><img src="images/klk.gif" width="150" height="50" border="0" hspace="1"><img src="images/old.gif" width="150" height="50" border="0" style="border-color:#cccccc" hspace="1"><img src="images/yangyang.gif" width="150" height="50" border="0" hspace="1"><img src="images/hanch.gif" width="150" height="50" border="0" hspace="1"></div>
+</nobr>
+<br>
+<br>
+向右翻屏滚动
+<nobr>
+<div id="marqueediv4" style="width:760px;height:52px;overflow:hidden;"><img src="images/yaode.gif" width="150" height="50" border="0" hspace="1"><img src="images/qtrjczh.gif" width="150" height="50" border="0" hspace="1"><img src="images/gucang.gif" width="150" height="50" border="0" hspace="1"><img src="images/bmfd.gif" width="150" height="50" border="0" hspace="1"><img src="images/guangming.gif" width="150" height="50" border="0" hspace="1"><img src="images/liangan.gif" width="150" height="50" border="0" hspace="1"><img src="images/klk.gif" width="150" height="50" border="0" hspace="1"><img src="images/old.gif" width="150" height="50" border="0" style="border-color:#cccccc" hspace="1"><img src="images/yangyang.gif" width="150" height="50" border="0" hspace="1"><img src="images/hanch.gif" width="150" height="50" border="0" hspace="1"></div>
+</nobr>
+<br>
+<br>
+向上连续滚动
+<div id="marqueediv5" style="width:760px;height:52px;overflow:hidden;">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td height="52" align="center" valign="middle"><img src="images/yaode.gif" width="150" height="50" border="0" hspace="1"><img src="images/qtrjczh.gif" width="150" height="50" border="0" hspace="1"><img src="images/gucang.gif" width="150" height="50" border="0" hspace="1"><img src="images/bmfd.gif" width="150" height="50" border="0" hspace="1"><img src="images/guangming.gif" width="150" height="50" border="0" hspace="1"></td>
+  </tr>
+  <tr>
+    <td height="52" align="center" valign="middle"><img src="images/liangan.gif" width="150" height="50" border="0" hspace="1"><img src="images/klk.gif" width="150" height="50" border="0" hspace="1"><img src="images/old.gif" width="150" height="50" border="0" style="border-color:#cccccc" hspace="1"><img src="images/yangyang.gif" width="150" height="50" border="0" hspace="1"><img src="images/hanch.gif" width="150" height="50" border="0" hspace="1"></td>
+  </tr>
+</table>
+</div>
+<br>
+<br>
+向左连续滚动
+<nobr>
+<div id="marqueediv6" style="width:760px;height:52px;overflow:hidden;"><img src="images/yaode.gif" width="150" height="50" border="0" hspace="1"><img src="images/qtrjczh.gif" width="150" height="50" border="0" hspace="1"><img src="images/gucang.gif" width="150" height="50" border="0" hspace="1"><img src="images/bmfd.gif" width="150" height="50" border="0" hspace="1"><img src="images/guangming.gif" width="150" height="50" border="0" hspace="1"><img src="images/liangan.gif" width="150" height="50" border="0" hspace="1"><img src="images/klk.gif" width="150" height="50" border="0" hspace="1"><img src="images/old.gif" width="150" height="50" border="0" style="border-color:#cccccc" hspace="1"><img src="images/yangyang.gif" width="150" height="50" border="0" hspace="1"><img src="images/hanch.gif" width="150" height="50" border="0" hspace="1"></div>
+</nobr>
+<br>
+<br>
+
+向上间歇滚动
+<div id="marqueediv7" style="width:760px;height:52px;overflow:hidden;">
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td height="52" align="center" valign="middle"><img src="images/yaode.gif" width="150" height="50" border="0" hspace="1"><img src="images/qtrjczh.gif" width="150" height="50" border="0" hspace="1"><img src="images/gucang.gif" width="150" height="50" border="0" hspace="1"><img src="images/bmfd.gif" width="150" height="50" border="0" hspace="1"><img src="images/guangming.gif" width="150" height="50" border="0" hspace="1"></td>
+  </tr>
+  <tr>
+    <td height="52" align="center" valign="middle"><img src="images/liangan.gif" width="150" height="50" border="0" hspace="1"><img src="images/klk.gif" width="150" height="50" border="0" hspace="1"><img src="images/old.gif" width="150" height="50" border="0" style="border-color:#cccccc" hspace="1"><img src="images/yangyang.gif" width="150" height="50" border="0" hspace="1"><img src="images/hanch.gif" width="150" height="50" border="0" hspace="1"></td>
+  </tr>
+</table>
+</div>
+<br>
+<br>
+
+向左间歇滚动
+<nobr>
+<div id="marqueediv8" style="width:760px;height:52px;overflow:hidden;"><img src="images/yaode.gif" width="150" height="50" border="0" hspace="1"><img src="images/qtrjczh.gif" width="150" height="50" border="0" hspace="1"><img src="images/gucang.gif" width="150" height="50" border="0" hspace="1"><img src="images/bmfd.gif" width="150" height="50" border="0" hspace="1"><img src="images/guangming.gif" width="150" height="50" border="0" hspace="1"><img src="images/liangan.gif" width="150" height="50" border="0" hspace="1"><img src="images/klk.gif" width="150" height="50" border="0" hspace="1"><img src="images/old.gif" width="150" height="50" border="0" style="border-color:#cccccc" hspace="1"><img src="images/yangyang.gif" width="150" height="50" border="0" hspace="1"><img src="images/hanch.gif" width="150" height="50" border="0" hspace="1"></div>
+</nobr>
+<br>
+<br>
+</center>
+<script defer>
+var marquee1=new Marquee("textnomouse")
+marquee1.ScrollStep=-1;
+marquee1.Start();
+
+new Marquee("marqueedivmouse",2,4,760,52,20,0,3000,0)
+new Marquee("textdiv",0,1,760,42,20,4000,500)
+new Marquee("textdiv1",0,1,760,42,20,4000,5000,14)
+new Marquee("marqueediv1",0,1,760,52,50,4000,500)
+new Marquee("marqueediv2",1,2,760,52,50,4000,500)
+new Marquee("marqueediv3",2,20,760,50,20,4000,5000)
+new Marquee("marqueediv4",3,10,760,52,20,4000,500)
+new Marquee("marqueediv5",0,1,760,52,30,0,0)
+new Marquee("marqueediv6",2,1,760,52,20,0,0)
+new Marquee("marqueediv7",0,1,760,104,50,4000,500,52)
+new Marquee("marqueediv8",2,20,760,50,20,4000,5000,152)
+
+
+
+var marquee2=new Marquee("marqueedivcontrol");
+marquee2.Direction="left";
+marquee2.Step=1;
+marquee2.Width=760;
+marquee2.Height=52;
+marquee2.Timer=20;
+marquee2.ScrollStep=-1;//此句禁止鼠标控制
+left1.onclick=function(){marquee2.Direction=2};
+right1.onclick=function(){marquee2.Direction=3};
+marquee2.Start();
+
+
+
+var marquee3=new Marquee("marqueedivcontrol1");
+marquee3.Direction="left";
+marquee3.Step=1;
+marquee3.Width=760;
+marquee3.Height=52;
+marquee3.Timer=20;
+marquee3.ScrollStep=-1;//此句禁止鼠标控制
+marquee3.Start();
+left2.onmouseover=function(){marquee3.Direction=2}
+left2.onmouseout=left2.onmouseup=function(){marquee3.Step=marquee3.BakStep}
+left2.onmousedown=right2.onmousedown=function(){marquee3.Step=marquee3.BakStep+2}
+right2.onmouseover=function(){marquee3.Direction=3}
+right2.onmouseout=right2.onmouseup=function(){marquee3.Step=marquee3.BakStep}
+</script>
+
+</fieldset>
+
+<br>
+<script language="javascript" type="text/javascript" src="../../js.users.51.la/3287800.js"></script>
+</body>

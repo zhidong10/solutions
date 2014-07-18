@@ -1,0 +1,84 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<!-- Mirrored from www.popub.net/script/example.asp?id=14 by HTTrack Website Copier/3.x [XR&CO'2010], Thu, 26 Jun 2014 06:26:48 GMT -->
+<HEAD>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<script src="MSClass.js" type="text/javascript"></script>
+
+<TITLE>箭头控制滚动方向、加速及鼠标拖动实例 JavaScript - MSClass应用实例演示 - Class Of Marquee Scroll通用不间断滚动JS封装类</TITLE>
+<meta name="keywords" content="JavaScript箭头控制滚动方向、加速及鼠标拖动实例,MSClass,不间断滚动,JS不间断滚动,通用不间断滚动,Class Of Marquee Scroll">
+<META NAME="description" CONTENT="JavaScript箭头控制滚动方向、加速及鼠标拖动实例,MSClass,不间断滚动,JS不间断滚动,通用不间断滚动,Class Of Marquee Scroll">
+<META content="MSHTML 6.00.6000.17097" name=GENERATOR></HEAD>
+<body>
+<script type="text/javascript">
+function $(id){return document.getElementById(id)};
+</script>
+
+<h1>箭头控制滚动方向、加速及鼠标拖动实例 JavaScript - MSClass应用实例演示 <a href="MSClass.html">下载MSClass</a></h1>
+<br/><br/>
+<style>
+a,body,select,td,b{font-size:12px;text-decoration:none;}
+body{background:#ffffff;}
+a,pre{color:#808080;}
+a:link,a:visited {color:#555;}
+a:hover,a:active { color:#ff4e00;}
+img{border:0}
+</style>
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#ffffff">
+<td><a href="javascript:void(0);" id="LeftButton2"><img src="images/left.gif" border="0"></a></td>
+<td width="10"></td>
+<td valign="top" width="477">
+	<div ID="MarqueeDiv2" style="width:477px;overflow:hidden;"><TABLE style="WIDTH:800px; BORDER-COLLAPSE: collapse;display:inline;" cellSpacing=0 cellPadding=0 align=center border=0>
+		<TBODY>
+		<TR>
+			<TD width="160" align="center" height="145">
+				<A href="javascript:void(0)"><IMG src="images/150X120_1.jpg" border=0 width="150" height="120"></A><br/>
+				<A href="javascript:void(0)">链接1</A> 
+			</TD>
+			<TD width="160" align="center">
+				<A href="javascript:void(0)"><IMG src="images/150X120_2.jpg" border=0 width="150" height="120"></A><br/>
+				<A href="javascript:void(0)">链接2</A> 
+			</TD>
+			<TD width="160" align="center">
+				<A href="javascript:void(0)"><IMG src="images/150X120_3.jpg" border=0 width="150" height="120"></A><br/>
+				<A href="javascript:void(0)">链接3</A> 
+			</TD>
+			<TD width="160" align="center">
+				<A href="javascript:void(0)"><IMG src="images/150X120_4.jpg" border=0 width="150" height="120"></A><br/>
+				<A href="javascript:void(0)">链接4</A> 
+			</TD>
+			<TD width="160" align="center">
+				<A href="javascript:void(0)"><IMG src="images/150X120_5.jpg" border=0 width="150" height="120"></A><br/>
+				<A href="javascript:void(0)">链接5</A> 
+			</TD>
+		</TR>
+		</TBODY>
+		</TABLE></div>
+</td>
+<td width="10"></td>
+<td><a href="javascript:void(0);" id="RightButton2"><img src="images/right.gif" border="0"></a></td></tr>
+</table>
+<script type="text/javascript">
+/*********箭头控制滚动方向、加速及鼠标拖动***************/
+/*********箭头控制滚动方向、加速及鼠标拖动***************/
+var MarqueeDiv2Control=new Marquee("MarqueeDiv2");		//箭头控制滚动方向、加速及鼠标拖动实例
+MarqueeDiv2Control.Direction="left";
+MarqueeDiv2Control.Step=1;
+MarqueeDiv2Control.Width=477;
+MarqueeDiv2Control.Height=145;
+MarqueeDiv2Control.Timer=20;
+MarqueeDiv2Control.ScrollStep=1;				//若为-1则禁止鼠标控制实例
+MarqueeDiv2Control.Start();
+MarqueeDiv2Control.BakStep=MarqueeDiv2Control.Step;
+$("LeftButton2").onmouseover=function(){MarqueeDiv2Control.Direction=2};
+$("LeftButton2").onmouseout=$("LeftButton2").onmouseup=function(){MarqueeDiv2Control.Step=MarqueeDiv2Control.BakStep};
+$("LeftButton2").onmousedown=$("RightButton2").onmousedown=function(){MarqueeDiv2Control.Step=MarqueeDiv2Control.BakStep+3};
+$("RightButton2").onmouseover=function(){MarqueeDiv2Control.Direction=3};
+$("RightButton2").onmouseout=$("RightButton2").onmouseup=function(){MarqueeDiv2Control.Step=MarqueeDiv2Control.BakStep};
+</script>
+<div style="position:absolute;top:-10000px;"><script language="javascript" type="text/javascript" src="../../js.users.51.la/3287800.js"></script></div>
+</body>
+
+<!-- Mirrored from www.popub.net/script/example.asp?id=14 by HTTrack Website Copier/3.x [XR&CO'2010], Thu, 26 Jun 2014 06:26:48 GMT -->
+</html>

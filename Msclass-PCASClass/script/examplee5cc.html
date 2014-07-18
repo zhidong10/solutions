@@ -1,0 +1,135 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<!-- Mirrored from www.popub.net/script/example.asp?id=20 by HTTrack Website Copier/3.x [XR&CO'2010], Thu, 26 Jun 2014 06:26:57 GMT -->
+<HEAD>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<script src="MSClass.js" type="text/javascript"></script>
+
+<TITLE>DIV + CSS左右交替滚动、缓动、默认静止、跳过等待时间改变方向及样式切换实例 JavaScript - MSClass应用实例演示 - Class Of Marquee Scroll通用不间断滚动JS封装类</TITLE>
+<meta name="keywords" content="JavaScriptDIV + CSS左右交替滚动、缓动、默认静止、跳过等待时间改变方向及样式切换实例,MSClass,不间断滚动,JS不间断滚动,通用不间断滚动,Class Of Marquee Scroll">
+<META NAME="description" CONTENT="JavaScriptDIV + CSS左右交替滚动、缓动、默认静止、跳过等待时间改变方向及样式切换实例,MSClass,不间断滚动,JS不间断滚动,通用不间断滚动,Class Of Marquee Scroll">
+<META content="MSHTML 6.00.6000.17097" name=GENERATOR></HEAD>
+<body>
+<script type="text/javascript">
+function $(id){return document.getElementById(id)};
+</script>
+
+<h1>DIV + CSS左右交替滚动、缓动、默认静止、跳过等待时间改变方向及样式切换实例 JavaScript - MSClass应用实例演示 <a href="MSClass.html">下载MSClass</a></h1>
+<br/><br/>
+<style>
+a,body,select,td,b{font-size:12px;text-decoration:none;}
+body{background:#ffffff;}
+a,pre{color:#808080;}
+a:link,a:visited {color:#555;}
+a:hover,a:active { color:#ff4e00;}
+img{border:0}
+</style>
+<style>
+.mod_scroll {
+	ZOOM: 1; POSITION: relative;width:760px;
+}
+.mod_scroll .mod_cont {
+	OVERFLOW: hidden; WIDTH: 710px; POSITION: relative; HEIGHT: 70px;left:0px;border:0px solid #c0c0c0;background-color:#ffffff;
+}
+.mod_scroll .mod_tit {
+	text-align:left;font-size:14px;font-weight:bold;clear:both;line-height:20px;
+}
+.mod_scroll UL {
+	PADDING: 0px;OVERFLOW: hidden; WIDTH: 2000px;
+}
+.mod_scroll UL LI {
+	FLOAT: left; MARGIN: 0px 6px;
+}
+.mod_scroll UL LI IMG {
+	DISPLAY: block; WIDTH: 69px; HEIGHT: 69px
+}
+.mod_scroll BUTTON {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; FONT-SIZE: 0px; Z-INDEX: 100; BACKGROUND: url(images/bg.png) no-repeat; OVERFLOW: hidden; BORDER-LEFT: 0px; WIDTH: 14px; CURSOR: pointer; BOTTOM: 0px; LINE-HEIGHT: 999px; BORDER-BOTTOM: 0px; POSITION: absolute; HEIGHT: 70px
+}
+.mod_scroll .prev {
+	BACKGROUND-POSITION: 0px -822px; LEFT: 0px
+}
+.mod_scroll .next {
+	BACKGROUND-POSITION: -16px -822px; RIGHT: 0px
+}
+.mod_scroll .over {
+	FILTER: alpha(opacity=40); CURSOR: default; opacity: .4
+}
+
+</style>
+
+<div class="mod_scroll" id="still_main" style="text-align:center"> 
+	<div class="mod_tit">《最强喜事》剧照 — <span style="font-size:12px;">DIV + CSS左右交替滚动、缓动、默认静止、跳过等待时间改变方向及样式切换实例</span></div> 
+	<div class="mod_cont" id="Movie_Box"> 
+		<ul id="still_scroll_container"><li><a href="javascript:void(0)"><img src="images/75X75_1.jpg" width="69" height="69" border="0"></a></li>
+			<li><a href="javascript:void(0)"><img src="images/75X75_2.jpg" width="69" height="69" border="0"></a></li>
+			<li><a href="javascript:void(0)"><img src="images/75X75_3.jpg" width="69" height="69" border="0"></a></li>
+			<li><a href="javascript:void(0)"><img src="images/75X75_4.jpg" width="69" height="69" border="0"></a></li>
+			<li><a href="javascript:void(0)"><img src="images/75X75_5.jpg" width="69" height="69" border="0"></a></li>
+			<li><a href="javascript:void(0)"><img src="images/75X75_6.jpg" width="69" height="69" border="0"></a></li>
+			<li><a href="javascript:void(0)"><img src="images/75X75_7.jpg" width="69" height="69" border="0"></a></li>
+			<li><a href="javascript:void(0)"><img src="images/75X75_8.jpg" width="69" height="69" border="0"></a></li>
+			<li><a href="javascript:void(0)"><img src="images/75X75_9.jpg" width="69" height="69" border="0"></a></li>
+			<li><a href="javascript:void(0)"><img src="images/75X75_10.jpg" width="69" height="69" border="0"></a></li>
+			<li><a href="javascript:void(0)"><img src="images/75X75_11.jpg" width="69" height="69" border="0"></a></li>
+			<li><a href="javascript:void(0)"><img src="images/75X75_12.jpg" width="69" height="69" border="0"></a></li>
+			<li><a href="javascript:void(0)"><img src="images/75X75_13.jpg" width="69" height="69" border="0"></a></li>
+			<li><a href="javascript:void(0)"><img src="images/75X75_14.jpg" width="69" height="69" border="0"></a></li>
+			<li><a href="javascript:void(0)"><img src="images/75X75_15.jpg" width="69" height="69" border="0"></a></li>
+			<li><a href="javascript:void(0)"><img src="images/75X75_16.jpg" width="69" height="69" border="0"></a></li>
+			<li><a href="javascript:void(0)"><img src="images/75X75_17.jpg" width="69" height="69" border="0"></a></li>
+			<li><a href="javascript:void(0)"><img src="images/75X75_18.jpg" width="69" height="69" border="0"></a></li>
+			<li><a href="javascript:void(0)"><img src="images/75X75_19.jpg" width="69" height="69" border="0"></a></li>
+			<li><a href="javascript:void(0)"><img src="images/75X75_20.jpg" width="69" height="69" border="0"></a></li>
+			<li><a href="javascript:void(0)"><img src="images/75X75_21.jpg" width="69" height="69" border="0"></a></li>
+			<li><a href="javascript:void(0)"><img src="images/75X75_22.jpg" width="69" height="69" border="0"></a></li>
+			<li><a href="javascript:void(0)"><img src="images/75X75_23.jpg" width="69" height="69" border="0"></a></li>
+			<li><a href="javascript:void(0)"><img src="images/75X75_24.jpg" width="69" height="69" border="0"></a></li></ul> 
+	</div>
+	<button title="上一页" type="button" class="prev" id="LeftButton4">上一页</button>
+	<button title="下一页" type="button" class="next" id="RightButton4">下一页</button>
+</div>
+
+<script type="text/javascript">
+/*********DIV + CSS左右交替滚动、缓动、默认静止、跳过等待时间改变方向及样式切换实例(将第WaitTime设置成60000，则第DelayTime会起作用)***************/
+var MarqueeDiv4Control = new Marquee(
+{
+	MSClass	  : ["Movie_Box","still_scroll_container"],
+	Direction : 4,
+	Step	  : 0.1,
+	Width	  : 729,
+	Height	  : 70,
+	Timer	  : 20,
+	DelayTime : 3000,
+	WaitTime  : 100000,
+	ScrollStep: 0,
+	SwitchType: 0,
+	AutoStart : true
+});
+$("LeftButton4").onclick = function(){MarqueeDiv4Control.Run("Left")};	//跳过等待时间向左滚动 可以用MarqueeDiv4Control.Run(2)代替
+$("RightButton4").onclick = function(){MarqueeDiv4Control.Run("Right")};//跳过等待时间向右滚动
+$("RightButton4").className = "next over";				//将按钮置为不可点击(样式)
+MarqueeDiv4Control.OnBound = function()
+	{
+		if(MarqueeDiv4Control.Bound == 2)
+		{
+			$("LeftButton4").className = "prev over";
+		}
+		else
+		{
+			$("RightButton4").className = "next over";
+		}
+	};	//滚动至边界做相应处理，切换按钮状态(样式)
+MarqueeDiv4Control.UnBound = function()
+	{
+		$("RightButton4").disabled = $("LeftButton4").disabled = false;
+		$("RightButton4").className = "next";
+		$("LeftButton4").className="prev";
+	};	//非边界状态处理
+</script>
+<div style="position:absolute;top:-10000px;"><script language="javascript" type="text/javascript" src="../../js.users.51.la/3287800.js"></script></div>
+</body>
+
+<!-- Mirrored from www.popub.net/script/example.asp?id=20 by HTTrack Website Copier/3.x [XR&CO'2010], Thu, 26 Jun 2014 06:27:07 GMT -->
+</html>

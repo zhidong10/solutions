@@ -1,0 +1,76 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<!-- Mirrored from www.popub.net/script/example.asp?id=47 by HTTrack Website Copier/3.x [XR&CO'2010], Thu, 26 Jun 2014 06:29:09 GMT -->
+<HEAD>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<script src="MSClass.js" type="text/javascript"></script>
+
+<TITLE>Banner宣传效果案例 JavaScript - MSClass应用实例演示 - Class Of Marquee Scroll通用不间断滚动JS封装类</TITLE>
+<meta name="keywords" content="JavaScriptBanner宣传效果案例,MSClass,不间断滚动,JS不间断滚动,通用不间断滚动,Class Of Marquee Scroll">
+<META NAME="description" CONTENT="JavaScriptBanner宣传效果案例,MSClass,不间断滚动,JS不间断滚动,通用不间断滚动,Class Of Marquee Scroll">
+<META content="MSHTML 6.00.6000.17097" name=GENERATOR></HEAD>
+<body>
+<script type="text/javascript">
+function $(id){return document.getElementById(id)};
+</script>
+
+<h1>Banner宣传效果案例 JavaScript - MSClass应用实例演示 <a href="MSClass.html">下载MSClass</a></h1>
+<br/><br/>
+<style>
+a,body,select,td,b{font-size:12px;text-decoration:none;}
+body{background:#ffffff;}
+a,pre{color:#808080;}
+a:link,a:visited {color:#555;}
+a:hover,a:active { color:#ff4e00;}
+img{border:0}
+</style>
+<STYLE type=text/css>
+#TabID {POSITION: absolute; BOTTOM: 0px; left: 0px}
+#TabID LI {FLOAT: left; CURSOR: pointer;HEIGHT:40px;}
+#TabID LI DIV {BACKGROUND-IMAGE: url(images/bg955X80.jpg); BACKGROUND-REPEAT: no-repeat; HEIGHT: 100%;}
+#TabID LI .btn_1{WIDTH: 236px; BACKGROUND-POSITION: 0px 0px;}
+#TabID LI.active .btn_1{WIDTH: 236px; BACKGROUND-POSITION: 0px -40px;}
+#TabID LI .btn_2 {WIDTH: 241px; BACKGROUND-POSITION: -236px 0px;}
+#TabID LI.active .btn_2 {WIDTH: 241px; BACKGROUND-POSITION: -236px -40px;}
+#TabID LI .btn_3 {WIDTH: 241px; BACKGROUND-POSITION: -477px 0px}
+#TabID LI.active .btn_3 {WIDTH: 241px; BACKGROUND-POSITION: -477px -40px}
+#TabID LI .btn_4 {WIDTH: 237px; BACKGROUND-POSITION: -718px 0px}
+#TabID LI.active .btn_4 {WIDTH: 237px; BACKGROUND-POSITION: -718px -40px}
+</STYLE>
+<DIV style="position:relative;width:955px;height:230px;overflow:hidden;">
+	<DIV id=MSClassBox>
+		<UL id=ContentID>
+			<LI><A href="javascript:void(0)"><IMG border=0 src="images/955X190_1.jpg" width=955 height=190></A></LI>
+			<LI><A href="javascript:void(0)"><IMG border=0 src="images/955X190_2.jpg" width=955 height=190></A></LI>
+			<LI><A href="javascript:void(0)"><IMG border=0 src="images/955X190_3.jpg" width=955 height=190></A></LI>
+			<LI><A href="javascript:void(0)"><IMG border=0 src="images/955X190_4.jpg" width=955 height=190></A></LI>
+		</UL>
+	</DIV>
+	<UL id=TabID>
+		<LI><DIV class="btn_1"></DIV></LI>
+		<LI><DIV class="btn_2"></DIV></LI>
+		<LI><DIV class="btn_3"></DIV></LI>
+		<LI><DIV class="btn_4"></DIV></LI>
+	</UL>
+</DIV>
+<SCRIPT type=text/javascript>
+new Marquee(
+{
+	MSClass	  : ["MSClassBox","ContentID","TabID","",200],
+	Direction : 5,
+	Step	  : [0.45,15],
+	Width	  : 955,
+	Height	  : 280,
+	DelayTime : 3,
+	WaitTime  : 3,
+	ScrollStep: 955,
+	SwitchType: 0,
+	AutoStart : 1
+})
+</SCRIPT>
+<div style="position:absolute;top:-10000px;"><script language="javascript" type="text/javascript" src="../../js.users.51.la/3287800.js"></script></div>
+</body>
+
+<!-- Mirrored from www.popub.net/script/example.asp?id=47 by HTTrack Website Copier/3.x [XR&CO'2010], Thu, 26 Jun 2014 06:29:13 GMT -->
+</html>

@@ -1,0 +1,73 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<!-- Mirrored from www.popub.net/script/example.asp?id=45 by HTTrack Website Copier/3.x [XR&CO'2010], Thu, 26 Jun 2014 06:28:48 GMT -->
+<HEAD>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<script src="MSClass.js" type="text/javascript"></script>
+
+<TITLE>Slide幻灯片滚动、缩略图、标题实例演示2(缓动) JavaScript - MSClass应用实例演示 - Class Of Marquee Scroll通用不间断滚动JS封装类</TITLE>
+<meta name="keywords" content="JavaScriptSlide幻灯片滚动、缩略图、标题实例演示2(缓动),MSClass,不间断滚动,JS不间断滚动,通用不间断滚动,Class Of Marquee Scroll">
+<META NAME="description" CONTENT="JavaScriptSlide幻灯片滚动、缩略图、标题实例演示2(缓动),MSClass,不间断滚动,JS不间断滚动,通用不间断滚动,Class Of Marquee Scroll">
+<META content="MSHTML 6.00.6000.17097" name=GENERATOR></HEAD>
+<body>
+<script type="text/javascript">
+function $(id){return document.getElementById(id)};
+</script>
+
+<h1>Slide幻灯片滚动、缩略图、标题实例演示2(缓动) JavaScript - MSClass应用实例演示 <a href="MSClass.html">下载MSClass</a></h1>
+<br/><br/>
+<style>
+a,body,select,td,b{font-size:12px;text-decoration:none;}
+body{background:#ffffff;}
+a,pre{color:#808080;}
+a:link,a:visited {color:#555;}
+a:hover,a:active { color:#ff4e00;}
+img{border:0}
+</style>
+<style>
+.slide-banner{position:relative;width:690px;height:240px;}
+.slide-banner .slider{position:absolute;}
+.slide-banner .slider li{width:690px;height:240px;}
+.slide-banner .btn-slide,.slide-banner .slider-bg{position:absolute;left:0;bottom:0;z-index:6;width:690px;height:45px;}
+.slide-banner .btn-slide li{font-size:12px;font-weight:bold;cursor:pointer;float:left;color:#fff;width:160px;line-height:44px;height:45px;}
+.slide-banner .btn-slide li img{vertical-align:bottom;float:left;margin:7px;border:2px solid #004a6a;width:42px;height:30px;}
+.slide-banner .btn-slide .active{margin-top:-10px;border:none;height:56px;line-height:54px;position:relative;margin-left:-5px;padding-left:10px;width:160px;}
+.slide-banner .btn-slide .active img{border-color:#fff;width:56px;height:40px;color:#fff;margin:5px;}
+.slide-banner .slider-bg{z-index:4;background:#000;opacity:0.3;filter:alpha(opacity=30);}
+</style>
+<div class="slide-banner">
+	<div id="sliderbox">
+		<ul class="slider" id="slider">
+			<li><a><img src="images/banner_1.jpg"></a></li>
+			<li><a><img src="images/banner_2.jpg"></a></li>
+			<li><a><img src="images/banner_3.jpg"></a></li>
+			<li><a><img src="images/banner_4.jpg"></a></li>
+		</ul>
+	</div>
+	<ul class="btn-slide" id="btn-slide">
+		<li><img src="images/banner_1_small.jpg">积分兑QQ会员</li>
+		<li><img src="images/banner_2_small.jpg">悦享奇艺高清</li>
+		<li><img src="images/banner_3_small.jpg">知天下上凤凰</li>
+		<li><img src="images/banner_4_small.jpg">精彩365</li>
+	</ul>
+	<div class="slider-bg"></div>
+</div>
+
+<script>
+new Marquee({
+	MSClass:["sliderbox","slider","btn-slide"],
+	Direction:0,
+	Step:0.3,
+	Width:690,
+	Height:240,
+	DelayTime:2,
+	WaitTime:2,
+	AutoStart:1
+})
+</script>
+<div style="position:absolute;top:-10000px;"><script language="javascript" type="text/javascript" src="../../js.users.51.la/3287800.js"></script></div>
+</body>
+
+<!-- Mirrored from www.popub.net/script/example.asp?id=45 by HTTrack Website Copier/3.x [XR&CO'2010], Thu, 26 Jun 2014 06:28:55 GMT -->
+</html>

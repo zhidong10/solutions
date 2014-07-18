@@ -1,0 +1,103 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<!-- Mirrored from www.popub.net/script/example.asp?id=12 by HTTrack Website Copier/3.x [XR&CO'2010], Thu, 26 Jun 2014 06:27:07 GMT -->
+<HEAD>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<script src="MSClass.js" type="text/javascript"></script>
+
+<TITLE>DIV + CSS(UL + LI)TAB轮显滑动门应用实例(缓动) JavaScript - MSClass应用实例演示 - Class Of Marquee Scroll通用不间断滚动JS封装类</TITLE>
+<meta name="keywords" content="JavaScriptDIV + CSS(UL + LI)TAB轮显滑动门应用实例(缓动),MSClass,不间断滚动,JS不间断滚动,通用不间断滚动,Class Of Marquee Scroll">
+<META NAME="description" CONTENT="JavaScriptDIV + CSS(UL + LI)TAB轮显滑动门应用实例(缓动),MSClass,不间断滚动,JS不间断滚动,通用不间断滚动,Class Of Marquee Scroll">
+<META content="MSHTML 6.00.6000.17097" name=GENERATOR></HEAD>
+<body>
+<script type="text/javascript">
+function $(id){return document.getElementById(id)};
+</script>
+
+<h1>DIV + CSS(UL + LI)TAB轮显滑动门应用实例(缓动) JavaScript - MSClass应用实例演示 <a href="MSClass.html">下载MSClass</a></h1>
+<br/><br/>
+<style>
+a,body,select,td,b{font-size:12px;text-decoration:none;}
+body{background:#ffffff;}
+a,pre{color:#808080;}
+a:link,a:visited {color:#555;}
+a:hover,a:active { color:#ff4e00;}
+img{border:0}
+</style>
+<style>
+.slide_tab{
+	width:520px; 	margin:0 auto;text-align:center;
+	height:280px;
+	background:#fff url(images/main_bg.gif) repeat-x 0 100%; 
+	border:0px solid #aaa;position:relative; 
+	overflow:hidden;
+
+}
+.slide_tab ul{
+	margin:0;
+	padding:0;
+	float:left;
+	overflow:hidden;
+}
+.tab_btn li{
+	list-style:none;
+	margin-top:8px;
+	float:left; width:90px;
+	font-size:12px;
+	padding:7px;
+	zoom:1;	text-decoration:none; 
+	color:#c0c0c0;line-height:50%; 
+	cursor:pointer;
+}
+.tab_btn li.active {
+	color:#F0B910;font-weight:bold;
+	cursor:default;
+}
+.tab_btn{
+	overflow:hidden;
+	height:30px; 
+	background:url(images/tabbar.gif) repeat-x ; 
+}
+
+.main{
+	width:490px;height:235px; overflow:hidden;
+}
+</style>
+<div class="slide_tab">
+	<ul class="tab_btn" id="myTab_btns1">
+		<li>动物演示</li><li>动物演示</li><li>动物演示</li><li>动物演示</li><li>动物演示</li>
+	</ul>
+	<div class="main" id="main1" style="margin:0 auto;">
+		<ul id="content1">
+		<li><a href="javascript:void(0)"><img src="images/490X235_1.jpg" width="490" height="235" border="0"/></a></li>
+		<li><a href="javascript:void(0)"><img src="images/490X235_2.jpg" width="490" height="235" border="0"/></a></li>
+		<li><a href="javascript:void(0)"><img src="images/490X235_3.jpg" width="490" height="235" border="0"/></a></li>
+		<li><a href="javascript:void(0)"><img src="images/490X235_4.jpg" width="490" height="235" border="0"/></a></li>
+		<li><a href="javascript:void(0)"><img src="images/490X235_5.jpg" width="490" height="235" border="0"/></a></li>
+		</ul>
+	</div>
+</div>
+<script type="text/javascript">
+new Marquee(
+{
+	MSClassID : "main1",
+	ContentID : "content1",
+	TabID	  : "myTab_btns1",
+	Direction : 2,
+	Step	  : 0.1,
+	Width	  : 490,
+	Height	  : 235,
+	Timer	  : 20,
+	DelayTime : 3000,
+	WaitTime  : 0,
+	ScrollStep: 490,
+	SwitchType: 0,
+	AutoStart : 1
+})
+</script>
+<div style="position:absolute;top:-10000px;"><script language="javascript" type="text/javascript" src="../../js.users.51.la/3287800.js"></script></div>
+</body>
+
+<!-- Mirrored from www.popub.net/script/example.asp?id=12 by HTTrack Website Copier/3.x [XR&CO'2010], Thu, 26 Jun 2014 06:27:13 GMT -->
+</html>

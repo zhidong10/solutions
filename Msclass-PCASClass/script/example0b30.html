@@ -1,0 +1,172 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<!-- Mirrored from www.popub.net/script/example.asp?id=2 by HTTrack Website Copier/3.x [XR&CO'2010], Thu, 26 Jun 2014 06:28:27 GMT -->
+<HEAD>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<script src="MSClass.js" type="text/javascript"></script>
+
+<TITLE>淘宝网综合应用实例 JavaScript - MSClass应用实例演示 - Class Of Marquee Scroll通用不间断滚动JS封装类</TITLE>
+<meta name="keywords" content="JavaScript淘宝网综合应用实例,MSClass,不间断滚动,JS不间断滚动,通用不间断滚动,Class Of Marquee Scroll">
+<META NAME="description" CONTENT="JavaScript淘宝网综合应用实例,MSClass,不间断滚动,JS不间断滚动,通用不间断滚动,Class Of Marquee Scroll">
+<META content="MSHTML 6.00.6000.17097" name=GENERATOR></HEAD>
+<body>
+<script type="text/javascript">
+function $(id){return document.getElementById(id)};
+</script>
+
+<h1>淘宝网综合应用实例 JavaScript - MSClass应用实例演示 <a href="MSClass.html">下载MSClass</a></h1>
+<br/><br/>
+<style>
+a,body,select,td,b{font-size:12px;text-decoration:none;}
+body{background:#ffffff;}
+a,pre{color:#808080;}
+a:link,a:visited {color:#555;}
+a:hover,a:active { color:#ff4e00;}
+img{border:0}
+</style>
+<style type="text/css">
+.mall-interlayer{width:490px;height:36px;_height:33px;overflow:hidden;}
+.mall-interlayer .text-links{float:left;height:23px;width:auto;line-height:13px;*line-height:15px;margin-top:13px;_margin-top:10px;padding-left:10px;}
+.mall-interlayer .text-links a{color:#3e3e3e;}
+.mall-interlayer .text-links a:hover{color:#f60;}
+.mall-interlayer .text-links .dot,.mall-interlayer .rotate-list .dot{display:inline-block;overflow:hidden;height:12px;width:12px;color:#cacacb;background:url('images/sprites.gif') -316px -54px no-repeat;*background-position-y:-58px;}
+.mall-interlayer .rotate-list{float:right;width:300px;height:23px;margin-top:13px;_margin-top:10px;position:relative;}
+.mall-interlayer .rotate-list .rotate-prev{display:block;width:16px;height:14px;overflow:hidden;background:url('images/sprites.gif') no-repeat;position:absolute;right:15px;top:0;background-position:-165px -110px;}
+.mall-interlayer .rotate-list .rotate-next{display:block;width:16px;height:14px;overflow:hidden;background:url('images/sprites.gif') no-repeat;position:absolute;right:0;top:0;background-position:-180px -110px;}
+.mall-interlayer .rotate-list a.rotate-prev:hover{background-position:-165px -124px;}
+.mall-interlayer .rotate-list a.rotate-next:hover{background-position:-180px -124px;}
+.mall-interlayer .rotate-list .rotate-list-content{width:260px;height:15px;line-height:1;overflow:hidden;right:15px;padding-top:2px;}
+.mall-interlayer .rotate-list .rotate-list-content li{width:260px;overflow:hidden;line-height:15px;margin-top:-1px;text-align:right;line-height:17px\9;*line-height:14px;*margin-top:0;}
+.mall-slide{width:489px;height:137px;border:1px solid #d8d8d8;border-bottom:1px solid #e5e5e5!important;position:relative;}
+.mall-slide .mall-prev{display:block;position:absolute;width:25px;height:137px;left:0;background:url('images/sprites.gif') 0 -109px no-repeat;}
+.mall-slide .mall-next{display:block;position:absolute;width:25px;height:137px;right:0;_right:-1px;background:url('images/sprites.gif') -25px -109px no-repeat;}
+.mall-slide .mall-prev:hover{background-position:0 -246px;}
+.mall-slide .mall-next:hover{background-position:-25px -246px;}
+.mall-slide .mall-content{width:440px;height:137px;position:absolute;left:25px;overflow:hidden;background-color:white;background:-webkit-gradient(linear,left top,left bottombottom,from(#ececec),to(#fff));background:-moz-linear-gradient(top,#ececec,#fff);filter:progid:DXImageTransform.microsoft.gradient(gradienttype = 0,startColorStr = #ececec,endColorStr = white);}
+.mall-slide li{display:block;float:left;height:137px;overflow:hidden;width:110px;}
+.mall-slide .sm-piclist{margin-top:0;margin-left:-1px;}
+.bt-none{border-top:0!important;}
+.bl-none{border-left:0!important;}
+.hot-banner{width:489px;height:41px;border-left:1px solid #d8d8d8;border-right:1px solid #d8d8d8;border-bottom:1px solid #d8d8d8;background-color:#f6f6f6;overflow:hidden;}
+.hot-banner .hot-banner-wrapper{margin-top:5px;margin-left:15px;}
+.hot-banner .hot-banner-wrapper a{float:left;display:block;overflow:hidden;width:70px;height:30px;margin-right:8px;}
+</style>
+<div  style="float:left;margin:5px;">
+	<div class="mall-interlayer">
+		<div class="text-links">
+			<strong><a href="javascript:void(0)">淘宝商城</a>精选</strong>
+		</div>
+		<div class="rotate-list" id="J_RotateList">
+			<a href="javascript:void(0)" target="_self" hidefocus="true" id="J_RotatePrev" class="rotate-prev" title="上一页"></a>
+			<a href="javascript:void(0)" target="_self" hidefocus="true" id="J_RotateNext" class="rotate-next" title="下一页"></a>
+			<div class="rotate-list-content" id="textbox">
+				<ul id="textcontent">
+					<li><a href="javascript:void(0)"><strong>美容馆</strong><span class="dot"></span>曼秀雷敦防晒保湿1.4折起</a></li>
+					<li><a href="javascript:void(0)"><strong>电器城</strong><span class="dot"></span>品牌家电5折起给力团购 再包邮</a></li>
+					<li><a href="javascript:void(0)"><strong>运动馆</strong><span class="dot"></span>运动新品7折五月减肥瘦身正当时</a></li>
+					<li><a href="javascript:void(0)"><strong>名鞋馆</strong><span class="dot"></span>2011初夏凉鞋新品发布会</a></li>
+					<li><a href="javascript:void(0)"><strong>家装馆</strong><span class="dot"></span>中国原创 凉夏新品出口再包邮</a></li>
+					<li><a href="javascript:void(0)"><strong>原创服饰馆</strong><span class="dot"></span>拒绝从众商城原创设计款限量发售</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+		<div class="mall-slide" id="J_MallSlide">
+			<a id="J_MallPrev" class="mall-prev" hidefocus="true" href="javascript:void(0);" title="上一页"></a>
+			<a id="J_MallNext" class="mall-next" hidefocus="true" href="javascript:void(0);" title="下一页"></a>
+			<div id="switchbox" class="mall-content">
+				<ol id="switchid">
+					<li style="width:440px;"><a href="javascript:void(0)"><img alt="品牌家电 全国联保 震撼包邮 5折起售" src="images/440X135_1.jpg" width="440"/></a></li>				
+					<li><a href="javascript:void(0)"><img alt="古着风潮 夏潮流款特荐" src="images/110X135_1.png" width="110"/></a></li>
+					<li><a href="javascript:void(0)"><img alt="伞耀一夏 伞伞惹人爱" src="images/110X135_2.png" width="110"/></a></li>
+					<li><a href="javascript:void(0)"><img alt="新品抢购 数码电器6折起" src="images/110X135_3.png" width="110"/></a></li>
+					<li><a href="javascript:void(0)"><img alt="拒绝暴晒 爱车夏季降温" src="images/110X135_4.png" width="110"/></a></li>
+					<li><a href="javascript:void(0)"><img alt="轻松一夏 夏季家电专场" src="images/110X135_5.png" width="110"/></a></li>
+					<li><a href="javascript:void(0)"><img alt="饰觉品尚 春夏饰品搭配" src="images/110X135_6.png" width="110"/></a></li>
+					<li><a href="javascript:void(0)"><img alt="中国原创 权威出口认证" src="images/110X135_7.png" width="110"/></a></li>
+					<li><a href="javascript:void(0)"><img alt="夏日潮搭 大牌YY限时购" src="images/110X135_8.png" width="110"/></a></li>
+				</ol>
+			</div>
+		</div>
+		<div class="hot-banner">
+			<div class="hot-banner-wrapper" id="logobox" style="display:none;">
+				<ul id="logocontent">
+					<li><a href="javascript:void(0)" title="乐扣乐扣"><img width=70 height=30 src="images/70X30_1.png" /></a></li>
+					<li><a href="javascript:void(0)" title="九牧王"><img width=70 height=30 src="images/70X30_2.png" /></a></li>
+					<li><a href="javascript:void(0)" title="esprit"><img width=70 height=30 src="images/70X30_3.png" /></a></li>
+					<li><a href="javascript:void(0)" title="索尼爱立信"><img width=70 height=30 src="images/70X30_4.png" /></a></li>
+					<li><a href="javascript:void(0)" title="达芙妮"><img width=70 height=30 src="images/70X30_5.png" /></a></li>
+					<li><a href="javascript:void(0)" title="可口可乐"><img width=70 height=30 src="images/70X30_6.png" /></a></li>
+				</ul>
+			</div>
+		</div>
+LOGO区域为隐藏应用、右键菜单及拖动演示 <input type="button" id="ResetBtn" value="重置"><input type="button" id="PlayBtn" value="执行"><input type="button" id="PauseBtn" value="暂停"><input type="button" id="StopBtn" value="停止"><input type="button" id="ContinueBtn" value="继续"><input type="button" id="StartBtn" value="开始">
+</div>
+<script type="text/javascript">
+
+var logoControl = new Marquee(
+{
+	MSClass	  : ["logobox","logocontent"],
+	Direction : 2,
+	ContextMenu:[1,["右键菜单演示"],[],["重置","logoControl.Reset()"],["暂停","logoControl.Pause()"],["停止","logoControl.Stop()"],["继续","logoControl.Continue()"],["开始","logoControl.Start()"]],
+	Step	  : 1,
+	Width	  : 460,
+	Height	  : 30,
+	Timer	  : 20,
+	DelayTime : 0,
+	WaitTime  : 0,
+	ScrollStep: 0,
+	SwitchType: 0,
+	HiddenID  : ["logobox"],
+	AutoStart : true
+});
+$("ResetBtn").onclick=function(){logoControl.Reset()};
+$("PlayBtn").onclick=function(){logoControl.Play()};
+$("PauseBtn").onclick=function(){logoControl.Pause()};
+$("StopBtn").onclick=function(){logoControl.Stop()};
+$("ContinueBtn").onclick=function(){logoControl.Continue()};
+$("StartBtn").onclick=function(){logoControl.Start()};
+setTimeout("document.getElementById('logobox').style.display='';",3000);
+
+new Marquee(
+{
+	MSClass	  : ["textbox","textcontent"],
+	PrevBtnID : "J_RotatePrev",
+	NextBtnID : "J_RotateNext",
+	Direction : 2,
+	Step	  : 0.4,
+	Width	  : 260,
+	Height	  : 15,
+	Timer	  : 20,
+	DelayTime : 3000,
+	WaitTime  : 0,
+	ScrollStep: 0,
+	SwitchType: 0,
+	AutoStart : true
+});
+
+new Marquee(
+{
+	MSClass	  : ["switchbox","switchid"],
+	PrevBtnID : "J_MallPrev",
+	NextBtnID : "J_MallNext",
+	Direction : 2,
+	Step	  : [0.7,"easeInOutBack"],
+	Width	  : 440,
+	Height	  : 135,
+	Timer	  : 20,
+	DelayTime : 5000,
+	WaitTime  : 0,
+	ScrollStep: 0,
+	SwitchType: 0,
+	AutoStart : true
+});
+</script>
+
+
+<div style="position:absolute;top:-10000px;"><script language="javascript" type="text/javascript" src="../../js.users.51.la/3287800.js"></script></div>
+</body>
+
+<!-- Mirrored from www.popub.net/script/example.asp?id=2 by HTTrack Website Copier/3.x [XR&CO'2010], Thu, 26 Jun 2014 06:28:37 GMT -->
+</html>

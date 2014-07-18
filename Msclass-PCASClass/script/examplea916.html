@@ -1,0 +1,96 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<!-- Mirrored from www.popub.net/script/example.asp?id=44 by HTTrack Website Copier/3.x [XR&CO'2010], Thu, 26 Jun 2014 06:27:55 GMT -->
+<HEAD>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<script src="MSClass.js" type="text/javascript"></script>
+
+<TITLE>Slide幻灯片滚动、缩略图、标题实例演示(缓动) JavaScript - MSClass应用实例演示 - Class Of Marquee Scroll通用不间断滚动JS封装类</TITLE>
+<meta name="keywords" content="JavaScriptSlide幻灯片滚动、缩略图、标题实例演示(缓动),MSClass,不间断滚动,JS不间断滚动,通用不间断滚动,Class Of Marquee Scroll">
+<META NAME="description" CONTENT="JavaScriptSlide幻灯片滚动、缩略图、标题实例演示(缓动),MSClass,不间断滚动,JS不间断滚动,通用不间断滚动,Class Of Marquee Scroll">
+<META content="MSHTML 6.00.6000.17097" name=GENERATOR></HEAD>
+<body>
+<script type="text/javascript">
+function $(id){return document.getElementById(id)};
+</script>
+
+<h1>Slide幻灯片滚动、缩略图、标题实例演示(缓动) JavaScript - MSClass应用实例演示 <a href="MSClass.html">下载MSClass</a></h1>
+<br/><br/>
+<style>
+a,body,select,td,b{font-size:12px;text-decoration:none;}
+body{background:#ffffff;}
+a,pre{color:#808080;}
+a:link,a:visited {color:#555;}
+a:hover,a:active { color:#ff4e00;}
+img{border:0}
+</style>
+<STYLE type=text/css>
+#ifocus * {PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; WORD-BREAK: break-all; PADDING-TOP: 0px}
+#ifocus {BORDER: #dedede 1px solid;MARGIN: 0px; WIDTH: 402px; FONT: 12px/1.6em Helvetica, Arial, sans-serif; BACKGROUND: #f8f8f8; HEIGHT: 235px; COLOR: #000;}
+#ifocus_pic {POSITION: relative; MARGIN: 8px 0px 0px 7px; WIDTH: 303px; DISPLAY: inline; FLOAT: left; HEIGHT: 220px; OVERFLOW: hidden}
+#ifocus_piclist {POSITION: absolute}
+#ifocus_piclist LI {LIST-STYLE-TYPE: none; WIDTH: 303px; HEIGHT: 220px; OVERFLOW: hidden}
+#ifocus_piclist IMG {WIDTH: 303px; HEIGHT: 220px}
+#ifocus_btn {MARGIN: 5px 2px 0px 0px; WIDTH: 88px; DISPLAY: inline; FLOAT: right}
+#ifocus_btn LI {FILTER: alpha(opacity=50); LIST-STYLE-TYPE: none; HEIGHT: 56px; CURSOR: pointer; opacity: 0.5; -moz-opacity: 0.5}
+#ifocus_btn IMG {MARGIN: 3px 4px 0px 10px; WIDTH: 72px; HEIGHT: 46px}
+#ifocus_btn .active {FILTER: alpha(opacity=100); BACKGROUND: no-repeat; opacity: 1; -moz-opacity: 1}
+#ifocus_opdiv {POSITION: absolute; FILTER: alpha(opacity=40); WIDTH: 303px; BOTTOM: 0px; BACKGROUND: #000; HEIGHT: 26px; LEFT: 0px; opacity: 0.5; -moz-opacity: 0.5}
+#ifocus_tx {POSITION: absolute; BOTTOM: 2px; COLOR: #fff; LEFT: 8px}
+#ifocus_tx .bai {COLOR: #ffffff; FONT-SIZE: 9pt}
+#ifocus_tx .normal {DISPLAY: none}
+</STYLE>
+<div id="ifocus">
+	<div id="ifocus_pic">
+		<div id="ifocus_piclist">
+			<ul id="ifocus_piclist_ul">
+				<li><a href="javascript:void(0)"><img src="images/111212154224843.jpg" border="0"></a></li>
+				<li><a href="javascript:void(0)"><img src="images/111212154202771.jpg" border="0"></a></li>
+				<li><a href="javascript:void(0)"><img src="images/111210182323882.jpg" border="0"></a></li>
+				<li><a href="javascript:void(0)"><img src="images/111209172753422.JPG" border="0"></a></li>
+			</ul>
+		</div>
+		<div id="ifocus_opdiv"></div>
+		<div id="ifocus_tx">
+			<ul>
+				<li><a  href="javascript:void(0)" class="bai" title="我县召开专题会议研究讨论全县2012年目标考核体系">我县召开专题会议研究讨论全县2012...</a></li>
+				<li class="normal"><a href="javascript:void(0)" class="bai" title="我县会办环境整治及城区亮化工作">我县会办环境整治及城区亮化工作</a></li>
+				<li class="normal"><a href="javascript:void(0)" class="bai" title="省人大代表省直宿迁组来洪考察">省人大代表省直宿迁组来洪考察</a></li>
+				<li class="normal"><a href="javascript:void(0)" class="bai" title="徐德调研市委扩大会议观摩点筹备情况">徐德调研市委扩大会议观摩点筹备情况</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="ifocus_btn">
+		<ul  id="ifocus_btn_ul">
+			<li><img src="images/111212154224843.jpg" border="0"></li>
+			<li><img src="images/111212154202771.jpg" border="0"></li>
+			<li><img src="images/111210182323882.jpg" border="0"></li>
+			<li><img src="images/111209172753422.JPG" border="0"></li>
+		</ul>
+	</div>
+</div>
+<script type="text/javascript"> 
+var a=new Marquee({
+	MSClass:["ifocus_piclist","ifocus_piclist_ul","ifocus_btn_ul"],
+	Directon:0,
+	Step:0.3,
+	Width:303,
+	Height:220,
+	ScrollStep:220,
+	DelayTime:5,
+	WaitTime:5,
+	AutoStart:1
+})
+a.OnScroll = function()
+{
+	var iFocusTxs = $("ifocus_tx").getElementsByTagName('li');
+	for(var i=0; i<iFocusTxs.length; i++)iFocusTxs[i].className='normal';
+	iFocusTxs[a.Counter - 1].className='';
+}
+</script>
+<div style="position:absolute;top:-10000px;"><script language="javascript" type="text/javascript" src="../../js.users.51.la/3287800.js"></script></div>
+</body>
+
+<!-- Mirrored from www.popub.net/script/example.asp?id=44 by HTTrack Website Copier/3.x [XR&CO'2010], Thu, 26 Jun 2014 06:28:27 GMT -->
+</html>
