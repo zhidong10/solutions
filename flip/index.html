@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>flip</title>
+	<style>
+	*{margin:0;padding:0;}
+	.content{background:orange;height:300px;margin:100px auto;width:200px;}
+	</style>
+</head>
+<body>
+	<div class="content"></div>
+</body>
+</html>
+<script src="jquery.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+<script src="jquery.flip.min.js"></script>
+<script>
+$(function(){
+	$('.content').click(function(){
+		var _this = $(this);
+		_this.flip({
+			direction: 'lr',
+			content: '反转后显示的内容，反转后显示的内容，反转后显示的内容，反转后显示的内容',
+			speed: 500,
+			onEnd: function(){
+				_this.css({
+					background: 'orange',
+					color: 'white'
+				}).unbind('click');
+			}
+		});
+	});
+});
+</script>
