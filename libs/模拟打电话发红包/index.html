@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>　</title>
+		<script>
+		!function(e,t){
+			"use strict";
+			var mresize=function(){
+				var n = Math.min(640,e.innerWidth);
+				return n?void (t.documentElement.style.fontSize=n/16+"px"):!1;
+			};
+			e.addEventListener("resize",mresize,!1);
+			e.addEventListener("DOMContentLoaded",mresize,!1);
+		}(window,document);
+		</script>
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="x5-orientation" content="portrait">
+    	<meta name="screen-orientation" content="portrait">
+		<!--<script src="//wx.9ria.com/open/beesdk.php"></script>-->
+		<!--<script src="http://static.beetobees.com/wx/common/zepto.min.js,wx/common/md5.js,wx/common/base64.js,wx/common/wx.jssdk.js,wx/js/9riasdk.js"></script>-->
+		<link rel="stylesheet" href="css/components.css?v=02">
+	</head>
+	<body style="background: #fff;">
+		<div id="xxx" style="background:#fff;position:fixed;top:0;left:0;right:0;bottom:0;z-index:9999;"></div>
+		<div class="base-pb" id="base-pb">
+			<div class="pb-box" id="pb-box">
+				<div class="lock">
+					<div class="time"></div>
+					<div class="date" id="date">02月07日 星期日</div>
+				</div>
+				<div class="wx-msg">小德哥：过年了，咱们发点福利！</div>
+				<div class="centerer block">
+					<h2>> 滑动来解锁</h2>
+				</div>
+			</div>
+		</div>
+		<div class="video"  id="video">
+			<video x-webkit-airplay="true" webkit-playsinline="true" preload="auto" src="http://static.beetobees.com/music-wx/bainian2.mp4?v=2"></video>
+			<div class="tool"><div class="numDown" id="second" style="display: none;">00:00</div></div>
+		</div>
+
+			<div class="base-msgbox" id="bsbox">
+			</div>
+			<ul class="base-bottombar" id="bsbar">
+				<li><b>语音按钮</b></li>
+				<li><input type="text" id="jobnum" style="display: none;"></li>
+				<li><b>表情符号</b></li>
+				<li>其他按钮</li>
+			</ul>
+
+		<div class="base-call" id="base-call">
+			<a href="javascript:;"></a>
+		</div>
+		<!--step 5-->
+		<div class="page5" id="page5">
+			<div class="dl-l in"></div>
+			<div class="dl-r in"></div>
+			<div class="dl-l sm"></div>
+			<div class="dl-r sm"></div>
+			<div class="dl-t"></div>
+			<div class="boardBox"><div class="board"></div></div>
+			<div class="btnsBox">
+				<a href="javascript:location.href=location.href;" class="aginBtn"></a>
+				<a href="javascript:;" class="sharebtn" id="share"></a>
+			</div>
+			<p class="yxj" style="bottom: 1.5rem;">赢销+提供技术支持</p>
+			<p class="yxj" style="bottom: 0.5rem;">畅游企业文化出品</p>
+			<!--share-->
+			<div class="alt-bg" id="share-bg" style="display: none;">
+				<div class="share"></div>
+			</div>
+		</div>
+		<div class="vilidatabg" id="alercode">
+			<div class="vilidatabox">
+				<p class="tip">请输入身份证后六位（没有身份证请输护照后六位）</p>
+				<input type="text" name="" id="scIpt" value="" />
+				<a href="javascript:;" class="btn" id="scBtn"></a>
+				<p class="yxj">赢销+提供技术支持</p>
+				<p class="msg" id="msg"></p>
+			</div>
+		</div>
+		<section class="hb" id="hb">
+			<div class="bg">
+				<a href="javascript:;" id="endin"></a>
+				<div class="logo2"></div>
+				<div class="photo"><img src="images/01.png" alt="" id="myphoto"/></div>
+				<div class="result">
+					<div class="has" id="money" style="display: -block;">
+						<h6 class="title">年年有红包，猴年猴嗨森</h6>
+						<h1 class="prize"><span id="num">00.00</span><em>元</em></h1>
+						<p class="tip">红包正在路上，请注意微信通知</p>
+					</div>
+					<div class="has" id="money2">
+						<h6 class="title2" id="tip">红包已经抢完了!</h6>
+					</div>
+				</div>
+				<div class="line"></div>
+				<ul class="listory" id="listory"></ul>
+				<p class="yxj">赢销+提供技术支持</p>
+			</div>
+		</section>
+		<!--error-->
+		<div id="error" style="display:none;background:#000;position:absolute;top:0;left:0;right:0;bottom:0;z-index:99999;">
+			<div style="font-size:0.6rem;color:#fff;margin:2rem auto;width:12rem;text-align: center;">手机歪了！！</div>
+		</div>
+		<audio preload="auto" src="http://static.beetobees.com/music-wx/msg.mp3" id="msgr"></audio>
+		<audio id="wx_mp3" src="http://static.beetobees.com/music-wx/ring.mp3" loop="loop" preload="auto"></audio>
+		<audio id="xj_mp3" src="http://static.beetobees.com/music-wx/bainian3.mp3" loop="loop" preload="auto"></audio>
+		<script type="text/javascript">
+			var hastouch = "ontouchstart" in window?true:false;
+		    var touchstart = hastouch?"touchstart":"mousedown";
+		    var touchmove = hastouch?"touchmove":"mousemove";
+		    var touchend = hastouch?"touchend":"mouseup";
+		</script>
+		<script src="js/jquery.js"></script>
+		<script src="js/wechat.js?v=06"></script>
+		<script>
+		//?_env=testing&appid=QqShSaGy
+		//I9RIA.openid = 'oTK2yt68Dxq0gn-Rguq9xgkNQsyY';
+		console.log = function(){};
+		var openid = 'oTK2yt68Dxq0gn-Rguq9xgkNQsyY';////;I9RIA.openid;//
+		var host = 'http://wx.9tech.cn';
+		var url1 = host + '/api/Springfestival/getUserInfoByJobnum';
+		var url2 = host + '/api/Springfestival/getUserInfoByIdcard';
+		//系统当前时间
+		var oDate = new Date();
+		document.getElementById('date').innerHTML = oDate.getMonth()+1+'月'+(oDate.getDate()>9?oDate.getDate():'0'+oDate.getDate())+'日 星期'+(['日','一','二','三','四','五','六'][oDate.getDay()]);
+
+		//头像
+		var user = {
+			name : '',
+			avatar : ''
+		};
+		var data = {};
+		//I9RIA.getUserInfo(I9RIA.openid, function(dat){
+//			var Img = new Image();
+//			Img.src = dat.headimgurl;
+//	    	user.name = dat.nickname
+//	    	user.avatar = Img.src;
+//	    	console.log(dat);
+	    	
+	    	data = {
+				chat_name:"畅游第一天团",
+				data:[
+				{type:"info",delay:0,data:{text:user.name+"加入群聊"}},
+				{type:"message-text",delay:100,data:{avatar:"images/01.png",name:"小德哥",text:"谁起的群名，太高调了吧？"}},
+				{type:"message-text",delay:1000,data:{avatar:"images/01.png",name:"小德哥",text:"不过我喜欢<img src='images/emoji01.png' class='emoji01'>"}},
+				{type:"message-text",delay:1500,data:{avatar:"images/04.png",name:"晓建",text:"畅游第一天团，低调奢华有内涵"}},
+				{type:"message-text",delay:1000,data:{avatar:"images/03.png",name:"韦青",text:"马上新年了，咱们是不是得贡献点money，让畅游的同学们乐呵乐呵"}},
+				{type:"send-text",delay:1800,data:{avatar:user.avatar,name:'',text:"不是开玩笑吧？"}},
+				{type:"message-text",delay:2000,data:{avatar:"images/02.png",name:"Jasmine",text:"来者何人报上工号~"}},
+				{type:"message-emoji",delay:1000,data:{avatar:"images/04.png",name:"晓建",image:"images/tip.gif"}}
+				]
+			};
+			$('#xxx').remove();
+//	    },function(red){
+//	    	//alert(JSON.stringify(red));
+//	    });
+
+		//weixin
+//		window.shareData = {
+//	        title : '畅游第一天团撒红包 手慢无！',
+//	        desc  : '祝所有畅游人 年年有红包 猴年猴嗨森！',
+//	        imgUrl: I9RIA.share_icon,
+//	        callbacks : {
+//	             success: function() {},
+//	             cancel: function() {}
+//	        }
+//	    };
+		</script>
+	</body>
+</html>

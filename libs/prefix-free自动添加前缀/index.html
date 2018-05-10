@@ -1,0 +1,161 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>prefix</title>
+	<style type="text/css">
+	body{font-family: 'Microsoft YaHei', '\5FAE\8F6F\96C5\9ED1'; font-size: 14px;}
+	body pre{font-family: 'Microsoft YaHei', '\5FAE\8F6F\96C5\9ED1';  line-height: 25px;}
+	.box{width: 800px; min-height: 400px; margin: 0 auto; padding:50px; border:1px solid #ccc; border-radius: 5px;}
+	.box p{line-height: 25px; padding: 5px 0;}
+	.pre{width: 600px; min-height: 400px; margin:0 auto; padding: 10px; border:1px solid #ccc;border-radius: 5px;}
+	.pre0{
+		  box-shadow: 10px 10px 5px #888888; 
+	}
+	.pre1{
+		width: 600px; min-height: 300px; margin:0 auto; background: #ff0;
+		border:26px solid transparent;
+		border-radius:10px;
+		border-image:url(img/border.png) 26 26 26 26 repeat round;
+	}
+	.pre2{
+		width: 600px; min-height: 400px; margin:0 auto;
+		border: 1px solid #ccc;
+		margin-top: 30px;
+		box-shadow: 10px 20px 10px 0px rgba(0,0,0,0.5);
+	}
+	.pre3{width: 600px; min-height: 300px; margin:0 auto; padding: 10px; border:1px solid #ccc; border-radius: 5px;}
+	</style>
+	<script type="text/javascript" src="js/prefixfree.min.js"></script>
+</head>
+<body>
+	<div class="box">
+		<h3>css3边框</h3>
+		<div class="pre pre0">
+			<p>border-radius 圆角:设置百分比或者值px都可以 50% 为正圆 一个值为默认设置所有边角 四个值代表设置四个边角</p>
+		</div>
+		<h3>border-image 边背景图 </h3>	
+		<div class="pre1">			
+			<p>border-image 边背景图 <img src="img/border-image.gif" alt=""></p>
+			
+		</div>
+		<h3>css3阴影</h3>
+		<div class="pre2">
+			<p>box-shadow 阴影 属性接受值最多由五个不同的部分组成。<br />
+				box-shadow: h-shadow v-shadow blur spread color inset;
+			</p>
+		</div>
+		<h3>css3背景</h3>
+		<div class="pre3">
+			<p> backgournd-image  <br />
+				background-size:取值范围 <br />
+				100px 100px<br />
+				75px 75px<br />
+				10px 150px<br />
+				200px<br />
+				50%<br />
+				100% 100%<br />
+				cover  把背景图像扩展至足够大，以使背景图像完全覆盖背景区域。<br />
+背景图像的某些部分也许无法显示在背景定位区域中。<br />
+				contain 把图像图像扩展至最大尺寸，以使其宽度和高度完全适应内容区域。<br />
+			</p>
+			<p>background-origin 指定了背景图的位置区域 三个值对应区域如图
+				border-box border+padding+content有背景<br>
+				padding-box padding+content有背景<br>
+				content-box content有背景<br>
+			</p>
+			<p>background-clip 这个属性是指从指定位置开始绘制 三个值跟上边的一样<br />
+				background: linear-gradient(direction, color-stop1, color-stop2, ...);<br />
+			</p>
+		</div>
+		<h3>css3渐变</h3>
+		<div class="pre pre4">
+			<p>分两种渐变：线性渐变（Linear Gradients）- 向下/向上/向左/向右/对角方向和径向渐变（Radial Gradients）- 由它们的中心定义</p>
+			<p>也就是一个是从一边到另一边 一个是从中间到四周的方式渐变</p>
+			<p>首先linear-gradient 线形渐变(默认从上到下)</p>
+			<p>然后radial-gradient 线形渐变(四周向外扩)</p>
+
+		</div>
+		<h3>css3文本效果</h3>
+		<div class="pre pre5">
+			<p>text-shadow 文本阴影</p>
+			<p>box-shadow  文本溢出</p>
+			<p>text-overflow 文本换行</p>
+			<p>word-wrap 文本拆分换行</p>
+			<p>word-break </p>
+		</div>
+		<h3>@font-face自定义字体</h3>
+		<div class="pre pre6">
+			<pre>
+			@font-face{
+				//自定义字体名字
+				font-family:name;
+				src:url('字体文件.ttf'),
+				//ie9专用字体
+				url('字体文件.eot');
+				//使用粗体文本
+				font-weight:bold;
+			}
+			</pre>
+		</div>
+		<h3>动画相关 css3 2d转换 transform:</h3>
+		<div class="pre">
+			<p>translate() 位移</p>
+			<p>rotate()  旋转 </p>
+			<p>scale()  缩放 </p>
+			<p>skew() 倾斜</p>
+			<p>matrix()  集合 matrix(位移，旋转，缩放，倾斜)表示所有transform的集合都可以写在这里</p>
+		</div>
+		<h3>css3 3d转换 改变xyz轴实现效果</h3>
+		<div class="pre">
+			<pre>
+	matrix3d(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n)定义 3D 转换，使用 16 个值的 4x4 矩阵。
+	translate3d(x,y,z)定义 3D 转化
+	translateX(x)定义 3D 转化，仅使用用于 X 轴的值
+	translateY(y)定义 3D 转化，仅使用用于 Y 轴的值
+	translateZ(z)定义 3D 转化，仅使用用于 Z 轴的值
+	scale3d(x,y,z)定义 3D 缩放转换
+	scaleX(x)定义 3D 缩放转换，通过给定一个 X 轴的值
+	scaleY(y)定义 3D 缩放转换，通过给定一个 Y 轴的值
+	scaleZ(z)定义 3D 缩放转换，通过给定一个 Z 轴的值
+	rotate3d(x,y,z,angle)定义 3D 旋转
+	rotateX(angle)  定义沿 X 轴的 3D 旋转。
+	rotateY(angle)定义沿 Y 轴的 3D 旋转。
+	rotateZ(angle)定义沿 Z 轴的 3D 旋转 
+	perspective(n)  定义 3D 转换元素的透视视图
+			</pre>
+		</div>
+		<h3>CSS3 过渡</h3>
+		<div class="pre">
+			<pre>
+	transition 总集合用于在一个属性中设置四个过渡属性。
+	transition: p(名称) d(花费时间) f(时间曲线) d(何时开始) 
+	transition-delay 规定过渡效果何时开始。默认是 0。
+	transition-duration 定义过渡效果花费的时间。默认是 0
+	transition-property 规定应用过渡的 CSS 属性的名称
+	transition-timing-function  规定过渡效果的时间曲线。默认是 "ease"
+			</pre>
+		</div>
+		<h3>CSS3 动画</h3>
+		<div class="pre">
+			<p>@feyframes规则</p>
+			<p>animation</p>
+			<p>1.首先使用@keyframes创建动画 把它绑定到一个选择器。否则动画不会有效果</p>
+			<pre>
+	+ 规定动画的名称
+	+ 规定动画的时长
+			</pre>			
+			<p>2.然后用 animation 动画捆绑到div元素</p>
+			<pre>
+	animation是一个综合简写属性(除animation-play-state) 分开分别是
+	animation-name  规定 @keyframes 动画的名称。
+	animation-duration  规定动画完成一个周期所花费的秒或毫秒。默认是 0。
+	animation-timing-function 规定动画的速度曲线。默认是 "ease"。
+	animation-delay 规定动画何时开始。默认是 0。
+	animation-iteration-count   规定动画被播放的次数。默认是 1。
+	animation-direction     规定动画是否在下一周期逆向地播放。默认是 "normal"。
+	animation-play-state    规定动画是否正在运行或暂停。默认是 "running
+			</pre>
+		</div>
+	</div>
+</body>
+</html>

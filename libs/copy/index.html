@@ -1,0 +1,70 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>copy</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=640,minimum-scale=0,maximum-scale=5,user-scalable=no"/>
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="author" content="Design: ; Web Layout: ;" />
+<style type="text/css">
+	*{padding: 0;margin: 0;}
+	.header{height: 158px; line-height: 50px; padding: 80px; text-align: center; background: #4cd964; color: #fff;}
+	.content{width: 1000px; margin: 0 auto; padding: 80px;}
+	.content p{line-height: 30px;}
+</style>
+<script>
+    if(navigator.appVersion.indexOf('Android') != -1){
+        document.addEventListener("DOMContentLoaded",function(e){
+            document.getElementsByTagName('body')[0].style.zoom = e.target.activeElement.clientWidth/640;
+        });
+    };
+</script>
+
+</head>
+<body>
+	<div class="header">
+		<h1>clipBordCopy.js </h1>
+		<h2>浏览器直接复制文字的方法</h2>
+		<h3>支持amd/cmd/node</h3>
+	</div>
+	<div class="content">
+		<p>使用方法：clipBordCopy("hello Copy");//执行后复制hello Copy到粘贴板</p>
+		<p>注意：部分浏览器需要配合鼠标点击等用户动作才能执行成功，这种方法一般是配合绑定用户点击事件使用</p>
+		<p><img src="img/exp.jpg"></p>
+		<p>demo:</p>
+		<p><a href="javascript:void(0);" id="copy">copy:hello Copy</a></p>
+		<p><a href="javascript:void(0);" id="copy2">copy:hello Copy2</a></p>
+	</div>
+
+<script type="text/javascript" src="js/clipBordCopy.js?x"></script>
+<script type="text/javascript">
+document.getElementById("copy").onclick = function(){
+	var result = clipBordCopy("hello Copy");
+	if(result){
+		alert("复制成功！");
+	}else{
+		alert("复制失败！");
+	}	
+}
+document.getElementById("copy2").onclick = function(){
+	var result = clipBordCopy("hello Copy2");
+	if(result){
+		alert("复制成功！");
+	}else{
+		alert("复制失败！");
+	}
+}
+//1.todo amd cmd等支持
+//2.createDom
+//3.select
+//4.copy
+//5.delDom
+
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=750, user-scalable=no, target-densitydpi=device-dpi"><!-- width取值与页面定义的宽度一致 -->
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<title>标题</title>
+<link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+<pre>
+	<!--
+1.目前只有ios7+、winphone8+支持自动播放
+2.支持Airplay的设备（如：音箱、Apple TV)播放
+x-webkit-airplay="true" 
+3.播放视频不全屏，ios7、、winphone8+支持，部分android4+支持（含华为、小米、魅族）
+webkit-playsinline="true" 
+4.ios 10 : playsinline
+5.ios 8、9 ：https://github.com/bfred-it/iphone-inline-video
+-->
+<video x-webkit-airplay="true" webkit-playsinline="true" preload="auto" autoplay src="http://"></video>
+<video playsinline preload="auto" autoplay src="http://"></video>
+</pre>
+</body>
+
+</html>

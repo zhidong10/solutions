@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=640,minimum-scale=0,maximum-scale=5,user-scalable=no"/>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>测试新增非全屏属性是否影响视频播放</title>
+    <script>
+        if(navigator.appVersion.indexOf('Android') != -1){
+            document.addEventListener("DOMContentLoaded",function(e){
+                document.getElementsByTagName('body')[0].style.zoom = e.target.activeElement.clientWidth/640;
+            });
+        };
+    </script>
+    <style type="text/css">
+    body{font-size: 21px;}
+    p{padding: 0 20px; line-height: 30px;}
+    .button{width: 150px; height: 40px; margin: 50px; text-align: center; border-radius: 5px; background: #f66; color: #fff; line-height: 40px;}
+    </style>
+</head>
+
+<body>
+
+<script type="text/javascript">
+function androidInputBugFix(){
+    // .container 设置了 overflow 属性, 导致 Android 手机下输入框获取焦点时, 输入法挡住输入框的 bug
+    // 相关 issue: https://github.com/weui/weui/issues/15
+    // 解决方法:
+    // 0. .container 去掉 overflow 属性, 但此 demo 下会引发别的问题
+    // 1. 参考 http://stackoverflow.com/questions/23757345/android-does-not-correctly-scroll-on-input-focus-if-not-body-element
+    //    Android 手机下, input 或 textarea 元素聚焦时, 主动滚一把
+    if (/Android/gi.test(navigator.userAgent)) {
+        window.addEventListener('resize', function () {
+            if (document.activeElement.tagName == 'INPUT' || document.activeElement.tagName == 'TEXTAREA') {
+                window.setTimeout(function () {
+                    document.activeElement.scrollIntoViewIfNeeded();
+                }, 0);
+            }
+        })
+    }
+}
+</script>
+</body>
+</html>

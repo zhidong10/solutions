@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>css3双面翻转</title>
+</head>
+<style type="text/css">
+.game {
+    display: block;
+    width: 320px;
+    height: 200px;
+    padding-top: 100px;
+    margin:0 auto;
+}
+.game a {
+    display: block;
+    width: 320px;
+    height: 200px;
+    position: relative;
+    -webkit-transform: perspective(1000px);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform: perspective(1000px);
+    -moz-transform-style: preserve-3d;
+    -ms-transform: perspective(1000px);
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.game a:hover {
+    z-index: 20;
+}
+.game a:hover .back {
+    z-index: 10;
+}
+.game img {
+    vertical-align: top;
+}
+
+.game .back {
+    cursor: pointer;
+    backface-visibility: hidden;
+    width: 320px;
+    height: 200px;
+    background: #000;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.game a:hover .back {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg)
+    display:block;
+}
+.game a:hover .front {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg)
+}
+.front, .back {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 0.6s;
+    -moz-transition: 0.6s;
+    -o-transition: 0.6s;
+    -ms-transition: 0.6s;
+    transition: 0.6s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    display: table;
+    background-size: cover;
+    background-position: center
+}
+.front {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg)
+}
+.back {
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg)
+}
+
+</style>
+<body>
+    <div class="game">
+        <a class="new_game" href="javascript:void(0);">
+            <div class="back">
+                <div class="text"><img src="http://i0.cy.com/wf/pic/2015/0902/main_a3.jpg" width="320" height="200" ></div>
+                <!--<p>8月7日超能内测 </p>-->
+            </div>
+            <div class="front">
+                <div class="text"><img src="http://i0.cy.com/wf/pic/2015/0902/main_a2.jpg" width="320" height="200" ></div>
+            </div>
+        </a>
+    </div>
+</body>
+</html>

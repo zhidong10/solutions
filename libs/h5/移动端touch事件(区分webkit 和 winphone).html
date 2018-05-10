@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<meta content="email=no" name="format-detection">
+<title>标题</title>
+<style type="text/css">
+html{font-size:10px}
+@media screen and (min-width:321px) and (max-width:375px){html{font-size:11px}}
+@media screen and (min-width:376px) and (max-width:414px){html{font-size:12px}}
+@media screen and (min-width:415px) and (max-width:639px){html{font-size:15px}}
+@media screen and (min-width:640px) and (max-width:719px){html{font-size:20px}}
+@media screen and (min-width:720px) and (max-width:749px){html{font-size:22.5px}}
+@media screen and (min-width:750px) and (max-width:799px){html{font-size:23.5px}}
+@media screen and (min-width:800px){html{font-size:25px}}
+</style>
+</head>
+
+<body>
+<h3>移动端touch事件(区分webkit 和 winphone)</h3>
+<p>当用户手指放在移动设备在屏幕上滑动会触发的touch事件</p>
+<p><strong>以下支持webkit</strong></p>
+<ul>
+    <li>touchstart&mdash;&mdash;当手指触碰屏幕时候发生。不管当前有多少只手指</li>
+    <li>touchmove&mdash;&mdash;当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用event的preventDefault()可以阻止默认情况的发生：阻止页面滚动</li>
+    <li>touchend&mdash;&mdash;当手指离开屏幕时触发</li>
+    <li>touchcancel&mdash;&mdash;系统停止跟踪触摸时候会触发。例如在触摸过程中突然页面alert()一个提示框，此时会触发该事件，这个事件比较少用</li>
+</ul>
+<p>TouchEvent</p>
+<ul>
+    <li>touches：屏幕上所有手指的信息</li>
+    <li>targetTouches：手指在目标区域的手指信息</li>
+    <li>changedTouches：最近一次触发该事件的手指信息</li>
+    <li>touchend时，touches与targetTouches信息会被删除，changedTouches保存的最后一次的信息，最好用于计算手指信息</li>
+</ul>
+<p>参数信息(changedTouches[0])</p>
+<ul>
+    <li>clientX、clientY在显示区的坐标</li>
+    <li>target：当前元素</li>
+</ul>
+<p>参考：<a href="https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent" target="_blank">https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent</a></p>
+<p><strong>以下支持winphone 8</strong></p>
+<ul>
+    <li>MSPointerDown&mdash;&mdash;当手指触碰屏幕时候发生。不管当前有多少只手指</li>
+    <li>MSPointerMove&mdash;&mdash;当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用css的html{-ms-touch-action: none;}可以阻止默认情况的发生：阻止页面滚动</li>
+    <li>MSPointerUp&mdash;&mdash;当手指离开屏幕时触发</li>
+</ul>
+<h3>移动端click屏幕产生200-300 ms的延迟响应</h3>
+<p>移动设备上的web网页是有300ms延迟的，玩玩会造成按钮点击延迟甚至是点击失效。</p>
+<p>以下是历史原因，来源一个公司内一个同事的分享：</p>
+<p>2007年苹果发布首款iphone上IOS系统搭载的safari为了将适用于PC端上大屏幕的网页能比较好的展示在手机端上，使用了双击缩放(double tap to zoom)的方案，比如你在手机上用浏览器打开一个PC上的网页，你可能在看到页面内容虽然可以撑满整个屏幕，但是字体、图片都很小看不清，此时可以快速双击屏幕上的某一部分，你就能看清该部分放大后的内容，再次双击后能回到原始状态。</p>
+<p>双击缩放是指用手指在屏幕上快速点击两次，iOS 自带的 Safari 浏览器会将网页缩放至原始比例。</p>
+<p>原因就出在浏览器需要如何判断快速点击上，当用户在屏幕上单击某一个元素时候，例如跳转链接&lt;a href="#"&gt;&lt;/a&gt;，此处浏览器会先捕获该次单击，但浏览器不能决定用户是单纯要点击链接还是要双击该部分区域进行缩放操作，所以，捕获第一次单击后，浏览器会先Hold一段时间t，如果在t时间区间里用户未进行下一次点击，则浏览器会做单击跳转链接的处理，如果t时间里用户进行了第二次单击操作，则浏览器会禁止跳转，转而进行对该部分区域页面的缩放操作。那么这个时间区间t有多少呢？在IOS safari下，大概为300毫秒。这就是延迟的由来。造成的后果用户纯粹单击页面，页面需要过一段时间才响应，给用户慢体验感觉，对于web开发者来说是，页面js捕获click事件的回调函数处理，需要300ms后才生效，也就间接导致影响其他业务逻辑的处理。</p>
+<p>解决方案：</p>
+<ul>
+    <li>fastclick可以解决在手机上点击事件的300ms延迟</li>
+    <li>zepto的touch模块，tap事件也是为了解决在click的延迟问题</li>
+</ul>
+<h3>触摸事件的响应顺序</h3>
+<div class="cnblogs_code">
+    <pre>1、ontouchstart 
+2、ontouchmove 
+3、ontouchend 
+4、onclick</pre>
+</div>
+<p>解决300ms延迟的问题，也可以通过绑定ontouchstart事件，加快对事件的响应</p>
+<div id="inp"></div>
+<script type="text/javascript">
+	function load (){  
+   
+    document.addEventListener('touchstart',touch, false);  
+    document.addEventListener('touchmove',touch, false);  
+    document.addEventListener('touchend',touch, false);  
+       
+    function touch (event){  
+        var event = event || window.event;  
+           
+        var oInp = document.getElementById("inp");  
+   
+        switch(event.type){  
+            case "touchstart":  
+                console.log("Touch started (" + event.touches[0].clientX + "," + event.touches[0].clientY + ")");  
+                break;  
+            case "touchend":  
+                console.log("<br>Touch end (" + event.changedTouches[0].clientX + "," + event.changedTouches[0].clientY + ")");  
+                break;  
+            case "touchmove":  
+                event.preventDefault();  
+                console.log("<br>Touch moved (" + event.touches[0].clientX + "," + event.touches[0].clientY + ")");  
+                break;  
+        }  
+           
+    }  
+}  
+window.addEventListener('load',load, false);  	
+
+
+</script>
+</body>
+</html>

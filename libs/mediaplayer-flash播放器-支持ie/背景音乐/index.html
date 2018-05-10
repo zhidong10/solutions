@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Overview The JWPlayer Skin</title>
+<style type="text/css">
+body, button, option, select{
+	font:normal normal 12px/22px Tahoma, Geneva, sans-serif;
+}
+/*背景播放，不可隐藏，但可以偏移到页面看不到的地方*/
+#player2{position: absolute; width: 200px; height: 1px; left: -9999px; top: 0;overflow: hidden;}
+</style>
+</head>
+
+<body>
+背景音乐播放 
+<div id="player2">
+	<span id="replaced2"></span>
+</div>
+<script type="text/javascript" src="http://www.changyou.com/scripts/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.changyou.com/js/swfobject.js"></script>
+<script type="text/javascript">
+$(function(){
+var playFlash2 = function(skin){
+	swfobject.embedSWF('flash/player.swf', 'replaced2', '500', '400', '7','flash/expressInstall.swf',
+		{
+			file      : 'mp3/overview.mp3',
+			//skin      : skin,
+			repeat:"always",
+			autostart : "true",	 
+		 	wmode     : 'transparent',
+			allowfullscreen   : 'false'
+	   });
+	}
+	playFlash2("bluemetal")
+});
+</script>
+</body>
+</html>

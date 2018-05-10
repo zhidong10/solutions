@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	#allMap{width: 300px;height: 200px;}
+		
+	</style>
+</head>
+<body>
+	<script src="http://static.loji.com/js/pc/jquery-1.11.0.min.js"></script>
+	<script src="http://api.map.baidu.com/api?v=2.0&ak=Gb8I7MVDMASK8l9oESQlLzul" type="text/javascript" /></script>
+	<div id="allMap" data-lat="23.09" data-lng="113.294"></div>
+	<script type="text/javascript">
+		function showMyPoint(){
+	var map = new BMap.Map("allMap");
+	var myGeo = new BMap.Geocoder();
+	
+	var _lat = $("#allMap").attr("data-lat");
+	var _lng = $("#allMap").attr("data-lng");
+	var address = $("#addressString").text().replace(/\//g,"");
+	
+	if(_lat!="" && _lng!=""){
+		// 百度地图API功能
+		var map = new BMap.Map("allMap");    // 创建Map实例
+		var marker = new BMap.Marker(new BMap.Point(_lng,_lat)); // 创建点
+		map.centerAndZoom(new BMap.Point(_lng,_lat), 14);  // 初始化地图,设置中心点坐标和地图级别
+		map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+		map.addOverlay(marker);            //增加点
+	}else{
+		myGeo.getPoint(address, function(point) {
+	     	var addressNow = new BMap.Point(point.lng, point.lat);
+	        map.centerAndZoom(addressNow, 11);
+	        var marker = new BMap.Marker(address);
+	        map.addOverlay(marker);
+		});
+	}
+}
+
+showMyPoint();
+	</script>
+</body>
+</html>

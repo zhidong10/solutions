@@ -1,0 +1,380 @@
+
+<HTML><HEAD><TITLE>MSClass (Class Of Marquee Scroll通用不间断滚动JS封装类) Ver 1.6</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<STYLE>A {
+	FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+BODY {
+	FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+SELECT {
+	FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+A {
+	COLOR: #808080
+}
+PRE {
+	COLOR: #808080
+}
+BODY {
+	BACKGROUND: #efefef
+}
+</STYLE>
+
+<META content="MSHTML 6.00.2900.3020" name=GENERATOR></HEAD>
+<BODY><PRE>/*MSClass (Class Of Marquee Scroll通用不间断滚动JS封装类) Ver 1.6*\
+
+　制作时间:2006-08-29 (Ver 0.5)
+　发布时间:2006-08-31 (Ver 0.8)
+　更新时间:2007-01-31 (Ver 1.6)
+　更新说明: + 加入功能 * 修正、完善
+	1.6.070131
+		+ 禁止鼠标控制暂停或继续 (将第9个参数设置为-1或者动态赋值将ScrollSetp设置为-1)
+		+ 判断是否可以滚动 (若内容区域小于显示区域,则自动取消滚动)
+		+ 跳过初始化错误 (避免引起其它滚动的停止)
+		+ 默认值 (除容器ID必选外，其他参数均可根据情况进行选择设置)
+		+ 参数动态赋值 (方向可用英文表示top|bottom|left|right,使其更直观、方便)
+		* 文字滚动不准确 (本次更新主要目的解决此Bug,感谢周珺参与测试)
+	1.4.061211
+		+ 鼠标悬停改变滚动方向 (鼠标悬停控制左右滚动)
+		* 由于文档下载过慢而导致获取的高度/宽度不准确
+		* 浏览器兼容问题 (IE、FF、Opera、NS、MYIE)
+	1.2.060922
+		+ 指定范围间歇滚动
+		* 程序调整
+		* 连续间歇滚动停止的错误
+	1.0.060901
+		+ 向下、向右滚动
+		+ 开始等待时间
+		+ 连续滚动
+		* 调整时间单位
+		* 滚动误差
+		* 随机死循环
+		* 加强性能
+		* 程序优化
+	0.8.060829
+		  翻屏不间断向上、向左滚动
+
+
+　应用说明:页面包含&lt;script type="text/javascript" src="MSClass.js"&gt;&lt;/script&gt;
+	
+	创建实例:
+		//参数直接赋值法
+		new Marquee("marquee")
+		new Marquee("marquee","top")
+		......
+		new Marquee("marquee",0,1,760,52)
+		new Marquee("marquee","top",1,760,52,50,5000)
+		......
+		new Marquee("marquee",0,1,760,104,50,5000,3000,52)
+		new Marquee("marquee",null,null,760,104,null,5000,null,-1)
+
+		//参数动态赋值法
+		var marquee1 = new Marquee("marquee")	*此参数必选
+		marquee1.Direction = "top";	或者	marquee1.Direction = 0;
+		marquee1.Step = 1;
+		marquee1.Width = 760;
+		marquee1.Height = 52;
+		marquee1.Timer = 50;
+		marquee1.DelayTime = 5000;
+		marquee1.WaitTime = 3000;
+		marquee1.ScrollStep = 52;
+		marquee1.Start();
+
+	参数说明:
+		ID		"marquee"	容器ID		(必选)
+		Direction	(0)		滚动方向	(可选,默认为0向上滚动) 可设置的值包括:0,1,2,3,"top","bottom","left","right" (0向上 1向下 2向左 3向右)
+		Step		(1)		滚动的步长	(可选,默认值为2,数值越大,滚动越快)
+		Width		(760)		容器可视宽度	(可选,默认值为容器初始设置的宽度)
+		Height		(52)		容器可视高度	(可选,默认值为容器初始设置的高度)
+		Timer		(50)		定时器		(可选,默认值为30,数值越小,滚动的速度越快,1000=1秒,建议不小于20)
+		DelayTime	(5000)		间歇停顿延迟时间(可选,默认为0不停顿,1000=1秒)
+		WaitTime	(3000)		开始时的等待时间(可选,默认或0为不等待,1000=1秒)
+		ScrollStep	(52)		间歇滚动间距	(可选,默认为翻屏宽/高度,该数值与延迟均为0则为鼠标悬停控制,-1禁止鼠标控制)
+
+　使用建议:
+		1、建议直接赋予容器的显示区域的宽度和高度，如(&lt;div id="marquee" style="width:760px;height:52px;"&gt;......&lt;/div&gt;)
+		2、建议为容器添加样式overflow = auto，如(&lt;div id="marquee" style="width:760px;height:52px;overflow:auto;"&gt;......&lt;/div&gt;)
+		3、为了更准确的获取滚动区域的宽度和高度，请尽可能将各滚动单位直接赋予正确宽高度
+		4、对于TABLE标记的横向滚动，需要对TABLE添加样式display = inline，如(&lt;div id="marquee" style="width:760px;height:52px;overflow:auto;"&gt;&lt;table style="display:inline"&gt;......&lt;/table&gt;&lt;/div&gt;)
+		5、对于翻屏滚动或间歇滚动，要注意各滚动单位间的间距，同时需要对容器的可视高度和可视宽度做好准确的设置，对于各滚动单位间的间距可以通过设置行间距或者单元格的高宽度来进行调整
+		6、对于LI自动换行的问题暂时没有更好的解决办法，建议将其转换成表格(TABLE)的形式来达到同等的效果
+		7、针对横向滚动的文字段落，如果最末端是以空格" "结束的，请将空格" "转换成"&nbsp;"
+		8、鼠标悬停滚动思想源自Flash，所以有一定的局限性（容器内仅允许用图片&lt;img&gt;或者带链接的图片&lt;a&gt;&lt;img&gt;&lt;/a&gt;的形式，并需要禁止其自动换行）
+
+　感　　谢:
+	周珺 zhoujun#yuchengtech.com (文字滚动跳行的bug) 2007/01/31
+	自本程序发布以来，收到不少朋友的邮件，提出了很多意见和建议，感谢大家的支持！
+</PRE>
+<SCRIPT language=javascript src="script/MSClass.js"></SCRIPT>
+<BR>
+<FIELDSET 
+style="PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px"><LEGEND>不间断滚动实例</LEGEND>
+<CENTER>禁止鼠标控制暂停或滚动 
+<DIV id=textnomouse style="BORDER-RIGHT: #c0c0c0 1px solid; BORDER-TOP: #c0c0c0 1px solid; OVERFLOW: hidden; BORDER-LEFT: #c0c0c0 1px solid; WIDTH: 760px; BORDER-BOTTOM: #c0c0c0 1px solid; HEIGHT: 42px; TEXT-ALIGN: left">
+文字滚动测试1<BR>文字滚动测试2<BR>文字滚动测试3<BR>如有其它意见及建议请Email<BR>
+</DIV>
+<BR><BR>鼠标悬停滚动 
+<NOBR>
+<DIV id=marqueedivmouse style="OVERFLOW: auto; WIDTH: 760px"><IMG height=50 
+hspace=1 
+src="images/yaode.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/qtrjczh.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/gucang.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/bmfd.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/guangming.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/liangan.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/klk.gif" 
+width=150 border=0><IMG 
+style="BORDER-LEFT-COLOR: #cccccc; BORDER-BOTTOM-COLOR: #cccccc; BORDER-TOP-COLOR: #cccccc; BORDER-RIGHT-COLOR: #cccccc" 
+height=50 hspace=1 
+src="images/old.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/yangyang.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/hanch.gif" 
+width=150 border=0></DIV></NOBR><BR><BR>文字翻屏滚动 
+<DIV id=textdiv style="BORDER-RIGHT: #c0c0c0 1px solid; BORDER-TOP: #c0c0c0 1px solid; OVERFLOW: hidden; BORDER-LEFT: #c0c0c0 1px solid; WIDTH: 760px; BORDER-BOTTOM: #c0c0c0 1px solid; HEIGHT: 42px; TEXT-ALIGN: left">
+文字滚动测试1<BR>文字滚动测试2<BR>文字滚动测试3<BR>如有其它意见及建议请Email<BR></DIV>
+<BR><BR>文字间歇滚动 
+
+<DIV id=textdiv1 style="BORDER-RIGHT: #c0c0c0 1px solid; BORDER-TOP: #c0c0c0 1px solid; OVERFLOW: hidden; BORDER-LEFT: #c0c0c0 1px solid; WIDTH: 760px; BORDER-BOTTOM: #c0c0c0 1px solid; HEIGHT: 42px; TEXT-ALIGN: left">
+文字滚动测试1<BR>文字滚动测试2<BR>文字滚动测试3<BR>如有其它意见及建议请Email<BR></DIV>
+<BR><BR>向上翻屏滚动 
+
+<DIV id=marqueediv1 style="OVERFLOW: hidden; WIDTH: 760px; HEIGHT: 52px">
+<TABLE cellSpacing=0 cellPadding=0 width=760 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=center align=middle height=52><IMG height=50 hspace=1 
+      src="images/yaode.gif" 
+      width=150 border=0><IMG height=50 hspace=1 
+      src="images/qtrjczh.gif" 
+      width=150 border=0><IMG height=50 hspace=1 
+      src="images/gucang.gif" 
+      width=150 border=0><IMG height=50 hspace=1 
+      src="images/bmfd.gif" 
+      width=150 border=0><IMG height=50 hspace=1 
+      src="images/guangming.gif" 
+      width=150 border=0></TD></TR>
+  <TR>
+    <TD vAlign=center align=middle height=52><IMG height=50 hspace=1 
+      src="images/liangan.gif" 
+      width=150 border=0><IMG height=50 hspace=1 
+      src="images/klk.gif" 
+      width=150 border=0><IMG 
+      style="BORDER-LEFT-COLOR: #cccccc; BORDER-BOTTOM-COLOR: #cccccc; BORDER-TOP-COLOR: #cccccc; BORDER-RIGHT-COLOR: #cccccc" 
+      height=50 hspace=1 
+      src="images/old.gif" 
+      width=150 border=0><IMG height=50 hspace=1 
+      src="images/yangyang.gif" 
+      width=150 border=0><IMG height=50 hspace=1 
+      src="images/hanch.gif" 
+      width=150 border=0></TD></TR></TBODY></TABLE></DIV><BR><BR>向下翻屏滚动 
+<DIV id=marqueediv2 style="OVERFLOW: hidden; WIDTH: 760px; HEIGHT: 52px">
+<TABLE cellSpacing=0 cellPadding=0 width=760 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=center align=middle height=52><IMG height=50 hspace=1 
+      src="images/yaode.gif" 
+      width=150 border=0><IMG height=50 hspace=1 
+      src="images/qtrjczh.gif" 
+      width=150 border=0><IMG height=50 hspace=1 
+      src="images/gucang.gif" 
+      width=150 border=0><IMG height=50 hspace=1 
+      src="images/bmfd.gif" 
+      width=150 border=0><IMG height=50 hspace=1 
+      src="images/guangming.gif" 
+      width=150 border=0></TD></TR>
+  <TR>
+    <TD vAlign=center align=middle height=52><IMG height=50 hspace=1 
+      src="images/liangan.gif" 
+      width=150 border=0><IMG height=50 hspace=1 
+      src="images/klk.gif" 
+      width=150 border=0><IMG 
+      style="BORDER-LEFT-COLOR: #cccccc; BORDER-BOTTOM-COLOR: #cccccc; BORDER-TOP-COLOR: #cccccc; BORDER-RIGHT-COLOR: #cccccc" 
+      height=50 hspace=1 
+      src="images/old.gif" 
+      width=150 border=0><IMG height=50 hspace=1 
+      src="images/yangyang.gif" 
+      width=150 border=0><IMG height=50 hspace=1 
+      src="images/hanch.gif" 
+      width=150 border=0></TD></TR></TBODY></TABLE></DIV><BR><BR>向左翻屏滚动 <NOBR>
+<DIV id=marqueediv3 style="OVERFLOW: hidden; WIDTH: 760px; HEIGHT: 52px"><IMG 
+height=50 hspace=1 
+src="images/yaode.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/qtrjczh.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/gucang.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/bmfd.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/guangming.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/liangan.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/klk.gif" 
+width=150 border=0><IMG 
+style="BORDER-LEFT-COLOR: #cccccc; BORDER-BOTTOM-COLOR: #cccccc; BORDER-TOP-COLOR: #cccccc; BORDER-RIGHT-COLOR: #cccccc" 
+height=50 hspace=1 
+src="images/old.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/yangyang.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/hanch.gif" 
+width=150 border=0></DIV></NOBR><BR><BR>向右翻屏滚动 <NOBR>
+<DIV id=marqueediv4 style="OVERFLOW: hidden; WIDTH: 760px; HEIGHT: 52px"><IMG 
+height=50 hspace=1 
+src="images/yaode.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/qtrjczh.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/gucang.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/bmfd.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/guangming.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/liangan.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/klk.gif" 
+width=150 border=0><IMG 
+style="BORDER-LEFT-COLOR: #cccccc; BORDER-BOTTOM-COLOR: #cccccc; BORDER-TOP-COLOR: #cccccc; BORDER-RIGHT-COLOR: #cccccc" 
+height=50 hspace=1 
+src="images/old.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/yangyang.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/hanch.gif" 
+width=150 border=0></DIV></NOBR><BR><BR>向上连续滚动 
+<DIV id=marqueediv5 style="OVERFLOW: hidden; WIDTH: 760px; HEIGHT: 52px">
+<TABLE cellSpacing=0 cellPadding=0 width=760 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=center align=middle height=52><IMG height=50 hspace=1 
+      src="images/yaode.gif" 
+      width=150 border=0><IMG height=50 hspace=1 
+      src="images/qtrjczh.gif" 
+      width=150 border=0><IMG height=50 hspace=1 
+      src="images/gucang.gif" 
+      width=150 border=0><IMG height=50 hspace=1 
+      src="images/bmfd.gif" 
+      width=150 border=0><IMG height=50 hspace=1 
+      src="images/guangming.gif" 
+      width=150 border=0></TD></TR>
+  <TR>
+    <TD vAlign=center align=middle height=52><IMG height=50 hspace=1 
+      src="images/liangan.gif" 
+      width=150 border=0><IMG height=50 hspace=1 
+      src="images/klk.gif" 
+      width=150 border=0><IMG 
+      style="BORDER-LEFT-COLOR: #cccccc; BORDER-BOTTOM-COLOR: #cccccc; BORDER-TOP-COLOR: #cccccc; BORDER-RIGHT-COLOR: #cccccc" 
+      height=50 hspace=1 
+      src="images/old.gif" 
+      width=150 border=0><IMG height=50 hspace=1 
+      src="images/yangyang.gif" 
+      width=150 border=0><IMG height=50 hspace=1 
+      src="images/hanch.gif" 
+      width=150 border=0></TD></TR></TBODY></TABLE></DIV><BR><BR>向左连续滚动 <NOBR>
+<DIV id=marqueediv6 style="OVERFLOW: hidden; WIDTH: 760px; HEIGHT: 52px"><IMG 
+height=50 hspace=1 
+src="images/yaode.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/qtrjczh.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/gucang.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/bmfd.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/guangming.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/liangan.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/klk.gif" 
+width=150 border=0><IMG 
+style="BORDER-LEFT-COLOR: #cccccc; BORDER-BOTTOM-COLOR: #cccccc; BORDER-TOP-COLOR: #cccccc; BORDER-RIGHT-COLOR: #cccccc" 
+height=50 hspace=1 
+src="images/old.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/yangyang.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/hanch.gif" 
+width=150 border=0></DIV></NOBR><BR><BR>向上间歇滚动 
+<DIV id=marqueediv7 style="OVERFLOW: hidden; WIDTH: 760px; HEIGHT: 52px">
+<TABLE cellSpacing=0 cellPadding=0 width=760 align=center border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=center align=middle height=52><IMG height=50 hspace=1 
+      src="images/yaode.gif" 
+      width=150 border=0><IMG height=50 hspace=1 
+      src="images/qtrjczh.gif" 
+      width=150 border=0><IMG height=50 hspace=1 
+      src="images/gucang.gif" 
+      width=150 border=0><IMG height=50 hspace=1 
+      src="images/bmfd.gif" 
+      width=150 border=0><IMG height=50 hspace=1 
+      src="images/guangming.gif" 
+      width=150 border=0></TD></TR>
+  <TR>
+    <TD vAlign=center align=middle height=52><IMG height=50 hspace=1 
+      src="images/liangan.gif" 
+      width=150 border=0><IMG height=50 hspace=1 
+      src="images/klk.gif" 
+      width=150 border=0><IMG 
+      style="BORDER-LEFT-COLOR: #cccccc; BORDER-BOTTOM-COLOR: #cccccc; BORDER-TOP-COLOR: #cccccc; BORDER-RIGHT-COLOR: #cccccc" 
+      height=50 hspace=1 
+      src="images/old.gif" 
+      width=150 border=0><IMG height=50 hspace=1 
+      src="images/yangyang.gif" 
+      width=150 border=0><IMG height=50 hspace=1 
+      src="images/hanch.gif" 
+      width=150 border=0></TD></TR></TBODY></TABLE></DIV><BR><BR>向左间歇滚动 <NOBR>
+<DIV id=marqueediv8 style="OVERFLOW: hidden; WIDTH: 760px; HEIGHT: 52px"><IMG 
+height=50 hspace=1 
+src="images/yaode.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/qtrjczh.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/gucang.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/bmfd.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/guangming.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/liangan.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/klk.gif" 
+width=150 border=0><IMG 
+style="BORDER-LEFT-COLOR: #cccccc; BORDER-BOTTOM-COLOR: #cccccc; BORDER-TOP-COLOR: #cccccc; BORDER-RIGHT-COLOR: #cccccc" 
+height=50 hspace=1 
+src="images/old.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/yangyang.gif" 
+width=150 border=0><IMG height=50 hspace=1 
+src="images/hanch.gif" 
+width=150 border=0></DIV></NOBR><BR><BR></CENTER>
+<SCRIPT defer>
+var marquee1=new Marquee("textnomouse")
+marquee1.ScrollStep=-1;
+marquee1.Start();
+
+new Marquee("marqueedivmouse",2,4,760,52,20,0,3000,0)
+new Marquee("textdiv",0,1,760,42,20,4000,500)
+new Marquee("textdiv1",0,1,760,42,20,4000,5000,14)
+new Marquee("marqueediv1",0,1,760,52,50,4000,500)
+new Marquee("marqueediv2",1,2,760,52,50,4000,500)
+new Marquee("marqueediv3",2,20,760,50,20,4000,5000)
+new Marquee("marqueediv4",3,10,760,52,20,4000,500)
+new Marquee("marqueediv5",0,1,760,52,30,0,0)
+new Marquee("marqueediv6",2,1,760,52,20,0,0)
+new Marquee("marqueediv7",0,1,760,104,50,4000,500,52)
+new Marquee("marqueediv8",2,20,760,50,20,4000,5000,152)
+</SCRIPT>
+</FIELDSET> <BR></BODY></HTML>

@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=640,minimum-scale=0,maximum-scale=5,user-scalable=no"/>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>测试新增非全屏属性是否影响视频播放</title>
+    <script>
+        if(navigator.appVersion.indexOf('Android') != -1){
+            document.addEventListener("DOMContentLoaded",function(e){
+                document.getElementsByTagName('body')[0].style.zoom = e.target.activeElement.clientWidth/640;
+            });
+        };
+    </script>
+    <style type="text/css">
+    body{font-size: 21px;}
+    p{padding: 0 20px; line-height: 30px;}
+    .button{width: 150px; height: 40px; margin: 50px; text-align: center; border-radius: 5px; background: #f66; color: #fff; line-height: 40px;}
+    </style>
+</head>
+
+<body>
+    <div id="btn" class="button">点击播放视频</div>
+    <div>
+        <p>1.测试安卓和ihpone里面(微信和手机自带浏览器浏览图)视频是否都能播放</p>
+        <p>2.测试安卓和ihpone里面(微信和手机自带浏览器浏览图)视频是否上下垂直居中播放（安卓微信、qq等X5内核浏览器，会自动全屏，能正常播放就行）</p>
+        <p>3.是否发现其他影响观看的情况</p>
+    </div>
+    <div>
+        <p>测试增加非全屏播放属性，是否影响视频播放</p>
+        <p>x-webkit-airplay="true" webkit-playsinline="true" playsinline="true"</p>
+     </div>
+    <div id="vbox" style="display:none; position: fixed; z-index: 999999; left: 0px; right: 0px; top: 0px; bottom: 0px; background: rgba(0, 0, 0, 0.74902);"><video x-webkit-airplay="true" webkit-playsinline="true" playsinline="true"  id="vv" src="" style="position: absolute; width: 100%; left: 0px; right: 0px; top: 50%; height: 360px; margin-top: -180px;"></video></div>
+    <script type="text/javascript">
+        var video = document.getElementById('vv');
+        var vobx = document.getElementById('vbox');
+        var btn = document.getElementById('btn');
+        function showVideo(){
+            vobx.style.display="block";
+            video.src="https://tx3.v.netease.com/2017/0104/ae91b59d76d346d77aa284efaf87528fqt.mp4"
+            video.load();
+            video.play();
+        }
+        function hideVideo(){
+            video.pause();
+            //video.src="https://tx3.v.netease.com/2017/0104/ae91b59d76d346d77aa284efaf87528fqt.mp4";
+            //video.load();
+            vobx.style.display="none";
+        }
+        video.addEventListener("click",function(){
+            if(this.paused){
+                this.play();
+            }else{
+                this.pause();
+            }
+            console.log(event)
+            event.stopImmediatePropagation();//阻止冒泡
+        })
+        vobx.addEventListener("click",hideVideo);
+        btn.addEventListener("click",showVideo,false);
+    </script>
+</body>
+</html>

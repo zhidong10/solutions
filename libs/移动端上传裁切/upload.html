@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>设置头像</title>
+		<meta name="Keywords" content="" />
+		<meta name="Description" content="" />
+		<meta name="viewport" content="width=640,minimum-scale=0,maximum-scale=5,user-scalable=no"/>
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<meta content="telephone=no" name="format-detection" />
+		<meta name="author" content="Design:KanChao; Web Layout:WangHongWei;" />
+		<script>
+		    if(navigator.appVersion.indexOf('Android') != -1){
+		        document.addEventListener("DOMContentLoaded",function(e){
+		            document.getElementsByTagName('body')[0].style.zoom = e.target.activeElement.clientWidth/640;
+		        });
+		    };
+		</script>
+		<style type="text/css">
+		* { font-family: "黑体"; }
+		body, html { height: 100%; overflow: auto; }
+		html { background-color: hsla(0, 0%, 96%, 1.00); }
+		body { background: none; }
+		section { padding-top: 3rem; font-size: 0.9rem; }
+		.tarImg { width: 280px; height: 280px; border: 2px solid #ffffff;   margin: auto; margin-bottom: 50px; background-size: 100% 100% !important; background-repeat: no-repeat; background-position: center center; }
+
+		/*截图上传页面*/
+		.clipbg { position: fixed; background: black; top: 0; z-index: 999; width: 100%; height: 100%; left: 0; }
+		.loading { position: absolute; top: 20px; width: 500px; left: 70px;  z-index: 99999; text-align: center; color: #ffffff; background: #9f9f9f; }
+		.clipbg #clipArea { width: 100%; height: 100%; margin: auto; }
+		.clipbg .footer { width: 600px; position: fixed; left: 20px; bottom: 0px; text-align: center; }
+		.clipbg dl { background: #ffffff; border-radius: 10px; overflow: hidden; margin-bottom: 10px; }
+		.clipbg dd { position: relative; height: 50px; line-height: 50px; border-bottom: 1px solid #999999; }
+		.clipbg .back { height: 50px; line-height: 50px; border-radius: 10px; margin-bottom: 10px; background: #ffffff; }
+		.clipbg dd input { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 11; filter: alpha(opacity=0); opacity: 0; }
+		.displaynone { display: none; }
+		</style>
+	</head>
+	<body>
+		<section class="aui-text-center">
+			<div class="tarImg" id="headimg">设置图片1</div>
+			<div class="tarImg" id="headimg2">设置图片2</div>
+		</section>
+		<!--图片裁剪-->
+		<div class="clipbg displaynone">
+			<div id="clipArea"></div>
+			<div class="loading displaynone">正在载入图片...</div>
+			<div class="footer">
+			<dl>
+				<dd style="background: #fe1041; color: #ffffff;border: none;">打开相册<input type="file" id="file" accept="image/*" ></dd>
+      			<dd id="clipBtn">完成裁剪</dd>
+			</dl>
+			<div class="back">取消</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/camera/hammer.min.js" ></script>
+	<script type="text/javascript" src="js/camera/lrz.all.bundle.js" ></script>
+	<script type="text/javascript" src="js/camera/iscroll-zoom-min.js" ></script>
+	<script type="text/javascript" src="js/camera/PhotoClip.js" ></script>
+	<script>
+		var ImgTar = '';
+		$("#headimg").click(function(){
+			ImgTar = $("#headimg");
+			$(".clipbg").fadeIn();
+		});
+		$("#headimg2").click(function(){
+			ImgTar = $("#headimg2");
+			$(".clipbg").fadeIn();
+		})
+		/**
+		 * 设置裁剪后图片放置目标
+		 * @param {string} url 图片base64URL
+		 */
+		function ClipImg(url){
+			ImgTar.css("backgroundImage","url("+ url +")");
+		}
+
+		var clipArea = new  PhotoClip("#clipArea", {
+				size: [300, 300],//裁剪框大小
+				outputSize:[0,0],//打开图片大小，[0,0]表示原图大小
+				file: "#file",
+				ok: "#clipBtn",
+				loadStart: function() { //图片开始加载的回调函数。this 指向当前 PhotoClip 的实例对象，并将正在加载的 file 对象作为参数传入。（如果是使用非 file 的方式加载图片，则该参数为图片的 url）
+					$(".loading").removeClass("displaynone");
+
+				},
+				loadComplete: function() {//图片加载完成的回调函数。this 指向当前 PhotoClip 的实例对象，并将图片的 <img> 对象作为参数传入。
+					$(".loading").addClass("displaynone");
+
+				},
+				done: function(dataURL) { //裁剪完成的回调函数。this 指向当前 PhotoClip 的实例对象，会将裁剪出的图像数据DataURL作为参数传入。
+					//$("#headimg").css("backgroundImage","url("+ dataURL +")");
+					//console.log(dataURL);//dataURL裁剪后图片地址base64格式提交给后台处理
+					ClipImg(dataURL);
+					$(".clipbg").fadeOut();
+					clipArea.clear();
+				}
+			});
+			// 取消按钮
+			$(".back").click(function(){
+				$(".clipbg").fadeOut()
+			});
+	</script>
+</html>

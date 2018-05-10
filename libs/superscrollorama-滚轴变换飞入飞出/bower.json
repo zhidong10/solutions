@@ -1,0 +1,14 @@
+{
+  "name": "SuperScrollorama",
+  "description": "The jQuery plugin for supercool scroll animation",
+  "homepage": "http://johnpolacek.github.io/superscrollorama/",
+  "author": {
+    "name": "John Polacek",
+    "url": "http://johnpolacek.com"
+  },
+  "main": ["js/jquery.superscrollorama.js"],
+  "dependencies": {
+    "jquery": "~1.9.1",
+    "greensock-js": "~1.9.6"
+  }
+}

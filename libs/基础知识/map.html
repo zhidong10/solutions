@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>冒泡和捕获事件</title>
+	<style type="text/css">
+		.con{width: 1000px; margin:0 auto;}
+		.con1{ width: 400px; height: 400px; margin: 0 auto; background: #ccc; }
+		.con2{ width: 200px; height: 200px; margin:0 auto; margin-top: 100px; background: #fff;}
+	</style>
+</head>
+<body>
+	<div class="con">
+		<p>IE只支持事件冒泡，不支持事件捕获，它也不支持addEventListener函数，不会用第三个参数来表示是冒泡还是捕获，它提供了另一个函数attachEvent。</p>
+		<p>IE9一下浏览器不支持：addEventListener，支持attachEvent</p>
+		<p>
+		兼容性写法：
+		<pre>
+	var x = document.getElementById("myBtn");
+	if (x.addEventListener) { //所有主流浏览器，除了 IE 8 及更早 IE版本
+	    x.addEventListener("click", myFunction);
+	} else if (x.attachEvent) { // IE 8 及更早 IE 版本
+	    x.attachEvent("onclick", myFunction);
+	}
+		</pre>
+		</p>
+		<p>
+			事件冒泡（的过程）：事件从发生的目标（event.srcElement||event.target）开始，沿着文档逐 层向上冒泡，到document为止。<br />
+			事件的传播是可以阻止的：<br />
+			• 在W3c中，使用stopPropagation()方法<br />
+			• 在IE下设置cancelBubble = true；<br />
+			在捕获的过程中stopPropagation()；后，后面的冒泡过程也不会发生了~<br />
+			3.阻止事件的默认行为，例如click <a>后的跳转~<br />
+			• 在W3c中，使用preventDefault()方法；<br />
+			• 在IE下设置window.event.returnValue = false;<br />
+			4.不是所有的事件都能冒泡，abort、error、mouseEnter、mouseLeave、resize、blur、focus、load、unload<br />
+		</p>
+	</div>
+	<div class="con1" id="box1">
+		<div>冒泡</div>
+		<div class="con2" id="box2"></div>
+	</div>
+	<div>&nbsp;</div>
+	<div class="con1" id="box3">
+		<div>捕获</div>
+		<div class="con2" id="box4"></div>
+	</div>
+	<script type="text/javascript">
+	var box1 = document.getElementById("box1");
+	var box2 = document.getElementById("box2");
+	box2.addEventListener("click",function(){
+		alert("开始冒泡！")
+	},false);
+	box1.addEventListener("click",function(e){
+		alert("二级冒泡！");
+		//阻止冒泡到document
+		e.preventDefault();
+		window.event.returnValue = false;
+		return false;
+	},false);
+	document.addEventListener("click",function(){
+		alert("冒泡到document！");
+	},false);
+	</script>
+</body>
+</html>
