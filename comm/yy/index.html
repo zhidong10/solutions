@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=750, user-scalable=no, target-densitydpi=device-dpi"> -->
+    <!-- width取值与页面定义的宽度一致 -->
+    <meta name="viewport" content="width=640, user-scalable=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>标题</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style type="text/css">
+    *{padding: 0;margin:0;}
+    html { -webkit-text-size-adjust: none; }
+    body {height: 3000px; line-height: 1.6; font-family: -apple-system-font, Helvetica Neue, sans-serif }
+    .weui-dialog__title {
+        font-weight: 400;
+        font-size: 30px
+    }
+
+.weui-mask {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .6);
+}
+
+.weui-dialog {
+    position: absolute;
+    z-index: 5000;
+    width: 520px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.weui-dialog__hd {
+    padding: 26px 32px 10px
+}
+
+.weui-dialog__bd {
+    text-align: left;
+    width: 428px;
+    margin:0 auto;
+    padding: 0 32px 16px;
+    min-height: 40px;
+    font-size: 15px;
+    line-height: 1.3;
+    word-wrap: break-word;
+    word-break: break-all;
+    color: #999
+}
+
+
+.weui-dialog__bd:first-child {
+    padding: 2.7em 20px 1.7em;
+    color: #353535
+}
+
+.weui-prompt-input {
+    padding: 4px 6px;
+    border: 1px solid #aaa;
+    box-sizing: border-box;
+    height: 50px;
+    line-height: 50px;
+    width: 400px;
+    font-size: 24px;
+    margin-top: 30px;
+}
+
+.weui-dialog__ft {
+    position: relative;
+    line-height: 48px;
+    font-size: 24px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex
+}
+
+.weui-btn {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 14px;
+    padding-right: 14px;
+    box-sizing: border-box;
+    font-size: 24px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    line-height: 2.55555556;
+    border-radius: 5px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    overflow: hidden
+}
+
+.weui-btn:after {
+    content: " ";
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid rgba(0, 0, 0, .2);
+    -webkit-transform: scale(.5);
+    transform: scale(.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    box-sizing: border-box;
+    border-radius: 10px
+}
+
+.weui-btn_inline {
+    display: inline-block
+}
+
+.weui-btn_mini {
+    display: inline-block;
+    padding: 0 26px;
+    line-height: 2.3;
+    font-size: 18px
+}
+
+.weui-btn_default {
+    color: #000;
+    background-color: #f8f8f8
+}
+
+.weui-btn_primary {
+    background-color: #1aad19
+}
+.yy-btn{width: 160px;}
+.yy-code{width: 150px;}
+.get-code-btn{ vertical-align: bottom; height: 50px; line-height: 50px; margin-left: 10px;}
+.button_sp_area{padding: 15px 0;}
+.yy-succ{padding: 50px 0; line-height: 40px; text-align: center; font-size: 24px; color: #e64340;}
+.yy-back{text-align: center;}
+.os-sel{  line-height: 34px; text-align: center; font-size: 20px;}
+.os-sel label{display: inline-block; height: 34px; line-height: 34px;}
+.os-sel em {
+    position: relative;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    margin-right: 10px;
+    border-radius: 18px;
+    font-size: 0;
+    line-height: 0;
+    border:solid 2px #aaa;
+    vertical-align: middle;
+     font-size: inherit;
+    text-rendering: auto;
+ }
+ .os-sel .active:after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    border-radius: 14px;
+    display: inline-block;
+    background: #09bb07;
+    vertical-align: middle;
+ }
+ .os-sel label{vertical-align: middle; margin-right: 20px;}
+        </style>
+    <script>
+		if (navigator.appVersion.indexOf('Android') != -1) {
+			document.addEventListener("DOMContentLoaded", function(e) {
+				document.getElementsByTagName('body')[0].style.zoom = e.target.activeElement.clientWidth / 640;
+			});
+		};
+	</script>
+</head>
+
+<body>
+内容.......内容........<br />
+内容.......内容........<br />
+内容.......内容........<br />
+内容.......内容........<br />
+内容.......内容........<br />
+内容.......内容........<br />
+内容.......内容........<br />
+内容.......内容........<br />
+内容.......内容........<br />
+内容.......内容........<br />
+内容.......内容........<br />
+内容.......内容........<br />
+内容.......内容........<br />
+内容.......内容........<br />
+内容.......内容........<br />
+<div class="js_dialog" id="androidDialog1" style="opacity: 1;">
+    <div class="weui-mask"></div>
+    <div class="weui-dialog ">
+        <div class="weui-dialog__hd"><strong class="weui-dialog__title">游戏预约</strong></div>
+        <div class="weui-dialog__bd" id="step1">
+            <div class="os-sel">                
+                <label for="android"><em class="active"></em>安卓系统</label>                
+                <label for="ios"><em></em>IOS系统</label>
+            </div>
+            <input type="text" maxlength="11" class="weui-input weui-prompt-input" id="weui-prompt-username" value="" placeholder="输入用户名">
+            <input type="password" maxlength="6" class="weui-input weui-prompt-input yy-code" id="weui-prompt-password" value="" placeholder="验证码"><a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default get-code-btn">获取验证码</a>
+            <div class="button_sp_area">
+            <a href="javascript:;" class="weui-btn weui-btn_primary yy-btn">提交</a>
+            <!-- <a href="javascript:;" class="weui-btn weui-btn_default">按钮</a> -->
+            </div>
+        </div>
+        <div class="weui-dialog__bd" id="step2" style="display:none;">
+             <p class="yy-succ">预约成功</p>
+             <div class="yy-back">
+                 <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_default ">返回</a>
+             </div>             
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="http://event.changyou.com/all/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+    $(".os-sel label").click(function(){
+        var ind = $(this).index();
+        $(".os-sel .active").removeClass("active");
+        $(this).find('em').addClass('active');
+    })
+
+</script>
+</body>
+
+</html>

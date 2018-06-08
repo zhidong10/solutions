@@ -1,0 +1,6 @@
+<object type="application/x-shockwave-flash" id="video_placeholder" width="500" height="380">
+    <param name="movie" value="http://share.vrs.sohu.com/my/v.swf&id=102570197&skinNum=8&fbarad=0&autoplay=true&sogouBtn=0&showCtrlBar=0&api_key=2b7e9d5dc22b6c6b66e770b5793c4190&co=31&topBar=0&showRecommend=0&shareBtn=0&likeBtn=0&topBarFull=0&topBarNor=0&sogouBtn=0&isListPlay=0&mainswf=1">
+    <param name="allowFullScreen" value="true">
+    <param name="allowscriptaccess" value="always">
+    <param name="wmode" value="Transparent">
+    <embed width="800" height="450" wmode="Transparent" allowfullscreen="true" allowscriptaccess="always" quality="high" src="http://share.vrs.sohu.com/my/v.swf&id=102570197&skinNum=8&fbarad=0&autoplay=true&sogouBtn=0&showCtrlBar=0&api_key=2b7e9d5dc22b6c6b66e770b5793c4190&co=31&topBar=0&showRecommend=0&shareBtn=0&likeBtn=0&topBarFull=0&topBarNor=0&sogouBtn=0&isListPlay=0&mainswf=1" type="application/x-shockwave-flash"> </object>
