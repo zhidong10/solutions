@@ -69,7 +69,7 @@ if (navigator.appVersion.indexOf('Android') != -1) { document.addEventListener("
 内容.......内容........<br />
 内容.......内容........<br />
 <div class="pop-dialog" id="Dialog1" >
-    <div class="pop-mask"></div>
+    <div class="pop-mask" id="pop-mask"></div>
     <div class="con-dialog ">
         <a href="javascript:void(0);" class="close-box"></a>
         <h3 class="pop-tit">游戏预约</h3>
@@ -192,6 +192,21 @@ var appoint = {}
             if(!this.checkCode()){
                 return;
             }
+            var urlName, qudao,order;
+            //获取页面文件名 
+            function GetPageName() 
+            { 
+                var url=window.location.href;//获取完整URL 
+                var tmp= new Array();//临时变量，保存分割字符串 
+                tmp=url.split("/");//按照"/"分割 
+                var pp = tmp[tmp.length-1];//获取最后一部分，即文件名和参数 
+                tmp=pp.split("?");//把参数和文件名分割开
+                tmp[0].split(".");
+                return tmp[0].split(".")[0]; 
+            }
+            urlName = GetPageName();
+            qudao = urlName.split('-')[0];
+            order = urlName.split('-')[1]?urlName.split('-')[1]:"kong";
             $.ajax({
                 type: "get",
                 url: "http://activity2.changyou.com/appoint/verificationCode.ncdo",
@@ -200,8 +215,9 @@ var appoint = {}
                     game: _this.conf.game,
                     actvKey: _this.conf.actv_key,
                     phone: _this.conf.phone_num,
-                    numCode: _this.conf.phone_code
-                    // col01 : mail_num,
+                    numCode: _this.conf.phone_code,
+                    col01 : qudao,
+                    col02 : order
                 },
                 success: function(data) {
                     if (data) {
@@ -223,6 +239,12 @@ var appoint = {}
         },
         init:function(){
             var _this = this;
+            var mask = document.getElementById("pop-mask");
+                mask.addEventListener("touchstart",function(e){
+                    e.preventDefault(); //标准  
+                    e.stopPropagation();
+                    return false;
+                },false)
             $("#subBtn").click(function(){
                 _this.codeSubmit();
             });
