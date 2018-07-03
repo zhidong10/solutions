@@ -1,4 +1,4 @@
-
+//预约
 var appoint = {}
     $(function(){
     appoint = {
