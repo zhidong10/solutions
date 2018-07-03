@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=750, user-scalable=no, target-densitydpi=device-dpi"> -->
+    <!-- width取值与页面定义的宽度一致 -->
+    <meta name="viewport" content="width=640, user-scalable=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>标题</title>
+    <link rel="stylesheet" href="css/reset.css">
+
+<script>
+if (navigator.appVersion.indexOf('Android') != -1) { document.addEventListener("DOMContentLoaded", function(e) { document.getElementsByTagName('body')[0].style.zoom = e.target.activeElement.clientWidth / 640; }
+); }
+;
+	</script>
+</head>
+
+<body>
+内容.......内容........<br />
+内容.......内容........<br />
+内容.......内容........<br />
+内容.......内容........<br />
+内容.......内容........<br />
+内容.......内容........<br />
+内容.......内容........<br />
+内容.......内容........<br />
+内容.......内容........<br />
+内容.......内容........<br />
+内容.......内容........<br />
+内容.......内容........<br />
+内容.......内容........<br />
+内容.......内容........<br />
+内容.......内容........<br />
+<input type="button" value="预约" style="width:200px; height:50px; line-height:50px; " id="yy-button">
+<!--#include virtual="inc/app.html"-->
+<script type="text/javascript" src="http://event.changyou.com/all/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript">
+    $("#yy-button").click(function(){
+        $("#Dialog1").show();
+        $(window).scroll();
+    });
+</script>
+</body>
+
+</html>
