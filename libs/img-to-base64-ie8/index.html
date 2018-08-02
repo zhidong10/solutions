@@ -1,0 +1,43 @@
+<html> 
+ <head> 
+  <title>图片转base64,兼容IE8+</title>
+  <meta  charset="utf-8" />
+  <meta name="author" content="徐崧">
+  <link rel="stylesheet" type="text/css" href="css/index.css" />   
+ </head> 
+ <body> 
+
+  <center>
+
+    <!-- 图片上传表单 -->
+    <form>
+      <input type="file" class="file-hook" onchange='PreviewImage(this)' style="display: none" />
+    </form>
+
+    <!-- 图片容器 -->
+    <div class="img-wrapper">
+      <!-- 图片列表 -->
+      <div class="img-list">
+       <!--  <div class="img-item">
+          <div>
+            <img src="img/xin1.jpg" width="200" height="200" alt="图片描述" />
+          </div>
+          <span class="delete-hook">删除</span>
+        </div> -->
+      </div>
+      <!-- 上传按钮 -->
+      <div class="upload-btn">
+        <button class="upload-hook">上传图片</button>
+      </div>
+    </div>
+    
+  </center>
+
+  <!-- js -->
+  <script  src="js/jquery-1.11.3.min.js"></script>
+  <!-- 插件 -->
+  <script  src="js/base64.js"></script>
+  <script  src="js/index.js"></script>
+
+ </body> 
+</html>
