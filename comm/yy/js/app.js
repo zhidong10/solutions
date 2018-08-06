@@ -7,8 +7,13 @@ var appoint = {}
             actv_key:"ldj_20180608",//活动key
             cdk_type:"",//礼包码是否相同（不填获取不同CDK）
             phone_num:"",
-            device_type:"",//手机型号（非必填）
-            phone_code:""
+            phone_code:"",
+            userId:"",//用户标志
+            deviceType:"",//手机型号（非必填）
+            cdkType:"",//礼包码是否相同（不填获取不同CDK）
+            col01:"",//其他参数1(最大32字符)
+            col02:"",//其他参数1(最大32字符)
+            col03:""//其他参数1(最大32字符)
         },
         times:"",
         time_num:60,
@@ -92,21 +97,7 @@ var appoint = {}
             if(!this.checkCode()){
                 return;
             }
-            var urlName, qudao,order;
-            //获取页面文件名 
-            function GetPageName() 
-            { 
-                var url=window.location.href;//获取完整URL 
-                var tmp= new Array();//临时变量，保存分割字符串 
-                tmp=url.split("/");//按照"/"分割 
-                var pp = tmp[tmp.length-1];//获取最后一部分，即文件名和参数 
-                tmp=pp.split("?");//把参数和文件名分割开
-                tmp[0].split(".");
-                return tmp[0].split(".")[0]; 
-            }
-            urlName = GetPageName();
-            qudao = urlName.split('-')[0];
-            order = urlName.split('-')[1]?urlName.split('-')[1]:"kong";
+            
             $.ajax({
                 type: "get",
                 url: "http://activity2.changyou.com/appoint/verificationCode.ncdo",
@@ -116,8 +107,12 @@ var appoint = {}
                     actvKey: _this.conf.actv_key,
                     phone: _this.conf.phone_num,
                     numCode: _this.conf.phone_code,
-                    col01 : qudao,
-                    col02 : order
+                    userId:_this.conf.userId,//用户标志
+                    deviceType:_this.conf.deviceType,//手机型号（非必填）
+                    cdkType:_this.conf.cdkType,//礼包码是否相同（不填获取不同CDK）
+                    col01:_this.conf.col01,//其他参数1(最大32字符)
+                    col02:_this.conf.col02,//其他参数1(最大32字符)
+                    col03:_this.conf.col03//其他参数1(最大32字符)
                 },
                 success: function(data) {
                     if (data) {
@@ -141,6 +136,7 @@ var appoint = {}
             var _this = this;
             var mask = document.getElementById("pop-mask");
             $(mask).bind('touchstart',function(e){
+                    $(window).scroll();
                     e.preventDefault(); //标准  
                     e.stopPropagation();
                     return false;
@@ -174,6 +170,26 @@ var appoint = {}
                .fadeIn();
         }
     });
+    //-------定制参数
+    var urlName, qudao,order;
+    //获取页面文件名 
+    function GetPageName() 
+    { 
+        var url=window.location.href;//获取完整URL 
+        var tmp= new Array();//临时变量，保存分割字符串 
+        tmp=url.split("/");//按照"/"分割 
+        var pp = tmp[tmp.length-1];//获取最后一部分，即文件名和参数 
+        tmp=pp.split("?");//把参数和文件名分割开
+        tmp[0].split(".");
+        return tmp[0].split(".")[0]; 
+    }
+    urlName = GetPageName();
+    qudao = urlName.split('-')[0];
+    order = urlName.split('-')[1]?urlName.split('-')[1]:"kong";
+    appoint.conf.col01 = qudao;
+    appoint.conf.col02 = order;
+    //-------定制参数
+
     appoint.init();
     $(window).scroll();
     });

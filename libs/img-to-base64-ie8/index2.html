@@ -1,0 +1,168 @@
+<html> 
+ <head> 
+  <title>图片转base64,兼容IE8+</title>
+  <meta  charset="utf-8" />
+  <meta name="author" content="徐崧">
+ </head> 
+ <body> 
+<img src="" width="200" heigth="200" id="pic" alt="">
+<!-- 图片上传表单 -->
+<input type="file" id="choosePic" accept="image/*" onchange='PreviewImage(this)' style="display: none" />
+<!-- 上传按钮 -->
+<div>
+    <button class="upload-hook">上传图片1</button>
+</div>
+
+<img src="" width="200" heigth="200" id="pic2" alt="">
+<!-- 图片上传表单 -->
+<input type="file" id="choosePic2" accept="image/*" onchange='PreviewImage2(this)' style="display: none" />
+<!-- 上传按钮 -->
+<div>
+    <button class="upload-hook2">上传图片2</button>
+</div>
+
+  <!-- js -->
+  <script  src="js/jquery-1.11.3.min.js"></script>
+  <!-- 插件 -->
+  <script type="text/javascript">
+  /*
+    图片input 对象转换base64数据，转换成功后进行回调
+  */
+  // 步骤3--------------------
+    function Base64(file,callback){
+      var baseData;
+      var fileName = file.value;
+      var strFileName = fileName.substring(fileName.lastIndexOf("\\")+1); 
+      var  fileType = strFileName.substring(strFileName.lastIndexOf(".")+1).toLowerCase();
+      //ie转换方法
+      function ieBase64(file){
+            var realPath, xmlHttp, xml_dom, tmpNode, imgData;
+            realPath = file;//获取文件的真实本地路径.
+            xmlHttp = new ActiveXObject("MSXML2.XMLHTTP");
+            xmlHttp.open("POST",realPath, false);
+            xmlHttp.send("");
+            xml_dom = new ActiveXObject("MSXML2.DOMDocument");
+            tmpNode = xml_dom.createElement("tmpNode");
+            tmpNode.dataType = "bin.base64";
+            tmpNode.nodeTypedValue = xmlHttp.responseBody;
+            imgData = "data:image/"+ "bmp" +";base64," + tmpNode.text.replace(/\n/g,"");
+            //计算文件大小
+            var str=imgData.substring(22);
+            var equalIndex= str.indexOf('=');
+            if(str.indexOf('=')>0){
+                str=str.substring(0, equalIndex);
+            }
+            var strLength=str.length;
+            var fileLength=parseInt(strLength-(strLength/8)*2);
+            if(fileLength > 5120000){//图片大于5M
+              alert("图片不能大于5M");
+              return;
+            }
+            callback(imgData);
+            //return imgData;//渲染图片
+        }
+        //其他浏览器转换方法
+        function mainBase64(file){
+            var fileReader, imgData;
+          fileReader = new FileReader();  
+            fileReader.readAsDataURL(file);  
+            fileReader.onload = function () {  
+                imgData = this.result; //base64数据
+                //计算文件大小
+                var str=imgData.substring(22);
+                var equalIndex= str.indexOf('=');
+                if(str.indexOf('=')>0){
+                    str=str.substring(0, equalIndex);
+                }
+                var strLength=str.length;
+                var fileLength=parseInt(strLength-(strLength/8)*2);
+                if(fileLength > 5120000){//图片大于5M
+                  alert("图片不能大于5M");
+                  return;
+                }
+                callback(imgData);
+            }
+        }
+      var pattern = /(\.*.jpg$)|(\.*.png$)|(\.*.jpeg$)|(\.*.gif$)|(\.*.bmp$)/;//图片格式过滤
+        if(!pattern.test(file.value)) { 
+          alert("请上传jpg/jpeg/png/gif/bmp格式的照片！");  
+          file.focus(); 
+        }else{
+           //判断浏览器类型
+           if(document.all){
+              //兼容IE
+              ieBase64(file.value);
+           }else{
+              //兼容主流浏览器 
+              mainBase64(file.files[0]);
+           }
+        }
+    }
+
+    // 步骤2-------------------
+    // input[type='file']监听函数
+    function PreviewImage(imgFile){
+      //传递的参数：input当前对象
+      Base64(imgFile, function(baseData){//回调  // 步骤5----------
+      
+      //ajax上传到服务器
+       /*$.ajax({
+             type: "POST",
+             url: "/tl/goddess2018/uploadImg.ncdo",
+             data: baseData,
+             dataType: "json",
+             success: function(data){
+              //console.log(data);
+              //$("#pic").attr("src",data.url);//设置图片上传后的地址
+             }
+         });*/
+        //本地图预览
+        var url; 
+        if (navigator.userAgent.indexOf("MSIE")>=1) { // IE >6
+            url = imgFile.value; 
+        }else{
+          url = window.URL.createObjectURL(imgFile.files.item(0)); 
+        }
+        $("#pic").attr("src",url);//ie8浏览器 base64仅显示32k数据，这里用本地地址显示。。。等ajax执行完成，这里被替换
+      });
+    }
+    // input[type='file']监听函数
+    function PreviewImage2(imgFile){
+      //传递的参数：input当前对象
+      Base64(imgFile, function(baseData){//回调  // 步骤5----------
+      
+      //ajax上传到服务器
+       /*$.ajax({
+             type: "POST",
+             url: "/tl/goddess2018/uploadImg.ncdo",
+             data: base64,
+             dataType: "json",
+             success: function(data){
+              //console.log(data);
+              //$("#pic2").attr("src",data.url);//设置图片上传后的地址
+             }
+         });*/
+        //本地图预览
+        var url; 
+        if (navigator.userAgent.indexOf("MSIE")>=1) { // IE >6
+            url = imgFile.value; 
+        }else{
+          url = window.URL.createObjectURL(imgFile.files.item(0));
+        }
+        $("#pic2").attr("src",url);//ie8浏览器 base64仅显示32k数据，这里用本地地址显示。。。等ajax执行完成，这里被替换
+      });
+    }
+
+    // 步骤1----------------
+    //点击上传，
+    $(".upload-hook").click(function(){
+      //模拟隐藏的input点击
+      $("#choosePic").click();
+    })
+    $(".upload-hook2").click(function(){
+      //模拟隐藏的input点击
+      $("#choosePic2").click();
+    })
+  </script>
+ </body> 
+</html>
