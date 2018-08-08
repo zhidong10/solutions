@@ -39,6 +39,27 @@
 		<p>demo:</p>
 		<p><a href="javascript:void(0);" id="copy">copy:hello Copy</a></p>
 		<p><a href="javascript:void(0);" id="copy2">copy:hello Copy2</a></p>
+		<br />
+		<br />
+		<br />
+		<pre>
+	document.getElementById("copy").onclick = function(){
+		var result = clipBordCopy("hello Copy");
+		if(result){
+			alert("复制成功！");
+		}else{
+			alert("复制失败！");
+		}	
+	}
+	document.getElementById("copy2").onclick = function(){
+		var result = clipBordCopy("hello Copy2");
+		if(result){
+			alert("复制成功！");
+		}else{
+			alert("复制失败！");
+		}
+	}
+		</pre>
 	</div>
 
 <script type="text/javascript" src="js/clipBordCopy.js?x"></script>
