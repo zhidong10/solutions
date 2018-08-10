@@ -66,6 +66,13 @@ document.addEventListener("WeixinJSBridgeReady", function () {
 	document.getElementById('audio').play();
 	document.getElementById('audio').pause();
 }, false);
+//处理苹果手机第一次没办法播放音乐的问题
+document.addEventListener("touchstart",autoPlayBug, false);
+function autoPlayBug(){
+	document.getElementById('audio').play();
+	document.getElementById('audio').pause();
+	document.removeEventListener("touchstart",autoPlayBug);
+}
 //获取加速度信息
 //通过监听上一步获取到的x, y, z 值在一定时间范围内的变化率，进行设备是否有进行晃动的判断。
 //而为了防止正常移动的误判，需要给该变化率设置一个合适的临界值。
@@ -103,15 +110,16 @@ function deviceMotionHandler(eventData) {
 //https://www.baidu.com/img/bd_logo1.png
 var BaseDate = {
 	url:'http://wx.qlogo.cn/mmopen/g3MonUZtNHkdmzicIlibx6iaFqAc56vxLSUfpb6n5WKSYVY0ChQKkiaJSgQ1dZuTOgvLLrhJbERQQ4eMsv84eavHiaiceqxibJxCfHe/0?'+ new Date().getTime(),//http://wx.qlogo.cn/mmopen/g3MonUZtNHkdmzicIlibx6iaFqAc56vxLSUfpb6n5WKSYVY0ChQKkiaJSgQ1dZuTOgvLLrhJbERQQ4eMsv84eavHiaiceqxibJxCfHe/0
-	ewm:'http://tl.changyou.com/',//二维码内容
+	ewm:window.location.href,//二维码内容http://tl.changyou.com/
 	tit:'江湖标题'
 }
 function InitFrame(url,ewm,tit){
 	exportRoot.gotoAndPlay(1);
 	exportRoot.stop();
-    var head_image = new Image();    
+    var head_image = new Image();
+    head_image.crossOrigin="*"; 
     head_image.src = url;
-    head_image.crossOrigin="*";
+    
     head_image.onload =function (e){
         var bitmap=new createjs.Bitmap(e.target);
         var rect=bitmap.getBounds();
@@ -126,10 +134,19 @@ function InitFrame(url,ewm,tit){
 		});		
         var bitmap2 = new createjs.Bitmap(qrcode._oDrawing._elCanvas.toDataURL());
 		//exportRoot.head.addChild(bitmap2);
+		//exportRoot.head.addChild(bitmap);
 		exportRoot.ewm.addChild(bitmap2);
-		exportRoot.actName.text.text = tit;//设置活动标题
-		//alert(1)
-		window.removeEventListener('devicemotion',deviceMotionHandler,false);
+		exportRoot.actName.text.text = tit;//设置活动标题		
+		window.removeEventListener('devicemotion',deviceMotionHandler);//去掉摇一摇监听
+		document.getElementById("imgBox").style.display="block";
+		setTimeout(function(){
+			//alert(1)
+			document.getElementById("imgBox").style.background="#ccc";
+			document.getElementById("dataImg").src = canvas.toDataURL();
+			document.getElementById("animation_container").style.display="none";
+			//alert(canvas.toDataURL())
+			alert('生成成功！')
+		},1000)
 		//window.addEventListener('devicemotion',deviceMotionHandler,false);
     }
 }
@@ -141,7 +158,9 @@ function InitFrame(url,ewm,tit){
 <body onload="init();" style="margin:0px;">
 	<div id="qr" style="display:none;"></div>
 	<a href="javascript:void(0);" class="btn" id="btn">点击开始摇一摇</a>
-	<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:640px; height:1136px">
+	<div id="imgBox" style=" width:640px; height:1136px ; display: none; background-color:#ccc;"><img id="dataImg" src="" alt=""></div>
+	sdfsfs
+	<div id="animation_container" style="display:block; background-color:rgba(255, 255, 255, 1.00); width:640px; height:1136px">
 		<canvas id="canvas" width="640" height="1136" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
 		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:640px; height:1136px; position: absolute; left: 0px; top: 0px; display: block;">
 		</div>
