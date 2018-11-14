@@ -10,8 +10,6 @@
 ###  PhotoZoomOutEffect hover图片显示全景<br />
 ###  progressbar 进度条<br />
 ###  Spacegallery 图片向前推进效果，最前面一张消失<br />
-###  其他解决方案：<br />
-###  libs <br />
 #### copy js复制功能 支持ie6以及ie6+<br />
 #### img-to-base64-ie8  图片转base64<br />
 #### jQuery抽奖转盘效果代码（兼容IE浏览器）<br />
