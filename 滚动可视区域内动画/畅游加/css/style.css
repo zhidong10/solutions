@@ -1,0 +1,363 @@
+/* -------------------------------------------------------------
+                     Jia Web Style
+      
+      Author:hanbingfeng
+      Create Date:14.04.09	  Last Mondify Date:14.04.22
+      ===================================================
+
+------------------------------------------------------------- */
+body{
+	margin: 0;
+	padding: 0;
+	font-family:"\5fae\8f6f\96c5\9ed1";
+}
+#wrap{margin:0 auto;background:#fff;min-width:1000px;max-width:1920px;overflow:hidden;_zoom:1;}
+
+/* -------------------------------------------------------------
+                           Header
+------------------------------------------------------------- */
+
+.header{
+	position: fixed;
+	_position:absolute;
+	top: 0;
+	left: 0;
+	z-index:1001;
+	overflow: hidden;
+	width: 100%;
+	height: 112px;
+	background:url(http://i0.cy.com/source/img/jia/topnav.png) no-repeat center 0;
+}
+.header-box{
+	margin:0 auto;
+	width:1000px;
+	height:49px;
+}
+.header-nav{
+	float:right;
+	_display:inline;
+	margin-right:80px;
+}
+.header-nav a{
+	float:left;
+	width:76px;
+	height:100%;
+	line-height:49px;
+	color:#efefef;
+	font-size:16px;
+	text-decoration:none;
+	text-align: center;
+}
+.header-nav a:hover,.header-nav .navcurr{
+	color: #ffd800;
+	background: url(http://i0.cy.com/source/img/jia/topcurr.png) no-repeat 0 bottom;
+}
+/* -------------------------------------------------------------
+                           Content
+------------------------------------------------------------- */
+.page2,.page3,.page4,.page5{
+	height:680px;
+}
+
+.page1{
+	position:relative;
+	z-index:1;
+	margin-top: 49px;
+	height: 848px;
+	background: url(http://i0.cy.com/source/img/jia/bg-01.png) no-repeat center 0;
+}
+
+.page1-title{
+	position:absolute;
+	top:0;
+	left:148px;
+	z-index:10;
+	padding-top:93px;
+}
+.page1-phone{
+	position:absolute;
+	top:0;
+	left:172px;
+	z-index:10;
+	padding-top:237px;
+}
+.page1-down{
+	position:absolute;
+	top:0;
+	left:-43px;
+	z-index:10;
+	padding-top:378px;
+	width:249px;
+	height:327px;
+	background: url(http://i0.cy.com/source/img/jia/page1-down.png) no-repeat center 328px;
+}
+.page1-down a{
+	display:block;
+}
+.page1-down a:hover{background: url(http://i0.cy.com/source/img/jia/page1-down2.png) no-repeat center 0;}
+.page1-down .ip-down{
+	margin:0 0 12px 21px;
+	width:228px;
+	height:112px;
+}
+.page1-down .ip-down:hover{background-position:0 -50px;}
+.page1-down .ad-down{
+	margin:0 0 0 40px;
+	width:200px;
+	height:127px;
+}
+.page1-down .ad-down:hover{background-position:-19px -174px;_background-position:-19px -173px;}
+.page1-code{
+	position:absolute;
+	top:0;
+	right:5px;
+	z-index:10;
+	padding-top:398px;
+}
+.page1 .cont h1,.page1 .cont p{display:none;}
+
+.page2,.page4,.footer{
+	background: url(http://i0.cy.com/source/img/jia/bg-02.png) no-repeat center 0;
+}
+.page3,.page5{
+	background: url(http://i0.cy.com/source/img/jia/bg-03.png) no-repeat center 0;
+}
+.page2{
+	position:relative;
+	z-index:20;
+}
+.cont{
+	position:relative;
+	z-index: 99;
+	margin:0 auto;
+	width:1000px;
+}
+.layout{
+	width: 100%;
+	height: 1500px;
+	position: absolute;
+	overflow: hidden;
+	_display:none;
+}
+#layout1{
+	left:0;
+	overflow:hidden;
+	z-index:2;
+	height:240px;
+	width:100%;
+	background: url(http://i0.cy.com/source/img/jia/page1-bg2.png) no-repeat center 0;
+}
+#mobi_bg{
+	left:226px;
+	top:0;
+	z-index:1;
+	padding-top:248px;
+	width:652px;
+	height:175px;
+	background: url(http://i0.cy.com/source/img/jia/page1-bg1.png) no-repeat center 248px;
+}
+
+/* -------------------------------------------------------------
+                       Product Funtion
+------------------------------------------------------------- */
+
+.function{
+	position: relative;
+	margin: 0 auto;
+	width: 1000px;
+}
+.function h3{
+	margin-bottom:29px;
+	font-size:38px;
+	color:#444;
+}
+.function p{
+	padding-top:25px;
+	font-size:20px;
+	color:#888;
+	line-height:1.8;
+	border-top:1px solid #e3e3e3;
+}
+.function_pic,.function_intro{
+	position: absolute;
+}
+
+.page2 .function_intro,.page4 .function_intro{
+	top: 200px;
+	right: 2px;
+}
+
+/*=--------------- #page2 ------------------=*/
+
+.page2 .page2-img{
+	position: absolute;
+	top:195px;
+	left:-16px;
+	z-index:10;
+}
+.page2 .page2-phone{
+	position: absolute;
+	top:68px;
+	left:105px;
+	z-index:11;
+}
+
+/*=--------------- #page3 ------------------=*/
+
+.page3 .function_intro{
+	top: 180px;
+	left:43px;
+	width:450px;
+	text-align:right;
+}
+.page3 .function_pic{
+	top: 54px;
+	right: 46px;
+}
+
+/*=--------------- #page4 ------------------=*/
+
+.page4 .function_pic{
+	top: 69px;
+	left: 26px;
+}
+
+/*=--------------- #page5 ------------------=*/
+
+.page5 .function_intro{
+	top: 205px;
+	left:33px;
+	text-align:right;
+}
+.page5 .function_pic{
+	top:54px;
+	right: 1px;
+}
+
+/* -------------------------------------------------------------
+                           Fix Nav
+------------------------------------------------------------- */
+
+#fix-nav{
+	position: fixed;
+	right: 25px;
+	top: 350px;
+	z-index: 1000;
+	*background: none;
+	*display: none;
+}
+#fix-nav li{
+	margin-bottom:10px;
+	height: 23px;
+	line-height: 23px;
+	width: 23px;
+	cursor: pointer;
+	background: url(http://i0.cy.com/source/img/jia/fixnav.png) no-repeat 0 -32px; 
+}
+#fix-nav li.current{
+	-webkit-transition:opacity .4s linear;opacity: 1;
+	-moz-transition:opacity .4s linear;opacity: 1;
+	-ms-transition:opacity .4s linear;opacity: 1;
+	-o-transition:opacity .4s linear;
+	transition:opacity .4s linear;
+	background-position:0 0;
+}
+#fix-nav li.last{margin-bottom: 0;}
+#fix-nav li span{display:none;font-family: microsoft yahei;color: #fff;font-size: 14px;}
+#fix-nav .current span{display: block;}
+#fix-nav-down{
+	position: fixed;
+	right:25px;
+	top:515px;
+	z-index: 999;
+	*display: none;
+}
+
+/* -------------------------------------------------------------
+                           Footer
+------------------------------------------------------------- */
+
+.footer{
+	height:382px;
+}
+
+/*=---------------- #download -------------------=*/
+
+.download{
+	height:205px;
+	min-width:1000px;
+	width:100%;
+	border-bottom: 1px solid #fbfbfb;
+}
+.download_info{
+	margin:0 auto;
+	position:relative;
+	padding-top: 45px;
+	height: 160px;
+	width:1000px;
+}
+.down_type{
+	margin-left: 150px;
+	_display:inline;
+}
+.down_type a{
+	display: inline-block;
+	width: 187px;
+	height: 76px;
+	background: url(http://i0.cy.com/source/img/jia/jia-down.png) no-repeat 0 0;
+}
+.down_type h2{
+	margin-bottom: 20px;
+	color: #3a3733;
+}
+.down_type a.type_iphone{
+	background-position:0 0;
+}
+.down_type a.type_iphone:hover{
+	background-position:0 -84px;
+}
+.down_type a.type_android{
+	background-position:-206px 0;
+}
+.down_type a.type_android:hover{
+	background-position:-206px -84px;
+}
+.qr_code_down{
+	margin-left: 40px;
+}
+a.aq_center{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding-left: 15px;
+	width: 107px;
+	height: 40px;
+	line-height: 40px;
+	background: #f4f4f4 url(http://jia.changyou.com/img/arrow.png) no-repeat 108px 17px;
+	color: #503832;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	font-size:14px;
+}
+a.aq_center:hover{
+	background-color: #f1f1f1;
+	text-decoration: none;
+}
+
+/*=---------------- #cyou_bottom -------------------=*/
+
+#cyou_bottom{ padding:35px 0 20px; height:120px; min-width:1000px; width:100%;border-top:1px solid #f4f4f4;}
+#cyou_bottom_main{ margin:0 auto; width:980px; height:71px; font: 12px/20px "宋体",Tahoma,Geneva,sans-serif; color:#aaa; }
+.cyou_bottom_logo{ float:left; padding:3px 0 0 23px; }
+.cyou_bottom_logo a{ display:inline-block; width:105px; height:55px; background:url(http://jia.changyou.com/img/footer_logo.png) no-repeat 0 0; }
+.cyou_bottom_sprite{ float:left; padding:12px 0 0 21px; }
+.beian{ display:inline-block; width:35px; height:35px; background:url(http://jia.changyou.com/img/baic.png) no-repeat 0 0; }
+.cyou_bottom_cont{ float:left; padding-left:40px; }
+.cyou_bottom_cont a{ color:#aaa; }
+.cyou_bottom_cont a:hover{ color:#006dc1; }
+.links{ color:#aaa; }
+.links a{ color:#aaa; }

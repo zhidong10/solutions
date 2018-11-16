@@ -1,0 +1,261 @@
+<HTML>
+<HEAD><TITLE>WebZIP 工程摘要</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=gb2312">
+
+
+<STYLE TYPE="text/css">
+<!--
+  .heading{font-family:宋体;font-size:16pt;font-weight:bold;}	
+  .copyright{font-family:宋体;font-size:9pt;}
+
+	TD.clsSummary {
+		vertical-align:top;
+		background-color:#FFFFFF;
+		padding:1px;
+                font-size:9pt;
+                font-family:宋体;
+	}
+
+	BODY {
+                font-size:9pt;
+                font-family:宋体;
+	}
+
+  td{font-family:宋体;font-size:9pt;}
+
+
+  A:link    {COLOR: #0000ff; TEXT-DECORATION: none}
+  A:visited {COLOR: #0000ff; TEXT-DECORATION: none}
+  A:active  {COLOR: #0000ff; TEXT-DECORATION: none}
+  A:hover   {TEXT-DECORATION: underline}
+
+
+-->
+</STYLE>
+
+
+<script language="Javascript" id=code>
+ function doSort(col) {
+  if (tasks.SortColumn == col){
+    tasks.SortAscending = (! tasks.SortAscending);
+  }
+  else{
+    tasks.SortAscending = true;
+    tasks.SortColumn = col;
+  }
+  tasks.Reset();
+ }
+</script>
+
+</HEAD>
+
+<BODY TOPMARGIN=0 LEFTMARGIN=10 BGCOLOR="#FFFFFF" VLINK="#808080"  onload=SetGraph()>
+
+<OBJECT id="project_summary" CLASSID="clsid:333C7BC4-460F-11D0-BC04-0080C7055A83">
+	<PARAM NAME="DataURL" VALUE="project_summary.txt">
+	<PARAM NAME="UseHeader" VALUE="True">
+        <PARAM NAME="TextQualifier" VALUE="&quot;">
+</OBJECT>
+
+<input id=DPages type=hidden datasrc="#project_summary" datafld="PagesDownloadedPct">
+<input id=QPages type=hidden datasrc="#project_summary" datafld="PagesQueuedPct">
+<input id=EPages type=hidden datasrc="#project_summary" datafld="PagesErrorPct">
+
+<input id=DVPages type=hidden datasrc="#project_summary" datafld="PagesDownloaded">
+<input id=QVPages type=hidden datasrc="#project_summary" datafld="PagesQueued">
+<input id=EVPages type=hidden datasrc="#project_summary" datafld="PagesError">
+<input id=TVPages type=hidden datasrc="#project_summary" datafld="PagesTotal">
+
+<input id=DMedia type=hidden datasrc="#project_summary" datafld="MediaDownloadedPct">
+<input id=QMedia type=hidden datasrc="#project_summary" datafld="MediaQueuedPct">
+<input id=EMedia type=hidden datasrc="#project_summary" datafld="MediaErrorPct">
+
+<input id=DVMedia type=hidden datasrc="#project_summary" datafld="MediaDownloaded">
+<input id=QVMedia type=hidden datasrc="#project_summary" datafld="MediaQueued">
+<input id=EVMedia type=hidden datasrc="#project_summary" datafld="MediaError">
+<input id=TVMedia type=hidden datasrc="#project_summary" datafld="MediaTotal">
+
+
+<input id=TErrors type=hidden datasrc="#project_summary" datafld="ErrorsTotal">
+<input id=TErrorsPct type=hidden datasrc="#project_summary" datafld="ErrorsPct">
+
+<input id=PageLoc type=hidden datasrc="#project_summary" datafld="PageLocation">
+<input id=MediaLoc type=hidden datasrc="#project_summary" datafld="MediaLocation">
+<input id=Depth type=hidden datasrc="#project_summary" datafld="Depth">
+
+
+
+
+
+<table width="100%" cellspacing="0" cellpading="0" border=0 >
+<tr>
+<td class="clsSummary"><SPAN class=heading datasrc="#project_summary" datafld="TaskName"></SPAN>
+<hr width="100%" size="1">
+</td>
+</tr>
+</table>
+
+
+
+
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top">
+
+<table cellpadding="5" cellspacing="0" bgcolor="fff0ff">
+<tr><td>最后运行：</td><td><span class=stdtext datasrc="#project_summary" datafld="LastRun"></span></td></tr>
+<tr><td>继续运行：</td><td><span class=stdtext datasrc="#project_summary" datafld="NextRun"></span></td></tr>
+<tr><td>文件总数：</td><td><SPAN datasrc="#project_summary" datafld="TotalFiles"></SPAN></td></tr>
+<tr><td>大小：</td><td><SPAN datasrc="#project_summary" datafld="TotalBytes"></SPAN>&nbsp;字节</td></tr>
+<td>状态：</td><td><SPAN datasrc="#project_summary" datafld="Status"></SPAN></td></tr>
+</table>
+
+
+
+<!-- c h a r t -->
+<table border="0" cellspacing="5" cellpadding="0" width="120">
+<tr>
+
+<td width="40" valign="bottom">
+<table border="0" width="40" cellspacing="1" cellpadding="0">
+<tr>
+<td width="40" valign="bottom"><hr id=hrPages width="40" size="40" color="#0000ff" noshade></td>
+</tr>
+</table>
+</td>
+
+<td width="40" valign="bottom">
+<table border="0" width="40" cellspacing="1" cellpadding="0">
+<tr>
+<td width="40" valign="bottom"><hr id=hrMedia width="40" size="40" color="#009933" noshade></td>
+</tr>
+</table>
+</td>
+
+<td width="40" valign="bottom">
+<table border="0" width="40" cellspacing="1" cellpadding="0">
+<tr>
+<td width="40" valign="bottom"><hr id=hrErrors width="40" size="40" color="#ff0000" noshade></td>
+</tr>
+</table>
+</td>
+
+</tr>
+
+<tr>
+<td width="40"><a href="project_report.htm?show=html">页面</a><br><SPAN datasrc="#project_summary" datafld="PagesDownloaded"></SPAN>/<SPAN datasrc="#project_summary" datafld="PagesTotal"></SPAN></td>
+<td width="40"><a href="project_report.htm?show=media">媒体</a><br><SPAN datasrc="#project_summary" datafld="MediaDownloaded"></SPAN>/<SPAN datasrc="#project_summary" datafld="MediaTotal"></SPAN></td>
+<td width="40"><a href="project_report.htm?show=errors">错误</a><br><SPAN datasrc="#project_summary" datafld="ErrorsTotal"></SPAN>/<SPAN datasrc="#project_summary" datafld="TotalFiles"></SPAN></td>
+</tr>
+</table>
+<!-- / c h a r t  -->
+
+</td>
+
+
+<td width="10"></td>
+<td width="1" bgcolor="#000000"><img src="" width="1"></td>
+<td width="5"><img src="" width="5"></td>
+
+
+<td valign="top">
+<!--  s u m m a r y   s e c t i o n  -->
+<table cellspacing="5" cellpadding="0"  border=0>
+<tr><td>类　　别：</td><td><SPAN datasrc="#project_summary" datafld="Category"></SPAN></td></tr>
+<tr><td>标　　题：</td><td><SPAN datasrc="#project_summary" datafld="Title"></SPAN></td></tr>
+<tr><td>地　　址：</td><td><a datasrc="#project_summary" datafld="URL"><SPAN datasrc="#project_summary" datafld="URL"></SPAN></a></td></tr>
+<tr><td>本地地址：</td><td><a datasrc="#project_summary" datafld="LocalURL"><span class=stdtext datasrc="#project_summary" datafld="Title"></span></a></td></tr>
+<tr><td>保存目录：</td><td><a datasrc="#project_summary" datafld="Destination"><span class=stdtext datasrc="#project_summary" datafld="Destination"></span></a></td></tr>
+</table>
+<!-- / s u m m a r y   s e c t i o n  -->
+</td>
+
+</tr>
+</table>
+
+
+
+
+<hr width="100%" size="1">
+
+
+
+<!--  D O W N L O A D   M E T H O D   D E T A I L S  -->
+<table bgcolor="#fff6ff" cellpadding="10" border=0>
+<tr>
+<td>
+<P style="font: bold; font-size:12pt;">下载程序详细资料</p>
+下列文件类型将被下载：<br><span style="font: bold" datasrc="#project_summary" datafld="FileTypes"></span>.<br><br>
+页面文件将下载自：<span id=clsploc style="font: bold"></span>。<br>
+
+媒体文件将下载自：<span id=clsmloc style="font: bold"></span><br>
+
+WebZIP 将下载页面<span id=clsDepth style="font: bold"></span>&nbsp;开始页。
+</td>
+</tr>
+</table>
+<!-- / D O W N L O A D   M E T H O D   D E T A I L S  -->
+
+
+
+
+
+<script language="javascript">
+
+function SetGraph(){
+  nPages = TVPages.value * 1;
+  nMedia = TVMedia.value * 1;
+  nTotalFiles = nPages + nMedia
+
+  if (nTotalFiles > 0) {
+    hrPages.size=DVPages.value / nTotalFiles * 100;
+    hrPages.title='下载页面：' +  DVPages.value + '/'  + TVPages.value + ' -> ' + DPages.value + '%';
+
+    hrMedia.size=DVMedia.value / nTotalFiles * 100;
+    hrMedia.title='下载媒体：' +  DVMedia.value + '/'  + TVMedia.value + ' -> ' + DMedia.value + '%';
+
+    hrErrors.size=TErrors.value / nTotalFiles * 100;
+    hrErrors.title='错　　误：' +  TErrors.value + '/'  + nTotalFiles + ' -> ' + TErrorsPct.value + '%';
+  } 
+  else {
+    hrPages.size = 0;
+    hrPages.title = '下载页面：0';
+ 
+    hrMedia.size = 0;
+    hrMedia.title = '下载媒体：0';
+
+    hrErrors.size = 0;
+    hrErrors.title = '错　　误：0';
+ 
+  }
+
+  if (PageLoc.value == 0) { document.body.all('clsploc').innerText = "在当前目录内";}
+  else if (PageLoc.value == 1) { document.body.all('clsploc').innerText = "在当前网站内";}
+  else if (PageLoc.value == 2) { document.body.all('clsploc').innerText ="任何地方";}
+
+  if (MediaLoc.value == 0) { document.body.all('clsmloc').innerText = "在当前目录内";}
+  else if (MediaLoc.value == 1) { document.body.all('clsmloc').innerText = "当前网站内";}
+  else if (MediaLoc.value == 2) { document.body.all('clsmloc').innerText ="任何地方";}
+
+  if (Depth.value == -1) { document.body.all('clsDepth').innerText = "所有层";}
+  else if (Depth.value == 0) { document.body.all('clsmloc').innerText = "当前页面";}
+  else { document.body.all('clsDepth').innerText ="当前页面 + " + Depth.value;}
+
+  return;
+}
+
+</script>
+
+<!-- PAGE_FOOTER -->
+<BR>
+<BR>
+<BR>
+<p class=copyright>汉化：软件本地化团队　XiaoSD[SLT] </p>
+<p class=copyright>版权 2005 Spidersoft. 所有权保留。</p>
+<!-- /PAGE_FOOTER -->
+
+
+
+</BODY>
+</HTML>

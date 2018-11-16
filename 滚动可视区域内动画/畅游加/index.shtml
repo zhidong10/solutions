@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>畅游+</title>
+	<link rel="stylesheet" href="http://jia.changyou.com/css/reset.css">
+	<link rel="stylesheet" href="http://i0.cy.com/source/css/quick_layout.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!--[if IE 6]>
+	<script src="http://i0.cy.com/source/js/DD_belatedPNG.js"></script>
+	<script>
+	  DD_belatedPNG.fix('.page2-phone,.header,.layout1,.page1-down,.ip-down:hover,.ad-down:hover,.page1-title img,.page1-phone img,.page1-code img');
+	</script>
+	<![endif]-->
+</head>
+<body>
+<div id="wrap">
+
+	<div class="header">
+		<div class="header-box">
+			<div class="header-nav">
+				<a class="navcurr" href="http://jia.changyou.com/">畅游+</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="content">
+		
+		<div class="page1" id="page1">
+			<div id="parallax" class="spacer s0"></div>
+			<div class="cont">
+				<h1>江湖险恶 安全有我</h1>
+				<p>【畅游+】让您的游戏账号再也不怕被盗，体验没有顾虑的安全，因为安全可以在你身边</p>
+				
+				<div id="page1-title" class="page1-title"><img src="http://i0.cy.com/source/img/jia/page1-title.png" alt=""></div>
+				<div id="page1-phone" class="page1-phone"><img src="http://i0.cy.com/source/img/jia/page1-phone.png" alt=""></div>
+				<div id="page1-down" class="page1-down">
+					<a class="ip-down" href="https://itunes.apple.com/cn/app/chang-you+/id598536861?mt=8"></a>
+					<a class="ad-down" href="http://saftyonpalm.changyou.com/CYSecurity_Android.apk"></a>
+				</div>
+				<div id="page1-code" class="page1-code"><img src="http://i0.cy.com/source/img/jia/page1-code.png" alt=""></div>
+				<div id="mobi_bg" class="layout"></div>
+			</div>
+			<div id="layout1" class="layout"></div>
+		</div>
+
+		<div class="page2" id="page2">
+			<div class="function">
+				<div id="function1" class="function_pic">
+					<img class="page2-img" id="page2-img" src="http://i0.cy.com/source/img/jia/page2-img.png" alt="">
+					<img class="page2-phone" id="page2-phone" src="http://i0.cy.com/source/img/jia/page2-phone.png" alt="">
+				</div>
+				<div id="function1_intro" class="function_intro">
+					<h3>动态密码</h3>
+					<p>根据国际领先算法，每分钟随机生成动态密码。 <br />游戏内高危操作时需要验证，安全有保障。</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="page3" id="page3">
+			<div class="function">
+				<div id="function2_intro" class="function_intro">
+					<h3>修改密码</h3>
+					<p>最快捷方便、安全可靠的修改密码方式<br />忘记密码找回？被人顶号改密码？统统随时搞定</p>
+				</div>
+				<div id="function2" class="function_pic">
+					<img src="http://i0.cy.com/source/img/jia/page3-phone.jpg" alt="" id="">
+				</div>
+			</div>
+		</div>
+
+		<div class="page4" id="page4">
+			<div class="function">
+				<div class="left">
+					<div id="function3" class="function_pic">
+						<img src="http://i0.cy.com/source/img/jia/page4-phone.jpg" alt="">
+					</div>
+				</div>
+				<div class="right">
+					<div id="function3_intro" class="function_intro">
+						<h3>账号停解权</h3>
+						<p>停权后全面禁止账号游戏登录与消费<br />如游戏角色在线，停权时可踢人下线（注：仅支持《新天龙八部》）</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="page5" id="page5">
+			<div class="function">
+				<div id="function4_intro" class="function_intro">
+					<h3>多账号管理</h3>
+					<p>支持多账号管理，提供多账号保护<br />1个【畅游+】，可以同时绑定5个账号，你不是一个人在战斗</p>
+				</div>
+				<div id="function4" class="function_pic">
+					<img src="http://i0.cy.com/source/img/jia/page5-phone.jpg" alt="">
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="footer">
+		<div class="download">
+			<div class="fix bd download_info">
+				<div class="l down_type">
+					<h2 class="fw f20">下载畅游+ 客户端</h2>
+					<a target="_blank" href="https://itunes.apple.com/cn/app/chang-you+/id598536861?mt=8" class="tdn type_iphone">
+						<span class="dn">畅游+ iPhone版</span>
+					</a>
+					<a href="http://saftyonpalm.changyou.com/CYSecurity_Android.apk" class="tdn ml10 type_android">
+						<span class="dn">畅游+ Android版</span>
+					</a>
+				</div>
+				<div class="l qr_code_down">
+					<img alt="" src="http://i0.cy.com/source/img/jia/qr-code.png">
+				</div>
+				<a href="http://aq.changyou.com/" class="aq_center">进入安全中心</a>
+			</div>
+		</div>
+
+		<div id="cyou_bottom">
+		    <div id="cyou_bottom_main">
+		        <div class="cyou_bottom_logo">
+		            <a href="http://www.changyou.com/index.shtml" target="_blank" title="畅游"></a>
+		        </div>
+		        <div class="cyou_bottom_sprite">
+		            <a href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202008090900025" title="经营性网站备案信息" target="_blank" class="beian"></a>
+		        </div>
+		        <div class="cyou_bottom_cont">
+		            <p class="links"><a href="http://www.changyou.com/1_1.shtml" target="_blank">关于畅游</a> | <a href="http://www.changyou.com/declaration.shtml" target="_blank">法律声明</a> | <a href="http://www.changyou.com/cu.shtml" target="_blank">联系我们</a> | <a href="http://hr.changyou.com/welcome.xhtml" target="_blank">诚聘英才</a> | <a href="http://hezuo.changyou.com/" target="_blank">畅游品牌战略联盟</a> | <a target="_blank" href="http://jia.changyou.com/">畅游+</a></p>
+		            <p>北京畅游时代数码技术有限公司版权所有  COPYRIGHT &copy; 2014 CHANGYOU.COM LIMITED. ALL RIGHTS RESERVED.</p>
+		            <p><a href="http://i1.itc.cn/20120308/2b88_54fc22d2_d391_bb9a_99d7_672a89a5b7f0_1.jpg" target="_blank">京网文[2011]0260-093号</a> | 京ICP证：070525号 ISBN号978-7-89989-782-9</p>
+		        </div>
+		    </div>  
+		</div>
+	</div>
+	<ul id="fix-nav">
+        <li class="current"><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li class="last"><span></span></li>
+    </ul>
+     <img width="23" height="23" style="cursor:pointer;" id="fix-nav-down" src="http://i0.cy.com/source/img/jia/navdown.png"> 
+</div>
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<!--jquery版本迁移-->
+<script src="js/jquery-migrate-1.2.1.min.js"></script>
+<!--页面滚动-->
+<!--<script src="js/jquery.scrollTo.min.js"></script>
+-->
+<!--右侧滚动条-->
+<script src="js/jquery.nicescroll.min.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+
+<script src="js/TweenMax.min.js"></script>
+<!--左右移动-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="js/jquery.scrollmagic.min.js"></script>
+<!--<![endif]-->
+<script src="js/index.js"></script>
+<!--统计代码 start-->
+<script src="js/jquery-a.js" type="text/javascript"></script>
+<!--统计代码 end-->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F5e755bd40a3308683a14a83e24350391' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>
