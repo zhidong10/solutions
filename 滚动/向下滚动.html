@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>向右滚动的文字特效JS代码</title>
+<link rel="stylesheet" type="text/css" href="http://image.tiancity.com/common/css/base.css"/>
+<style>
+.marquee { margin:0px auto; width:400px; height:200px;  overflow:hidden; border:1px solid red; }
+.marquee ul li { height:20px; }
+</style>
+</head>
+
+<body>
+<div class="marquee" id="marquee">
+<ul id="marquee1">
+<li><a href="#">111111111111</a></li>
+<li><a href="#">222222222222</a></li>
+<li><a href="#">333333333333</a></li>
+<li><a href="#">444444444444</a></li>
+<li><a href="#">111111111111</a></li>
+<li><a href="#">222222222222</a></li>
+<li><a href="#">444444444444</a></li>
+</ul>
+<ul id="marquee2"></ul>
+</div>
+
+<script style="text/javascript">
+(function(){
+    var speed=30; //数字越大速度越慢
+    var tab=document.getElementById("marquee");
+    var tab1=document.getElementById("marquee1");
+    var tab2=document.getElementById("marquee2");
+	tab.scrollTop=tab.offsetHeight;
+    function Marquee(){
+		if(tab1.offsetTop-tab.scrollTop>=0)
+		{
+			tab.scrollTop+=tab1.offsetHeight;
+		}else{
+			tab.scrollTop--;
+		}
+    };
+    var MyMar=setInterval(Marquee,speed);
+	if(tab1.offsetHeight-tab.offsetHeight>0)
+	{
+   		tab2.innerHTML=tab1.innerHTML;
+		tab.onmouseover=function() {clearInterval(MyMar)};
+		tab.onmouseout=function() {MyMar=setInterval(Marquee,speed)};
+	}
+})();
+</script>
+</body>
+</html>
+
+					

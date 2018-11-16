@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>jsScrollerTween</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style type="text/css">
+  @import url(src/main.css);
+</style>
+</head>
+<body>
+<div id="nav">
+<h2>Files</h2>
+<div><a href="src/jsScrollerTween.js" title="jsScrollerTween.js">jsScrollerTween.js</a></div>
+<div><a href="example5.html" title="example 5">example5.html</a></div>
+<h2>Related</h2>
+<div><a href="jsScroller.html" title="jsScroller">jsScroller</a></div>
+<div><a href="jsScrollbar.html" title="jsScrollbar">jsScrollbar</a></div>
+<div><a href="index.html" title="Index">Index</a></div>
+</div>
+<h1>jsScrollerTween</h1>
+
+<div id="wrapper">
+
+<h2>Preparation</h2>
+<p>You just have to have set up either a jsScroller, or jsScrollbar object.</p>
+
+<h2>Constructor</h2>
+<pre>new jsScrollerTween(jsScroll, trackTween);</pre>
+<p><code>jsScroll</code> can be an instance of jsScroller or jsScrollbar.
+<code>trackTween</code> is a boolean value that sets whether or not the
+jsScrollbar will use the tween when the track is clicked.</p>
+<p>An example of implementation:</p>
+<pre>
+var wrapper = document.getElementById("Scroller");
+var barWrapper = document.getElementById("Scrollbar-Container");
+
+var scroller = new jsScroller(wrapper, 400, 200);
+var scrollbar = new jsScrollbar(scroller, barWrapper, true);
+
+//use it with the scrollbar, enable track tweening
+var scrollTween = new jsScrollerTween(scrollbar, true);
+</pre>
+
+<h2>Methods</h2>
+<p>You should take note, when using these methods, use them with the original jsScrollbar or jsScroller
+object that was passed. Dont't use them with the jsScrollTween object. The jsScrollTween object
+just adds more functions to the original object.</p>
+<p><code class="bold">.tweenTo(y);</code></p>
+<p>Tweens to the specified y coordinate</p>
+<p><code class="bold">.tweenBy(y)</code></p>
+<p>Tweens by a specified amount.</p>
+<pre>
+//Tween to the y coordinate 126
+//notice I'm using "scrollbar" not "scrollTween"
+scrollbar.tweenTo(126);
+
+//Tween up 50px
+scrollbar.tweenBy(-50);
+</pre>
+
+<h2>Examples</h2>
+<p><a href="example5.html" title="example 5">example5.html</a></p>
+
+<h2>Quirks</h2>
+<p>None that I know of...</p>
+
+<h2>Useful Properties</h2>
+<p>These are properties that you can access that may help you in making scripts:</p>
+<p><code class="bold">.steps</code></p>
+<p>This lets you change the tweening steps so you can create your own animation. The steps
+are defined by the percent of the total distance the tween must travel.</p>
+<pre>
+// gradual acceleration and deceleration
+scrollTween.steps = 
+[0,1,3,6,10,15,21,28,36,45,55,64,72,79,85,90,94,97,99,100];
+
+//Rapid deceleration, this is the default
+scrollTween.steps = [0,25,50,70,85,95,97,99,100];
+
+//Straight movement
+scrollTween.steps = [0,10,20,30,40,50,60,70,80,90,100];
+
+//Rapid deceleration with a bounce at the end
+scrollTween.steps = [0,25,50,70,85,95,100,105,101,97,100,99,100];
+</pre>
+<p><code class="bold">._idle</code></p>
+<p>Boolean value that is true when it's not in the middle of an animation.</p>
+<p><code class="bold">.stepDelay</code></p>
+<p>The time between the steps in milliseconds. Default is 40.</p>
+</div>
+</body>
+</html>

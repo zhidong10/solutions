@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>《LETHE》 官方网站-音乐剧式手游</title>
+	<meta charset="utf-8">
+	<meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link type="text/css" rel="stylesheet" href="css/reset.css" />
+    <link type="text/css" rel="stylesheet" href="css/index.css" />
+    <link type="image/x-icon" href="/favicon.ico" rel="icon" />
+    <link type="image/x-icon" href="/favicon.ico" rel="shortcut icon" />
+</head>
+<div class="wrap" id="wrap">
+    <h1 class="none">一部音乐绘卷</h1>
+    <div class="nav">
+        <a class="lethe_icon" href="/" target="_blank" title="《LETHE》官方网站"></a>
+        <strong>Lethe</strong>
+        <a class="btn_ios" href="javascript:;" title="App Store下载"></a>
+        <a class="btn_android" href="javascript:;" title="安卓下载"></a>
+        <a class="btn_appoint" href="javascript:;" title="游戏预约"></a>
+    </div>
+    <img class="star_left layer" data-depth-x="0.2" data-depth-y="0.4" src="images/star_left.png" />
+    <div class="star_right layer" data-depth-x="0.2" data-depth-y="0.3"><img src="images/star_right.png" /></div>
+    <div class="scene_left layer" data-depth-x="0.4" data-depth-y="0.2"><img src="images/scene_left.png" /></div>
+    <div class="scene_right layer" data-depth-x="0.4" data-depth-y="0.1"><img src="images/scene_right.png" /></div>
+    <div class="people_left layer" data-depth-x="1" data-depth-y="1"><img src="images/people_left.png" /></div>
+    <div class="people_right layer" data-depth-x="1" data-depth-y="-1"><img src="images/people_right.png" /></div>
+    <div class="leaf_01 layer" data-depth-x="0.5" data-depth-y="0.4"><img src="images/leaf_01.png" /></div>
+
+    <div class="leaf_02 layer" data-depth-x="0.3" data-depth-y="0.6"><img src="images/leaf_02.png" /></div>
+    <div class="bird_01 layer" data-depth-x="0.25" data-depth-y="0.35"><img src="images/bird_01.png" /></div>
+    <div class="bird_02 layer" data-depth-x="0.35" data-depth-y="0.5"><img src="images/bird_02.png" /></div>
+    <div class="slogin layer" data-depth-x="0.3" data-depth-y="0.3"><img src="images/slogin.png" /></div>
+	<div class="glory layer" data-depth-x="0.5" data-depth-y="0.1"><img src="images/glory.png" /></div>
+	<div class="video layer" data-depth-x="0.4" data-depth-y="0.4"><a href="javascript:;"></a></div>
+    <div class="lethe_logo layer" data-depth="0.2"><a href="http://lethe.cy.com/" target="_blank" title="《LETHE》官方网站"></a></div>
+
+	<div class="music"></div>
+    <div class="jw"><span id="jw"></span></div>
+</div>
+
+<dl class="video_player">
+    <dt><strong></strong><a class="close" href="javascript:;" title="关闭"></a></dt>
+    <dd><span></span></dd>
+</dl>
+
+<div class="pop appoint">
+    <dl>
+        <dt><strong>立即预约，待御剑乘风来，红尘共寻梦</strong><a class="close" href="javascript:;" title="关闭"></a></dt>
+        <dd>
+            <ul>
+                <li><label>选择目的地</label><span class="android"><ins></ins><strong>安卓</strong><font></font></span><span class="ios"><ins></ins><strong>IOS</strong><font></font></span></li>
+                <li><label>输入手机号</label><input class="phone_num" type="text" /><a class="btn_code" title="获取口诀">获取口诀</a></li>
+                <li><label>输入口诀</label><input class="phone_code" type="text" /><a class="btn_appoint" title="确认预约">确认预约</a></li>            
+            </ul>
+        </dd>
+    </dl>
+</div>
+
+
+<body>
+<script src="js/jquery-1.7.1.min.js"></script>
+<script src="js/popout.js"></script>
+<script src="js/jwplayer.js"></script>  
+<script src="js/parallax.min.js"></script>
+<script>
+	var scene = document.getElementById('wrap');
+	var parallax = new Parallax(scene);
+
+
+function flash(index){
+	if(index==1){
+		popup($(".appoint"));
+	}else{
+		music_switch();
+		var video_id="82227453";
+		var video_title="视频标题";
+		$(".video_player dt strong").html(video_title);
+		$(".video_player dd span").commVideoPlayer({
+			v_id  : video_id
+		})	
+		popup($(".video_player"));
+	}
+}
+
+$(".video a").click(function(){
+	alert("d")
+	music_switch();
+	var video_id="82227453";
+	var video_title="视频标题";
+	$(".video_player dt strong").html(video_title);
+	$(".video_player dd span").commVideoPlayer({
+		v_id  : video_id
+	})	
+	popup($(".video_player"));
+});
+
+
+//音频
+var thePlayer = new jwplayer('jw').setup({
+	flashplayer: 'flash/jwplayer.flash.swf'
+	,file: 'http://files2.changyou.com/vc/pal5/bgm.mp3'
+	,autostart: true
+	,repeat: true
+	,height: 0
+	,width: 0
+});
+
+var has_closed=false;
+$(".music").click(function(){
+	if($(this).hasClass("pause")){
+		$(this).removeClass("pause");
+		has_closed=false;
+	}else{
+		$(this).addClass("pause");
+		has_closed=true;
+	}
+	thePlayer.play();
+});
+
+//视频
+function music_switch(){
+	if(!$(".music").hasClass("pause")){
+		$(".music").addClass("pause");
+		thePlayer.play();
+	}
+}
+
+$(".video_player .close").click(function(){
+	if(has_closed==false){
+		$(".music").removeClass("pause");
+		thePlayer.play();
+	}
+	$(".video_player dd").html("<span></span>");
+});
+
+
+</script>
+</body>
+</html>

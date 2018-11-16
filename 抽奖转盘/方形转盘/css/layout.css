@@ -1,0 +1,62 @@
+﻿@charset "utf-8";
+@import url(http://tl.changyou.com/logo/xtl_logo.css);
+*{ margin:0;padding:0;}
+.lottery a,.pop dt a { background-image:url(../images/sprite.jpg); background-repeat:no-repeat; }
+.none{font-size:0;height:0;line-height:0;visibility:hidden;display:none;}
+body{font:normal 14px/1.5 "Microsoft YaHei","微软雅黑";min-width:1000px; color:#40596d; word-break:break-all; word-wrap:break-word; background:#131217; }
+.wrap{ position:relative; width:1000px; margin:0 auto; overflow:hidden; }
+img,object,embed{vertical-align:top;}
+
+.box{ background-repeat:no-repeat; background-position:center top; }
+.wrap{ background-repeat:no-repeat; }
+
+.box01{ background-image:url(../images/bg_01.jpg); }
+.box02{ background-image:url(../images/bg_02.jpg); }
+.box03{ background-image:url(../images/bg_03.jpg); }
+.box01 .wrap{ height:551px; background-image:url(../images/wrap_01.jpg); }
+.box02 .wrap{ height:691px; background-image:url(../images/wrap_02.jpg); }
+.box03 .wrap{ padding-bottom:50px; height:933px; background-image:url(../images/wrap_03.jpg);  }
+
+.xtl_logo_lk a,.xtl_logo_bg{position:absolute;top:25px;left:0px;}
+.titlelink{ position:absolute; right:0px; top:60px; }
+.titlelink center { float:left; }
+.titlelink center a{ float:left; width:34px; height:34px; margin-right:6px; border-radius:50%; border:1px solid #643409; color:#643409; font:normal 12px/34px simsun; }
+.titlelink center a:hover,.titlelink center a.hover{ background:#643409; color:#f7eec6; }
+#share{ position:relative; float:left; width:114px; height:34px; border:1px solid #643409; border-radius:18px; color:#643409; }
+.cyou_share{ padding:9px 0 0 16px; }
+.time{ position:absolute; top:340px; width:100%; text-align:center; font:bold 22px/1.5 simsun,"宋体"; letter-spacing:1px; color:#ffeab2; }
+
+h3{ font-size:24px; }
+h3 strong{ color:#ae7f4c; }
+.code{ position:absolute; top:182px; left:103px; width:282px; text-align:center; }
+.code img{ padding-top:36px; width:255px; height:255px; }
+.event{ position:absolute; top:182px; left:465px; width:435px; overflow:hidden; }
+.event ul{ width:110%; padding-top:24px; height:155px; }
+.event ul li{ float:left; padding-right:18px; }
+.event ul li span{ display:block; padding-top:10px; text-align:center; color:#738694; }
+.rule{ padding-left:46px; }
+.rule li{ position:relative; width:100%; padding:16px 0px; border-bottom:1px dotted #9eaab3; }
+.rule li span{ position:absolute; left:-46px; top:0; font:normal 36px/54px Book Antiqua; color:#ae7f4c; font-style:italic; }
+.rule li span font{ font-size:24px; vertical-align:top; margin-right:2px; }
+
+.box03 h2{ position:absolute; top:124px; width:100%; color:#c5bdde; font-size:18px; text-align:center; }
+.lottery { padding-top:230px; width:900px; margin:0 auto; text-align:center; font-size:0; }
+.lottery span,.lottery a { display:inline-block; position:relative; width:160px; height:120px; margin:3px; vertical-align:top; }
+.lottery a { width:492px; background-position:0 0; }
+.lottery a:hover { background-position:0 -130px; }
+.lottery span img { width:100%; height:100%; }
+.lottery span.current ins { position:absolute; left:0; top:0; z-index:2; width:100%; height:100%; background:url(../images/lottery_select.png) no-repeat; }
+.box03 .rule{ padding-top:40px; margin:0 auto; width:770px; color:#c3bdd3; }
+.box03 .rule li{ border-color:#686378; }
+.box03 .rule li span{ color:#debf6a; }
+
+.pop{display:none;position:relative;width:560px; background:#a4723b;}
+.pop dt{ position:relative; padding:0px 55px;  text-align:center; }
+.pop dt span{ display:block; padding:25px 0px; border-bottom:1px solid #6e471d;  font:bold 30px/1.5 "Microsoft YaHei","微软雅黑"; color:#ffffff; }
+.pop dt a{position:absolute; right:30px; top:30px; width:24px;height:24px; cursor:pointer; background-position:0px -260px; transition:all 0.4s ease-in-out 0s; -webkit-transition:all 0.4s ease-in-out 0s;}
+.pop dt a:hover{ -webkit-transform:rotate(180deg); transform:rotate(180deg);}
+.pop dd { padding-bottom:50px;}
+.pop dd p { padding-top:25px; color:#ffd3a4; text-indent:center; font-size:24px; line-height:2; text-align:center; }
+.pop dd img { display:block; margin:25px auto 0px auto; width:190px; height:190px; }
+.pop dd .btn_finish { display:block; width:180px; height:60px; margin:35px auto 0 auto; text-align:center; background:#ffe380; color:#865927; border-radius:5px; font-size:24px; line-height:58px; cursor:pointer; }
+.pop dd .btn_finish:hover { background:#fff3c9; }

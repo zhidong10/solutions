@@ -1,0 +1,192 @@
+@charset "gb2312";
+.header dl dt a,.left_bar .reglog a.register,.left_bar .reglog a.download,.left_bar .service dt ul,.left_bar .service dd a,.left_bar .guardianship a ,.left_bar .health dt ,.left_bar .health dd,.left_bar .ad img{background:url(http://img1.tiancitycdn.com/eve/homepage/v2/images/eve_index.png) no-repeat;}
+.left_bar .binding,.content h2,.page a.first,.page a.prev,.page a.next,.page a.last,.detail dt h3,.detail dd ul li h4,#pageList a,.wallpaper li a,#videoList p,.sign dt h3{background:url(http://img1.tiancitycdn.com/eve/homepage/v2/images/eve_inside.png) no-repeat;}
+
+.step01 ul:after,.step02 ul li:after{content:".";display:block;height:0;visibility:hidden;clear:both;}
+.step01 ul,.step02 ul li{zoom:1}
+
+
+
+body{background:#080b14 url(http://img1.tiancitycdn.com/eve/homepage/v2/images/body.jpg) no-repeat center 36px;}
+.top{width:100%;height:36px;position:absolute;top:0px;left:0px;}
+.wrap{width:1000px;margin:36px auto 0px auto;background:url(http://img1.tiancitycdn.com/eve/homepage/v2/images/wrap_inside.jpg) no-repeat center top;}
+.wrap_down{width:1000px;margin:36px auto 0px auto;background:url(http://img1.tiancitycdn.com/eve/homepage/v2/images/wrap_down.jpg) no-repeat center top;}
+.header{position:relative;height:210px;z-index:10;}
+.wrap_down .header{position:relative;height:109px;z-index:10;}
+.header h1{display:none;}
+.header dl{position:relative;float:left;width:95px;margin:4px 1px 0px 2px;display:inline;}
+.header dl dt a{display:block;width:95px;height:42px;text-indent:-9999px;cursor:pointer;}
+.header dl dt.nav01 a{background-position:0px 0px;}
+.header dl.current dt.nav01 a{background-position:0px -50px;}
+.header dl dt.nav02 a{background-position:-100px 0px;}
+.header dl.current dt.nav02 a{background-position:-100px -50px;}
+.header dl dt.nav03 a{background-position:-200px 0px;}
+.header dl.current dt.nav03 a{background-position:-200px -50px;}
+.header dl dt.nav04 a{background-position:-300px 0px;}
+.header dl.current dt.nav04 a{background-position:-300px -50px;}
+.header dl dt.nav05 a{background-position:-400px 0px;}
+.header dl.current dt.nav05 a{background-position:-400px -50px;}
+.header dl dt.nav06 a{background-position:-500px 0px;}
+.header dl.current dt.nav06 a{background-position:-500px -50px;}
+.header dl dt.nav07 a{background-position:-600px 0px;}
+.header dl.current dt.nav07 a{background-position:-600px -50px;}
+.header dl dt.nav08 a{background-position:-700px 0px;}
+.header dl.current dt.nav08 a{background-position:-700px -50px;}
+.header dl.logo{width:212px;}
+.header dl.logo dt a{background:none;margin-left:56px;height:55px;}
+.header dl dd{display:none;position:absolute;left:0px;top:45px;width:95px;padding-bottom:3px;background:#11769c;box-shadow: 0px 0px 5px #11769c;}
+.header dl dd ul{background:#138bb8 url(http://img1.tiancitycdn.com/eve/homepage/v2/images/repeat_x.jpg) repeat-x left top;}
+.header dl dd ul li h3{line-height:26px;text-align:center;color:#e8f1ff;}
+.header dl dd ul li h3 a{color:#e8f1ff;}
+.header dl dd ul li h3 a:hover{color:#000000;text-decoration:none;font-weight:bold;}
+.main{padding:0px 11px 30px 11px;*zoom:1;}
+.main:after{content:".";display:block;height:0;visibility:hidden;clear:both;}
+.left_bar{float:left;width:215px;padding:18px 17px 17px 17px;margin-right:14px;}
+.left_bar .binding{position:relative;z-index:8;height:102px;background-position:0px -50px;}
+.left_bar .reglog{height:46px;padding:3px 0px 19px 0px;}
+.left_bar .reglog a{float:left;width:106px;height:46px;text-indent:-9999px;}
+.left_bar .reglog a.register{margin-right:3px;background-position:0px -220px;}
+.left_bar .reglog a.download{background-position:-109px -220px;}
+.left_bar .service{height:102px;background:#bdbdbd;border:1px solid #838383;}
+.left_bar .service dt ul{margin-top:11px;height:56px;background-position:0px -280px;}
+.left_bar .service dt ul li{padding:0px 0px 11px 95px;height:17px;line-height:17px;color:#04151e;}
+.left_bar .service dd a{float:left;width:91px;height:27px;text-indent:-9999px;}
+.left_bar .service dd a.onlineser{margin:0px 8px 0px 12px;background-position:-250px -220px;}
+.left_bar .service dd a.findpass{background-position:-370px -220px;}
+.left_bar .guardianship{padding-top:20px;height:102px;}
+.left_bar .guardianship dt a{display:block;width:214px;height:36px;background-position:-250px -260px;text-indent:-9999px;}
+.left_bar .guardianship dd{padding:8px 0px 0px 11px;color:#e8e8e8;}
+.left_bar .health dt{padding-left:14px;height:22px;background-position:-890px -23px;color:#34b3d8;}
+.left_bar .health dd{padding-top:12px;height:82px;color:#a8acae;text-align:center;background-position:0px -100px;}
+
+/* down */
+.down{padding:0px 74px 60px 74px;}
+.down h1{height:51px;padding-top:12px;text-align:center;}
+#videoPlayer{position:relative;width:635px;height:365px;margin:45px 0px 0px 110px;}
+#videoPlayer p{position:absolute;left:0px;top:0px;width:635px;height:365px;text-align:center;line-height:365px;color:#e4e4e4;}
+#videoPlayer ins{display:block;width:615px;height:345px;border:10px solid #000000;opacity:0.5;filter:alpha(opacity=50);}
+#videoPlayer object{position:absolute;left:10px;top:10px;width:615px;height:345px;background:#000000;}
+#videoList{position:relative;height:480px;padding:40px 0px 0px 46px;}
+#videoList li{position:relative;float:left;width:231px;height:240px;padding-right:35px;}
+#videoList li cite{display:block;width:213px;height:133px;margin-bottom:3px;border:9px solid #000000;opacity:0.5;filter:alpha(opacity=50);}
+#videoList li ins{display:block;margin-bottom:4px;width:231px;height:28px;background:#000000;opacity:0.5;filter:alpha(opacity=50);}
+#videoList li a img{position:absolute;left:9px;top:9px;width:213px;height:133px;}
+#videoList h2{position:absolute;left:0px;top:155px;width:231px;height:28px;line-height:28px;overflow:hidden;color:#ffffff;text-align:center;}
+#videoList p{position:absolute;left:0px;top:185px;width:155px;height:28px;line-height:28px;overflow:hidden;margin-left:60px;padding-left:16px;background-position:-685px -76px;}
+#videoList p a{color:#1884a8;}
+#videoList .list_tips{position:absolute;left:0px;top:0px;width:853px;height:450px;text-align:center;line-height:450px;color:#e4e4e4;}
+#pageList{position:relative;height:16px;padding:14px 0px;text-align:center;}
+#pageList a{display:inline-block;margin:0px 5px;width:40px;height:17px;text-align:center;overflow:hidden;color:#000000;background-position:-230px -135px;font:bold 14px/17px "宋体", Times, serif;}
+#pageList a:hover{text-decoration:none;}
+#pageList a.current,#pageList span.current{display:inline-block;margin:0px 5px;width:40px;height:17px;text-align:center;overflow:hidden;color:#000000;background:url(http://img1.tiancitycdn.com/eve/homepage/v2/images/page_num.png) no-repeat;color:#ffffff;_background-image:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/page_num.png",sizingMethod="crop");font:bold 14px/17px "宋体", Times, serif;}
+.wallpaper{padding:31px 0px 0px 46px;min-height:900px;_height:900px;}
+.wallpaper li{position:relative;float:left;width:231px;height:225px;padding-right:35px;}
+.wallpaper li ins.wpic{display:block;width:213px;height:133px;margin-bottom:3px;border:9px solid #000000;opacity:0.5;filter:alpha(opacity=50);}
+.wallpaper li ins.wdown1{float:left;_float:none;_display:inline-block;width:114px;height:24px;margin:0px 3px 4px 0px;background:#000000;opacity:0.5;filter:alpha(opacity=50);}
+.wallpaper li ins.wdown2{float:left;_float:none;_display:inline-block;width:114px;height:24px;margin:0px 0px 4px 0px;background:#000000;opacity:0.5;filter:alpha(opacity=50);}
+.wallpaper li img{position:absolute;left:9px;top:9px;width:213px;height:133px;}
+.wallpaper li a{position:absolute;width:98px;height:24px;margin-left:16px;line-height:24px;color:#ffffff;background-position:-612px -77px;}
+.wallpaper li a.pdown1{left:0px;top:154px;}
+.wallpaper li a.pdown2{left:117px;top:154px;}
+.wallpaper li a.pdown3{left:0px;top:182px;}
+.wallpaper li a.pdown4{left:117px;top:182px;}
+.screenshot{padding:40px 0px 0px 46px;min-height:870px;_height:870px;}
+.screenshot li{position:relative;float:left;width:231px;height:215px;padding-right:35px;}
+.screenshot li cite{display:block;width:213px;height:133px;margin-bottom:4px;border:9px solid #000000;opacity:0.5;filter:alpha(opacity=50);}
+.screenshot li ins{display:block;margin-bottom:4px;width:231px;height:34px;background:#000000;opacity:0.5;filter:alpha(opacity=50);}
+.screenshot li img{position:absolute;left:9px;top:9px;width:213px;height:133px;}
+.screenshot li h3{position:absolute;left:0px;top:154px;width:231px;height:34px;line-height:34px;overflow:hidden;text-align:center;color:#ffffff;}
+
+/* inside */
+.content{float:right;width:680px;margin-top:61px;padding:16px 17px 16px 18px;}
+.content_more{background:url(http://img1.tiancitycdn.com/eve/homepage/v2/images/content_more.jpg) no-repeat 0px 756px;}
+.content h2{height:44px;line-height:46px;overflow:hidden;margin-bottom:14px;padding-left:28px;color:#ffffff;background-position:0px 0px;}
+.content h2 a,.content h2 a:hover{color:#ffffff;}
+.content h2 strong{color:#04151e;font-weight:normal;}
+.gray{min-height:635px;_height:635px;background:#bdbdbd;padding:14px;}
+.list dt ul{height:29px;border-bottom:1px solid #202b32;}
+.list dt ul li{float:left;width:87px;height:29px;line-height:29px;text-align:center;margin-right:1px;background:url(http://img1.tiancitycdn.com/eve/homepage/v2/images/repeat_x.png) repeat-x 0px -70px;}
+.list dt ul li.current{background-position:0px -35px;}
+.list dt ul li a{display:block;width:87px;height:30px;color:#ffffff;}
+.list dt ul li a:hover{text-decoration:none;}
+.list dd ul{min-height:560px;_height:560px;padding:7px 0px 18px 0px;}
+.list dd ul li{height:22px;padding:5px 10px 0px 6px;line-height:22px;border-bottom:1px solid #a1a0a0;overflow:hidden;}
+.list dd ul li strong{float:left;width:46px;color:#1590bb;}
+.list dd ul li h3{float:left;width:500px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.list dd ul li h3 a{color:#000000;}
+.list dd ul li h3 a:hover{color:#a06900;text-decoration:none;}
+.list dd ul li span{float:right;color:#1286ac;}
+
+.page{color:#bcac99;text-align:center;}
+.page a{color:#333333;margin:0px 5px;}
+.page span{color:#158BB7;text-decoration:underline;margin:0px 5px;}
+.page span.off{color:#777777;text-decoration:none;}
+.page a:hover{color:#158BB7;}
+.detail dt{height:29px;line-height:29px;padding-left:12px;background:url(http://img1.tiancitycdn.com/eve/homepage/v2/images/repeat_x.png) repeat-x 0px 0px;color:#ffffff;}
+.detail dt h3{padding-left:17px;background-position:-685px 9px;}
+.detail dd ul{min-height:567px;_height:567px;padding:12px 12px 6px 8px;}
+.detail dd ul li h4{font-weight:bold ;color:#0e6e9b;line-height:22px;padding:0px 0px 3px 22px;background-position:-681px -24px;}
+.detail dd ul li p{color:#000000;padding:0px 0px 8px 22px;}
+.slidep dd ul{min-height:575px;_height:575px;}
+.slidep dd ul li h4{cursor:pointer;}
+.slidep dd ul li p{display:none;}
+.newsdetail dt h1{text-align:center;height:29px;border-bottom:1px solid #212b34;color:#146c9c;font:bold 14px/29px "宋体";}
+.newsdetail dd{padding:20px 10px 0px 10px;color:#000000;word-wrap:break-word;}
+.newsdetail dd a{color:#000000;}
+.newsdetail dd a:hover{color:#000000;text-decoration:underline;}
+.game_down{text-align:center;padding:20px 0px 25px 0px;}
+.config{padding:15px 0px 0px 29px;}
+.config table caption{line-height:29px;background:#0c2132;color:#ffffff;}
+.config table tr th{line-height:27px;background:#8ba1ae;color:#095974;border-right:1px solid #9fb5c2;}
+.config table tr td{width:236px;border-right:1px solid #9fb5c2;border-top:1px solid #9fb5c2;background:#8ba1ae;color:#000000;padding:3px 5px;vertical-align:top;}
+.config table tr td.tc{width:90px;vertical-align:middle;}
+.config table tr td.last{background:#9fb5c2;width:475px;}
+.down_other{width:595px;padding-top:15px;zoom:1;}
+.down_other:after{content:".";height:0;visibility:hidden;clear:both;display:block;}
+
+.configuration{width:100%;border-collapse:separate;border-right:1px solid #cccccc;border-bottom:1px solid #cccccc;border-top:1px solid #777777;border-left:1px solid #777777;} 
+.configuration tr th{border-right:1px solid #777777;border-bottom:1px solid #777777;border-top:1px solid #cccccc;border-left:1px solid #cccccc;text-align:center;font:bold 13px/2 "宋体";} 
+.configuration tr th strong , .configuration tr th b{display:inline-block;font:bold 14px/2.5 "宋体";} 
+.configuration tr td{border-right:1px solid #777777;border-bottom:1px solid #777777;border-top:1px solid #cccccc;border-left:1px solid #cccccc;padding:5px;line-height:1.5;} 
+.configuration tr td span{color:#1484ac;} 
+.configuration tr td span a{color:#1484ac;text-decoration:underline;} 
+.configuration tr td span a:hover{color:#0E6E9B;text-decoration:underline;} 
+.wid_short{width:16%;}
+.wid_long{width:42%;}
+.all_tc tr td{color:#000000;}
+.all_tc tr th , .all_tc tr td{text-align:center;}
+
+/* sign hongwei 5.28 */
+.sign dt{height:29px;line-height:29px;padding-left:12px;background:url(http://img1.tiancitycdn.com/eve/homepage/v2/images/repeat_x.png) repeat-x 0px 0px;color:#ffffff;}
+.sign dt h3{padding-left:17px;background-position:-685px 9px;}
+.sign dd{ border:1px solid #000000;padding:12px 7px 6px 13px;}
+
+.step01 li {float:left; width:126px; height:60px; cursor:pointer; }
+.step01 li.z_index { position:relative;}
+.step01 li img.small { width:114px; height:48px; border:3px solid #000000; opacity:0.8; filter:alpha(opacity=80); }
+.step01 li img.current {  opacity:1.0; filter:alpha(opacity=100);}
+.step01 li img.selected { border-color:#1cb6fe; }
+.step01 li img.big { display:none;}
+.step01 li img.show01 { display:inline; z-index:100; position:absolute; top:54px; left:0px; width:392px; height:172px; border:4px solid #000000;}
+.step01 li img.show02 { display:inline; z-index:100; position:absolute; top:54px; right:6px; width:392px; height:172px; border:4px solid #000000;}
+.martop14 { margin-top:14px; }
+.step02 { height:283px; }
+.step02 h4 { margin:0px 6px 14px 0px; height:19px; line-height:19px; border-bottom:1px solid #000000; }
+.step02 ul li { padding-bottom:5px; }
+.step02 .sub01 { float:left; width:190px; padding-left:5px; }
+.step02 .sub02 { float:left; width:95px; }
+.step02 .sub03 { float:left; width:56px; }
+.step02 .sub04 { float:left; width:80px; }
+.step02 .sub05 { float:left; width:100px; }
+.step02 .sub05.posirela { position:relative; }
+.step02 .sub06 { float:left; width:95px; }
+.step02 .sub01 input { width:170px; height:18px; line-height:18px; padding:0px 5px; border:1px solid #a5a5a5; }
+.step02 .sub02 select {  width:89px; height:20px; }
+
+.color{ display:none; position:absolute; left:0px; top:22px; width:235px; padding:0 0 1px 0; background:#fff; overflow:hidden; margin-bottom:30px;}
+.color ul{ width:78px; float:left; display:inline; background:#fff; overflow:hidden;}
+.color li{ float:left; display:inline; width:12px; height:12px; margin:1px 0 0 1px; background:#808080;}
+.color li a{ display:block; margin:1px 0 0 1px; width:11px; height:11px; overflow:hidden;}
+.showColor{ float:left; width:56px; height:18px; line-height:18px; text-align:center; background:#fff; border:1px solid #A5A5A5;text-transform:lowercase; color:#000000;}
+.myhand { float:left; height:20px; width:35px; margin-left:2px; border:1px solid #A5A5A5; background:#ffffff; color:#000000; }
+.colorwhite { color:#ffffff;}

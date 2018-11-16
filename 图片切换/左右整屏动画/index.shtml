@@ -1,0 +1,184 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>《星际战甲》游戏特色—《星际战甲》官方网站</title>
+    <meta name="Keywords" content="星际战甲,warframe,星际战甲官网,warframe国服,动作射击,warframe中文,战争框架,战争框架国服,Digital Extremes战甲公测,超能革命,战争框架公测,星际战甲职业,星际战甲新闻,warframe更新,星际战甲图片,超能战甲,星际战甲客户端,星际战甲客户端下载,科幻,2015科幻大作,2015必玩网游,2015最期待网游,xingjizhanjia,星级战甲" /> 
+    <meta name="Description" content="超能革命，势不可挡！由畅游独家代理，欧美著名游戏研发商Digital Extremes研发的新一代科幻题材第三人称动作射击网游《星际战甲》（英文名：Warframe）即将于5月7日“超能革命”国服首测。《星际战甲》凭借形象鲜明、能力各异的众多超能英雄，激爽刺激的动作击杀快感，以及媲美单机大作的极致画面 ，吸引了全球超过500万游戏用户的关注，并常驻国外各大热游榜排名前三的位置。" />
+    <meta name="author" content="Design:FengMengYao; Web Layout:WangHongWei;" />
+    <link type="image/x-icon" href="http://wf.changyou.com/favicon.ico" rel="icon" />
+    <link type="image/x-icon" href="http://wf.changyou.com/favicon.ico" rel="shortcut icon" />
+    <link type="text/css" rel="stylesheet" href="css/reset.css" />
+    <link type="text/css" rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+<h1 class="hideTxt">《星际战甲》游戏特色</h1>
+<div class="wrapper">
+    <div class="bot_nav_wrap">
+      <div class="bot_nav">
+       <ul>
+          <li id="d1"><a class="on" title="超能英雄">超能英雄</a></li>
+          <li id="d2"><a title="动作射击">动作射击</a></li>
+          <li id="d3"><a title="星际探索">星际探索</a></li>
+          <li id="space"><span></span></li>
+          <li id="d4"><a title="异能武器">异能武器</a></li>
+          <li id="d5"><a title="模块收集">模块收集</a></li>
+          <li id="d6"><a title="氏族系统">氏族系统</a></li>
+        </ul>
+        <div class="wf_logo_lk">
+            <a href="http://wf.changyou.com/index.shtml" target="_blank" title="星际战甲官方网站"></a>
+        </div>
+        <div class="wf_logo_bg"></div>
+      </div>
+    </div>
+
+    <div id="parallax" data-model="parallax" class="g-parallax">
+        <div class="bg" alt="0.1"></div>
+        <!--第一部分 开始-->
+        <div class="box l-box1">
+            <img class="s1_line" src="images/bg1.jpg" />
+            <img class="box1_dot" src="images/box1_dot.png" alt="1.6" data-w="1920"/>
+            <img class="box1_player_right" src="images/box1_player_right.png" alt="1.3" data-w="1180"/>
+            <img class="box1_player_left" src="images/box1_player_left.png" alt="1.0" data-w="1280"/>
+            <img class="box1_slogan" src="images/box1_slogan.png" alt="1.1" data-w="537"/>
+            <div class="box1_video" alt="0.9" data-w="368">
+            	<a id="box1_video" href="javascript:void(0)"  rel="http://files2.changyou.com/vc/xjzj/warframe_cn_ccb1_1st.flv" class="box_video" title="5月7日首测！《星际战甲》“超能革命”首测前瞻"></a>
+            </div>
+        </div>
+		<!--第一部分 结束-->
+        <!--第二部分 开始-->
+        <div class="box l-box2" data-type="screen">
+            <img class="s1_line" src="images/bg2.png" />
+            <img class="box2_dot" src="images/box2_dot.png" alt="1.6" data-w="1970"/>
+            <img class="box2_slogan" src="images/box2_slogan.png" alt="1.1" data-w="970"/>
+        </div>
+		<!--第二部分 结束-->
+        <!--第三部分 开始-->
+        <div  class="box l-box3" data-type="screen">
+            <img class="s1_line" src="images/bg3.png"   />
+            <img class="box3_ship" src="images/box3_ship.png" alt="1.5" data-w="2450"/>
+            <img class="box3_planet" src="images/box3_planet.png" alt="1.2" data-w="200"/>
+            <img class="box3_slogan" src="images/box3_slogan.png" alt="1.4" data-w="1480"/>
+        </div>
+		<!--第三部分 结束-->
+        <!--第四部分 开始-->
+        <div class="box l-box4" data-type="screen">
+            <img class="s1_line" src="images/bg4.png"  />
+            <img class="box4_dot" src="images/box4_dot.png" alt="1.6" data-w="2200"/>
+            <img class="box4_slogan" src="images/box4_slogan.png" alt="1.4" data-w="1560"/>
+            <img class="box4_weapon" src="images/box4_weapon.png" alt="1.3" data-w="1000"/>
+            <img class="box4_player" src="images/box4_player.png" alt="1.1" data-w="120"/>
+        </div>
+		<!--第四部分 结束-->
+        <!--第五部分 开始-->
+        <div class="box l-box5" data-type="screen">
+            <img class="s1_line" src="images/bg5.png"  />
+            <img class="box5_light" src="images/box5_light.png" alt="1.6" data-w="2300"/>
+            <img class="box5_card" src="images/box5_card.png" alt="1.3" data-w="260"/>
+            <img class="box5_slogan" src="images/box5_slogan.png" alt="1.4" data-w="660"/>
+            <img class="box5_player" src="images/box5_player.png" alt="1.2" data-w="1880"/>
+        </div>
+		<!--第五部分 结束-->
+        <!--第六部分 开始-->
+        <div class="box l-box6" data-type="screen">
+            <img class="s1_line" src="images/bg6.png"  />
+            <img class="box6_light" src="images/box6_light.png" alt="1.6" data-w="2300"/>
+            <img class="box6_slogan" src="images/box6_slogan.png" alt="1.4" data-w="1530"/>
+            <img class="box6_player_left" src="images/box6_player_left.png" alt="1.2" data-w="2260"/>
+            <img class="box6_player_right" src="images/box6_player_right.png" alt="1.3" data-w="1160"/>
+        </div>
+		<!--第六部分 结束-->
+</div>
+</div>
+
+<!--鼠标滚屏提示-->
+<div class="tips">
+	<dl>
+    	<dt title="关闭"></dt>
+        <dd>滚动滚轮，横向浏览</dd>
+    </dl>
+</div>
+
+
+<!--视频弹窗-->
+<div id="video_player">
+  <div class="video_title">
+        <h2></h2>
+        <a class="close">X</a>
+    </div>
+    <div class="video_placeholder">
+        <div><span id="video_placeholder">视频正在下载中...</span></div>
+    </div>
+</div> 
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/popout.js"></script>
+<script type="text/javascript" src="js/scroll.js"></script>
+<script type="text/javascript" src="js/video.sohu.js"></script>
+<script type="text/javascript" src="js/jquery.flash.min_.js"></script> 
+<script type="text/javascript">
+//JS设置
+var Setting = {
+  scrollSpeed: 2 // 页面滚动速度
+
+};
+
+//鼠标滚屏提示
+$(".tips dl dt").click(function(){
+	$(this).parents(".tips").fadeOut();
+});
+
+//鼠标滚屏一定时间后关闭
+/*function tips_close(){
+	$(".tips dl dt").click();
+};
+
+$(window).load(function(){
+	setTimeout("tips_close()",4000)
+});*/
+
+$(function(){
+	$('.box_video').click(function(){
+		popup($('#video_player'));
+		$('.video_title h2').text($(this).attr('title'));
+		var rel_video = $(this).attr('rel')
+		var title_video = $(this).attr('title')
+		
+		video_fun(rel_video,title_video);
+	})
+
+	$('#video_player .close').click(function(){
+		$('.video_placeholder div').html('<span id="video_placeholder">视频正在下载中...</span>');
+	})
+
+})
+
+
+function video_fun(rel_video,title_video){
+	if(rel_video.length > 10 ){
+		$('#video_placeholder').flash({
+			'src':'gddflvplayer.swf',
+			'width':'640',
+			'height':'360',
+			'allowfullscreen':'true',
+			'allowscriptaccess':'always',
+			'wmode':'transparent',
+			'flashvars': {
+				'vdo':rel_video,
+				'sound':'60',
+				'splashscreen':'',
+				'autoplay':'true'
+			}
+		});
+	}else{
+		$("#video_placeholder").playSohuVideo({
+			v_id : rel_video,
+			title : title_video,
+			width : 640 ,
+			height: 360 
+		});
+	}	
+}
+</script>
+<!--#include virtual="/all/dma/dma_static.html" -->
+</body>
+</html>

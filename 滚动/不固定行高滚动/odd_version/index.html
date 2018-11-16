@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<style type="text/css">
+<!--
+#nli_con {
+	height: 100px;
+	width: 300px;
+	overflow: hidden;
+	border: 1px solid #999999;
+}
+div,dl,dt,dd {
+	margin: 0px;
+	padding: 0px;
+}
+dl {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #CCCCCC;
+	font-size: 14px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+dd {
+	font-size: 12px;
+}
+-->
+</style>
+<script language="javascript">
+var $ = function (d){
+    typeof d == "string" &&(d = document.getElementById(d)); 
+    return $.fn.call(d);
+};
+$.fn = function (){//附加2个方法
+	this.$ADD = function (fn){CLS.add(this,fn)};
+	this.addEvent = function (sEventType,fnHandler){
+		if (this.addEventListener) {this.addEventListener(sEventType, fnHandler, false);} 
+	    else if (this.attachEvent) {this.attachEvent("on" + sEventType, fnHandler);} 
+	    else {this["on" + sEventType] = fnHandler;}
+	}
+	this.removeEvent = function (sEventType,fnHandler){
+		if (this.removeEventListener) {this.removeEventListener(sEventType, fnHandler, false);} 
+	    else if (this.detachEvent) {this.detachEvent("on" + sEventType, fnHandler);} 
+	    else { this["on" + sEventType] = null;}
+	}
+	return this;
+};
+var Class = {create: function() {return function() { this.initialize.apply(this, arguments); }}};
+var Bind = function (obj,fun,arr){return function() {return fun.apply(obj,arr);}}
+var Marquee = Class.create();
+Marquee.prototype = {
+  initialize: function(id,name,out,speed) {
+    this.name = name;
+	this.box = $(id);
+	this.out  = out;
+	this.speed = speed;
+	this.d = 1;
+	this.box.style.position = "relative";
+	this.box.scrollTop = 0;
+	var _li = this.box.firstChild;
+	while(typeof(_li.tagName)=="undefined")_li = _li.nextSibling;
+	this.lis = this.box.getElementsByTagName(_li.tagName);
+	this.len = this.lis.length;	
+	for(var i=0;i<this.lis.length;i++){//计算该复制多少节点，保证无缝滚动，没必要的就不复制
+	    var __li = document.createElement(_li.tagName);
+		__li.innerHTML = this.lis[i].innerHTML;
+		this.box.appendChild(__li);
+		if(this.lis[i].offsetTop>=this.box.offsetHeight)break;
+	}
+	this.Start();
+	this.box.addEvent("mouseover",Bind(this,function(){clearTimeout(this.timeout);},[]));
+	this.box.addEvent("mouseout",Bind(this,this.Start,[]));
+  },
+  Start:function (){
+	  clearTimeout(this.timeout);
+	  this.timeout = setTimeout(this.name+".Up()",this.out*1000)
+  },
+  Up:function(){
+	  clearInterval(this.interval);
+	  this.interval = setInterval(this.name+".Fun()",10);
+  },
+  Fun:function (){
+      this.box.scrollTop+=this.speed;
+	  if(this.lis[this.d].offsetTop <= this.box.scrollTop){
+	    clearInterval(this.interval);
+		this.box.scrollTop = this.lis[this.d].offsetTop;
+		this.Start();
+		this.d++;
+	  }
+	  if(this.d >= this.len + 1){
+	     this.d = 1;
+	     this.box.scrollTop = 0;
+	  }
+  }
+};
+$(window).addEvent("load",function (){
+  marquee = new Marquee("nli_con","marquee",1,2);//加载完后运行代码，
+});
+</script>
+</head>
+<body>
+ <div id="nli_con">
+ <li><h1><a href=http://www.hwj123.com/'blog/post/10.html' target='_blank'><strong>1. 域名与网址有什么区别？</strong></a></h1>
+   <p>一个完整网址范例如下： http://www.hwj123.com....</p></li>
+ <li><h1><a href=http://www.hwj123.com/'blog/post/10.html' target='_blank'><strong>1. 域名与网址有什么区别？</strong></a></h1>
+   <p>一个完整网址范例如下： http://www.hwj123.com....</p></li>
+ <li><h1><a href=http://www.hwj123.com/'blog/post/10.html' target='_blank'><strong>1. 域名与网址有什么区别？</strong></a></h1>
+   <p>一个完整网址范例如下： http://www.hwj123.com....</p></li>
+ <li><h1><a href=http://www.hwj123.com/'blog/post/10.html' target='_blank'><strong>1. 域名与网址有什么区别？</strong></a></h1>
+   <p>一个完整网址范例如下： http://www.hwj123.com....</p></li>
+ <li><h1><a href=http://www.hwj123.com/'blog/post/10.html' target='_blank'><strong>1. 域名与网址有什么区别？</strong></a></h1>
+   <p>一个完整网址范例如下： http://www.hwj123.com....</p></li>
+ <li><h1><a href=http://www.hwj123.com/'blog/post/10.html' target='_blank'><strong>1. 域名与网址有什么区别？</strong></a></h1>
+   <p>一个完整网址范例如下： http://www.hwj123.com....</p></li>
+ <li><h1><a href=http://www.hwj123.com/'blog/post/10.html' target='_blank'><strong>1. 域名与网址有什么区别？</strong></a></h1>
+   <p>一个完整网址范例如下： http://www.hwj123.com....</p></li>
+ <li><h1><a href=http://www.hwj123.com/'blog/post/10.html' target='_blank'><strong>1. 域名与网址有什么区别？</strong></a></h1>
+   <p>一个完整网址范例如下： http://www.hwj123.com....</p></li>
+ <li><h1><a href=http://www.hwj123.com/'blog/post/10.html' target='_blank'><strong>1. 域名与网址有什么区别？</strong></a></h1>
+   <p>一个完整网址范例如下： http://www.hwj123.com....</p></li>
+ <li><h1><a href=http://www.hwj123.com/'blog/post/10.html' target='_blank'><strong>1. 域名与网址有什么区别？</strong></a></h1>
+   <p>一个完整网址范例如下： http://www.hwj123.com....</p></li>
+ <li><h1><a href=http://www.hwj123.com/'blog/post/10.html' target='_blank'><strong>1. 域名与网址有什么区别？</strong></a></h1>
+   <p>一个完整网址范例如下： http://www.hwj123.com....</p></li>
+ <li><h1><a href=http://www.hwj123.com/'blog/post/10.html' target='_blank'><strong>1. 域名与网址有什么区别？</strong></a></h1>
+   <p>一个完整网址范例如下： http://www.hwj123.com....</p></li>
+
+
+
+</div>
+<p>
+<span>
+$(window).addEvent("load",function (){
+  marquee = new Marquee("nli_con","marquee",a,b);//加载完后运行代码，nli_con是外框的id，a是间隔滚动的时间，b是滚动距离递增的数值
+});
+</span>
+<p>
+不需要固定一个行高，文档结构不一定非要像我这样。
+dl可以换成div
+<br/>
+=============也可以使下面的结构==============
+<br/>
+ul
+<br/>
+  li  /li
+<br/>  
+li  /li
+<br/>
+/ul
+<p>
+</p>
+
+</body>
+</html>

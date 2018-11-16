@@ -1,0 +1,33 @@
+//预加载
+function doOnload() {
+    setTimeout("downloadComponents()",3000);
+}
+window.onload = doOnload;
+
+function downloadComponents() {
+    downloadImg("http://img1.tiancitycdn.com/eve/homepage/v2/images/inside0712.jpg");
+    downloadImg("http://img1.tiancitycdn.com/eve/homepage/v2/images/down0712.jpg");
+    downloadImg("http://img1.tiancitycdn.com/eve/homepage/v2/images/body0726.jpg");
+ }
+function downloadImg(url) {
+    var elem = document.createElement("img");
+    elem.src = url;
+    document.getElementById("none").appendChild(elem);
+}
+function downloadJs(url) {
+    var elem = document.createElement("script");
+    elem.type = "text/javascript";
+    elem.src = url;
+    document.getElementById("none").appendChild(elem);
+}
+
+另外一种方法：
+//预加载
+$(window).load(function(){
+    setTimeout("downloadImg()",4000);
+})
+function downloadImg() {
+	var pics='<img src="images/content_01.png" /><img src="images/content_02.png" /><img src="images/content_03.png" /><img src="images/content_04.png" /><img src="images/content_05.png" /><img src="images/content_06.png" /><img src="images/content_07.png" />'
+	$("#none").html(pics);
+}
+

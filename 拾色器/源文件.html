@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="gbk" />
+<title>JS取色器</title>
+<style>
+body{ margin:0; padding:20px 0 0 50px; font-size:14px; color:#000; font-family:simsun, arial;}
+div,ul,ol,li,dl,dt,dd,form,img,p{ margin:0; padding:0; border:0;}
+li { list-style-type:none;}
+h1,h2,h3,h4,h5,input{ margin:0; padding:0; letter-spacing:1px;}
+table,tr,td,th{ font-size:12px;}
+textarea{ overflow:auto;}
+
+#color{ width:235px; padding:0 0 1px 0; background:#fff; overflow:hidden; margin-bottom:30px;}
+#color ul{ width:78px; float:left; display:inline; background:#fff; overflow:hidden;}
+#color li{ float:left; display:inline; width:12px; height:12px; margin:1px 0 0 1px; background:#808080;}
+#color li a{ display:block; margin:1px 0 0 1px; width:11px; height:11px; overflow:hidden;}
+</style>
+<script>
+/*
+auther:f7
+date:2010.10
+*/
+
+// 辅助函数
+function F$(element){
+ return typeof(element)=="object" ? element : document.getElementById(element);
+};
+
+// 事件加载器
+function addEvent(elem,type,fn){if(elem.nodeName==="A"&&type==="click"){F7(elem).attr("href","javascript:void(0)")};if(elem.addEventListener){elem.addEventListener(type,fn,false);return true;}else if(elem.attachEvent){elem['e'+type+fn]=fn;elem[type+fn]=function(){elem['e'+type+fn](window.event);}
+elem.attachEvent("on"+type,elem[type+fn]);return true;}
+return false;};
+
+// 主体函数
+var getColor = function(hand, input, elem, mouse){
+// 缺点：目前不支持点击空白地方关闭
+  this.hand = hand;// 触发按钮
+  this.input = input;// 接受选中颜色的表单
+  this.elem = elem;// 色块放置的容器，最佳标签为DIV
+  this.mouse = mouse;// 鼠标触发动作
+  this.flag = 0;// 记录是否已经打开颜色模块
+  this.h = [];
+  this.h[0] = "FF";
+  this.h[1] = "CC";
+  this.h[2] = "99";
+  this.h[3] = "66";
+  this.h[4] = "33";
+  this.h[5] = "00";
+};
+getColor.prototype = {
+  init: function(){// 执行
+    var that = this;
+    addEvent(this.hand, this.mouse, function(){
+      if(that.flag == 0){
+        that.show();
+        that.getRank();
+        //that.hand.onblur = function(){ that.hide() };// 手柄失去焦点后关闭  --  此功能失败
+        //that.hand.onblur = function(){ setTimeout(function(){that.hide()}, 100) };// 手柄失去焦点后关闭
+      }else{
+        that.hide();
+      };
+    });
+  },
+  
+  show: function(){
+    this.elem.style.display = "block";
+    this.elem.innerHTML = "";// 先清空内容；
+    this.flag = 1;
+  },
+  
+  hide: function(){
+    this.elem.style.display = "none";
+    this.flag = 0;
+  },
+  
+  getRank: function(){// 组合出216种不同的颜色参数
+    for(var r=0; r<6; r++){
+      var _ul = document.createElement("ul");
+      for(var g=0; g<6; g++){
+        for(var b=0; b<6; b++){
+          this.getCube(this.h[r], this.h[g], this.h[b], _ul);
+        };
+      };
+      this.elem.appendChild(_ul);
+    };
+  },
+  
+  getCube: function(R, G, B, _ul){// 创建颜色小方块
+    var _li = document.createElement("li");
+    var _a = document.createElement("a");
+    _a.style.background = "#"+ R + G + B;
+    _li.title = "#"+ R + G + B;
+    _li.appendChild(_a);
+    _ul.appendChild(_li);
+    var that = this;
+    addEvent(_li, "click", function(){ that.action(R + G + B) });
+  },
+  
+  action:function(RGB){//点击颜色后的执行
+    this.hide();
+    this.input.value = "#"+RGB;
+    this.input.style.background = "#"+RGB;
+    
+    alert('您选择的颜色是:'+RGB);
+  }
+};
+
+// 效果加载
+window.onload = function(){
+  
+  var Fcolor = new getColor(F$("myhand"), F$("showColor"), F$("color"), "click");
+  Fcolor.init();
+  
+  var spancolor = new getColor(F$("spanhand"), F$("showColor"), F$("color"), "click");
+  spancolor.init();
+  
+};
+</script>
+</head>
+
+<body>
+<input type="button" value="按钮选取颜色" id="myhand" />
+ <span id="spanhand">其他标签选取颜色</span>
+<input type="button" value="#FFFFFF" id="showColor" style="width:120px; background:#fff; border:1px solid #ccc; height:22px;" />
+
+<div id="color" style="display:none;"></div>
+
+<br /><br /><br /><br /><br />
+<a href="http://www.imf7.com/archives/201">说明地址：http://www.imf7.com/archives/201</a>
+</body>
+</html>

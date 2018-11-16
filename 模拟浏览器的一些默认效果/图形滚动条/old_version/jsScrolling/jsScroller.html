@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>jsScroller</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style type="text/css">
+  @import url(src/main.css);
+</style>
+</head>
+<body>
+<div id="nav">
+<h2>Files</h2>
+<div><a href="src/jsScroller.js" title="jsScroller.js">jsScroller.js</a></div>
+<div><a href="example1.html" title="example 1">example1.html</a></div>
+<h2>Related</h2>
+<div><a href="jsScrollbar.html" title="jsScrollbar">jsScrollbar</a></div>
+<div><a href="jsScrollerTween.html" title="jsScrollerTween">jsScrollerTween</a></div>
+<div><a href="index.html" title="Index">Index</a></div>
+</div>
+<h1>jsScroller</h1>
+
+<div id="wrapper">
+
+<h2>Preparation</h2>
+<p>Before initializing the scroller, there are a few things that have to
+be set up in order for it to work properly.</p>
+<p>First thing is the HTML:</p>
+<pre>
+&lt;div id="Scroller"&gt;
+  &lt;div class="Scroller-Container"&gt;
+    Insert Text here!
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<p>Now, "Scroller" can actually be change to anything you want, you just
+need to be able reference this element. The div with the class
+<code>Scroller-Container</code>, however, must have this class name. If
+it doesn't, the script won't be able to find the content and it will break.</p>
+<p>The next bit, is the CSS:</p>
+<pre>
+#Scroller {
+  position: relative;
+  width: 400px;
+  height: 200px;
+  overflow: hidden;
+}
+.Scroller-Container {
+  position: absolute;
+}
+</pre>
+<p>This is all the CSS that is required. #Scroller must have some sort of
+positioning set in the CSS, and it must have overflow set to hidden. The
+width and height can be set to anything. <code>Scroller-Container</code>
+must have position set to absolute, and this is all that is needed.</p>
+
+<h2>Constructor</h2>
+<pre>new jsScroller(scrollerWrapper, viewableWidth, viewableHeight);</pre>
+<p>This is what you use when initializing the <code>jsScroller</code> object. 
+It's quite simple really. First, you have to assign it to a variable when 
+making a new <code>jsScroller</code>. The <code>scrollerWrapper</code> is
+the HTML element that houses the <code>Scroller-Container</code> div.
+<code>viewableHeight</code> and <code>viewableWidth are the viewable area
+od the scroller.</code></p>
+<p>An example of implementation:</p>
+<pre>
+var wrapper = document.getElementById("Scroller");
+var scroller = new jsScroller(wrapper, 400, 200);
+</pre>
+
+<h2>Methods</h2>
+<p><code class="bold">.scrollTo(x, y)</code></p>
+<p>This just makes the content jump to the specified coordinates</p>
+<p><code class="bold">.scrollBy(x, y)</code></p>
+<p>This moves the content by a specified amount. Positive values make it
+move up and left. Negative values make it scroll down and right;</p>
+<p><code class="bold">.startScroll(x, y)</code></p>
+<p>This is the same as <code>scrollBy</code> except it repeats over and over
+until <code>stopScroll</code> is called.</p>
+<p><code class="bold">.stopScroll()</code></p>
+<p>This stops <code>startScroll</code>.</p>
+<p><code class="bold">.swapContent(scrollerWrapper, viewableWidth, viewableHeight)</code></p>
+<p>This lets you switch what area the scroller controls. This is done in the same
+manner as when calling the constructor, except <code>viewableHeight</code> and 
+<code>viewableWidth</code> are not required.</p>
+<p><code class="bold">.reset()</code></p>
+<p>This just sets everything back to 0 and recalculates.</p>
+<p>Some examples:</p>
+<pre>
+scroller.scrollTo(0, 120);
+
+//scrolls up 5px
+scroller.scrollBy(0, 5);
+
+//events on an image
+&lt;img src="up.png" onmouseover="scroller.startScroll(0, 5)" 
+onmouseout="scroller.stopScroll()" /&gt;
+</pre>
+
+<h2>Examples</h2>
+<p><a href="example1.html" title="example 1">example1.html</a></p>
+
+<h2>Quirks</h2>
+<p>Horizontal scrolling doesn't work correctly. I haven't
+The slightest idea how to fix it either. No one uses horizontal scrolling
+anyways, so I'm not in a hurry to figure it out.</p>
+
+<h2>Useful Properties</h2>
+<p>These are properties that you can access that may help you in making scripts:</p>
+<p><code class="bold">.viewableWidth, .viewableHeight</code></p>
+<p>The viewable dimensions of the scroller, as defined by the arguments passed to jsScroller.</p>
+<p><code class="bold">.totalWidth, .totalHeight</code></p>
+<p>The total dimensions of the scroller content.</p>
+<p><code class="bold">._x, ._y</code></p>
+<p>The position of the content in the scroller. These are actually negative values, so when using them,
+you probably want to put a - sign in front to make it positive.</p>
+</div>
+</body>
+</html>

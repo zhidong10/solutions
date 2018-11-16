@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Example Blog</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style type="text/css">
+body {
+  background-image: url(images/blog_background.jpg);
+  background-repeat: no-repeat;
+}
+#Container {
+  position: absolute;
+  top: 60px; left: 60px;
+  width: 270px; height: 330px;
+  overflow: hidden;
+}
+.Scroller-Container { position: absolute; background: transparent; }
+h3 {
+  margin: 0 0 5px 0;
+  font-family: "Arial Narrow", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #0B6589;
+}
+p {
+  margin: 0 0 5px 0;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: #054C68;
+  text-align: justify;
+  text-indent: 10px;
+}
+#Scrollbar-Container {
+  position: absolute;
+  top: 55px; left: 335px;
+  width: 10px; height: 340px;
+}
+.Scrollbar-Track {
+  width: 10px; height: 340px;
+}
+.Scrollbar-Handle {
+  position: absolute;
+  width: 10px; height: 50px;
+  background-color: #C6E7F4;
+}
+#sbLine {
+  position: absolute;
+  width: 6px;
+  height: 5px;
+  left: 7px;
+  background-color: #B5D6E3;
+  font-size: 0px;
+}
+#List {
+  position: absolute;
+  top: 50px; left: 380px;
+}
+#List a {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: #7ABAD3;
+  display: block;
+  text-decoration: none;
+  padding: 3px;
+}
+#List a:hover {
+  color: #0B6589;
+}
+</style>
+<script type="text/javascript" src="src/jsScroller.js"></script>
+<script type="text/javascript" src="src/jsScrollbar.js"></script>
+<script type="text/javascript" src="src/jsScrollerTween.js"></script>
+<script type="text/javascript">
+window.onload = function () {
+  scroller  = new jsScroller(document.getElementById("Container"), 270, 330);
+  scrollbar = new jsScrollbar(document.getElementById("Scrollbar-Container"), scroller, true);
+  scrollTween = new jsScrollerTween(scrollbar, true);
+  scrollTween.stepDelay = 30;
+  
+  scrollbar._moveContentOld = scrollbar._moveContent;
+  scrollbar._moveContent = function () {
+    this._moveContentOld();
+    var percent = this._y/(this._trackHeight - this._handleHeight);
+    document.getElementById("sbLine").style.top = Math.round((this._handleHeight - 5) * percent) +"px";
+  };
+  
+  findTags ("h3", document.getElementById("Container"));
+}
+
+function findTags (tag, parent) {
+  var tags = parent.getElementsByTagName(tag);
+  var cont = document.getElementById("Links");
+  for (var i = 0; i < tags.length; i++) {
+    cont.innerHTML += "<a href=\"javascript:scrollbar.tweenTo("+ tags[i].offsetTop +")\">"+ tags[i].innerHTML +"</a>";
+  }
+}
+</script>
+</head>
+<body>
+<div id="Container">
+  <div class="Scroller-Container">
+    <h3>This Script</h3>
+    <p>Finds all the h3 tags and their position within the container. It then generates tweenTo() links so you can make it scroll to the different title. Pretty cool, huh?</p>
+    <h3>Chicken</h3>
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam pellentesque metus in lectus. Sed sed sapien sed eros rhoncus facilisis. Morbi vestibulum, diam non tincidunt imperdiet, ligula quam lacinia enim, molestie venenatis massa ante a erat. Nunc sed justo quis lorem posuere molestie. Nam eget orci sagittis risus imperdiet aliquet. Nullam est ipsum, sagittis id, varius ac, cursus ut, leo. Morbi ultricies ligula eget massa. Ut sagittis dui ac risus. Phasellus facilisis nunc ac sapien luctus ullamcorper. Nulla ullamcorper lacinia turpis. Maecenas varius. Proin volutpat odio quis nisl. Ut vitae nibh. Cras pharetra placerat mauris. Donec consequat pretium wisi. Suspendisse non eros. Donec pulvinar diam vitae velit. Proin aliquam tortor vel pede faucibus interdum.</p>
+    <h3>Alligator Head</h3>
+    <p>Nam mollis rhoncus purus. Aenean venenatis, nunc et rhoncus sodales, lacus mi malesuada metus, id rhoncus massa pede id mauris. Nullam faucibus. Sed sollicitudin massa id felis. Suspendisse leo quam, laoreet nec, eleifend et, convallis vel, lectus. In nonummy bibendum dui. Quisque ultrices wisi sollicitudin neque. Aenean consectetuer tincidunt tortor. Nulla et elit et nunc facilisis tempus. Nullam nisl augue, varius vel, tincidunt at, volutpat sit amet, justo.</p>
+    <h3>Cah-lee-forn-ee-ya</h3>
+	<p>Suspendisse suscipit pretium libero. Quisque nibh. Donec orci erat, semper at, dictum non, pharetra eu, turpis. Vestibulum dui ante, porttitor commodo, ullamcorper et, pellentesque in, mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur eget sem eu metus cursus consequat. Cras tincidunt feugiat sem. Nunc quis ligula eget libero tempus elementum. Ut lacinia. Praesent sit amet nisl nec eros porta ultrices. Sed id felis. Duis tellus. Ut vehicula mi eu diam. In lobortis dignissim wisi. Morbi non felis. In consectetuer elit sit amet urna.</p>
+    <h3>Another One</h3>
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam pellentesque metus in lectus. Sed sed sapien sed eros rhoncus facilisis. Morbi vestibulum, diam non tincidunt imperdiet, ligula quam lacinia enim, molestie venenatis massa ante a erat. Nunc sed justo quis lorem posuere molestie. Nam eget orci sagittis risus imperdiet aliquet. Nullam est ipsum, sagittis id, varius ac, cursus ut, leo. Morbi ultricies ligula eget massa. Ut sagittis dui ac risus. Phasellus facilisis nunc ac sapien luctus ullamcorper. Nulla ullamcorper lacinia turpis. Maecenas varius. Proin volutpat odio quis nisl. Ut vitae nibh. Cras pharetra placerat mauris. Donec consequat pretium wisi. Suspendisse non eros. Donec pulvinar diam vitae velit. Proin aliquam tortor vel pede faucibus interdum.</p>
+
+  </div>
+</div>
+<div id="Scrollbar-Container">
+  <div class="Scrollbar-Track">
+    <div class="Scrollbar-Handle"><div class="Scrollbar-Handle" id="sbLine"></div></div>
+  </div>
+</div>
+<div id="List">
+  <h3>Recent Posts</h3>
+  <div id="Links">
+  
+  </div>
+</div>
+</body>
+</html>

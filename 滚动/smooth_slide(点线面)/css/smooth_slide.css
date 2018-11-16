@@ -1,0 +1,47 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/* reset */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin:0; padding:0; border:none; outline:0; font-size:100%; font-style:normal; }
+h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, form, img, p { list-style-type:none; }
+:focus{ outline:0 none; }
+table { border-collapse:collapse; border-spacing:0; }
+
+/* hack */
+.clear { display:block; overflow:hidden; clear:both; height:0; line-height:0; font-size:0; }
+html, body { -webkit-text-size-adjust:none; }
+
+/* text */
+body { font:normal 12px/150% "宋体","SimSun",Arial,Lucida,Verdana,Helvetica,sans-serif; color:#333; background-color:#fff; }
+h1, h2 ,h3 ,h4, h5, h6 { font-size:12px; font-weight:normal; }
+
+/* link */
+a { color:#333333; text-decoration:none; }
+a:hover { color:#ff6100; text-decoration:underline; }
+a:active, a:focus { outline:none; }
+
+/* blank */
+.blank5 { height:5px; line-height:5px; clear:both; visibility:hidden; }
+.blank10 { height:10px; line-height:10px; clear:both; visibility:hidden; }
+.blank15 { height:15px; line-height:15px; clear:both; visibility:hidden; }
+.blank20 { height:20px; line-height:20px; clear:both; visibility:hidden; }
+.blank30 { height:30px; line-height:30px; clear:both; visibility:hidden; }
+.blank40 { height:40px; line-height:40px; clear:both; visibility:hidden; }
+.blank50 { height:50px; line-height:50px; clear:both; visibility:hidden; }
+.blank100 { height:100px; line-height:100px; clear:both; visibility:hidden; }
+
+/* float */
+.fl { float:left; }
+.fr { float:right; }
+.fn { float:none; }
+
+/* style */
+.slide { width:640px; height:220px; position: relative; }
+.slide div.scrollableArea img { float: left; margin: 0; padding: 0;width:150px; height:200px; margin:0px 5px; }
+
+.scrollingHotSpotLeft {	min-width: 75px; width: 10%; height: 100%; background-image: url(../images/big_transparent.gif);/* There is a big background image and it's used to solve some problems I experienced in Internet Explorer 6. */	background-repeat: repeat; background-position: center center; position: absolute; z-index: 200; left: 0; cursor: url(../images/cursor_arrow_left.png), url(../images/cursor_arrow_left.cur),w-resize; }
+.scrollingHotSpotLeftVisible { background-image: url(../images/arrow_left.gif); background-color: #fff;	background-repeat: no-repeat; opacity: 0.35; -moz-opacity: 0.35; filter: alpha(opacity = 35); zoom: 1; }
+.scrollingHotSpotRight { min-width: 75px; width: 10%; height: 100%;	background-image: url(../images/big_transparent.gif); background-repeat: repeat; background-position: center center;	position: absolute;	z-index: 200; right: 0;	cursor: url(../images/cursor_arrow_right.png), url(../images/cursor_arrow_right.cur),e-resize; }
+.scrollingHotSpotRightVisible {	background-image: url(../images/arrow_right.gif); background-color: #fff; background-repeat: no-repeat;	opacity: 0.35; filter: alpha(opacity = 35); -moz-opacity: 0.35;	zoom: 1; }
+.scrollWrapper { position: relative; overflow: hidden; width: 100%;	height: 100%; }
+.scrollableArea { position: relative; width: auto; height: 100%; }

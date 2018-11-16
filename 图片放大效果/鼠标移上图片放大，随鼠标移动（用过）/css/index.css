@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* reset */
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,del, dfn, em, font, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin:0; padding:0; border:0 none; outline:0; font-size:100%; font-style:normal; }
+h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, form, img, p { list-style-type:none; }
+select, input, button, textarea { font-size:100%; font-size-adjust:none; font-stretch:normal; font-style:normal; font-variant:normal; font-weight:normal; line-height:normal; }
+input, button, textarea, select, optgroup, option{ font-family:inherit; font-size:inherit; font-style:inherit; font-weight:inherit; padding:0px; margin:0px; }
+:focus{ outline:0 none; }
+table { border-collapse:collapse; border-spacing:0; }
+
+/* hack */
+.clear { display:block; overflow:hidden; clear:both; height:0; line-height:0; font-size:0; }
+.clearfix:after{ content:"."; display:block; height:0; clear:both; visibility:hidden; }
+.clearfix{ display:inline-table; }
+*html .clearfix { height:1%; }
+*+html .clearfix { min-height:1%; }
+html,body { -webkit-text-size-adjust:none; }
+
+/* text */
+body { font:normal 12px/150% "宋体","SimSun",Arial,Lucida,Verdana,Helvetica,sans-serif; color:#333; background-color:#fff; }
+h1, h2 ,h3 ,h4, h5, h6 { font-size:12px; font-weight:normal; }
+
+/* link */
+a { color:#666; text-decoration:none; }
+a:hover { color:#ff6100; text-decoration:underline; }
+a:active, a:focus { outline:none; }
+
+/* blank */
+.blank5 { height:5px; line-height:5px; clear:both; visibility:hidden; }
+.blank10 { height:10px; line-height:10px; clear:both; visibility:hidden; }
+.blank15 { height:15px; line-height:15px; clear:both; visibility:hidden; }
+.blank20 { height:20px; line-height:20px; clear:both; visibility:hidden; }
+.blank30 { height:30px; line-height:30px; clear:both; visibility:hidden; }
+.blank40 { height:40px; line-height:40px; clear:both; visibility:hidden; }
+.blank50 { height:50px; line-height:50px; clear:both; visibility:hidden; }
+.blank100 { height:100px; line-height:100px; clear:both; visibility:hidden; }
+
+/* float */
+.fl { float:left; }
+.fr { float:right; }
+.fn { float:none; }
+
+.wrap { width:920px; margin:0px auto; }
+.wrap li { float:left;  width:154px; height:275px; margin:10px 15px; }
+.wrap li img { width:150px; border:2px solid #EBEAEA; }
+#toolTipLayer img { border:1px solid #cccccc; max-width:650px; max-height:500px; width:expression(this.width>650 && this.width>this.height ? 650:true); height:expresion(this.height>500 ? 500:true); }

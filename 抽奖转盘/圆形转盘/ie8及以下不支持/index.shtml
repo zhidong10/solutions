@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no" />
+<title>超级礼包抢先约 幸运转盘 百万豪礼中奖率100%-《风云》手游官方网站-正版授权 电影级武侠手游</title>
+<meta name="keywords" content="风云,风云手游,绝世好剑,绝世好剑手游,RPG手游" />
+<meta name="description" content="首款电影级武侠MMO手游《风云》，由港漫教父马荣成正版授权，是畅游天龙八部3D团队打造最新力作。多种PK方式全景战斗模式，带来电影级武侠体验。" />
+<meta name="author" content="Design:LiuSha; Web Layout:WangHongWei;" />
+<link rel="stylesheet" type="text/css" href="http://mevent.cy.com/all/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+</head>
+<body>
+<div class="top">
+	<a class="logo_fy" href="http://m.fy.cy.com/" title="《风云》手游官方网站" target="_blank"></a>
+	<a class="logo_bd"></a>
+</div>
+
+<div class="header">
+	<h1 class="hide">9月10日 震撼公测</h1>
+	<h2 class="hide">超级礼包抢先约 幸运转盘 百万豪礼中奖率100%</h2>
+	<div class="appoint"><input type="text" /><span title="提交预约"></span></div>
+    <dl class="infors time">
+    	<dt>活动时间</dt>
+        <dd>
+			<p>即日-2015年9月9日24时</p>
+        </dd>
+    </dl>
+    <dl class="infors">
+    	<dt>活动说明</dt>
+        <dd>
+        	<ul>
+                <li><span>1</span>填写手机号即可获得《风云》百度独家豪礼；</li>
+                <li><span>2</span>礼包将于开服当天统一发放。</li>
+            </ul>
+        </dd>
+    </dl>
+    <div class="btn_downlod"><a target="_blank" href="http://m.fy.cy.com/download_baidu.shtml" title="我要下载"></a></div>
+</div>
+
+<div class="content">
+	<dl class="lottery">
+    	<dt><span></span><ins></ins></dt>
+    	<dd>
+        	<p title="查看奖励"></p>
+            <center>
+            	<span class="weixin"></span>
+            	<!--<span class="qq"></span>-->
+            	<span class="qzone"></span>
+            	<span class="sina"></span>
+            	<span class="tencent"></span>
+            </center>
+        </dd>
+    </dl>
+    <dl class="infors">
+    	<dt>活动说明</dt>
+        <dd>
+        	<ul>
+                <li><span>1</span>成功预约《风云》超级礼包的玩家，可获得一次抽奖机会；</li>
+                <li><span>2</span>将分享活动给好友，即可额外获得1次抽奖机会；</li>
+                <li><span>3</span>礼包码每个账号只能使用一次，额外礼包可分享给好友；</li>
+                <li><span>4</span>请正确填写手机号，手机号是领取实物奖励唯一凭证；</li>
+                <li><span>5</span>所有奖励将在活动结束后统一发放给玩家，请耐心等待。</li>
+                <li>备注：本活动仅限通过百度手机助手，91助手，安卓市场，多酷，百度贴吧，百度星玩家下载注册玩家。</li>
+            </ul>
+        </dd>
+    </dl>
+    
+    <dl class="feature">
+    	<dt>游戏特色</dt>
+        <dd>
+            <div class="swipe_box" id="feature_box">
+                <ul>
+                    <li><a><img src="images/feature_01.jpg" /></a></li> 
+                    <li><a><img src="images/feature_01.jpg" /></a></li> 
+                    <li><a><img src="images/feature_01.jpg" /></a></li> 
+                    <li><a><img src="images/feature_01.jpg" /></a></li> 
+                </ul>
+            </div>
+            <ul class="swipe_trigger" id="feature_trigger"></ul>
+            <p class="tips"></p>
+        </dd>
+    </dl>
+    
+    
+</div>
+
+<div class="pop pop_tips">
+    <dl>
+        <dt></dt>
+        <dd>
+            <p class="info"></p>
+            <center title="确定"></center>
+        </dd>
+    </dl>
+</div>
+
+<div class="pop pop_prize">
+    <dl>
+        <dt></dt>
+        <dd>
+        	<h3>个人奖励</h3>	
+            <p class="prize"></p>
+            <p>*工作人员会在15个工作日内联系您！</p>
+            <center title="确定"></center>
+        </dd>
+    </dl>
+</div>
+
+<div class="pop pop_submit">
+    <dl>
+        <dt></dt>
+        <dd>
+            <p class="phone"><input type="text" placeholder="请输入您预约的手机号" /></p>
+            <p class="prompt"></p>
+            <center title="提交"></center>
+        </dd>
+    </dl>
+</div>
+
+<div class="share_weixin"></div>
+
+<div class="hide" id="share_weibo"></div>
+
+<script type="text/javascript" src="http://mevent.cy.com/all/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="http://www.changyou.com/cyou_share/cyoushare.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="http://www.changyou.com/cyouFile/shareToWx/js/share.wx.js"></script>
+<script type="text/javascript" src="http://mevent.cy.com/all/js/swipe.min.js"></script>
+<script type="text/javascript" src="js/jQueryRotate.2.2.js"></script>
+<script type="text/javascript" src="js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="http://www.cy.com/js/cy_public_white.js"></script>
+<script type="text/javascript" src="http://mon.changyou.com/jquery-a.js"></script>
+</body>
+</html>

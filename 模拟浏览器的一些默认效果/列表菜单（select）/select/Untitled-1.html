@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JS+DIV模拟SELECT并且把无效选项设置为灰色</title> 
+<script type="text/javascript"> 
+$=function(id){ 
+return document.getElementById(id); 
+} 
+var flag=false; 
+function shlist(){ 
+$("selectList").style.display=$("selectList").style.display=="block"?"none":"block"; 
+} 
+function changesever(ts){ 
+document.getElementById("t_selected").innerHTML=ts.innerHTML;
+var p = document.createElement("input");
+p.type="hidden";
+p.value=ts.innerHTML;
+document.getElementById("t_selected").appendChild(p); 
+shlist(); 
+} 
+function setFlag(val){ 
+flag=val; 
+} 
+function hideList(){ 
+if(!flag)document.getElementById("selectList").style.display="none"; 
+} 
+setCss=function(p){ 
+p.style.background='green'; 
+} 
+removeCss=function(p){ 
+p.style.background='transparent'; 
+
+} 
+</script> 
+
+<style type="text/css"> 
+/* reset */
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, font, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin:0; padding:0; border:0; outline:0; font-size:100%; font-style:normal; }
+h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, form, img, p { list-style-type:none; }
+select, input, button, textarea { font-size:100%; font-size-adjust:none; font-stretch:normal; font-style:normal; font-variant:normal; font-weight:normal;line-height:normal; }
+input, button, textarea, select, optgroup, option{ font-family:inherit; font-size:inherit; font-style:inherit; font-weight:inherit; padding:0px; margin:0px; }
+:focus{ outline:0; }
+img { border:1px; }
+table { border-collapse:collapse; border-spacing:0; }
+ins { text-decoration:none;}
+del { text-decoration:line-through;}
+em { font-style:normal;}
+
+/* hack */
+.clear { display:block;overflow:hidden;clear:both;height:0;line-height:0;font-size:0; }
+.clearfix:after{ content:"."; display:block; height:0; clear:both;visibility:hidden; }
+.clearfix{ display:inline-table; }
+*html .clearfix { height:1%; }
+*+html .clearfix { min-height:1%; }
+html,body { -webkit-text-size-adjust:none; }
+
+/* text */
+body { font-family:"宋体",Arial,Lucida,Verdana,Helvetica,sans-serif; font-size:12px; color:#333; line-height:150%; background-color:#fff; }
+h1 { font-size:18px; font-weight:bold; }
+h2 { font-size:16px; font-weight:bold; }
+h3 { font-size:14px; font-weight:bold; }
+h4, h5, h6 { font-size:12px; }
+
+/* link */
+a, a:link, a:visited { color:#666; text-decoration:none; }
+a:hover { text-decoration:underline; }
+a:active, a:focus { outline:none; }
+
+/* blank */
+.blank5{height:5px; line-height:5px; clear:both; visibility:hidden;}
+.blank10{height:10px; line-height:10px; clear:both; visibility:hidden;}
+.blank15{height:15px; line-height:15px; clear:both; visibility:hidden;}
+.blank20{height:20px; line-height:20px; clear:both; visibility:hidden;}
+.blank30{height:30px; line-height:30px; clear:both; visibility:hidden;}
+.blank40{height:40px; line-height:40px; clear:both; visibility:hidden;}
+.blank50{height:50px; line-height:50px; clear:both; visibility:hidden;}
+.blank100{height:100px; line-height:100px; clear:both; visibility:hidden;}
+
+/* float */
+.fl{float:left;}
+.fr{float:right;}
+
+
+
+.wrap{ width:500px;  margin:50px auto; } 
+.select { width:500px; }
+#t_selected{ background:url(photo_selectbg.gif) top left no-repeat; font-size:12px; width:240px; height:22px; line-height:22px; text-align:center; } 
+#selectList{ border:#ff6100 1px solid; font-size:12px; width:240px; display:none; position:absolute;  text-align:center; background:url(bg.png) top left repeat-y;} 
+#selectList span{ display:block; width:240px; height:30px; line-height:30px; color:#ffffff;  cursor:pointer; } 
+#selectList span:hover { display:block; width:240px; height:30px; line-height:30px; color:#ffffff;  cursor:pointer; background:#ff0000; } 
+#selectList span.disable { color:#999999; cursor:text; }
+
+</style> 
+</head> 
+<body>
+<div class="wrap">
+<div class="select"> 
+<div id="t_selected" onclick="shlist();" onmouseover="setFlag(true);" onmouseout="setFlag(false);" onblur="hideList()">---请选---</div> 
+<div id="selectList" onmouseover="setFlag(true);" onmouseout="setFlag(false);"> 
+<span onclick="changesever(this);" onmouseover="setCss(this)" onmouseout="removeCss(this);">餐饮美食</span>
+<span onclick="changesever(this);" onmouseover="setCss(this)" onmouseout="removeCss(this);">休闲娱乐</span>
+<span class="disable">宾馆酒店</span>
+<span onclick="changesever(this);" onmouseover="setCss(this)" onmouseout="removeCss(this);">购物指南</span>
+<span onclick="changesever(this);" onmouseover="setCss(this)" onmouseout="removeCss(this);">运动场馆</span>
+<span onclick="changesever(this);" onmouseover="setCss(this)" onmouseout="removeCss(this);">生活便利</span>
+<span onclick="changesever(this);" onmouseover="setCss(this)" onmouseout="removeCss(this);">出行旅游</span>
+</div> 
+</div> 
+
+<div>dssssssssssssssssss的方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法凤飞飞的方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法凤飞飞的方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法凤飞飞的方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法凤飞飞的方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法凤飞飞的方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法凤飞飞的方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法方法凤飞飞
+</div>
+
+</div>
+</body>
+</html>

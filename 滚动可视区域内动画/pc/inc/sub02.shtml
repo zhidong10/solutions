@@ -1,0 +1,59 @@
+<div class="wrap">
+    <div class="header">	
+        <h1 class="none">大荒·山海图</h1>
+        <div class="mh_logo_lk">
+            <a target="_blank" href="http://mh.changyou.com" title="《蛮荒搜神记》官方网站"></a>
+        </div>
+        <div class="mh_logo_bg"></div>
+        
+        <div class="links">
+            <a target="_blank" href="http://mh.changyou.com" title="官网">官网</a>
+            <font></font>
+            <a href="javascript:;" title="预约">预约</a>
+            <font></font>
+            <span>分享</span>
+            <a href="javascript:;" class="btn_share btn_wechat"><img src="images/wechat_code.png" /></a>
+            <a href="javascript:;" class="btn_share btn_sina"></a>
+        </div>
+        <div id="share" class="none"></div>
+        <div class="nav">
+            <a class="nav_01" href="javascript:;" title="山海图"></a>
+            <a class="nav_02" href="javascript:;" title="女娲卷"></a>
+            <a class="nav_03" href="javascript:;" title="后羿卷"></a>
+            <a class="nav_04" href="javascript:;" title="青丘卷"></a>
+        </div>
+    </div>
+	<div class="loading"><div><a></a><ins></ins><span><strong>0</strong>%</span></div></div>
+    <div class="scroll" id="scroll">
+        <div class="box box02_01">
+            <img src="images/he.png" data-p="0,600"  data-x="-300,100" data-y="500,260"  />
+            <img src="images/txt02_01.png" data-p="0,600"  data-x="800,400" data-y="604,604" />
+        </div>
+        <div class="box box02_02">
+            <img src="images/tree02_02.png" data-p="500,1500"  data-x="-250,0" data-y="400,200"  />
+            <img src="images/xiezi.png" data-p="500,1500"  data-x="1500,1100" data-y="600,700"  />
+            <img src="images/filter.png" data-p="500,1500" data-x="0,0" data-y="0,900" />
+            <img src="images/txt02_02.png" data-p="500,1500"  data-x="300,300" data-y="350,650" />
+        </div>
+        <div class="box box02_03">
+            <span data-p="1400,2400" data-x="200,0" data-y="0,300" ><img class="layer" data-depth-x="0.2" data-depth-y="0.2" src="images/green.png" /></span>        
+            <img src="images/qizi.png" data-p="1400,2400"  data-x="0,150" data-y="600,400"  />
+            <img src="images/tree02_03.png" data-p="1400,2400"  data-x="1700,1410" data-y="213,213"  />
+            <img src="images/filter.png" data-p="1400,2400" data-x="0,0" data-y="0,900" />
+           <img src="images/txt02_03.png" data-p="1400,2400"  data-x="400,400" data-y="570,270" />
+        </div>
+        <div class="box box02_04">
+        	<span id="flash"></span>
+            <img src="images/txt02_04.png" data-p="2200,3000"  data-x="-100,500" data-y="640,640" />
+        </div>
+    </div>
+</div>
+
+<div class="float">
+	<span class="top"></span>
+	<a href="javascript:;" title="寿华之野">寿华之野</a><font></font>
+	<a href="javascript:;" title="流沙荒漠">流沙荒漠</a><font></font>
+	<a href="javascript:;" title="弱水飞瀑">弱水飞瀑</a><font></font>
+	<a href="javascript:;" title="金乌现世">金乌现世</a>
+	<span class="bottom"></span>
+</div>

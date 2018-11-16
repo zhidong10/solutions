@@ -1,0 +1,224 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>三大核心特色 玩转无限浮空—《蛮荒搜神记》官方网站</title>
+<meta name="keywords" content="蛮荒,蛮荒ol,搜神记,搜神记ol,蛮荒搜神记,蛮荒搜神记ol,ARPG,次世代,动作网游" />
+<meta name="description" content="畅游首款以CryEngine3引擎开发的次世代大作《蛮荒搜神记》，以极炫操作唤醒沉寂已久的动作之魂。2015年，上古史诗浩然开篇！" />
+<meta name="author" content="Design:KanChao; Web Layout:WangHongWei;" />
+<link type="image/x-icon" href="http://mh.changyou.com/favicon.ico" rel="icon" />
+<link type="image/x-icon" href="http://mh.changyou.com/favicon.ico" rel="shortcut icon" />
+<link type="text/css" rel="stylesheet" href="http://event.changyou.com/all/css/reset.css" />
+<link type="text/css" rel="stylesheet" href="http://event.changyou.com/all/css/jquery.lightbox-0.5.css" />
+<link type="text/css" rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+<div class="bg">
+<div class="wrap">
+<div class="header">
+    <h1 class="hideTxt">三大核心特色 玩转无限浮空</h1>
+    <div class="mh_logo_lk">
+        <a href="http://mh.changyou.com/main.shtml" target="_blank" title="《蛮荒搜神记》官方网站"></a>
+    </div>
+    <div class="mh_logo_bg"></div>
+    <div class="toplink">
+    	<a class="link01" href="http://activity2.changyou.com/mh/sendQuestionnaire/" target="_blank" title="精英首测资格申请"></a>
+    	<a class="link02" href="http://mh.changyou.com/main.shtml" target="_blank" title="官网首页"></a>
+    	<a class="link03" href="http://zhuce.changyou.com/regInit.act?gameType=mh" target="_blank" title="注册账号"></a>
+    	<a class="link04" href="http://mh.changyou.com/download/index.shtml" target="_blank" title="游戏下载"></a>
+    </div>
+</div>
+
+<div class="content">
+	<div class="box box0">
+    	<p class="slogin">三大核心特色 玩转你的无限浮空</p>
+    	<div class="video">
+        	<ins></ins>
+        	<span id="video_btn"></span>
+        </div>
+    	<div class="nav">
+        	<a class="nav0"></a>
+        	<a class="nav1" href="javascript:void(0)" title="五行天赋"></a>
+        	<a class="nav2" href="javascript:void(0)" title="CE3引擎支持"></a>
+        	<a class="nav3" href="javascript:void(0)" title="SKILL评分系统"></a>
+        	<ins></ins>
+        </div>
+    </div>
+
+	<div class="box box1">
+    	<p class="slogin">五行天赋 海量招式组合</p>
+    	<div class="pic">
+        	<img src="images/pic_1.png" usemap="#Map1" />
+            <map name="Map1">
+                <area shape="poly" coords="10,218,233,138,445,221,242,300" href="images/light_1_1.jpg" title="游戏截图1">
+                <area shape="poly" coords="246,131,451,53,671,139,457,212" href="images/light_1_2.jpg" title="游戏截图2">
+                <area shape="poly" coords="470,221,689,142,910,232,692,303" href="images/light_1_3.jpg" title="游戏截图3">
+                <area shape="poly" coords="248,306,458,225,685,311,462,391" href="images/light_1_4.jpg" title="游戏截图4">
+            </map>
+        </div>
+    </div>
+
+	<div class="box box2">
+    	<p class="slogin">CE3引擎支持 极致战斗想象</p>
+    	<div class="pic">
+        	<img src="images/pic_2.png" usemap="#Map2" />
+            <map name="Map2">
+                <area shape="poly" coords="10,218,233,138,445,221,242,300" href="images/light_2_1.jpg" title="游戏截图1">
+                <area shape="poly" coords="246,131,451,53,671,139,457,212" href="images/light_2_2.jpg" title="游戏截图2">
+                <area shape="poly" coords="470,221,689,142,910,232,692,303" href="images/light_2_3.jpg" title="游戏截图3">
+                <area shape="poly" coords="248,306,458,225,685,311,462,391" href="images/light_2_4.jpg" title="游戏截图4">
+            </map>
+        </div>
+    </div>
+
+	<div class="box box3">
+    	<p class="slogin">SKILL评分系统 追求花式极限</p>
+    	<div class="pic">
+        	<img src="images/pic_3.png" usemap="#Map3" />
+            <map name="Map3">
+                <area shape="poly" coords="10,218,233,138,445,221,242,300" href="images/light_3_1.jpg" title="游戏截图1">
+                <area shape="poly" coords="246,131,451,53,671,139,457,212" href="images/light_3_2.jpg" title="游戏截图2">
+                <area shape="poly" coords="470,221,689,142,910,232,692,303" href="images/light_3_3.jpg" title="游戏截图3">
+                <area shape="poly" coords="248,306,458,225,685,311,462,391" href="images/light_3_4.jpg" title="游戏截图4">
+            </map>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<div class="fixed">
+	<ul>
+        <li class="fixed0"><a href="javascript:void(0)" title="首页"></a></li>
+        <li class="fixed1"><a href="javascript:void(0)" title="五行天赋"></a></li>
+        <li class="fixed2"><a href="javascript:void(0)" title="CE3引擎支持"></a></li>
+        <li class="fixed3"><a href="javascript:void(0)" title="SKILL评分系统"></a></li>
+    </ul>
+</div>
+
+<!--视频弹窗-->
+<div id="video_player">
+  <div class="video_title">
+        <h2></h2>
+        <a class="close">X</a>
+    </div>
+    <div class="video_placeholder">
+        <div class="video_box"><span id="video_placeholder">视频正在下载中...</span></div>
+    </div>
+</div> 
+
+<script type="text/javascript" src="http://event.changyou.com/all/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="http://event.changyou.com/all/js/jquery.lightbox-0.5.min.js"></script>
+<script type="text/javascript" src="http://event.changyou.com/all/js/popout.js"></script>
+<script type="text/javascript" src="http://event.changyou.com/all/js/swfobject.js"></script> 
+<script type="text/javascript" src="js/video.sohu.js"></script>
+<script type="text/javascript">
+//滚屏
+var scrn=0;
+
+var winwidth=$(window).width()+600;
+
+$(window).resize(function(){
+	winwidth=$(window).width()+600;
+})
+
+$(".box").eq(0).animate({"left":"0px"},1000);
+$(".box").eq(0).children(".slogin").animate({"left":"0px"},500);
+$(".box").eq(0).children(".video").delay(300).animate({"left":"490px"},700);
+$(".box").eq(0).children(".nav").delay(500).animate({"left":"0px"},700);
+
+
+function animate_screen(num){
+	var num=num;
+	$(".box").css({"left":winwidth},1000);
+	$(".box").eq(scrn).css({"left":"0px"},1000);
+	$(".fixed a").removeClass("current");
+	$(".fixed a").eq(num).addClass("current");
+	
+	$(".box").eq(scrn).animate({"left":-winwidth},1000);
+	$(".box").eq(scrn).children(".slogin").delay(500).animate({"left":"500px"},700);
+	$(".box").eq(scrn).children(".video").delay(300).animate({"left":"990px"},700);
+	$(".box").eq(scrn).children(".nav").animate({"left":"500px"},500);
+	$(".box").eq(scrn).children(".pic").animate({"left":"530px"},500);
+
+	$(".box").eq(num).animate({"left":"0px"},1000,function(){
+		if(num==0){
+			$(".fixed").animate({"left":"-80px"},200);
+		}else{
+			$(".fixed").animate({"left":"60px"},200);
+		}
+	});
+	
+	$(".box").eq(num).children(".slogin").animate({"left":"0px"},500);
+	$(".box").eq(num).children(".video").delay(300).animate({"left":"490px"},700);
+	$(".box").eq(num).children(".nav").delay(500).animate({"left":"0px"},700);
+	$(".box").eq(num).children(".pic").delay(500).animate({"left":"30px"},700);
+	scrn=num;
+}
+
+
+$(".nav a").click(function(){
+	var num=$(".nav a").index($(this));
+	//if(num<2){
+		animate_screen(num);
+	//}else{
+		//alert("敬请期待！")
+	//}
+});
+
+$(".fixed a").click(function(){
+	if(!$(this).hasClass("current")){
+		var num=$(".fixed a").index($(this));
+		//if(num<2){
+			animate_screen(num);
+		//}else{
+			//alert("敬请期待！")
+		//}
+	}
+});
+
+//首屏导航
+$(".nav a").hover(function(){
+	$(this).addClass("highz");
+},function(){
+	$(this).removeClass("highz");
+});
+
+//视频
+//addSWF('http://files2.changyou.com/vc/taoyuan/2015/gwgb0429/ty_gw0429.swf', 'video_btn', "193", "127"); 
+
+function video(){
+	var rel_video = "79207214"
+	var title_video = "《蛮荒搜神记》宣传视频";
+	popup($('#video_player'));
+	$('.video_title h2').text(title_video);
+	
+	$("#video_placeholder").playSohuVideo({
+		v_id : rel_video,
+		title : title_video,
+		width : 640 ,
+		height: 360 
+	});
+}
+
+function jsFun(n){
+	video();
+}
+
+$('.video ins').click(function(){
+	video();
+})
+
+$('.video_title .close').bind('click', function(){
+	$('.video_box').html('<span id="video_placeholder">视频正在下载中...</span>');
+});
+
+
+
+$('.box1 area').lightBox();
+$('.box2 area').lightBox();
+$('.box3 area').lightBox();
+
+</script>
+</body>
+</html>

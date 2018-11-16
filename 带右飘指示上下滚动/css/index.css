@@ -1,0 +1,135 @@
+@charset "utf-8";@import url(http://ldj.changyou.com/logo/ldj_logo.css);
+.nav a.gotop,.front,.back{ background-image:url(../images/sprite.png); background-repeat:no-repeat; }
+li,img{ vertical-align:top;}
+.hide{ display:none; }
+html{ color:#ade4f3; font:normal 14px/2 "Microsoft YaHei","微软雅黑"; word-wrap:break-word; word-break:break-all; }
+.wrap{ position:relative; width:1000px; margin:0 auto;}
+
+.ldj_logo_lk a,.ldj_logo_bg{ left:170px; top:14px;}
+
+.titlelink {position:absolute; right:242px; top:8px;}
+.titlelink a{ float:left; margin-left:16px; color:#e6e0bd; font:normal 12px/1.5 simsun,"宋体"; }
+.titlelink a:hover{color:#ffd33c; text-decoration:underline; }
+#share {position:absolute; right:100px; top:8px; width:120px;color:#e6e0bd}
+
+.box{ background-repeat:no-repeat; background-position:center top;}
+.wrap{ position:relative; width:1000px; height:561px; margin:0 auto; background-repeat:no-repeat; background-position:center top;  }
+.box01{ background-image:url(../images/bg_01.jpg); }
+.box01 .wrap{ background-image:url(../images/box_01.jpg); }
+.box02{ background-image:url(../images/bg_02.jpg); }
+.box02 .wrap{ background-image:url(../images/box_02.jpg); }
+.box03{ background-image:url(../images/bg_03.jpg); }
+.box03 .wrap{ height:794px; background-image:url(../images/box_03.jpg); }
+.box04{ background-image:url(../images/bg_04.jpg); }
+.box04 .wrap{ height:794px; background-image:url(../images/box_04.jpg); }
+.box05{ background-image:url(../images/bg_05.jpg); }
+.box05 .wrap{ height:825px; background-image:url(../images/box_05.jpg); }
+
+.nav{position:fixed;right:0px;top:50%; width:158px; height:377px; margin-top:-189px;_position:absolute; _margin-top:expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop) + 'px'); background:url(../images/nav.png) no-repeat right center;_background-image:url(../images/nav.gif); }
+.nav p{ padding-top:17px; }
+.nav a{ display:block; font:bold 24px/64px "Microsoft YaHei","微软雅黑"; color:#ffffff; border-bottom:1px solid #3c3471; text-align:center; }
+.nav a:hover,.nav a.current{ color:#ffb016; }
+.nav a.gotop{ display:block; width:34px; height:36px; margin:22px auto; text-indent:-9999px; }
+
+.box02 ul { padding:265px 50px 0px 50px; }
+.box02 ul li{ float:left; width:300px; text-align:center; color:#783816; font-size:16px; line-height:2; }
+.box02 ul li strong{ color:#c32c2c; }
+
+.box03 table{ position:absolute; left:18px; top:228px; width:643px; color:#b6f2ff; font:normal 12px/20px simsun,"宋体"; }
+.box03 table tr td{ text-align:center; }
+.box03 table tr td.one{ width:179px; }
+.box03 table tr td.two{ width:239px; }
+.box03 table tr td strong{ color:#ffcd6d; }
+.height01{ height:141px; }
+.height02{ height:96px; }
+.height03{ height:75px; }
+.height01 p{ padding-top:63px;}
+.height02 p{ padding-top:45px;}
+
+.box03 ul{ position:absolute; right:15px; top:178px; width:324px; color:#ffffff; }
+.box03 ul li{ float:left; padding:109px 0px 20px 19px; width:143px; line-height:25px; text-align:center; }
+
+.show{ position:absolute; left:108px; top:190px; width:758px; }
+.show_left { float:left; width:532px; }
+.show_left li{ float:left; width:109px; height:102px; margin:0px 22px 22px 0px; text-align:center; font:normal 16px/1.5 "Microsoft YaHei","微软雅黑"; color:#ffffff; }
+.show_left li a{display:block; height:100%; position:relative; transform-style:preserve-3d;transform:perspective(1000px);}
+.show_left li a:hover{z-index: 20;}
+.show_left li.current a .back,.show_left li a:hover .back{z-index: 10;}
+.show_left li a div.front { color:#ffffff;  }
+.show_left li a div.back { color:#431801; }
+.show_left li a div strong{ display:block; padding-top:28px; font-weight:bold; }
+
+.front,.back {
+  -webkit-backface-visibility:hidden;
+  -moz-backface-visibility:hidden;
+  -ms-backface-visibility:hidden;
+  backface-visibility:hidden;
+  
+  -webkit-transform-style:preserve-3d;
+  -moz-transform-style:preserve-3d;
+  -o-transform-style:preserve-3d;
+  -ms-transform-style:preserve-3d;
+  transform-style:preserve-3d;
+  
+  -webkit-transition:0.6s;
+  -moz-transition:0.6s;
+  -o-transition:0.6s;
+  -ms-transition:0.6s;
+  transition:0.6s;
+  
+  position:absolute;
+  top:0;
+  left:0;
+  cursor:pointer;width:100%; height:100%;
+  
+  
+}
+
+.front {z-index: 1;background-position:0px -100px;
+  -webkit-transform:rotateY(0deg);
+  -moz-transform:rotateY(0deg);
+  -o-transform:rotateY(0deg);
+  -ms-transform:rotateY(0deg);
+  transform:rotateY(0deg)
+}
+.back {background-position:0px -210px;
+  -webkit-transform:rotateY(-180deg);
+  -moz-transform:rotateY(-180deg);
+  -o-transform:rotateY(-180deg);
+  -ms-transform:rotateY(-180deg);
+  transform:rotateY(-180deg)
+}
+
+.show_left li.current a .front,.show_left li a:hover .front {
+  -webkit-transform:rotateY(180deg);
+  -moz-transform:rotateY(180deg);
+  -o-transform:rotateY(180deg);
+  -ms-transform:rotateY(180deg);
+  transform:rotateY(180deg)
+}
+
+.show_left li.current a .back,.show_left li a:hover .back{
+  -webkit-transform:rotateY(0deg);
+  -moz-transform:rotateY(0deg);
+  -o-transform:rotateY(0deg);
+  -ms-transform:rotateY(0deg);
+  transform:rotateY(0deg)
+}
+
+.show_right{ float:right; width:170px; text-align:center; }
+.show_right dl{ display:none; }
+.show_right dt{ border-bottom:1px solid #8f82e9; margin-bottom:18px; }
+.show_right dt strong{ position:relative; bottom:-15px; display:inline-block; width:96px; font:bold 18px/1.5 "Microsoft YaHei","微软雅黑"; color:#ffd119; background:#3c356b; }
+.show_right dd{ padding-bottom:12px; color:#c9c2f4; font-size:16px; }
+.show_right dd p{ padding-top:15px; font-size:14px; }
+
+.rule{ padding:177px 55px 0px 55px; }
+.rule .intro{ padding-bottom:7px; color:#ade4f3; text-indent:2em; border-bottom:1px solid #3779e6; }
+.rule dl{ padding:14px 0px; }
+.rule dl dt{ margin-bottom:15px; color:#d1f3ff; font-weight:bold; padding-left:28px; background:url(../images/title_ico.png) no-repeat left center; _background-image:url(../images/title_ico.gif); }
+.rule dl dd ul{ padding-left:2em; }
+.rule dl dd ul li { position:relative; width:100%; }
+.rule dl dd ul li span{ position:absolute; left:-2em; top:4px; width:20px; height:20px; border-radius:100%; background:#3c356b; text-align:center; line-height:20px; color:#53cfff;  }
+.rule dl dd ul li strong{ color:#ffde00;  }
+.rule dl dd ul li a{ color:#ffffff; text-decoration:underline; }
+.rule dl.big dt{ color:#ffffff; font-weight:normal; font-size:20px;  border-bottom:1px solid #3779e6; }

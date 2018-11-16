@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>jQuery+CSS实现的很酷的星级评分效果丨芯晴网页特效丨CsrCode.Cn</title>
+<meta http-equiv="content-type" content="text/html;charset=gb2312">
+<style type="text/css">
+.user_rate {font-size:14px; position:relative; padding:10px 0;}
+ .user_rate p {margin:0; padding:0; display:inline; height:40px; overflow:hidden; position:absolute; top:0; left:100px; margin-left:140px;}
+ .user_rate p span.s {font-size:36px; line-height:36px; float:left; font-weight:bold; color:#DD5400;}
+ .user_rate p span.g {font-size:22px; display:block; float:left; color:#DD5400;}
+/*rating*/
+.big_rate_bak {width:140px; height:28px; text-align:left; position:absolute; top:3px; left:85px; display:inline-block; background:url(two_stars.gif) left -32px repeat-x;}
+ .big_rate_bak b {display:inline-block; width:14px;float:left; height:28px; position:relative; z-index:1000; cursor:pointer; overflow:hidden;}
+ .big_rate_up {width:140px; height:28px; position:absolute; top:0; left:0; background:url(two_stars.gif) left top;}
+</style>
+<script type="text/javascript" src="jquery.js"></script>
+</head>
+<body>
+<div class="user_rate">
+    <div class="big_rate_bak">
+        <b rate="1" onclick="javascript:up_rate(10);"> </b>
+        <b rate="2" onclick="javascript:up_rate(20);"> </b>
+        <b rate="3" onclick="javascript:up_rate(30);"> </b>
+        <b rate="4" onclick="javascript:up_rate(40);"> </b>
+        <b rate="5" onclick="javascript:up_rate(50);"> </b>
+        <b rate="6" onclick="javascript:up_rate(60);"> </b>
+        <b rate="7" onclick="javascript:up_rate(70);"> </b>
+        <b rate="8" onclick="javascript:up_rate(80);"> </b>
+        <b rate="9" onclick="javascript:up_rate(90);"> </b>
+        <b rate="10" onclick="javascript:up_rate(100);"> </b>
+        <div style="width:45px;" class="big_rate_up"></div>
+    </div>
+    <p><span id="s" class="s"></span><span id="g" class="g"></span></p>
+</div>
+
+
+<div style="line-height:50px">lkdjsal开发商大家afk大家爱看来的会计法<div style="float:left; font-size:36px">的咖啡加sdk就爱看</div>的萨芬对方的答复对方</div>
+<script type="text/javascript">
+$(function(){
+ get_rate(88);
+})
+function get_rate(rate){
+ rate=rate.toString();
+ var s;
+ var g;
+ $("#g").show();
+ if (rate.length>=3){
+  s=10; 
+  g=0;
+  $("#g").hide();
+ }else if(rate=="0"){
+  s=0;
+  g=0;
+ }else{
+  s=rate.substr(0,1);
+  g=rate.substr(1,1);
+ }
+ $("#s").text(s);
+ $("#g").text("."+ g);
+ $(".big_rate_up").animate({width:(parseInt(s)+parseInt(g)/10) * 14,height:26},1000);
+ $(".big_rate_bak b").each(function(){
+  $(this).mouseover(function(){
+   $(".big_rate_up").width($(this).attr("rate") * 14 );
+   $("#s").text($(this).attr("rate"));
+   $("#g").text("");
+  }).click(function(){
+   $("#f").text($(this).attr("rate"));
+   $("#my_rate").show();
+  })
+ })
+ $(".big_rate_bak").mouseout(function(){
+  $("#s").text(s);
+  $("#g").text("."+ g);
+  $(".big_rate_up").width((parseInt(s)+parseInt(g)/10) * 14);
+ })
+}
+function up_rate(rate){
+ $(".big_rate_up").width("0");
+ get_rate(rate);
+}
+</script>
+</body>
+</html>
+

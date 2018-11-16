@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<title> code.js.cn </title>
+<style>
+.core{
+	border:1px solid #000;
+	height:35px;
+	overflow:hidden;
+	line-height:35px;
+}
+</style>
+</head>
+<body>
+	<div id="div1" class="core">
+	  <a href="#">请教高手帮我看下这段代码 FLASH显示不了</a><br />
+	  <a href="#">请教在UTF-8编辑下的符号显示问题 </a><br />
+	</div> 
+	<div id="div2" class="core">
+	  <a href="#">请教高手帮我看下这段代码 FLASH显示不了</a><br />
+	  <a href="#">请教在UTF-8编辑下的符号显示问题 </a><br />
+	  <a href="javascript:void(0)">jquery做的一个滑动效果,不知如何增加延迟,现在太灵敏了</a><br />
+	  <a href="javascript:void(0)">技术研究-QQ09版按钮渐显渐隐的由来 </a><br />
+	  <a href="javascript:void(0)">javascript读取Json数据并分页显示，支持键盘和滚轮翻页 </a><br />
+	  <a href="javascript:void(0)">腾讯网奇怪的PNG文件，拜师以求解惑</a><br />
+	  <a href="javascript:void(0)">更新lhgdialog-ver2.0.1弹出窗口组件 2009-7-18 </a>
+	</div> 
+</body>
+<script>
+function myGod(id,w,n){
+	var box=document.getElementById(id),can=true,w=w||1500,fq=fq||10,n=n==-1?-1:1;
+	box.innerHTML+=box.innerHTML;
+	box.onmouseover=function(){can=false};
+	box.onmouseout=function(){can=true};
+	var max=parseInt(box.scrollHeight/2);
+	new function (){
+		var stop=box.scrollTop%35==0&&!can;
+		if(!stop){
+			var set=n>0?[max,0]:[0,max];
+			box.scrollTop==set[0]?box.scrollTop=set[1]:box.scrollTop+=n;
+		};
+		setTimeout(arguments.callee,box.scrollTop%35?fq:w);
+	};
+};
+myGod('div1',600);
+myGod('div2',10,-1);
+</script>
+</html>

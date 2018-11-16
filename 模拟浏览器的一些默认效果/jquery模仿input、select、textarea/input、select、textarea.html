@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content=" " />
+<meta name="keywords" content=" " />
+<meta name="author" content=" "/>
+<link rel="stylesheet" type="text/css"  href="css/uniform.default.css" />
+<title>jquery模仿各小插件</title>
+
+</head>
+<body>
+<div class="wrap">
+<ul>
+<li><label >Message:</label><textarea cols="40" rows="5"></textarea></li>
+<li><label>Your Name:</label><input type="text" size="40"/></li>
+
+<li>
+<label>I found your site:</label>
+<select>
+<option>Through Google</option>
+<option>Through Twitter</option>
+<option>Other&hellip;</option>
+<option>&lt;Hi&gt;</option>
+</select>
+</li>
+<li>
+<input type="radio" name="radio" /><label> Saying hi</label>
+<input type="radio" name="radio" /><label> Sending feedback</label>
+</li>
+<li>
+<input type="checkbox" /><label> Please contact me back</label>
+</li>
+<li>
+<label>Upload a file:</label>
+<input type="file" />
+</li>
+<li>
+<input type="submit" value="提交" />
+<input type="reset" value="重置"/>
+</li>
+</ul>
+</div>
+
+
+<script type="text/javascript" src="js/jquery-1.4.2.min.js" ></script>
+<script type="text/javascript" src="js/jquery.uniform.js" ></script>
+<script type="text/javascript" >
+$(function(){
+$("input, textarea, select, button").uniform();
+});
+</script>
+
+</body>
+</html>

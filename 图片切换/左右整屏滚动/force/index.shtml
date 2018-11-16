@@ -1,0 +1,59 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>《星际战甲》阵营故事—《星际战甲》官方网站</title>
+<meta name="Keywords" content="星际战甲,星际战甲OL,warframe,超能降临,星际战甲故事,warframe故事,星际战甲官网,战争框架,星际战甲OL官网,星际,战甲,战甲英雄" />
+<meta name="Description" content="《星际战甲》是由畅游独家运营的一款科幻题材第三人称动作射击类网游。游戏由加拿大游戏公司Digital Extremes研发，使用优质的Evolution引擎，拥有战甲英雄、宇宙探索、多元化玩法（动作射击、养成体系、守护系统）三大特色。形象酷炫的战甲英雄，激爽刺激的动作击杀快感，随意搭配的多元化玩法，媲美单机大作的极致画面都能让玩家深切享受到探索未来的新体验。" />
+<meta name="author" content="Design:ZhangDongLiang; Web Layout:WangHongWei;">
+<link type="image/x-icon" href="/favicon.ico" rel="icon" />
+<link type="image/x-icon" href="/favicon.ico" rel="shortcut icon" />
+<link type="text/css" rel="stylesheet" href="/all/css/reset.css" />
+<link type="text/css" rel="stylesheet" href="css/index.css"  />
+</head>
+<body>
+
+<h1 class="none">《星际战甲》阵营故事</h1>
+<div class="top">
+    <div class="wrap">
+       <div class="link">
+            <a href="http://wf.changyou.com/index.shtml" title="返回首页" target="_blank">返回首页</a>
+            <a href="http://zhuce.changyou.com/regInit.act?gameType=wf&suffix=suffix" title="账号注册" target="_blank">账号注册</a>
+        </div>
+        <div id="share"></div>
+    </div>
+</div>
+
+<div class="wf_logo_lk">
+    <a href="http://wf.changyou.com/index.shtml" target="_blank" title="《星际战甲》官方网站"></a>
+</div>
+<div class="wf_logo_bg"></div>
+
+<div class="content">
+    <img src="images/pic_00.jpg" usemap="#Map" />
+    <map name="Map">
+      <area title="科普斯商会" href="sub.shtml?id=2" shape="poly" coords="653,170,503,182,345,383,363,572,432,569,411,709,499,709,527,624,554,670,634,539,609,473,604,368,607,336">
+      <area title="天诺" href="sub.shtml?id=0" shape="poly" coords="593,636,1322,632,955,5">
+      <area title="克隆尼" href="sub.shtml?id=1" shape="poly" coords="1577,198,1529,213,1482,159,1405,165,1361,218,1344,278,1250,311,1346,469,1345,529,1316,578,1416,718,1605,699,1552,587,1607,427,1682,469,1706,436,1580,348,1619,229">
+    </map>
+    
+    <p class="nav">
+        <a class="current" href="index.shtml" title="阵营故事">阵营故事</a>
+		<a href="sub.shtml?id=0" title="天诺">天诺</a>
+		<a href="sub.shtml?id=1" title="克隆尼">克隆尼</a>
+		<a href="sub.shtml?id=2" title="科普斯商会">科普斯商会</a>
+    </p>
+    
+	<p class="story">距今几千年后的宇宙，一种神秘的病毒忽然间席卷了整个地球。幸存的人类发现，病毒已经将大部分人变为怪物。走投无路的人类设法离开地球并征服了太阳系,他们制造了一种半机械半AI的奥罗金来帮助仅存的人类维护统治。</p>
+</div>
+
+<div class="bottom"></div>
+
+<script type="text/javascript" src="/all/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="http://www.changyou.com/cyou_share/cyoushare.js"></script>
+<script type="text/javascript" src="js/jquery.switchable-2.0.min.js"></script>
+<script type="text/javascript" src="js/website.js"></script>
+<!--#include virtual="/all/nav/wf_dark_notop.html" -->
+<!--#include virtual="/all/dma/dma_static.html" -->
+</body>
+</html>

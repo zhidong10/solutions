@@ -1,0 +1,82 @@
+﻿.infors dt,.btn_downlod a,.lottery dd p,.lottery dd center span,.feature dt,.swipe_trigger li,.tips,.pop dl dt,.pop dl dd center{ background-image:url(../images/sprite.png); background-repeat:no-repeat; background-size:3.69rem 6.68rem; }
+
+body{font:normal 0.24rem/1.5 "Microsoft YaHei","微软雅黑"; color:#ffffff; background:#020202; word-wrap:break-word; word-break:break-all;-webkit-tap-highlight-color:rgba(255,255,255,0); }
+
+img{display: block;width: 100%; vertical-align:top;}
+.hide{ display: none;}
+
+.top{ height:1.18rem;}
+.logo_fy{ float:left; width:1.02rem; height:1.03rem; margin:0.11rem 0rem 0rem 0.27rem; background:url(../images/logo_fy.png) no-repeat left top; background-size:100% 100%; }
+.logo_bd{ float:left; width:1.42rem; height:0.73rem; margin:0.25rem 0rem 0rem 0.38rem; background:url(../images/logo_bd.png) no-repeat left top; background-size:100% 100%; }
+
+
+
+.header{ position:relative; padding-top:7.64rem; height:5.31rem; background:url(../images/header.jpg) no-repeat left top; background-size:100% 100%; }
+
+.appoint{ position:absolute; top:6.27rem; left:1.10rem; }
+.appoint input{ float:left; width:3.00rem; font:bold 0.28rem/0.54rem "Microsoft YaHei","微软雅黑"; color:#000000; background:none; border:none; letter-spacing:0.05rem; }
+.appoint span{ float:left; width:1.35rem; height:0.54rem; margin-left:0.08rem;  }
+.infors{ padding:0.20rem 0.20rem 0.30rem 0.20rem; }
+.infors dt{ height:0.63rem; background-position:0rem -3.10rem; text-indent:-9999px; }
+.infors dt.time{ background-position:0rem -2.40rem; }
+.infors dd{ padding-top:0.10rem; color:#000000; }
+.infors dd p{ padding-top:0.10rem; }
+.infors dd ul{ padding-left:0.50rem; }
+.infors dd ul li{ position:relative; margin-top:0.10rem;  }
+.infors dd ul li span{ position:absolute; left:-0.44rem; top:0.03rem; width:0.24rem; height:0.24rem; background:#7c2a2a; border-radius:100%; text-align:center; font-weight:bold; line-height:1; color:#ffffff;  }
+.btn_downlod{ padding:0.10rem 0rem 0rem 1.04rem; }
+.btn_downlod a{ display:block; width:3.69rem; height:1.10rem; background-position:0rem 0rem; }
+
+.content{ position:relative; height:21.78rem; background:url(../images/content.jpg) no-repeat left top; background-size:100% 100%; }
+.lottery{ padding:0.68rem 0rem; }
+.lottery dt{ position:relative; overflow:hidden; width:4.84rem; margin:0 auto; }
+.lottery dt span{ display:block; height:4.84rem; background:url(../images/turntable.png) no-repeat; background-size:100% 100%; }
+.lottery dt ins{ position:absolute; left:50%; top:1.90rem; margin-left:-0.64rem; width:1.27rem; height:1.40rem; background:url(../images/needle.png) no-repeat; background-size:100% 100%; }
+.lottery dd p{ width:3.69rem; height:1.10rem; margin:0.28rem 0rem 0rem 1.04rem; background-position:0rem -1.20rem; }
+.lottery dd center{ padding-top:0.34rem; font-size:0; }
+.lottery dd center span{ display:inline-block; width:0.43rem; height:0.43rem; margin:0rem 0.09rem; }
+.lottery dd center span.weixin{ background-position:0rem -3.80rem; }
+.lottery dd center span.qq{ background-position:-0.61rem -3.80rem; }
+.lottery dd center span.qzone{ background-position:-1.22rem -3.80rem; }
+.lottery dd center span.sina{ background-position:-1.83rem -3.80rem; }
+.lottery dd center span.tencent{ background-position:-2.44rem -3.80rem; }
+
+.content .infors dd{ height:5.70rem; color:#ffffff; }
+.feature dt{ width:1.88rem; height:0.45rem; margin:0 auto; text-indent:-9999px; background-position:0rem -4.30rem; }
+.swipe_box {  position:relative; height:3.80rem; padding-top:0.30rem; overflow:hidden;}
+.swipe_box ul li { position:relative; float:left; width:100%;}
+.swipe_trigger{ padding:0.26rem 0rem 0.24rem 0rem; text-align:center; font-size:0;}
+.swipe_trigger li{display:inline-block;width:0.36rem;height:0.37rem;margin:0 0.07rem; background-position:0rem -5.56rem; }
+.swipe_trigger li.cur{ background-position:-0.50rem -5.56rem; }
+.tips{ width:3.40rem; height:0.60rem; margin:0 auto; background-position:0rem -4.80rem;-webkit-animation:tips 2s ease-in 1s infinite normal;animation:tips 2s linear 1s infinite normal;  }
+@keyframes tips
+{
+0%,50%,100% {transform:rotate(0deg);}
+10%  {transform:rotate(10deg);}
+20%  {transform:rotate(-10deg);}
+30%  {transform:rotate(5deg);}
+40%  {transform:rotate(-5deg);}
+}
+
+@-webkit-keyframes tips
+{
+0%,50%,100% {-webkit-transform:rotate(0deg);}
+10%  {-webkit-transform:rotate(10deg);}
+20%  {-webkit-transform:rotate(-10deg);}
+30%  {-webkit-transform:rotate(5deg);}
+40%  {-webkit-transform:rotate(-5deg);}
+}
+
+.pop,.share_weixin,.horizontal{ display:none; position:fixed; z-index:11; top:0px; left:0px; height:100%; width:100%; background-color:rgba(0,0,0,0.8); }
+.pop dl{ position:absolute; left:0.30rem; width:4.80rem; bottom:50%; margin-bottom:-3.50rem; padding:0.50rem; background:#1a1a1a; color:#dc4646; }
+.pop dl dt{ position:absolute; right:0; top:-0.40rem; width:0.40rem; height:0.40rem; background-position:-1.10rem -5.50rem; }
+.pop dl dd .info { font-size:0.28rem; font-weight:bold; padding:0.35rem 0rem; text-align:center; }
+.pop dl dd center{ width:1.60rem; height:0.68rem; margin:0.35rem auto 0 auto; background-position:-1.80rem -6.00rem; }
+.pop_submit dl dd center{ background-position:0rem -6.00rem; }
+.pop dl dd h3 { font-size:0.28rem; font-weight:bold; text-align:center; }
+.pop dl dd .prize { padding:0.26rem 0rem; color:#e3e3e3; }
+.pop dl dd .phone { padding:0.26rem 0rem; text-align:center; }
+.pop dl dd .phone input { width:80%; height:0.50rem; border:0.04rem solid #c03d3d; font:bold 0.28rem/0.54rem "Microsoft YaHei","微软雅黑"; color:#000000; letter-spacing:0.05rem; }
+.prompt { text-align:center; }
+
+.share_weixin{ background-image:url(../images/share_tips.png); background-repeat:no-repeat; background-position:right top; background-size:90% auto; }

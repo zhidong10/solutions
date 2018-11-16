@@ -1,0 +1,283 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD><TITLE>WebZIP 工程报告</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=gb2312">
+
+<STYLE TYPE="text/css">
+<!--
+	.heading{
+                font-family:宋体;
+                font-size:16pt;
+		font-weight:bold;
+
+	}	
+
+	.copyright{
+                font-family:宋体;	
+                font-size:9pt;
+	}
+
+	TD.clsSummary {
+		vertical-align:top;
+		background-color:#FFFFFF;
+		padding:1px;
+                font-size:9pt;
+                font-family:宋体;
+	}
+
+	TH {
+		text-align:left; 
+		vertical-align:center;
+		padding:0px;
+                font-size:9pt;
+                font-family:宋体;
+                FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr="#FFFFFFFF", EndColorStr="#DCE6F0FF");
+                BORDER: 1px solid #DCE6F4;
+
+                cursor:hand;
+
+	  	COLOR: #000000;
+	  	TEXT-DECORATION: none;
+	}
+
+	TD {
+		vertical-align:top;
+                background-color:#FFF8FF;
+		padding:4px;
+                font-size:9pt;
+                font-family:宋体;
+	}
+
+	BODY {
+                font-size:9pt;
+                font-family:宋体;
+	}
+A.title:link
+{
+    COLOR: #000000;
+    TEXT-DECORATION: none
+}
+A.title:visited
+{
+    COLOR: #000000;
+    TEXT-DECORATION: none
+}
+A.title:active
+{
+    COLOR: #000000;
+    TEXT-DECORATION: none
+}
+A.title:hover
+{
+    BACKGROUND: #3366cc;
+    COLOR: white;
+}
+
+-->
+</STYLE>
+
+
+<script language="Javascript" id=code>
+
+ function doSort(col) {
+  if (projectitems.SortColumn == col){
+    projectitems.SortAscending = (! projectitems.SortAscending);
+  }
+  else{
+    projectitems.SortAscending = true;
+    projectitems.SortColumn = col;
+  }
+  projectitems.Reset();
+ }
+
+</script>
+
+
+
+<script language="vbscript">
+
+function ShowProjectItems()
+  sFilterExpr = ""
+  if cboShowProjectItems.selectedIndex = 0 then
+    sFilterExpr = ""
+    window.location.href = "project_report.htm?show=all"
+  end if
+  
+  if cboShowProjectItems.selectedIndex = 1 then
+    sFilterExpr = "FileType=HTML"
+    window.location.href = "project_report.htm?show=html"
+  end if
+
+  if cboShowProjectItems.selectedIndex = 2 then
+    sFilterExpr = "FileType<>HTML"
+    window.location.href = "project_report.htm?show=media"
+  end if
+
+  if cboShowProjectItems.selectedIndex = 3 then
+    sFilterExpr = "Status=Errors" 
+    window.location.href = "project_report.htm?show=errors"
+  end if
+
+  projectitems.object.Filter = sFilterExpr
+  projectitems.Reset()
+
+end function
+
+
+
+function cboShowProjectItems_onchange()
+  ShowProjectItems
+end function
+
+</script>
+
+
+
+</HEAD>
+
+<BODY TOPMARGIN=10 LEFTMARGIN=10 BGCOLOR="#FFFFFF" VLINK="#808080">
+
+<OBJECT id="project_summary" CLASSID="clsid:333C7BC4-460F-11D0-BC04-0080C7055A83">
+	<PARAM NAME="DataURL" VALUE="project_summary.txt">
+	<PARAM NAME="UseHeader" VALUE="True">
+        <PARAM NAME="TextQualifier" VALUE="&quot;">
+</OBJECT>
+
+
+<table>
+<tr>
+<td class="clsSummary" width="120"><img src="wzlogo.gif" align="top"></td>
+<td class="clsSummary"><div class=heading>工程报告：<SPAN datasrc="#project_summary" datafld="TaskName"></SPAN></div>
+
+
+<table cellspacing="1" cellpadding="0">
+<tr><td class="clsSummary">类别：&nbsp;&nbsp;&nbsp; </td><td class="clsSummary"><SPAN datasrc="#project_summary" datafld="Category"></SPAN></td></tr>
+<tr><td class="clsSummary">标题：</td><td class="clsSummary"><SPAN datasrc="#project_summary" datafld="Title"></SPAN></td></tr>
+</table>
+
+
+</td>
+</tr>
+</table>
+
+
+
+
+<hr noshade color=#3366cc><br>
+
+
+显示： 
+<select id=cboShowProjectItems>
+  <option value=0>所有
+  <option value=1>页面
+  <option value=2>媒体
+  <option value=3>错误
+</select>
+&nbsp;&nbsp;
+
+<input type=text value=10 size=3 onblur="tblprojectitems.dataPageSize = this.value;">&nbsp; 项/页 &nbsp;&nbsp;&nbsp;
+
+<button id=cmdprevouspage onclick="tblprojectitems.firstPage()" title="第一页">I&lt;</button>
+<button id=cmdprevouspage onclick="tblprojectitems.previousPage()" title="上一页">&lt;</button>
+<button id=cmdnextpage onclick="tblprojectitems.nextPage()" title="下一页">&gt;</button>
+<button id=cmdnextpage onclick="tblprojectitems.lastPage()" title="最后一页">&gt;I</button>
+&nbsp;&nbsp;
+项目总数：<span id=numofitems></span>
+
+
+
+<script FOR=projectitems EVENT=ondatasetchanged>
+  nItems = projectitems.recordset.recordCount;
+  document.body.all('numofitems').innerText = projectitems.recordset.recordCount;
+</script>
+
+
+
+
+<OBJECT id=projectitems CLASSID="clsid:333C7BC4-460F-11D0-BC04-0080C7055A83">
+	<PARAM NAME="DataURL" VALUE="project_report.txt">
+	<PARAM NAME="UseHeader" VALUE="True">
+        <PARAM NAME="TextQualifier" VALUE="&quot;">
+</OBJECT>
+
+
+
+<script language="javascript">
+  sStr=window.location.href;
+  if (sStr.indexOf('show=') > 0) {
+    nloc = sStr.indexOf('show=') + 5;
+    sShow = sStr.substring(nloc);
+  } 
+  else {
+    sShow = '';
+  }
+
+  if (sShow == 'all') { 
+    sShow = '';
+    cboShowProjectItems.selectedIndex = 0;
+  }
+
+  if (sShow == 'html') {
+    sShow = 'FileType=HTML';
+    cboShowProjectItems.selectedIndex = 1;
+  }
+
+  if (sShow == 'media') { 
+    sShow = 'FileType<>HTML';
+    cboShowProjectItems.selectedIndex = 2;
+  }
+
+  if (sShow == 'errors') {
+    sShow = 'Status=Error';
+    cboShowProjectItems.selectedIndex = 3;
+  }
+
+  projectitems.object.filter = sShow;
+  projectitems.reset();
+
+</script>
+
+
+
+
+<TABLE id=tblprojectitems datasrc="#projectitems" datapagesize="10">
+<THEAD><TR>
+<TH onclick="doSort('Status')">状态<IMG src="" WIDTH="40" HEIGHT="0"></TH>
+<TH onclick="doSort('Title')"><SPAN class="up">标题<IMG src="" WIDTH="150" HEIGHT="0"></SPAN></TH>
+<TH onclick="doSort('URL')"><SPAN class="up">地址</SPAN></TH>
+<TH onclick="doSort('FileType')">文件类型</TH>
+<TH onclick="doSort('Size')"nowrap>大小</TH>
+<TH onclick="doSort('LastModified')"nowrap>最后修改<IMG src="" WIDTH="50" HEIGHT="0"></TH>
+<TH onclick="doSort('DownloadResult')">下载结果</TH>
+<TH onclick="doSort('Level')">层次</TH>
+<TH onclick="doSort('Referrer')">引用</TH>
+</TR></THEAD>
+
+<TBODY>
+<TR>
+<TD><DIV datafld="Status"></DIV></TD>
+<TD>
+<a class="title" datafld="LocalFile">
+<script>
+  if (sShow == 'FileType<>HTML') {
+    document.write('<img datafld=LocalFile border=0 width=60 height=60>');
+  }
+</script>
+<DIV datafld="Title"></DIV></a></TD>
+<TD><a datafld="URL"><DIV datafld="URL"></a></DIV></TD>
+<TD nowrap><DIV datafld="FileType"></DIV></TD>
+<TD nowrap><DIV datafld="Size"></DIV></TD>
+<TD><DIV datafld="LastModified"></DIV></TD>
+<TD><DIV datafld="DownloadResult" bgcolor="336699"></DIV></TD>
+<TD><DIV datafld="Level"></DIV></TD>
+<TD><DIV datafld="Referrer"></DIV></TD>
+</TR></TBODY>
+</TABLE>
+
+<!-- START_PAGE_FOOTER -->
+<BR><BR><BR>
+<p class=copyright>汉化：软件本地化团队　XiaoSD[SLT] </p>
+<p class=copyright>版权 2005 Spidersoft. 所有权保留。</p>
+<!-- END_PAGE_FOOTER -->
+</BODY>
+</HTML>

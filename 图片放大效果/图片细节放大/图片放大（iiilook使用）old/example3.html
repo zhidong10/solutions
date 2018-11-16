@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>MagicZoom | Example</title>
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="MagicZoom.css" type="text/css" media="screen" />
+    <script src="mz-packed.js" type="text/javascript"></script>
+    <style>
+        img {
+            border-width: 0px;
+        }
+        
+        body, p {
+            font-size: 11px;
+        }
+        
+        /* Lets change background color for mouse-under popup box: */
+        /* this will override MagicZoom CSS settings */ 
+        .MagicZoomPup {
+	        background: 	#f97979;
+        }
+    </style>
+</head>
+<body>
+
+<a href="dress-BK-big.jpg" class="MagicZoom" title="Black dress" id="zoom1"><img src="dress-BK-small.jpg"/></a>
+
+<!-- by defining such image we will add loading animation to Magic Zoom -->
+<img class="MagicZoomLoading" src="ajax-loader.gif" alt="Loading Zoom, please wait"/>
+
+<p>Click to change dress color view:</p>
+<a href="dress-BK-big.jpg" rel="zoom1" rev="dress-BK-small.jpg" title="Black dress"><img src="color_BK.gif"/></a>
+<a href="dress-PR-big.jpg" rel="zoom1" rev="dress-PR-small.jpg" title="Purple dress"><img src="color_PR.gif"/></a>
+<a href="dress-RB-big.jpg" rel="zoom1" rev="dress-RB-small.jpg" title="Blue dress"><img src="color_RB.gif"/></a>
+<a href="dress-RD-big.jpg" rel="zoom1" rev="dress-RD-small.jpg" title="Red dress"><img src="color_RD.gif"/></a>
+
+</body>
+</html>

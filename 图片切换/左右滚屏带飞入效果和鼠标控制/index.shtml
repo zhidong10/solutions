@@ -1,0 +1,218 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>《鹿鼎记》手游游戏特色-《鹿鼎记》手游官方网站-金庸正版授权，即时移动战斗卡牌</title>
+<meta name="keywords" content="鹿鼎记手游官网,鹿鼎记手游攻略,鹿鼎记手游礼包,鹿鼎记手游激活码,鹿鼎记手游安卓版,鹿鼎记手游ios版,鹿鼎记手游下载,鹿鼎记手游,卡牌网游,塔防游戏,休闲游戏,3d,金庸群侠传,鹿鼎记神龙教,小宝与康熙,韦小宝七老婆,梦回鹿鼎记" />
+<meta name="description" content="《鹿鼎记》手游是由金庸小说改编的卡牌网游，玩家可成为最强卡牌大师，同时《鹿鼎记》也是新派塔防游戏，玩家需要不断提高战斗力，迎接更多挑战。" />
+<meta name="author" content="Design:ZhangDongLiang; Web Layout:WangHongWei;" />
+<link type="image/x-icon" href="http://ldj.changyou.com/favicon.ico" rel="icon" />
+<link type="image/x-icon" href="http://ldj.changyou.com/favicon.ico" rel="shortcut icon" />
+<link type="text/css" rel="stylesheet" href="http://event.changyou.com/all/css/reset.css" />
+<link type="text/css" rel="stylesheet" href="css/index.css" />
+</head>
+<body>	
+<div class="content">
+    <div class="wrap">
+        <h1 class="hide">《鹿鼎记》手游游戏特色</h1>
+        <div class="ldjsy_logo_lk">
+            <a href="http://ldjsy.changyou.com/" target="_blank" title="鹿鼎记手游官方网站"></a>
+        </div>
+        <div class="ldjsy_logo_bg"></div>
+		<div class="titlelink">
+            <a href="http://ldjsy.changyou.com/" target="_blank" title="官网">官网</a>
+            <a href="javascript:alert('敬请期待！');" title="下载">下载</a>
+         </div>
+        <div class="share">
+        	<div id="share"></div>
+            <dl>
+            	<dt></dt>
+                <dd><ins></ins><img src="images/code.png" /></dd>
+            </dl>
+        </div>
+    </div>    
+    <div class="banner">
+        <div class="slide">
+            <ul>
+                <li class="box box01">
+                    <span class="right"><img src="images/box01_right.png" width="685" height="602" /></span>
+                    <span class="left"><img src="images/box01_left.png" width="901" height="945" /></span>
+                    <span class="bottom bottom_left"><img src="images/box01_bottom.png" width="1920" height="297" /></span>
+                    <span class="txt bottom_right"><img src="images/box01_txt.png" width="678" height="190" /></span>
+                </li>
+                <li class="box box02">
+                    <span class="left"><img src="images/box02_left.png" width="663" height="563" /></span>
+                    <span class="right"><img src="images/box02_right.png" width="972" height="1032" /></span>
+                    <span class="bottom bottom_right"><img src="images/box02_bottom.png" width="1920" height="417" /></span>
+                    <span class="txt bottom_left"><img src="images/box02_txt.png" width="681" height="166" /></span>
+                </li>
+                <li class="box box03">
+                    <span class="left"><img src="images/box03_left.png" width="1122" height="1080" /></span>
+                    <span class="right"><img src="images/box03_right.png" width="644" height="566" /></span>
+                    <span class="bottom bottom_left"><img src="images/box03_bottom.png" width="1920" height="297" /></span>
+                    <span class="txt bottom_right"><img src="images/box03_txt.png" width="670" height="177" /></span>
+                </li>
+                <li class="box box04">
+                    <span class="left"><img src="images/box04_left.png" width="655" height="558" /></span>
+                    <span class="right"><img src="images/box04_right.png" width="1129" height="971" /></span>
+                    <span class="bottom bottom_right"><img src="images/box04_bottom.png" width="1920" height="360" /></span>
+                    <span class="txt bottom_left"><img src="images/box04_txt.png" width="667" height="153" /></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="button">
+    <a class="prev" href="javascript:;"></a>
+    <a class="next" href="javascript:;"></a>
+</div>
+
+<div class="tips">
+	<dl>
+    	<dt></dt>
+        <dd>滚动鼠标浏览页面</dd>
+    </dl>
+</div>
+
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="http://www.changyou.com/cyou_share/cyoushare.js"></script>
+<script type="text/javascript" src="js/jquery.switchable-2.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+<script type="text/javascript">
+//$(window).load(function(){//防止图片坐标获取不准，也可将图片写好宽高值
+// 分享
+var share = new Cyoushare('share', {
+	offset : ['0', '0']
+	,icon : 'small'// 使用小图标
+	,notShareTo : 's_qzone,s_renren,s_kaixin'
+	,gap : '7px'// 图标间隔5px
+	,url : ''// 分享的地址
+	,showTitle : '分享'
+	,title:"《鹿鼎记》手游游戏特色"
+	,content : '我正在看《鹿鼎记》手游游戏特色，分享给你哟~' //分享的内容
+});
+
+//鼠标滚屏提示
+$(".tips,body").click(function(e){
+	$(".tips").fadeOut();
+});
+
+//左右箭头出入效果
+(function(){
+	var enter_action , leave_action;
+	$(".content,.button a").hover(function(){
+		clearTimeout(leave_action);
+		enter_action = setTimeout(function(){
+			$(".button .prev").animate({"opacity":"show","left":"150px"},400);
+			$(".button .next").animate({"opacity":"show","right":"150px"},400);
+		},401);
+	},function(){
+		clearTimeout(enter_action);
+		leave_action=setTimeout(function(){
+			$(".button .prev").animate({"opacity":"hide","left":"0px"},200);
+			$(".button .next").animate({"opacity":"hide","right":"0px"},200);
+		},201);
+	});
+})();
+
+
+//微信图片
+$(".share dl dt").hover(function(){
+	$(this).next().slideDown();
+},function(){
+	$(this).next().slideUp();
+})
+
+
+//鼠标滚动
+var loghandle = function(event, delta) {
+	if(delta > 0){//向上
+		$(".button .prev").click();
+	}
+	if(delta < 0){//向下
+		$(".button .next").click();
+	}
+};
+
+$(".content").mousewheel(function(event, delta) {
+	loghandle(event, delta);
+	return false;
+});
+
+//滚屏动画
+var left_array=[];
+$(".left").each(function(index) {
+    left_array[index]=$(this).position().left;
+});
+
+var right_array=[];
+$(".right").each(function(index) {
+    right_array[index]=$(this).position().left;
+});
+
+var bottom_left_array=[];
+$(".bottom_left").each(function(index) {
+    bottom_left_array[index]=$(this).position().left;
+});
+
+var bottom_right_array=[];
+$(".bottom_right").each(function(index) {
+    bottom_right_array[index]=$(this).position().left;
+});
+
+var num=0;
+var scrn=0;
+$(".box").each(function(index) {
+	$(".box").eq(index).children(".left").animate({"left":"-2000px"},0);
+	$(".box").eq(index).children(".right").animate({"left":"2000px"},0);
+	$(".box").eq(index).children(".bottom_left").animate({"left":"-2000px"},0);
+	$(".box").eq(index).children(".bottom_right").animate({"left":"2000px"},0);
+});
+
+$(".box").eq(num).children(".left").animate({"left":left_array[num]},1000);
+$(".box").eq(num).children(".right").animate({"left":right_array[num]},1000);
+$(".box").eq(num).children(".bottom_left").animate({"left":bottom_left_array[num]},700);
+$(".box").eq(num).children(".bottom_right").animate({"left":bottom_right_array[num]},700);
+
+function animate_screen(currentIndex){
+	num=currentIndex;
+	$(".box").eq(scrn).children(".left").animate({"left":"-2000px"},1000);
+	$(".box").eq(scrn).children(".right").animate({"left":"2000px"},1000);
+	$(".box").eq(scrn).children(".bottom_left").animate({"left":"-2000px"},700);
+	$(".box").eq(scrn).children(".bottom_right").animate({"left":"2000px"},700);
+	
+	$(".box").eq(num).children(".left").animate({"left":left_array[num]},1000);
+	$(".box").eq(num).children(".right").animate({"left":right_array[num]},1000);
+	$(".box").eq(num).children(".bottom_left").animate({"left":bottom_left_array[num]},700);
+	$(".box").eq(num).children(".bottom_right").animate({"left":bottom_right_array[num]},700);
+	scrn=num;
+}
+
+
+$('.slide').switchable({
+	//triggers: '&bull;',  //&bull;应用时，触点样式变为圆点;
+	putTriggers: 'insertBefore',
+	effect: 'fade',
+	panels: '.box',
+	triggerType:'click',
+	autoplay: false,
+	loop: true,//false时不循环
+	easing: 'ease-in-out',
+	prev: '.prev',
+	next: $('.next'),
+	onSwitch: function(event, currentIndex) {
+		/*var api = this;
+		api.prevBtn[currentIndex === 0 ? 'hide' : 'show']();
+		api.nextBtn[currentIndex === api.length - 1? 'hide' : 'show']();*/
+		//css3方法
+		/*$(".slide li").removeClass("box01cur box02cur box03cur box04cur");
+		$(".slide li").eq(currentIndex).addClass("box0"+(currentIndex+1)+"cur");*/
+		//js方法
+		animate_screen(currentIndex);
+	}
+});
+
+//})
+</script>
+</body>
+</html>

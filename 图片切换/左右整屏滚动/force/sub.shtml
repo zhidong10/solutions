@@ -1,0 +1,113 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>《星际战甲》阵营故事—《星际战甲》官方网站</title>
+<meta name="Keywords" content="星际战甲,星际战甲OL,warframe,超能降临,星际战甲故事,warframe故事,星际战甲官网,战争框架,星际战甲OL官网,星际,战甲,战甲英雄" />
+<meta name="Description" content="《星际战甲》是由畅游独家运营的一款科幻题材第三人称动作射击类网游。游戏由加拿大游戏公司Digital Extremes研发，使用优质的Evolution引擎，拥有战甲英雄、宇宙探索、多元化玩法（动作射击、养成体系、守护系统）三大特色。形象酷炫的战甲英雄，激爽刺激的动作击杀快感，随意搭配的多元化玩法，媲美单机大作的极致画面都能让玩家深切享受到探索未来的新体验。" />
+<meta name="author" content="Design:ZhangDongLiang; Web Layout:WangHongWei;">
+<link type="image/x-icon" href="/favicon.ico" rel="icon" />
+<link type="image/x-icon" href="/favicon.ico" rel="shortcut icon" />
+<link type="text/css" rel="stylesheet" href="/all/css/reset.css" />
+<link type="text/css" rel="stylesheet" href="css/index.css"  />
+</head>
+<body>
+
+<h1 class="none">《星际战甲》阵营故事</h1>
+<div class="top">
+    <div class="wrap">
+       <div class="link">
+            <a href="http://wf.changyou.com/index.shtml" title="返回首页" target="_blank">返回首页</a>
+            <a href="http://zhuce.changyou.com/regInit.act?gameType=wf&suffix=suffix" title="账号注册" target="_blank">账号注册</a>
+        </div>
+        <div id="share"></div>
+    </div>
+</div>
+
+<div class="wf_logo_lk">
+    <a href="http://wf.changyou.com/index.shtml" target="_blank" title="《星际战甲》官方网站"></a>
+</div>
+<div class="wf_logo_bg"></div>
+
+
+<div class="content">
+    <div class="banner">
+        <ul class="slide">
+            <li class="detail">
+                <img src="images/pic_01.jpg" />
+                <div class="info01">
+                    <div class="box">
+                        <div class="txt">
+                            <p>天诺是一支古老而神秘的战士种族的后代。在奥罗金时代后期爆发了一场几乎毁灭整个文明战争中，天诺起到了决定性的作用。病毒毁灭了整个地球之后，部分幸存者将注意力转向了虚空,那个令一切科学和理性崩溃的地狱空间。</p>
+                            <p>探险者在虚空中活着回来，并且获得了强大的能力。他们重新拾起最老套武器：枪与剑。这些人变成了奥罗金的救世主，这些战神向摧毁他们家园的敌人倾泻无数金属热流和怒火，重新恢复了宇宙的平衡。但是，在胜利的庆功宴上，他们却选择从此在宇宙中消失。他们被成为“天诺”。</p>
+                            <p>如今苏醒的天诺们面对的是一个陌生的宇宙。他们身为奥罗金科技的唯一继承者，独立对抗着那些妄图掌控天诺的野心家。尽管在漫长的时间中遗失了记忆，天诺对枪械、刀剑和超能战甲的精通却没有遗忘。戒律和骑士精神是天诺价值观的基石。</p>
+                        </div>
+                        
+                        <div class="switch">
+                            <a class="prev"></a>
+                            <a class="next"></a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </li>
+            <li class="detail">
+	            <img src="images/pic_02.jpg" />
+                <div class="info02">
+                    <div class="box">
+                        <div class="txt">
+                            <p>克隆尼是一个不断自我克隆的种族，他们是由几乎被遗弃的奥罗金技术诞生而来的。他们可以批量生产，但是过度的克隆破坏了基因序列。不过，这些批量出现的缺陷很快被技术所弥补。</p>
+                            <p>比起重新制造一个躯体，克隆尼更擅长用科技修补破损的躯体。他们的家乡是严重污染、生态灭绝的地球，他们排斥其他种族，对异族人有种天生的狂热憎恨。如果他们扩张得逞，整个太阳系里将只剩下克隆尼。他们是苏醒的天诺面对的第一个敌人。</p>
+                            <p>克隆尼擅长吸收外族技术。例如玩家能够接触到第一位克隆尼大boss沃尔上尉的“希尔先知”手枪就带有奥罗金元素和零件，是一把高威力手炮和狙击武器的结合体。</p>
+                            <p>不过克隆尼一直制造不出强有力的高伤害武器，尽管他们一直在尝试。他们的武器在技术上比较粗糙，但威力不容置疑。许多天诺因为低估克隆枪兵和格拉卡塔步枪的精准性，在等待护盾充能的过程中丧命。</p>
+                        </div>
+                        
+                        <div class="switch">
+                            <a class="prev"></a>
+                            <a class="next"></a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </li>
+            <li class="detail">
+	            <img src="images/pic_03.jpg" />
+                <div class="info03">
+                    <div class="box">
+                        <div class="txt">
+                            <p>科普斯是一群商业狂人，一群因共同的商业和工业利益而聚集起来的人。他们用统一的贸易语言，共享同一个目标——找到并贩卖古代奥罗金技术和战甲。他们的武器技术比克隆尼发达，他们的员工和狙击手使用和克隆尼相同的消耗战和伏击战术。</p>
+                            <p>他们扫荡外太阳系，贪婪地寻找各种可以卖钱的东西。而他们最想得到的，就是天诺和他们的战甲。他们像对待打捞物一样对待被他们捕获的天诺，细心地分解再组合。余下的部分就卖给出价最高的人。他们是天诺苏醒后遇到的第二股敌对势力。</p>
+                            <p>科普斯商会是游戏里最高产的武器制造商之一，他们向所有势力出售不计其数的武器和军火。他们的武器多种多样，从民用能量武器到射速达到每分钟几百发的现代等离子武器。科普斯商会的武器注重低成本自动化生产，但是器性能非常强劲。</p>
+                        </div>
+                        
+                        <div class="switch">
+                            <a class="prev"></a>
+                            <a class="next"></a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <p class="goindex">
+        <a href="index.shtml" title="阵营故事">阵营故事</a>
+    </p>
+    
+</div>
+
+    <div class="button">
+        <a class="prev"></a>
+        <a class="next"></a>
+    </div>
+    
+<div class="bottom"></div>
+
+<script type="text/javascript" src="/all/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="http://www.changyou.com/cyou_share/cyoushare.js"></script>
+<script type="text/javascript" src="js/jquery.switchable-2.0.min.js"></script>
+<script type="text/javascript" src="js/website.js"></script>
+<!--#include virtual="/all/nav/wf_dark_notop.html" -->
+<!--#include virtual="/all/dma/dma_static.html" -->
+</body>
+</html>

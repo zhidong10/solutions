@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>一段文字向左滚动caiying2007</title>
+<style>
+*{ margin:0px;padding:0px;}
+div { width:100px; height:20px; overflow:hidden; font-size:12px; line-height:20px; }
+div span { width:100px; height:20px; white-space:nowrap; }
+</style>
+</head>
+
+<body>
+<div onmouseover="startscroll(this)" onmouseout='clearTimeout(timer);stopScroll(this);'><span>123456789abcdefghigklmnopqrstuvwxyz</span></div>
+<div onmouseover="startscroll(this)" onmouseout='clearTimeout(timer);stopScroll(this);'><span>请避免标点符号及中西文混编请避免标点符号及中西文混编</span></div>
+<div onmouseover="startscroll(this)" onmouseout='clearTimeout(timer);stopScroll(this);'><span>pppppp+pppppp_ppppp'ppp'pppppp,ppppppp.pppppppppp</span></div>
+
+
+<script type="text/javascript">
+var timer,stops=0;
+function startscroll(o){
+if (stops==1)return
+stops=1
+	var w1=o.getElementsByTagName("span")[0].offsetWidth,w2=o.offsetWidth;
+	if(w1<=w2)return;
+	Scroll(o,w1-w2/2,0);
+}
+
+function Scroll(o,w,k){
+	if(k<w) {
+		k++;
+		o.getElementsByTagName("span")[0].style.marginLeft=-k+'px';		
+		timer=setTimeout(function(){Scroll(o,w,k)},30);
+	}
+	else{stopScroll(o);}
+}
+
+function stopScroll(old){
+	old.getElementsByTagName("span")[0].style.marginLeft=0+'px';
+	stops=0;
+}
+</script>
+
+</body>
+</html>

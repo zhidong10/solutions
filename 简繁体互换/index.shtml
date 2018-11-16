@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>第十二届公会争霸-《刀剑英雄》官方网站</title>
+<meta name="keywords" content="公会争霸,刀剑十年,公会,刀剑,刀剑英雄,我是开箱王,帮派大考验,第一帮">
+<meta name="description" content="《刀剑英雄》官方网站——“刀剑十年”公会争霸5月9日报名开启">
+<meta name="author" content="Design:YouCaiXia; Web Layout:WangHongWei;">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link type="text/css" rel="stylesheet" href="http://www.changyou.com/styles/reset.css">
+</head>	
+<body>
+
+<div><span class="ss" onClick="zh_tran('s');">简体</span><span class="ff" onClick="zh_tran('t');">繁體</span></div>
+<div>昆德拉放得開的放大放到了凱撒就放到</div>
+<script type="text/javascript" src="js/simp_trad.js"></script>
+<!--<script type="text/javascript" src="http://www.changyou.com/js/jquery.min.js"></script> 
+<script type="text/javascript">
+$(".ss").click(function(){
+zh_tran('s');
+})
+
+$(".ff").click(function(){
+zh_tran('t');
+})
+
+</script>
+-->
+
+</body>
+</html>

@@ -1,0 +1,223 @@
+﻿
+.sub_bg{
+	background: url(http://i1.cy.com/lethe/main/20170227/sub-bg.jpg) no-repeat;
+}
+
+.left{
+	width:195px;
+	height:100%;
+	position:fixed;
+}
+.left .lethe_logo_bg{
+		top:10px;
+}
+.left .lethe_logo_lk{
+	width:192px;
+	height:155px;
+}
+
+.left .download{
+
+}
+.left .download .apply,.left .download .android{
+	display:block;
+	margin: 20px auto 0 auto;
+	width:153px;
+	height:45px;
+
+}
+.left .download .apply{
+	background:url(http://i1.cy.com/lethe/main/20170227/appstore.png) no-repeat;
+}
+.left .download .android{
+	background: url(http://i1.cy.com/lethe/main/20170227/android.png) no-repeat;
+}
+
+.left .wx{
+	text-align: center;
+	padding-top:15px;
+}
+.left .wx img{
+	border:7px solid #e5f1fd;
+	width:152px;
+	height:152px;
+}
+.left h3{
+text-align: center;
+font-size:24px;
+line-height: 70px;
+}
+.left .sbt{
+	height:50px;
+
+}
+.left .sbt .info{
+	display: inline-block;
+	height:50px;
+	width:68px;
+	float: left;
+	padding-top:10px;
+	padding-left:17px;
+}
+.left .sbt p{
+	display: inline-block;
+	float: left;
+	padding-top:10px;
+}
+.left .sbt .sina,.left .sbt .qq,.left .sbt .baidu{
+	width:47px;
+	height:32px;
+	display: inline-block;
+	background:url(http://i1.cy.com/lethe/main/20170227/sbt.png) no-repeat;
+	margin-left:7px;
+	margin-right:7px;
+}
+.left .sbt .sina{
+	background-position:10px 0px;
+
+}
+.left .sbt .baidu{
+	background-position:-33px 0px;
+}
+.left .sbt .qq{
+	background-position:-73px 0px;
+}
+
+.wrap{
+	width:900px;
+
+	height:980px;
+	overflow: auto;
+}
+.wrap .tit{
+	border-bottom:1px solid #939fbd;
+	height:45px;
+}
+.wrap .tit a{
+	font-size:14px;
+	color:#5b5b5b;
+}
+.wrap .tit h3{
+	font-size: 24px;
+	color:#4a678e;
+	background:url(http://i1.cy.com/lethe/main/20170227/titicon.png) no-repeat center left;
+	padding-left:50px;
+	display: inline-block;
+	margin-right: 20px;
+}
+.wrap .tit .back{
+	float: right;
+	margin-top: 10px;
+	background: url(http://i1.cy.com/lethe/main/20170227/back.png) no-repeat center left;
+	padding-left:23px;
+	margin-right: 20px;
+}
+.wrap .txtitle{
+	height: 129px;
+	text-align: center;
+	border-bottom:1px dashed #95a1bb;
+	margin-bottom: 34px;
+}
+.wrap .txtitle h1{
+	    font-size: 30px;
+    line-height: 35px;
+    color: #181717;
+    padding-top: 38px;
+}
+.wrap .txtitle span{
+	line-height: 50px;
+}
+.wrap .content{
+
+}
+.wrap .content p{
+	line-height: 30px;
+	text-indent: 2em;
+}
+.wrap .content h2{
+	font-size:18px;
+	color:#212121;
+	font-weight: 900;
+	padding-top:20px;
+	padding-bottom:20px;
+}
+.wrap .content img{
+	max-width: 883px;
+	padding-top:30px;
+	padding-bottom:30px;
+	display: block;
+	margin:0 auto;
+
+}
+.wrap .content .imginfo{
+	text-align: center;
+}
+.wrap .alight{
+	color:#d01818;
+}
+.wrap .content a{
+	text-decoration: underline;
+	color:#d01818;
+}
+.wrap .newslist{
+	width:884px;
+	height: 880px;
+	position: relative;
+
+}
+.wrap .newslist ul{
+	margin-top:20px;
+}
+.wrap .newslist li{
+	border-bottom: 1px dashed #91a1c1;
+	background:url(http://i1.cy.com/lethe/main/20170227/point.png) no-repeat center left;
+	padding-left:10px;
+}
+.wrap .newslist li a{
+	line-height: 74px;
+	display: inline-block;
+    width: 620px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color:#000000;
+}
+.wrap .newslist ul li a:hover{
+	color:#c41414;
+}
+.wrap .newslist ul li a:focus,.wrap .newslist ul li a:active,.wrap .newslist ul li a:link,.wrap .newslist ul li  a:visited{
+	text-decoration: none;
+	color#000000;
+}
+.wrap .pagenav{
+	padding-top:14px;
+	text-align: center;
+	color:#525252;
+	font-size:14px;
+	position: absolute;
+	bottom:10px;
+	width:880px;
+}
+.wrap .pagenav a{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.wrap .pagenav a.cur,wrap .pagenav a:hover{
+	color:#c41414;
+}
+.wrap .newslist ul li .date{
+	float: right;
+	line-height: 74px;
+}
+.hidescoll{
+	width:883px;
+	height:980px;
+	background: url(http://i1.cy.com/lethe/main/20170227/wrap.jpg) no-repeat;
+	margin-left:195px;
+	z-index: 99999;
+	overflow: hidden;
+	padding-top:50px;
+	padding-left:50px;
+	padding-bottom:50px;
+}
+

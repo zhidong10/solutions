@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>圆形旋转展示</title>
+<link type="text/css" rel="stylesheet" href="css/global.css" />
+</head>
+<body>
+    
+<div class="circle circle1">
+	<div class="origin">
+        <a href="javascript:;" title="夔牛"></a>
+        <a href="javascript:;" title="吼天罴"></a>
+        <a href="javascript:;" title="炎天兕"></a>
+        <a href="javascript:;" title="赤火凤"></a>
+        <a href="javascript:;" title="雪啸虎"></a>
+    </div>
+</div>
+
+<div class="circle circle2">
+	<div class="origin">
+        <a href="javascript:;" title="吼天罴"></a>
+        <a href="javascript:;" title="炎天兕"></a>
+        <a href="javascript:;" title="赤火凤"></a>
+    </div>
+</div>
+
+<div class="circle circle3">
+	<div class="origin">
+        <a href="javascript:;" title="夔牛"></a>
+        <a href="javascript:;" title="吼天罴"></a>
+        <a href="javascript:;" title="炎天兕"></a>
+        <a href="javascript:;" title="赤火凤"></a>
+        <a href="javascript:;" title="雪啸虎"></a>
+    </div>
+</div>
+
+<div class="circle circle4">
+	<div class="origin">
+        <a href="javascript:;" title="夔牛"></a>
+        <a href="javascript:;" title="吼天罴"></a>
+        <a href="javascript:;" title="炎天兕"></a>
+        <a href="javascript:;" title="赤火凤"></a>
+        <a href="javascript:;" title="雪啸虎"></a>
+    </div>
+</div>
+
+
+
+
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript">
+$(".circle1").circle({
+	differ:"a_",
+	direction:"bottom",
+	posi_length:15,
+	role_length:5,
+	r:283
+})
+$(".circle2").circle({
+	differ:"b_",
+	direction:"left",
+	posi_length:9,
+	role_length:5,
+	r:283
+})
+$(".circle3").circle({
+	differ:"c_",
+	direction:"top",
+	posi_length:15,
+	role_length:5,
+	r:283
+})
+
+$(".circle4").circle({
+	differ:"d_",
+	direction:"right",
+	posi_length:15,
+	role_length:5,
+	r:433
+})
+
+</script>
+</body>
+</html>

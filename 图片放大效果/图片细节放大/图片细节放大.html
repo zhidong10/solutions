@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content=" " />
+<meta name="keywords" content=" ">
+<meta name="author" content="wr wang"/>
+<title>图片细节放大</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/zoom_in.js" ></script>
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/switchable.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".prev").mouseover(function(){
+		$(this).addClass("prev_hover");						  
+	}).mouseout(function(){
+		$(this).removeClass("prev_hover");							   
+	});	
+	
+	
+	$(".next").mouseover(function(){
+		$(this).addClass("next_hover");						  
+	}).mouseout(function(){
+		$(this).removeClass("next_hover");							   
+	});					   
+						   
+
+
+	$("#trigger1").switchable(".scrollable-panel > ul > li", {
+		  triggerType: "click",
+		  effect: "scroll",
+		  steps: 2,
+		  visible: 4
+		  }).autoplay().carousel().mousewheel();//依次为：自动播放插件，旋转木马插件，鼠标滚珠插件。
+		  
+		  var api1 = $("#trigger1").switchable();
+		  $("#next1").click(function(){
+		  api1.next();
+		  });
+		  $("#prev1").click(function(){
+		  api1.prev();
+	});
+		  
+});
+</script>
+</head>
+
+<body>
+<div class="wrap">
+
+<div class="zoom_in"><a href="images/big2.jpg" title="放大效果图" class="MagicZoom" id="zoom"><img class="zoom_in_pic" src="images/2.jpg"/></a></div>
+<div class="blank10"></div>
+
+<div class="trigger-bar">
+<span id="prev1" class="prev"></span> 
+<span id="next1" class="next"></span>
+<div class="scrollable-panel">
+<ul>
+<li><a href="images/big1.jpg" rel="zoom" rev="images/1.jpg" title="折叠状态"><img src="images/small1.png" /></a></li>
+<li><a href="images/big2.jpg" rel="zoom" rev="images/2.jpg" title="展开30°状态"><img src="images/small2.png" /></a></li> 
+<li><a href="images/big3.jpg" rel="zoom" rev="images/3.jpg" title="展开60°状态"><img src="images/small3.png" /></a></li>
+<li><a href="images/big4.jpg" rel="zoom" rev="images/4.jpg" title="完全展开状态"><img src="images/small4.png" /></a></li>
+<li><a href="images/big1.jpg" rel="zoom" rev="images/1.jpg" title="折叠状态"><img src="images/small1.png" /></a></li>
+<li><a href="images/big2.jpg" rel="zoom" rev="images/2.jpg" title="展开30°状态"><img src="images/small2.png" /></a></li> 
+<li><a href="images/big3.jpg" rel="zoom" rev="images/3.jpg" title="展开60°状态"><img src="images/small3.png" /></a></li>
+<li><a href="images/big4.jpg" rel="zoom" rev="images/4.jpg" title="完全展开状态"><img src="images/small4.png" /></a></li>
+</ul>
+</div>
+<div id="trigger1" class="scrollable-trigger"></div>
+</div>
+
+</div>
+</body>
+</html>

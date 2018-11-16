@@ -1,0 +1,62 @@
+<div class="wrap">
+    <div class="header">	
+        <h1 class="none">大荒·山海图</h1>
+        <div class="mh_logo_lk">
+            <a target="_blank" href="http://mh.changyou.com" title="《蛮荒搜神记》官方网站"></a>
+        </div>
+        <div class="mh_logo_bg"></div>
+        
+        <div class="links">
+            <a target="_blank" href="http://mh.changyou.com" title="官网">官网</a>
+            <font></font>
+            <a href="javascript:;" title="预约">预约</a>
+            <font></font>
+            <span>分享</span>
+            <a href="javascript:;" class="btn_share btn_wechat"><img src="images/wechat_code.png" /></a>
+            <a href="javascript:;" class="btn_share btn_sina"></a>
+        </div>
+        <div id="share" class="none"></div>
+        <div class="nav">
+            <a class="nav_01" href="javascript:;" title="山海图"></a>
+            <a class="nav_02" href="javascript:;" title="女娲卷"></a>
+            <a class="nav_03" href="javascript:;" title="后羿卷"></a>
+            <a class="nav_04" href="javascript:;" title="青丘卷"></a>
+        </div>
+    </div>
+	<div class="loading"><div><a></a><ins></ins><span><strong>0</strong>%</span></div></div>
+    <div class="scroll" id="scroll">
+        <div class="box box03_01">
+            <span data-p="0,600" data-x="200,0" data-y="-100,200" ><img class="layer" data-depth-x="0.2" data-depth-y="0.4" src="images/pink.png" /></span>        
+            <img src="images/flower_left.png" data-p="0,600"  data-x="-100,100" data-y="600,400"  />
+            <img src="images/flower_right.png" data-p="0,600"  data-x="1500,1100" data-y="400,200" />
+            <img src="images/txt03_01.png" data-p="0,600"  data-x="800,100" data-y="580,580" />
+        </div>
+        <div class="box box03_02">
+            <span data-p="500,1500" data-x="0,300" data-y="100,400"><img class="layer" data-depth-x="0.2" data-depth-y="0.4" src="images/pink03_02.png" /></span>        
+            <img src="images/filter.png" data-p="500,1500" data-x="0,0" data-y="0,900" />
+             <img src="images/filter.png" data-p="500,1500" data-x="0,0" data-y="0,900" />
+           <img src="images/txt03_02.png" data-p="500,1500"  data-x="300,300" data-y="290,590" />
+        </div>
+        <div class="box box03_03">
+            <img src="images/wood_left.png" data-p="1400,2400"  data-x="0,200" data-y="580,580"  />
+            <img src="images/wood_right.png" data-p="1400,2400"  data-x="1800,1602" data-y="0,0"  />
+            <img src="images/fog.png" data-p="1400,2400"  data-x="-500,0" data-y="41,41"  />
+            <img src="images/filter.png" data-p="1400,2400" data-x="0,0" data-y="0,900" />
+            <img src="images/txt03_03.png" data-p="1400,2400"  data-x="400,400" data-y="597,297" />
+        </div>
+        <div class="box box03_04">
+        	<span id="flash"></span>
+            <img src="images/txt03_04.png" data-p="2200,3000"  data-x="-100,500" data-y="597,597" />
+        </div>
+    </div>
+</div>
+
+<div class="float">
+	<span class="top"></span>
+	<a href="javascript:;" title="青丘森林">青丘森林</a><font></font>
+	<a href="javascript:;" title="青雘山谷">青雘山谷</a><font></font>
+	<a href="javascript:;" title="寂归沼泽">寂归沼泽</a><font></font>
+	<a href="javascript:;" title="九尾狐">九尾狐</a>
+	<span class="bottom"></span>
+</div>
+

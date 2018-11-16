@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>大荒·山海图-《蛮荒搜神记》官方网站</title>
+<meta name="keywords" content="蛮荒,蛮荒ol,搜神记,搜神记ol,蛮荒搜神记,蛮荒搜神记ol,ARPG,树下野狐,拓拔野,雨师妾,蚩尤,次世代,动作网游" />
+<meta name="description" content="追寻神话时代，探秘古神遗迹。《蛮荒搜神记》全新世界设定站“大荒·山海图”公开，告诉你蛮荒世界的真实模样。" />
+<meta name="author" content="Design:LiHao; Web Layout:WangHongWei;" />
+<link type="image/x-icon" href="http://mh.changyou.com/favicon.ico" rel="icon" />
+<link type="image/x-icon" href="http://mh.changyou.com/favicon.ico" rel="shortcut icon" />
+<link type="text/css" rel="stylesheet" href="http://event.changyou.com/all/css/reset.css" />
+<link type="text/css" rel="stylesheet" href="css/global.css" />
+</head>
+<body>
+<div class="music open" data-music="flash/bg.mp3"></div>
+<div class="jw"><span id="jw"></span></div>
+
+<div class="index">	
+    <h1 class="none">大荒·山海图</h1>
+    <div class="mh_logo_lk">
+        <a target="_blank" href="http://mh.changyou.com" title="《蛮荒搜神记》官方网站"></a>
+    </div>
+    <div class="mh_logo_bg"></div>
+    
+    <div class="links">
+        <a target="_blank" href="http://mh.changyou.com" title="官网">官网</a>
+        <font></font>
+        <a href="javascript:;" title="预约">预约</a>
+        <font></font>
+        <span>分享</span>
+        <a href="javascript:;" class="btn_share btn_wechat"><img src="images/wechat_code.png" /></a>
+        <a href="javascript:;" class="btn_share btn_sina"></a>
+    </div>
+    <div id="share" class="none"></div>
+
+    <a class="btn_video" href="javascript:;" title="《蛮荒搜神记》" rel="90621177"><img class="video_01" src="images/btn_video.png" /><img class="video_02" src="images/btn_video.png" /></a>
+	
+	<img src="images/index.jpg" />
+    <img class="slogan" src="images/slogan.png" />
+	<div class="btn">
+		<a href="javascript:;" title="女娲卷">
+            <span>
+                <img class="pic" src="images/pic_01.jpg" />
+                <ins></ins>
+                <img class="border_small" src="images/border_small.png" />
+                <img class="border_big" src="images/border_big.png" />
+                <img class="top" src="images/top_01.png" />
+                <img class="circle" src="images/circle.png" />
+            </span>            
+            <img class="bottom" src="images/bottom_01.png" />
+        </a>
+		<a href="javascript:;"  title="后羿卷">
+            <span>
+                <img class="pic" src="images/pic_02.jpg" />
+                <ins></ins>
+                <img class="border_small" src="images/border_small.png" />
+                <img class="border_big" src="images/border_big.png" />
+                <img class="top" src="images/top_02.png" />
+                <img class="circle" src="images/circle.png" />
+            </span>            
+            <img class="bottom" src="images/bottom_02.png" />
+        </a>
+		<a href="javascript:;"  title="青丘卷">
+            <span>
+                <img class="pic" src="images/pic_03.jpg" />
+                <ins></ins>
+                <img class="border_small" src="images/border_small.png" />
+                <img class="border_big" src="images/border_big.png" />
+                <img class="top" src="images/top_03.png" />
+                <img class="circle" src="images/circle.png" />
+            </span>            
+            <img class="bottom" src="images/bottom_03.png" />
+        </a>
+	</div>
+</div>
+
+<div class="sub"></div>
+
+<dl class="video_player">
+    <dt><strong></strong><a class="close" href="javascript:;" title="关闭"></a></dt>
+    <dd><span></span></dd>
+</dl>
+
+<dl class="pop_appoint">
+    <dt>测试资格预约<a class="close" href="javascript:;" title="关闭"></a></dt>
+    <dd>
+        <div class="left">
+            <div class="step_01">
+                <p>在下方填写您的手机号码进行游戏预约，我们将定期从中抽取部分玩家并通过短信的形式发放激活码。</p>
+                <ul>
+                    <li><label>手机号：</label><input class="phone_num" type="text" /></li>
+                    <li><label>验证码：</label><input class="phone_code" type="text" /><a class="btn_code" title="获取验证码">获取验证码</a></li>            
+                </ul>
+                <a class="btn_appoint" title="预约">预约</a>
+            </div>
+            
+            <div class="step_02">
+                <p>关注公众号随时获取最新中奖通知</p>
+            </div>
+        </div>
+        <div class="right">
+            <img src="http://i1.cy.com/mh/main/20170626/code_wechat.png" />
+            <p><strong>关注官方微信公众号</strong>第一时间知晓中奖名单！</p>
+        </div>
+    </dd>
+</dl>
+<script type="text/javascript">
+(function(){
+	var option = "{	name:'mh',skins:[0,'dark',0]}";
+	var script = document.createElement('script');
+	script.setAttribute('type', 'text/javascript');
+	script.setAttribute('src', 'http://www.changyou.com/js/cyou_public.js');
+	script.setAttribute('id', 'cyou_public_js');
+	script.setAttribute('options', option);
+	document.getElementsByTagName('head')[0].appendChild(script);	
+})();
+</script><script type="text/javascript" src="http://event.changyou.com/all/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="http://www.changyou.com/cyouFile/commVideoPlayer/commVideoPlayer.js" ></script>
+<script src="js/jwplayer.js"></script>  
+<script type="text/javascript" src="http://event.changyou.com/all/js/swfobject.js"></script>
+<script type="text/javascript" src="js/loader.min.js"></script>
+<script type="text/javascript" src="http://www.changyou.com/cyou_share/cyoushare.js"></script>
+<script type="text/javascript" src="http://event.changyou.com/all/js/jScrollPanel/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript" src="http://event.changyou.com/all/js/popout.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/parallax.min.js"></script>
+<script type="text/javascript" src="js/website.js"></script>
+</body>
+</html>

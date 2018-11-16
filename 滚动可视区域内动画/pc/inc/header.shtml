@@ -1,0 +1,16 @@
+<h1 class="none">大荒·山海图</h1>
+<div class="mh_logo_lk">
+    <a target="_blank" href="http://mh.changyou.com" title="《蛮荒搜神记》官方网站"></a>
+</div>
+<div class="mh_logo_bg"></div>
+
+<div class="links">
+    <a target="_blank" href="http://mh.changyou.com" title="官网">官网</a>
+    <font></font>
+    <a href="javascript:;" title="预约">预约</a>
+    <font></font>
+    <span>分享</span>
+	<a href="javascript:;" class="btn_share btn_wechat"><img src="images/wechat_code.png" /></a>
+    <a href="javascript:;" class="btn_share btn_sina"></a>
+</div>
+<div id="share" class="none"></div>

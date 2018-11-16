@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<title> code.js.cn </title>
+<style>
+.rank{ margin:0 auto; width:500px;border:1px solid #000;height:350px;overflow:hidden;}
+.rank li { line-height:20px; height:20px; padding:7px 0px; border-bottom:1px solid red; }
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+</head>
+<body>
+<ul id="rank" class="rank">
+<li><a href="#">请教高手帮我看下这段代码 FLASH显示不了</a></li>
+<li><a href="#">请教高手帮我看下这段代码 FLASH显示不了</a></li>
+<li><a href="#">请教高手帮我看下这段代码 FLASH显示不了</a></li>
+<li><a href="#">请教高手帮我看下这段代码 FLASH显示不了</a></li>
+<li><a href="#">请教高手帮我看下这段代码 FLASH显示不了</a></li>
+<li><a href="#">请教高手帮我看下这段代码 FLASH显示不了</a></li>
+<li><a href="#">请教高手帮我看下这段代码 FLASH显示不了</a></li>
+<li><a href="#">请教高手帮我看下这段代码 FLASH显示不了</a></li>
+<li><a href="#">请教高手帮我看下这段代码 FLASH显示不了</a></li>
+<li><a href="#">请教高手帮我看下这段代码 FLASH显示不了</a></li>
+<li><a href="#">请教高手帮我看下这段代码 FLASH显示不了</a></li>
+<li><a href="#">请教高手帮我看下这段代码 FLASH显示不了</a></li>
+<li><a href="#">请教高手帮我看下这段代码 FLASH显示不了</a></li>
+<li><a href="#">请教高手帮我看下这段代码 FLASH显示不了</a></li>
+<li><a href="#">请教高手帮我看下这段代码 FLASH显示不了</a></li>
+</ul> 
+<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+
+<script>
+function myGod(id,w,n){
+	var box=document.getElementById(id),can=true,w=w||1500,fq=fq||10,n=n==-1?-1:1;
+//	var w=box.id;
+//	alert(w);
+	var wrap=$("#rank");
+	var children=$("#rank>li");
+	var wrap_h=wrap.height();
+	var children_h=children.outerHeight();
+	var wrap_num=wrap_h/children_h;
+	var real_num=children.length;
+	alert("滚动区域的高度为："+wrap_h);
+	alert("一条信息的高度为："+children_h);
+	alert("滚动区域能容纳的信息条数为："+wrap_num);
+	alert("真实的信息条数为："+real_num);
+	if(real_num<wrap_num){
+		box.innerHTML=box.innerHTML;	
+
+	}else{ 
+		box.innerHTML+=box.innerHTML;
+	};
+	box.onmouseover=function(){can=false};
+	box.onmouseout=function(){can=true};
+	var max=parseInt(box.scrollHeight/2);
+	new function (){
+		var stop=box.scrollTop%children_h==0&&!can;
+		if(!stop){
+			var set=n>0?[max,0]:[0,max];
+			box.scrollTop==set[0]?box.scrollTop=set[1]:box.scrollTop+=n;
+		};
+		setTimeout(arguments.callee,box.scrollTop%children_h?fq:w);
+	};
+};
+myGod('rank',2000 );
+
+
+/*function myGod1(id,w,n){
+	var box=document.getElementById(id),can=true,w=w||1500,fq=fq||10,n=n==-1?-1:1;
+	var wrap=$(".zj_list");
+	var children=$(".zj_list>.list_item");
+	var wrap_h=wrap.height();
+	var children_h=children.outerHeight();
+	var wrap_num=wrap_h/children_h;
+	var real_num=children.length;
+	if(real_num<wrap_num){
+		box.innerHTML=box.innerHTML;	
+
+	}else{ 
+		box.innerHTML+=box.innerHTML;
+	};
+	box.onmouseover=function(){can=false};
+	box.onmouseout=function(){can=true};
+	var max=parseInt(box.scrollHeight/2);
+	new function (){
+		var stop=box.scrollTop%children_h==0&&!can;
+		if(!stop){
+			var set=n>0?[max,0]:[0,max];
+			box.scrollTop==set[0]?box.scrollTop=set[1]:box.scrollTop+=n;
+		};
+		setTimeout(arguments.callee,box.scrollTop%children_h?fq:w);
+	};
+};
+myGod1('zj_list',2000 );
+*/
+
+</script>
+有两个区域滚动时最好重新定义一个类似的方法（因为有两个相同的类名时，判断一个区域真实的信息条数会把两个区域的信息条数加起来）！
+</body>
+</html>

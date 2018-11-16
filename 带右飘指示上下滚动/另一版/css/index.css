@@ -1,0 +1,68 @@
+@charset "utf-8";
+@import url(http://wf.changyou.com/logo/wf_logo_small.css);
+html {_background-image:url(about:blank);}
+body { font:normal 14px/1.5 "Microsoft YaHei","微软雅黑"; color:#7094b1; word-break:break-all; word-break:break-all; }
+.hidTxt {position: absolute; left: -9999px; top: -9999px;}
+.wf_logo_bg,.wf_logo_lk a {left:26px; top:22px;}
+.box03 .btn,.box06 .btn { background-image:url(../images/sprite.png); background-repeat:no-repeat; }
+
+
+.box{ background-repeat:no-repeat; background-position:center top;}
+.wrap{ position:relative; width:1000px; height:760px; margin:0 auto; background-repeat:no-repeat; background-position:center top;  }
+.box01{ background-image:url(../images/bg_01.jpg); }
+.box01 .wrap{ background-image:url(../images/box_01.jpg); }
+.box02{ background-image:url(../images/bg_02.jpg); }
+.box02 .wrap{ background-image:url(../images/box_02.jpg); }
+.box03{ background-image:url(../images/bg_03.jpg); }
+.box03 .wrap{ background-image:url(../images/box_03.jpg); }
+.box04{ background-image:url(../images/bg_04.jpg); }
+.box04 .wrap{ height:1020px; background-image:url(../images/box_04.jpg); }
+.box05{ background-image:url(../images/bg_05.jpg); }
+.box05 .wrap{ height:1973px; background-image:url(../images/box_05.jpg); }
+.box06{ background-image:url(../images/bg_06.jpg); }
+.box06 .wrap{ height:793px; background-image:url(../images/box_06.jpg); }
+.box07{ background-image:url(../images/bg_07.jpg); }
+.box07 .wrap{ height:745px; background-image:url(../images/box_07.jpg); }
+
+.box02 p { position:absolute; top:170px; width:100%; text-align:center; color:#c0d2e1; }
+.box b,.box a { color:#ffffff; }
+.box02 iframe { position:absolute; left:50%; margin-left:-354px; top:251px; }
+
+.box03 p { position:absolute; width:100%; text-align:center; color:#8aaac5; }
+.box03 p.info01 { top:202px; }
+.box03 p.info02 { top:580px; }
+.box03 .btn { position:absolute; left:50%; margin-left:-110px; top:659px; width:220px; height:59px; background-position:0px 0px; }
+.box03 .btn:hover { background-position:0px -60px; }
+
+.prize{ padding:330px 0px 0px 12px; }
+.prize dl{ float:left; width:430px; height:290px; margin:0px 0px 19px 18px; padding:0px 15px; }
+.prize dl dt{ height:65px; padding-top:14px; color:#25a3ff; text-align:center; border-bottom:1px solid #1b304c; }
+.prize dl dt strong{ display:block; font:bold 22px/28px "Microsoft YaHei","微软雅黑"; }
+
+.prize dl dd p{ text-indent:2em; padding-top:26px; }
+.prize dl dd p.haspic{ padding-top:142px; }
+
+.events{ padding-top:240px; }
+.events dl{ float:left; width:225px; height:290px; padding:0px 15px 0px 260px; }
+.events dl dt{ height:86px; padding-top:20px; color:#25a3ff; }
+.events dl dt strong{ display:block; height:56px; font:bold 22px/28px "Microsoft YaHei","微软雅黑"; }
+.box05 .info{ position:absolute; top:536px; width:100%; text-align:center; }
+
+.box06 .info{ position:absolute; top:245px; width:100%; text-align:center; color:#c0d2e1; }
+.box06 .btn { position:absolute; left:50%; margin-left:-162px; top:310px; width:324px; height:59px; background-position:0px -120px; }
+.box06 .btn:hover { background-position:0px -180px; }
+
+.box07 .info{ position:absolute; top:435px; width:100%; text-align:center; }
+.box07 .info strong{ display:block; padding-bottom:8px; font:bold 18px/1.5 "Microsoft YaHei","微软雅黑"; color:#ffffff; }
+.box07 .btn{ position:absolute; top:541px; padding-left:4px; width:100%; }
+.box07 .btn a{ float:left; width:225px; height:91px; margin-left:18px; padding-top:39px; text-align:center; font:bold 20px/26px "Microsoft YaHei","微软雅黑"; color:#ffffff;  }
+
+.nav{position:fixed;right:30px;top:50%; margin-top:-266px;_position:absolute; _margin-top:expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop) + 'px'); padding:94px 20px 94px 0px;background:url(../images/nav.png) no-repeat right center;_background-image:url(../images/nav.gif); }
+.nav a{ display:block; font:normal 27px/49px "Agency FB","微软雅黑"; color:#229cff; border-bottom:1px solid #124c81; }
+.nav a:hover,.nav a.current{ color:#ffffff; }
+
+
+
+
+
+

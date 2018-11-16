@@ -1,0 +1,87 @@
+@import '/logo/sl_logo_small.css';
+.hide{display:none}
+html{overflow-x:hidden}
+body{background:url(//i1.cy.com/sl/main/20150701/bg_repeat.jpg) center 55px repeat-y #ffffed;position:relative;font-family:'\5FAE\8F6F\96C5\9ED1','\5B8B\4F53';font-size:14px;line-height:22px;color:#727272}
+.page{background:url(//i1.cy.com/sl/main/20150701/bg.jpg) center top no-repeat;position:relative}
+.wrap{background:url(//i1.cy.com/sl/main/20150701/bg_bot.jpg) center bottom no-repeat;position:relative}
+.top{width:1000px;height:481px;background:url(//i1.cy.com/sl/main/20150716/header.jpg) center top no-repeat;margin:0 auto;position:relative}
+.sl_logo_bg,.sl_logo_lk a{left:40px;top:4px}
+.content{width:1000px;min-height:1133px;_height:1133px;padding-bottom:100px;background:url(//i1.cy.com/sl/main/20150701/content.jpg) -1px top no-repeat;margin:0 auto;position:relative}/*-1px 是因为在chrome下有BUG，换肤时请注意*/
+.nav{width:822px;height:94px;position:absolute;left:0;padding-left:178px;z-index:5}
+#nav{}
+#nav a{display:block;width:133px;height:93px;float:left;margin-right:1px;text-indent:-9999em;background-repeat:no-repeat}
+#nav a.nav_home{background-image:url(//i1.cy.com/sl/main/20150701/global.jpg);background-position:0 0}
+#nav a.nav_home:hover{background-position:-134px 0}
+#nav a.nav_news{background-image:url(//i1.cy.com/sl/main/20150701/global.jpg);background-position:-268px 0}
+#nav a.nav_news:hover{background-position:-402px 0}
+#nav a.nav_data{background-image:url(//i1.cy.com/sl/main/20150701/global.jpg);background-position:-536px 0}
+#nav a.nav_data:hover{background-position:-670px 0}
+#nav a.nav_down{background-image:url(//i1.cy.com/sl/main/20150701/global.jpg);background-position:-804px 0}
+#nav a.nav_down:hover{background-position:-938px 0}
+#nav a.nav_inte{background-image:url(//i1.cy.com/sl/main/20150701/global.jpg);background-position:-1072px 0}
+#nav a.nav_inte:hover{background-position:-1206px 0}
+#nav a.nav_serv{background-image:url(//i1.cy.com/sl/main/20150701/global.jpg);background-position:-1340px 0}
+#nav a.nav_serv:hover{background-position:-1474px 0}
+.nav_sub{display:none;width:1000px;height:155px;position:absolute;top:93px;left:0;z-index:5}
+.nav_sub .nav_sub_bg{width:1920px;height:161px;top:0;left:50%;margin-left:-460px;background:url(//i1.cy.com/sl/main/20150701/bg_nav_sub.jpg) no-repeat;z-index:6}
+.nav_sub ul{position:absolute;top:0;left:0;padding:20px 0 0 182px;z-index:8}
+.nav_sub li{display:block;width:133px;height:135px;float:left;margin-right:1px}
+.nav_sub li a{display:block;width:133px;height:30px;float:left;line-height:30px;color:#fff;text-align:center}
+.nav_sub li a:hover{text-decoration:underline;color:#fce203}
+.left{width:240px;position:relative;float:left;padding-left:20px}
+.left .btns{margin-bottom:9px;padding-left:4px}
+.left .btns a{display:block;width:114px;height:44px;float:left;margin-bottom:2px;margin-right:2px;text-indent:-9999em;background: url(//i1.cy.com/sl/main/20150701/left_nav.png) no-repeat;box-shadow: 0 0 5px rgba(0,0,0,.4)}
+.left .btns a.btn_down{width:230px;height:155px;background-position:0 0}
+.left .btns a.btn_down:hover{background-position:-230px 0}
+.left .btns a.btn_reg{background-position:0 -157px}
+.left .btns a.btn_reg:hover{background-position:-230px -157px}
+.left .btns a.btn_regchong{background-position:-116px -157px}
+.left .btns a.btn_regchong:hover{background-position:-346px -157px}
+.left .btns a.btn_regact{background-position:0 -203px}
+.left .btns a.btn_regact:hover{background-position:-230px -203px}
+.left .btns a.btn_giftact{background-position:-116px -203px}
+.left .btns a.btn_giftact:hover{background-position:-346px -203px}
+
+
+.left .fast_nav,.left .service{width:240px;background-color:#352d29}
+.left .fast_nav h3{text-indent:-9999em;display:block;width:240px;height:35px;float:left;background-image:url(//i1.cy.com/sl/main/20150523/left.jpg);background-position:-1281px -119px;background-repeat:no-repeat;margin-bottom:1px}
+.left .fast_nav a,.left .service a,.left .service span,.left .fast_nav span{position:relative;display:block;width:88px;height:30px;float:left;background-color:#997f67;border-left:1px solid #b19c7f;border-top:1px solid #b19c7f;margin-bottom:1px;margin-right:1px;padding-left:30px;line-height:30px;color:#fff0da}
+.left .fast_nav a:hover,.left .service a:hover{background-color:#cc8d53;border-left:1px solid #d8a766;border-top:1px solid #d8a766}
+.left .fast_nav a em,.left .service a em{display:block;width:10px;height:10px;position:absolute;top:10px;left:14px;background:url(//i1.cy.com/sl/main/20150523/em_tit.png) no-repeat}
+.left .service span{display:block;width:239px;height:36px;float:left;border-left:1px solid #b19c7f;border-top:1px solid #b19c7f;margin-bottom:0;margin-right:0;padding-left:0;text-align:center;line-height:36px;color:#ffe2ba}
+.left .service{margin-bottom:3px;}
+.left .service h3{text-indent:-9999em;display:block;width:240px;height:36px;float:left;background-image:url(//i1.cy.com/sl/main/20150523/left.jpg);background-position:-1280px -45px;background-repeat:no-repeat;margin-bottom:1px}
+.left .ads{margin-bottom:3px}
+.left .ads a,.left .ads a img{display:block;width:240px;height:100px}
+.left .ads a{margin-bottom:3px}
+.left .code{width:196px;height:196px;padding:44px 0 0 44px;background:url(//i1.cy.com/sl/main/20150523/bg_code.jpg) no-repeat;margin-bottom:4px}
+.left .code img{display:block;width:155px;height:155px}
+.left .code p{line-height:40px;color:#fff; padding: 0 0 0 14px;}
+.left .survey{margin-bottom:4px}
+.left .survey a{display:block;width:240px;height:80px;text-indent:-9999em;background-repeat:no-repeat;background-image:url(//i1.cy.com/sl/main/20150523/left.jpg);background-position:-924px 0}
+.left .survey a:hover{background-image:url(//i1.cy.com/sl/main/20150523/left.jpg);background-position:-924px -81px}
+.left .media{width:240px;background-color:#352d29;margin-bottom:4px}
+/*.left .media h3{text-indent:-9999em;display:block;width:240px;height:36px;background-image:url(//i1.cy.com/sl/main/20150523/left.jpg);background-position:-1281px -82px;background-repeat:no-repeat}*/
+.left .media h3{display:block;width:223px;height:34px;line-height:34px;padding-left:15px;background-color: #5e4639;border: 1px solid #8a7059;cursor: pointer}
+.left .media h3 span{font-size: 16px;color: #fff;margin-right: 5px;}
+.left .media h3 em{font-size: 12px;color: #d4aa94;font-family: 'SimSun'}
+.left_clm_arrow{display: block;float: right;width: 11px;height: 6px;background: url(http://i1.cy.com/sl/main/20150701/left_clm_arrow.png) no-repeat;margin: 15px 16px 0 0;_display:inline}
+
+.left .media .media_box{width:212px;padding:13px;border:1px solid #8a7059;background-color:#997f67;overflow:hidden;position: absolute;display: none}
+.left .media .media_box .jCarouselLite{overflow:hidden}
+.left .media ul{position:relative}
+.left .media li{text-align: center}
+.left .media li a{color: #FFF}
+.left .media li a:hover{text-decoration: underline}
+.left .healthy{}
+.left .healthy h3{display:block;width:240px;height:46px;line-height:46px;color:#5a1616;font-size:16px;text-align:center}
+.left .healthy .line{width:240px;height:2px;background:url(//i1.cy.com/sl/main/20150523/line.jpg) no-repeat;margin-bottom:12px}
+.left .healthy p{padding-left:22px;line-height:24px;color:#fff0da}
+.left .healthy p.pa10{padding-bottom:10px;border-bottom:1px dashed #8a6f57}
+.left .healthy p.pa12{padding:12px 10px 0 20px;line-height:22px;border-top:1px dashed #ba9f87}
+.right{width:730px;float:right;position:relative;}
+#pop_video{width:615px;height:445px;position:relative;display:none;padding:29px 74px 0 75px;background:url(//i1.cy.com/sl/main/20150522/bg_video.png) no-repeat;_background-image:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="//i1.cy.com/sl/main/20150522/bg_video.png",sizingMethod="crop")}
+#pop_video h4{font-family:'\5FAE\8F6F\96C5\9ED1','\5B8B\4F53';font-size:20px;font-weight:700;line-height:48px;text-align:center;color:#1f1f1f}
+#pop_video .close{display:block;width:35px;height:35px;position:absolute;top:37px;right:39px;text-indent:-9999em;background:url(//i1.cy.com/sl/main/20150522/close.jpg) no-repeat}
+.bd{width:615px;height:347px;position:relative}
+#CssGaga{content:"150523162435,cy6,333"}

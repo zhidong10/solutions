@@ -1,0 +1,14 @@
+ $(".dd").jscroll({ W:"12px",//设置滚动条宽度
+	BgUrl:"",              //设置滚动条背景图片地址
+	Bg:"#ccc",             //设置滚动条背景图片position,颜色等
+	Bar:{  Pos:"bottom",   //设置滚动条初始化位置在底部，要想在头部可把此行删掉
+	       Bd:{Out:"#000",Hover:"red"},        //设置滚动滚轴边框颜色：鼠标离开(默认)，经过
+	       Bg:{Out:"green",Hover:"#fff",Focus:"orange"}    //设置滚动条滚轴背景：鼠标离开(默认)，经过，点击
+            },
+	Btn:{  btn:true，      //是否显示上下按钮 false为不显示
+	       uBg:{Out:"black",Hover:"#fff",Focus:"orange"},  //设置上按钮背景：鼠标离开(默认)，经过，点击
+	       dBg:{Out:"black",Hover:"#fff",Focus:"orange"}   //设置下按钮背景：鼠标离开(默认)，经过，点击
+            },
+
+	Fn:function(){}//滚动时候触发的方法
+});

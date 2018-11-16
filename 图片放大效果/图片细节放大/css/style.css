@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* reset */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin:0; padding:0; border:none; outline:0; font-size:100%; font-style:normal; }
+h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, form, img, p { list-style-type:none; }
+:focus{ outline:0 none; }
+table { border-collapse:collapse; border-spacing:0; }
+
+/* hack */
+.clear { display:block; overflow:hidden; clear:both; height:0; line-height:0; font-size:0; }
+html, body { -webkit-text-size-adjust:none; }
+
+/* text */
+body { font:normal 12px/150% "宋体","SimSun",Arial,Lucida,Verdana,Helvetica,sans-serif; color:#333; background-color:#fff; }
+h1, h2 ,h3 ,h4, h5, h6 { font-size:12px; font-weight:normal; }
+
+/* link */
+a { color:#333333; text-decoration:none; }
+a:hover { color:#ff6100; text-decoration:underline; }
+a:active, a:focus { outline:none; }
+
+/* blank */
+.blank5 { height:5px; line-height:5px; clear:both; visibility:hidden; }
+.blank10 { height:10px; line-height:10px; clear:both; visibility:hidden; }
+.blank15 { height:15px; line-height:15px; clear:both; visibility:hidden; }
+.blank20 { height:20px; line-height:20px; clear:both; visibility:hidden; }
+.blank30 { height:30px; line-height:30px; clear:both; visibility:hidden; }
+.blank40 { height:40px; line-height:40px; clear:both; visibility:hidden; }
+.blank50 { height:50px; line-height:50px; clear:both; visibility:hidden; }
+.blank100 { height:100px; line-height:100px; clear:both; visibility:hidden; }
+
+/* float */
+.fl { float:left; }
+.fr { float:right; }
+.fn { float:none; }
+
+
+
+/* Scrollable */
+.wrap { width:308px; margin:50px auto; }
+.zoom_in { width:308px; height:302px;  }
+.zoom_in img.zoom_in_pic { width:306px; height:300px; border:1px solid #bdbdbd; }
+
+.trigger-bar { height:60px; width:308px;  }
+.prev , .next { width:18px; height:31px; display:block; margin-top:20px; cursor:pointer; }
+.prev { float:left; background:url(../images/leftarrow.png) left top no-repeat; }
+.next { float:right; background:url(../images/rightarrow.png) left top no-repeat; }
+.next_hover { background:url(../images/rightarrow_over.png) left top no-repeat; }
+.prev_hover { background:url(../images/leftarrow_over.png) left top no-repeat; }
+
+.scrollable-panel { /* 前四项必须设置 */ position:relative; width:272px; height:60px; overflow:hidden; float:left; }
+.scrollable-panel ul {	position:absolute; width:2000em; }
+.scrollable-panel ul li { width:60px; height:60px; padding:0px 4px; float:left; }
+.scrollable-panel ul li a img { width:56px; height:56px; padding:2px; background:url(../images/graysmallborder.png) left top no-repeat; } 
+.scrollable-panel ul li a:hover img { background:url(../images/redsmallborder.png) left top no-repeat; }
+
+.scrollable-trigger { display:none; }
+
+
+/*图片放大窗口*/
+.MagicZoomBigImageCont { border:1px solid #b00000;}
+.MagicZoomMain {text-align: center ;width: 92px;}
+.MagicZoomMain div {padding: 0px ;}
+.MagicZoomHeader {font:12px Tahoma, Verdana, Arial, sans-serif;color:#fff;background:#e31a00;text-align:center ; letter-spacing:2px;}
+.MagicZoomPup {border:1px solid #aaa;width:450px;background:#ffffff;}
+.MagicZoomLoading {text-align:center;background:#ffffff;color:#444;border:1px solid #ccc;opacity:0.8;padding:30px 30px 3px 30px;display:none;width:450px;}
+.MagicZoomLoading img {padding-top:	30px;}

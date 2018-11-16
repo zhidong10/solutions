@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery抽奖大转盘</title>
+<style>
+*{margin:0;padding:0;font-size:12px;}
+.lottery { position:relative; width:484px; height:484px; overflow:hidden;}
+.turntable{ width:100%; height:100%; }
+.pointer { position:absolute; width:127px; height:140px; left:50%; top:50%; margin:-84px 0px 0px -63px; background:url(images/pointer.png) no-repeat;  }
+</style>
+
+</head>
+<body>
+
+<div class="lottery"> 
+  <img class="turntable" src="images/turntable.png" />
+  <span class="pointer"></span>
+</div>
+
+
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/awardRotate.js"></script>
+<script type="text/javascript">
+var canrotate=true;
+$('.pointer').click(function (){
+	var rotate=22.5;
+	if(canrotate==true){
+		canrotate=false;
+		$('.turntable').rotate({
+			angle:0,
+			animateTo:rotate+1800,
+			duration:8000,
+			callback:function (){
+				canrotate=true;
+				alert("中奖啦！")
+			}
+		})
+	}
+});
+</script>
+</body>
+</html>

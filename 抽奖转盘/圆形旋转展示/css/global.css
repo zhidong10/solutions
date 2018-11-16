@@ -1,0 +1,26 @@
+@charset "utf-8";
+*{margin:0; padding:0;}
+body{ background:#aaaaaa; }
+
+.circle{ position:fixed; width:560px; height:560px; transition:all 0.4s ease-in-out 0s;-ms-transition:all 0.4s ease-in-out 0s; border:3px solid #dddddd; border-radius:50%; }
+
+.origin{ position:absolute; left:50%; top:50%; width:0; height:0; }
+.circle a{position:absolute; width:89px; height:89px; margin:-45px 0px 0px -45px; background-image:url(../images/sprite_float.png); background-position:no-repeat; }
+.circle a.a_role_0,.circle a.b_role_0,.circle a.c_role_0,.circle a.d_role_0{  background-position:10px 10px; }
+.circle a.a_role_1,.circle a.b_role_1,.circle a.c_role_1,.circle a.d_role_1{  background-position:10px -90px; }
+.circle a.a_role_2,.circle a.b_role_2,.circle a.c_role_2,.circle a.d_role_2{  background-position:10px -190px; }
+.circle a.a_role_3,.circle a.b_role_3,.circle a.c_role_3,.circle a.d_role_3{  background-position:10px -290px; }
+.circle a.a_role_4,.circle a.b_role_4,.circle a.c_role_4,.circle a.d_role_4{  background-position:10px -390px; }
+.circle a.a_role_0.current,.circle a.b_role_0.current,.circle a.c_role_0.current,.circle a.d_role_0.current{  background-position:-100px 0px; }
+.circle a.a_role_1.current,.circle a.b_role_1.current,.circle a.c_role_1.current,.circle a.d_role_1.current{  background-position:-100px -100px; }
+.circle a.a_role_2.current,.circle a.b_role_2.current,.circle a.c_role_2.current,.circle a.d_role_2.current{  background-position:-100px -200px; }
+.circle a.a_role_3.current,.circle a.b_role_3.current,.circle a.c_role_3.current,.circle a.d_role_3.current{  background-position:-100px -300px; }
+.circle a.a_role_4.current,.circle a.b_role_4.current,.circle a.c_role_4.current,.circle a.d_role_4.current{  background-position:-100px -400px; }
+
+
+
+.circle1{ top:-420px;left:50%; margin-left:-283px; }
+.circle2{ right:-420px; top:50%; margin-top:-283px;}
+.circle3{ bottom:-420px;left:50%; margin-left:-283px; }
+.circle4{ width:866px; height:866px; left:-620px; top:50%; margin-top:-433px; }
+

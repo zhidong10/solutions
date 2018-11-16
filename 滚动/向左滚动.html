@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>向左滚动的文字特效JS代码</title>
+<link rel="stylesheet" type="text/css" href="http://image.tiancity.com/common/css/base.css"/>
+<style>
+.marquee { width:800px; height:30px; overflow:hidden; line-height:30px; white-space:nowrap; border:1px solid red; }
+.marquee ul { width:4000%; float:left; }
+.marquee ul li { float:left; }
+.marquee ul li a { float:left; margin:0px 20px; color:#c59d81; }
+</style>
+</head>
+
+<body>
+<div class="marquee" id="marquee">
+<ul>
+<li id="marquee1">
+<a href="#">懒人站懒111111111111</a>
+<a href="#">懒人站懒111111111111</a>
+<a href="#">懒人站懒111111111111</a>
+<a href="#">懒人站懒111111111111</a>
+<a href="#">懒人站懒111111111111</a>
+<a href="#">懒人站懒111111111111</a>
+<a href="#">懒人站懒111111111111</a>
+<a href="#">懒人站懒111111111111</a>
+<a href="#">懒人站懒111111111111</a>
+<a href="#">懒人站懒111111111111</a>
+<a href="#">懒人站懒111111111111</a>
+<a href="#">懒人站懒111111111111</a>
+<a href="#">懒人站懒111111111111</a>
+<a href="#">懒人站懒111111111111</a>
+</li>
+<li id="marquee2"></li>
+</ul>
+</div>
+
+<script style="text/javascript">
+(function(){
+    var speed=30; //数字越大速度越慢
+    var tab=document.getElementById("marquee");
+    var tab1=document.getElementById("marquee1");
+    var tab2=document.getElementById("marquee2");
+	console.log(tab1.offsetWidth)
+    function Marquee(){
+		if(tab1.offsetWidth-tab.scrollLeft<=0)
+		{
+			tab.scrollLeft-=tab1.offsetWidth;
+		}else if(tab1.offsetWidth-tab.offsetWidth>0){
+			tab.scrollLeft++;
+		}
+    };
+    var MyMar=setInterval(Marquee,speed);
+	if(tab1.offsetWidth-tab.offsetWidth>0)
+	{
+   		tab2.innerHTML=tab1.innerHTML;
+		tab.onmouseover=function() {clearInterval(MyMar)};
+		tab.onmouseout=function() {MyMar=setInterval(Marquee,speed)};
+	}
+})();
+</script>
+</body>
+</html>
+
+					

@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* CSS Document */
+body{ font-size:12px; font-family:"微软雅黑"; color:#8b6e62; }
+.actbox,.loginbox,.actcodebox,.succbox{ width:605px; height:250px; }
+.btn,.btn:hover{ background:url(http://i0.cy.com/sl/main/20150409/framesprite.jpg) no-repeat;}
+.actbox .btn{ display:block; width:282px; height:92px; margin:74px auto 0; background-position:0 0;}
+.actbox .btn:hover{ background-position:0 -100px;}
+
+.loginboxlist{ width:360px; height:120px; margin:23px auto 0;}
+.loginboxlist ul li { width:100%; height:22px; margin-bottom:10px;}
+.loginboxlist ul li span.name{ width:80px; height:20px; display:block; float:left; color:#8b6e62; font:14px/20px "微软雅黑"; text-align:right;}
+.loginboxlist ul li input{ float:left; height:18px; line-height:18px; width:186px; border:1px solid #bdbdbd; background:#d7d7d7; color:#8b6e62; margin-right:10px; }
+.loginboxlist ul li input.code{ width:105px;}
+.loginboxlist ul li a.reglink{ color:#66ac16; font:12px/20px "微软雅黑";}
+.loginboxlist ul li a.reglink:hover{ text-decoration:underline;}
+.loginboxlist ul li img{ display:block; margin-right:10px; float:left;}
+.loginboxlist ul li span.error{ display:block; padding-left:80px; color:#ff0000; font:12px/20px "微软雅黑"; }
+.loginbox .btn{ display:block; width:151px; height:46px; margin:10px auto 0; font:14px/46px "微软雅黑"; text-align: center; color: #fefbf1;background-position:0 -255px;}
+.loginbox .btn:hover{ background-position:-160px -255px;}
+
+.actcodeinfo{ width:310px; margin:10px auto ;  height:20px;}
+.actcodeinfo span{ padding-right:10px; font:12px/20px "宋体";}
+.actcodeinfo a{color:#66ac16; font:12px/20px "宋体";}
+.actcodeinfo a:hover{ text-decoration:underline;}
+.actcodeinfo1 { width:310px; height:34px; margin:15px auto 0;}
+.actcodeinfo1 span{ width:65px; height:30px; display:block; float:left; font:14px/30px "微软雅黑";}
+.actcodeinfo1 input{ width:185px; height:30px; display:block; float:left;  border:1px solid #bdbdbd; background:#d7d7d7; color:#8b6e62;}
+.actcodeinfo2 { width:310px; height:22px; margin:10px auto 20px;}
+.actcodeinfo2 span{ width:65px; height:22px; display:block; float:left; color:#425569; font:14px/22px "微软雅黑";}
+.actcodeinfo2 input{ width:100px; height:20px; display:block; float:left; border:1px solid #e0e6ec; margin-right:10px;}
+.actcodeinfo2 img{ display:block; margin-right:10px; float:left;}
+.actcodeinfo2 a{ color:#425569; font:12px/20px "宋体";}
+.actcodeinfo2 a:hover{ text-decoration:underline;}
+
+.actcodebox .error{ width:245px; height:22px; margin:0 auto; padding-left:65px; color:#ff0000; font:12px/22px "微软雅黑";}
+.actcodebox .btn{ display:block; width:151px; height:46px; margin:10px auto 0; font:14px/46px "微软雅黑"; text-align: center; color: #fefbf1;background-position:0 -255px;}
+.actcodebox .btn:hover{ background-position:-160px -255px;}
+
+.succinfo{ color:#425569; font:12px/22px "宋体"; margin-top:20px; text-align:center;}
+.succinfo1{ width:442px; margin:0 auto; color:#425569; font:12px/22px "宋体"; margin-top:10px;}
+
+.login_tit{height: 40px; font:18px/40px 'Microsoft YaHei'; text-align: center; }
+
