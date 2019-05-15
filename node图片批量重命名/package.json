@@ -1,0 +1,11 @@
+{
+  "name": "pic_rename",
+  "version": "1.0.0",
+  "description": "图片重命名-替换图片名称部分字符",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
