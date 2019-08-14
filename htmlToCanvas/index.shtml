@@ -1,0 +1,223 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=640,minimum-scale=0,maximum-scale=5,user-scalable=no" name="viewport" />
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+        <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+        <meta content="telephone=no" name="format-detection" />
+        <title>老玩家特权-《新天龙八部》官方网站</title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="author" content="Design:; Web Layout:;" />
+        <link href="css/swiper-3.4.2.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/index.css" rel="stylesheet" type="text/css" />
+        <script>
+        if(navigator.appVersion.indexOf('Android') != -1){
+        document.addEventListener("DOMContentLoaded",function(e){
+        document.getElementsByTagName('body')[0].style.zoom = e.target.activeElement.clientWidth/640;
+        });
+        };
+        </script>
+    </head>
+    <body>
+        
+        <!-- 回归特权 -->
+        <section class="part part2" id="htmlDom">
+            <div class="wrap">
+                <h3 class="t">回归特权</h3>
+                <p class="des">2017年4月28日-2017年7月28日未登录过游戏，</br>其角色等级≥50级的老玩家，登录游戏后可尊享回归特权。</p>
+                <div class="privilege p2-1">
+                    <h4 class="t">特权一：荣归大礼</h4>
+                    <p>回归特权期间的玩家，击杀怪物时还额外获得20%的经验，除此之外，还可领取荣归大礼：</p>
+                    <ul class="clearfix">
+                        <li>
+                            <a href="javascript:;"><img src="img/g-2-1-1.jpg" alt="老友的祝福"></a>
+                            <p>老友的祝福</p>
+                        </li>
+                        <li>
+                            <a href="javascript:;"><img src="img/g-2-1-2.jpg" alt="坐骑：憨宝熊"></a>
+                            <p>坐骑：憨宝熊</p>
+                        </li>
+                        <li>
+                            <a href="javascript:;"><img src="img/g-2-1-3.jpg" alt="回归功力值"></a>
+                            <p>回归功力值</p>
+                        </li>
+                        <li class="tips">
+                            <a href="javascript:;"><img src="img/g-2-1-4.jpg" alt="荣归锦囊"></a>
+                            <p>荣归锦囊</p>
+                        </li>
+                    </ul>
+                    <a href="javascript:;" class="look get-bag">查看锦囊</a>
+                    <p class="pt36">荣归大礼的每种奖励仅可在回归特权期间领取1次。领取的回归功力值，与您连续未登录游戏的天数、角色等级和天龙VIP等级有关。</p>
+                </div>
+                <div class="privilege p2-2">
+                    <h4 class="t">特权二：登录领奖</h4>
+                    <p>回归特权期间，每日可免费领取回归经验和玄灵丹状态（玄灵丹状态：每日可免费领取1小时，花费60元宝，可额外再领取1个小时哦）！</p>
+                    <p>每日可免费领取的回归经验数，与您连续未登录游戏的天数、角色等级和天龙VIP等级有关，且回归经验仅可用于提升心法和修炼。拥有玄灵丹状态时，使用天灵丹或双倍经验，可获得4倍经验！</p>
+                    <div class="reward">
+                        <h5>每日登录奖励</h5>
+                        <ul class="clearfix">
+                            <li>
+                                <a href="javascript:;"><img src="img/g-2-2-1.jpg" alt="回归经验"></a>
+                                <p>回归经验</p>
+                            </li>
+                            <li>
+                                <a href="javascript:;"><img src="img/g-2-2-2.jpg" alt="玄灵丹状态"></a>
+                                <p>玄灵丹状态</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="reward reward-l">
+                        <h5>累计登录奖励</h5>
+                        <ul class="clearfix">
+                            <li class="tips">
+                                <a href="javascript:;"><img src="http://i1.cy.com/xtl/pic/2017/11/03/1.jpg" alt="登录1天可领取"></a>
+                                <p>登录<em>1天</em><br>可领取</p>
+                            </li>
+                            <li class="tips">
+                                <a href="javascript:;"><img  src="http://i1.cy.com/xtl/pic/2017/11/03/2.jpg" alt="登录3天可领取"></a>
+                                <p>登录<em>3天</em><br>可领取</p>
+                            </li>
+                            <li class="tips">
+                                <a href="javascript:;"><img   src="http://static2.changyou.com/act/xtl/vote/20190325/pc/img/show/s4.jpg" alt="登录7天可领取"></a>
+                                <p>登录<em>7天</em><br>可领取</p>
+                            </li>
+                            <li class="tips">
+                                <a href="javascript:;"><img src="http://static2.changyou.com/act/xtl/vote/20190325/pc/img/show/s4.jpg" alt="登录15天可领取"></a>
+                                <p>登录<em>15天</em><br>可领取</p>
+                            </li>
+                        </ul>
+                        <a href="javascript:;" class="look get-box">查看奖励</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div data-note-content="" class="show-content">
+            <div class="show-content-free">
+                <hr>
+                <h2>作用</h2>
+                <ul>
+                    <li>html2canvas可以通过纯JS对浏览器端经行截屏，但截图的精确度还有待提高，部分css不可识别，所以在canvas中不能完美呈现原画面样式</li>
+                </ul>
+                <hr>
+                <h2>支持的浏览器</h2>
+                <ul>
+                    <li>Firefox 3.5+</li>
+                    <li>Google Chrome</li>
+                    <li>Opera 12+</li>
+                    <li>IE9+</li>
+                    <li>Safari 6+</li>
+                </ul>
+                <hr>
+                <h2>基本语法</h2>
+                            <pre class="hljs javascript"><code class="javascript"> <span class="hljs-comment">//两个参数：所需要截图的元素id，截图后要执行的函数， canvas为截图后返回的最后一个canvas</span>
+                             html2canvas(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'id'</span>)).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">canvas</span>) </span>{<span class="hljs-built_in">document</span>.body.appendChild(canvas);});
+            </code></pre>
+            <hr>
+            <h2>可用参数</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>参数名称</th>
+                        <th>类型</th>
+                        <th>默认值</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>allowTaint</td>
+                        <td>boolean</td>
+                        <td>false</td>
+                        <td>Whether to allow cross-origin images to taint the canvas---允许跨域</td>
+                    </tr>
+                    <tr>
+                        <td>background</td>
+                        <td>string</td>
+                        <td>#fff</td>
+                        <td>Canvas background color, if none is specified in DOM. Set undefined for transparent---canvas的背景颜色，如果没有设定默认透明</td>
+                    </tr>
+                    <tr>
+                        <td>height</td>
+                        <td>number</td>
+                        <td>null</td>
+                        <td>Define the heigt of the canvas in pixels. If null, renders with full height of the window.---canvas高度设定</td>
+                    </tr>
+                    <tr>
+                        <td>letterRendering</td>
+                        <td>boolean</td>
+                        <td>false</td>
+                        <td>Whether to render each letter seperately. Necessary if letter-spacing is used.---在设置了字间距的时候有用</td>
+                    </tr>
+                    <tr>
+                        <td>logging</td>
+                        <td>boolean</td>
+                        <td>false</td>
+                        <td>Whether to log events in the console.---在console.log()中输出信息</td>
+                    </tr>
+                    <tr>
+                        <td>proxy</td>
+                        <td>string</td>
+                        <td>undefined</td>
+                        <td>Url to the proxy which is to be used for loading cross-origin images. If left empty, cross-origin images won't be loaded.---代理地址</td>
+                    </tr>
+                    <tr>
+                        <td>taintTest</td>
+                        <td>boolean</td>
+                        <td>true</td>
+                        <td>Whether to test each image if it taints the canvas before drawing them---是否在渲染前测试图片</td>
+                    </tr>
+                    <tr>
+                        <td>timeout</td>
+                        <td>number</td>
+                        <td>0</td>
+                        <td>Timeout for loading images, in milliseconds. Setting it to 0 will result in no timeout.---图片加载延迟，默认延迟为0，单位毫秒</td>
+                    </tr>
+                    <tr>
+                        <td>width</td>
+                        <td>number</td>
+                        <td>null</td>
+                        <td>Define the width of the canvas in pixels. If null, renders with full width of the window.---canvas宽度</td>
+                    </tr>
+                    <tr>
+                        <td>useCORS</td>
+                        <td>boolean</td>
+                        <td>false</td>
+                        <td>Whether to attempt to load cross-origin images as CORS served, before reverting back to proxy--这个我也不知道是干嘛的</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- 回归特权 -->
+    <section class="part">
+        <!-- 图片生成展示 -->
+        <h2>生成后：</h2>
+        <h2>html生成canvas canvas.toDataURL 生成base64图片</h2>
+        <h2>底部4个小图，由于跨域，2个无法生成，设置允许跨域的图是可以生成的。</h2>
+        <img id="tarPic" src="" width="640" alt="">
+    </section>
+    <section class="part">
+        <!-- 图片生成展示 -->
+        <h2>下面这里是canvas</h2>
+    </section>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/html2canvas.js"></script>
+    <script type="text/javascript">
+    html2canvas(document.getElementById('htmlDom'), {
+    useCORS:true,//设置该属性,图片请求头带Access-Control-Allow-Origin: * 的可以生成，图片请求如有带301跳转，则无法生成
+    onrendered: function(canvas) {
+    window.can = canvas;
+    console.log(canvas);
+    $("#tarPic").attr("src",canvas.toDataURL())
+    document.body.appendChild(canvas);
+    },
+    // width: 300,
+    // height: 300
+    });
+    </script>
+</body>
+</html>
