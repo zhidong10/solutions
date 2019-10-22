@@ -5,6 +5,9 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <script src="js/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="js/jsencrypt.js"></script>
+  <style type="text/css">
+    .container{width: 1000px; margin:0 auto;}
+  </style>
 </head>
 <body>
 
@@ -27,7 +30,7 @@ psLBYuApa66NcVHJpCECQQDTjI2AQhFc1yRnCU/YgDnSpJVm1nASoRUnU8Jfm3Oz
 uku7JUXcVpt08DFSceCEX9unCuMcT72rAQlLpdZir876
 -----END RSA PRIVATE KEY-----</textarea><br/>
 <label for="pubkey">Public Key</label><br/>
-<textarea id="pubkey" rows="15" cols="65">-----BEGIN PUBLIC KEY-----
+<textarea id="pubkey" rows="10" cols="65">-----BEGIN PUBLIC KEY-----
 MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDlOJu6TyygqxfWT7eLtGDwajtN
 FOb9I5XRb6khyfD1Yt3YiCgQWMNW649887VGJiGr/L5i2osbl8C9+WJTeucF+S76
 xFxdU6jE0NQ+Z+zEdhUTooNRaY5nZiu5PgDB0ED/ZKBUSLKL7eibMxZtMlUDHjm4
@@ -36,36 +39,53 @@ gwQco1KRMDSmXSMkDwIDAQAB
 
 <div class="tool">
   输入需要加密文字：<br/>
-  <textarea name="" id="needCrypt" cols="30" rows="10">测试XXXX</textarea>
-  <a href="javascript:void(0);" id="crypt-btn">加密</a><br/>
+  <textarea name="" id="needCrypt" cols="65" rows="10">测试XXXX</textarea>
+  
+  <br/><a href="javascript:void(0);" id="crypt-btn">私钥加密</a>
+  <a href="javascript:void(0);" id="crypt-btn-pub">公钥加密</a><br/>
   加密结果：<br/>
-  <textarea name="" id="resultCrypt" cols="30" rows="10">
+  <textarea name="" id="resultCrypt" cols="65" rows="10">
     
   </textarea>
-  <a href="javascript:void(0);" id="decrypt-btn">解密</a><br/>
+  <br/><a href="javascript:void(0);" id="decrypt-btn">私钥解密</a>
+  <a href="javascript:void(0);" id="decrypt-btn-pub">公钥解密</a><br/>
   解密结果：<br/>
-  <textarea name="" id="result" cols="30" rows="10">    
+  <textarea name="" id="result" cols="65" rows="10">    
   </textarea>
 </div>
 
   <script type="text/javascript">
-
+  //setPrivateKey 和 setPublicKey 的处理方法一样的，RSA插件不关心传入的是公钥还是私钥
   // Call this code when the page is done loading.
   $(function() {
-      $("#crypt-btn").click(function(){
+      $("#crypt-btn").click(function(){//私钥加密
+          // Encrypt with the public key...
+          var encrypt = new JSEncrypt();
+          encrypt.setPrivateKey($('#privkey').val());
+          var encrypted = encrypt.encrypt($("#needCrypt").val());
+          $("#resultCrypt").val(encrypted);
+      });
+      $("#crypt-btn-pub").click(function(){//公钥加密
           // Encrypt with the public key...
           var encrypt = new JSEncrypt();
           encrypt.setPublicKey($('#pubkey').val());
           var encrypted = encrypt.encrypt($("#needCrypt").val());
-          document.getElementById("resultCrypt").innerText = encrypted;
+          $("#resultCrypt").val(encrypted);
       });
-      $("#decrypt-btn").click(function(){
+      $("#decrypt-btn").click(function(){//私钥解密
           // Decrypt with the private key...
           var decrypt = new JSEncrypt();
           decrypt.setPrivateKey($('#privkey').val());
           var uncrypted = decrypt.decrypt($("#resultCrypt").val());
-          document.getElementById("result").innerText = uncrypted;
+          $("#result").val(uncrypted);
       });      
+      $("#decrypt-btn-pub").click(function(){//公钥解密
+          // Decrypt with the private key...
+          var decrypt = new JSEncrypt();
+          decrypt.setPublicKey($('#pubkey').val());
+          var uncrypted = decrypt.decrypt($("#resultCrypt").val());
+          $("#result").val(uncrypted);
+      });    
   });
 </script>
 
