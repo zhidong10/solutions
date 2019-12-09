@@ -12,41 +12,26 @@ import sys
 import pandas as pd
 import time
 from sqlalchemy import create_engine
-#import pymysql
+import config as conf
 
+# kehuan2.sql sql文件是包含抓取数据的创建表和数据的sql
+#kehuan2.sql sql 创建表的sql
 #列表首页 https://www.piaohua.com/html/kehuan/list_1.html
 
-#分析列表 分页信息(总页数、当前页)
-#生成爬虫列表
-#开始爬取列表
-#根据列表爬出每个链接
-#每个页面存储一次
-#循环爬取所有
 #web 头信息
-webheader = {
-    'Accept': 'text/html, application/xhtml+xml, */*',
-    # 'Accept-Encoding': 'gzip, deflate',
-    'Accept-Language': 'zh-CN',
-    'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko',
-    'DNT': '1',
-    'Connection': 'Keep-Alive',
-    'Host': 'www.douban.com'
-}
+webheader = conf.webheader
 #数据库信息
-db_info = {
-            'user': 'root',
-            'password': "",
-            'host': "localhost",
-            'port': "3306",
-            'database': 'py_spider'
-        }
+db_info = conf.db_info
+
+print(db_info)
 #配置连接mysql
 engine = create_engine(
             'mysql+mysqlconnector://%(user)s:%(password)s@%(host)s:%(port)s/%(database)s?charset=utf8' % db_info,
             encoding='utf-8'
         )
-
+#列表首页
 DataUrl = 'https://www.piaohua.com/html/kehuan/list_1.html'
+#爬取网站
 Site='https://www.piaohua.com'
 MovieList = []
 ListInfo = {}
@@ -115,18 +100,19 @@ def getDownUrl(url):
             linkInfo["downLink"].append(dl[0].strip().replace(r"(^(\t|\r|\n)*)|((\t|\r|\n)*$)",""))
     return linkInfo
 #格式化获得数据，并存储到mysql
+#start 开始从第几页抓取
 def parseHtmlList(start):    
     page = getHtml(DataUrl);
     listPage = getHtmlList(page)#返回所有大列表页面
     #dList = getDownList(listPage[0])
-    for ind, dlt in enumerate(listPage[start:]): 
+    for ind, dlt in enumerate(listPage[start-1:]): 
         dList = getDownList(dlt)#获取列表中的下载页面链接列表
         for dl in dList:
             #dLink = []
             tmpData = []
             dLink=(getDownUrl(dl))
             sys.stdout.flush() #刷新缓冲区
-            time.sleep(1)
+            time.sleep(1)#设置隔1秒抓一次，根据情况自己设置，防止抓取过快被屏蔽
             kong = [""]*5
             tmpData.append(dLink["title"])
             for i in dLink["downLink"]:
@@ -140,10 +126,12 @@ def parseHtmlList(start):
 def saveData(info):
     #数据
     data = info
+    #配置数据库保存字段
     tableColumns = ['name','down0','down1','down2','down3','down4']
-    pd.DataFrame(data, columns=tableColumns).to_sql('kehuan2', engine, if_exists='append', chunksize=100,index=False)
+    pd.DataFrame(data, columns=tableColumns).to_sql('kehuan3', engine, if_exists='append', chunksize=100,index=False)
 
-parseHtmlList(47)
+#程序开始，从第X页面抓取,遇到失败后，可以修改从指定页面开始继续抓取
+parseHtmlList(1)
 #getDownList(DataUrl)
 #getDownUrl('https://www.piaohua.com/html/kehuan/2008/0722/13140.html')
 #page = getHtml(DataUrl);
