@@ -1,0 +1,157 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf8">
+  <meta name="applicable-device" content="mobile">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <meta content="yes" name="mobile-web-app-capable">
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta name="robots" content="all" />
+  <title>移动端弹幕demo</title>
+  <!-- @author:dereksu 2016-04-22 静态数据弹幕demo -->
+  <link rel="stylesheet" type="text/css" href="css/m_reset.css" />
+  <style>
+  body,html{width:100%;height:100%;overflow:hidden;background: #000;}
+  /*page css*/
+  .main{width:100%;height:100%}
+  .content{width:100%;height:90%;position:relative;top:0;left:0;z-index:1;}
+  .danmustage{width:100%;height:100%;z-index:2;color:#fff;overflow:hidden;background:#292929;font-size:20px;}
+  .danmu{height:24px;line-height:24px;display:block;}
+  .mydanmu{height:24px;line-height:24px;display:block;padding:6px;border:1px solid #fff;border-radius:15px}
+  .alwaysdanmu{display:block}
+  .controls{position:relative;width:100%;height:10%;line-height: normal;z-index:1;}
+  .danmuForm{position:relative;width:100%;height:100%;display:block;overflow: hidden;}
+  .commentInput{width:80%;height:100%;display:block;background:#ccc;text-indent:.5em;font-size:18px;outline:0;z-index:2;color:#333;float:left;border-radius:0 !important;padding:0 !important;border:0 !important;outline: none;}
+  .commentSubmit{display:block;width:20%;height:100%;background:#f00;color:#fff;font-size:18px;text-align:center;z-index:2;outline:0;float:left;border-radius:0 !important;padding:0 !important;border:0 !important;}
+  .keyboardSubmit{position: absolute;bottom: -9999px;right: -9999px;visibility: hidden;}
+  .btn{position:absolute;bottom:10%;left:0;display:block;width:80px;height:28px;line-height:28px;background:#f00;color:#fff;font-size:16px;text-align:center;z-index:3;text-decoration:none;border-radius:0 40px 40px 0;}
+  .play{display:none}
+  .pause{display:block}
+  </style>
+</head>
+<body>
+  <div class="main">
+
+    <div class="content">
+      <div class="danmustage"></div>
+      <a href="javascript:;" class="play btn">开启弹幕</a>
+      <a href="javascript:;" class="pause btn">暂停弹幕</a>
+    </div>
+
+    <div class="controls">
+      <form class="danmuForm">
+        <input id="comment" name="comment" type="text" class="commentInput" maxlength="20" autocomplete="off" placeholder="来发弹幕吧，最多20个字">
+        <button type="button" class="commentSubmit" id="submit_btn" name="submit_btn" onclick="return false;">发送</button>
+        <input type="submit" class="keyboardSubmit" value="手机键盘enter键" id="kb_submit_btn" name="kb_submit_btn">
+      </form>
+    </div>
+
+  </div>
+
+  <script src="js/jquery-1.11.3.min.js"></script>
+  <script src="js/danMu.beta.min.js"></script>
+  <script>
+  //初始的弹幕数据
+  var danmuData = [
+    '哈哈哈哈哈哈哈',
+    '弹幕来袭~',
+    '前面的 你肥皂掉了！！',
+    "前方高能，一大波弹幕来袭！",
+    "不约，叔叔我们不约~",
+    "今天没吃药，感觉自己萌萌哒",
+    "走开，让专业的来",
+    "23333333333~~~~~",
+    "请允许我做一个悲伤的表情",
+    "警察叔叔，就是这个人",
+    "为什么放弃治疗",
+    "放开那个人，让我来",
+    "噗……节操去了哪里啊都！！",
+    "膜拜老司机",
+    "你咋不上天呢",
+    "666",
+    "666666666666666666666666~~~",
+    "放开她，让我来！！！",
+    "德里克。。。。test 。。。",
+    "666~~~~~~~~~！！！！！",
+    "前方高能 非战斗人员紧急撤离",
+    "妈妈问我为什么跪着看电脑_(:_」∠)_",
+    "他说的好有道理 我竟无言以对",
+    '小六 你好靓吖',
+    '我基本是只废猫(≥◇≤)',
+    '这个是真的耶',
+    '弹幕走一波~~~~~~~~~~~~~~~~~~~~~~~~~~',
+    '我似乎听到有人说我帅',
+    '什么？！你刚才说我帅？',
+    '~~~~~~~~~~~~~~~~~~~~~~~~~~我是天空中最亮的星星~~~~~~~~~~~~~~~~~~~~~',
+    '好多人啊',
+    '喂，妖妖灵吗，这里有人在装逼。。',
+    '对方不想和你说话,并向你扔了一条狗。。。',
+    '前面那个说我帅的别走啊啊啊啊',
+    '你们玩，我静静地看着',
+    '我就静静看着你',
+    '超级羞羞',
+    '好想你',
+    '我想你！',
+    '你真帅~',
+    '你肚子好大！！',
+    '最近变胖了，悲伤'
+  ];
+
+  //tgame组件改造了一下
+  //默认组件发送弹幕默认发送请求给注释掉了。
+
+  //实例化弹幕
+  var dm = new danMu({
+    device:'pc',
+    stage: $(".danmustage"),
+    comments: danmuData,
+    danMuHtml: "<span>{comment}</span>",
+    colors: ["#fff","#00ccff","#ff0000","#00ff00","#fef500"],
+    flyTime:7000, 
+    timeInterval:1200,
+    randomSort:true,
+    hSpacing:0.8
+  });
+
+  //发送弹幕
+  var sendDanmuCheck = function(){
+    var commVal = $.trim($("#comment").val());
+    if(commVal == ''){
+      $("#comment").blur();
+      alert('不能没写东西啊！');
+      return false;
+    }else if(commVal.length > 20){
+      $("#comment").blur();
+      alert('你是不是写超过20个字了？');
+      return false;
+    }
+    $("#comment").blur();
+    dm.send(commVal,function(){
+      $("#comment").val('');
+    });
+  };
+  $("#submit_btn").bind('click', function(e) {
+    sendDanmuCheck();
+  });
+  $("#kb_submit_btn").bind('click', function(e) {
+    sendDanmuCheck();
+    return false;
+  });
+
+  //弹幕开关
+  $(".play").bind('click', function(e) {
+    $(this).hide();
+    $(".pause").show();
+    dm.play();
+  });
+  $(".pause").bind('click', function(e) {
+    $(this).hide();
+    $(".play").show();
+    dm.pause();
+  });
+  </script>
+  
+</body>
+</html>
